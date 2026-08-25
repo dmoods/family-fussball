@@ -1,0 +1,138 @@
+name: Täglicher Fußball-Update
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests beautifulsoup4
+      - name: Spielpläne aktualisieren
+        shell: python
+        run: |
+          import json, re
+          from datetime import datetime
+          from pathlib import Path
+          from urllib.parse import quote
+          import requests
+          from bs4 import BeautifulSoup
+
+          DATA = Path("data/events.json")
+          TEAMS = [
+            {"child":"Alicia","own":"1. FC Union Berlin Mädchen DM","url":"https://www.fussball.de/mannschaft/1-fc-union-berlin-maedchen-dm-1fc-union-berlin-berlin/-/saison/2627/team-id/011MIBV3NC000000VTVG0001VTR8C1K7","type":"Spiel","home":"Am Plänterwald 17, 12435 Berlin"},
+            {"child":"Luis","own":"BSV Eintracht Mahlsdorf 3.E - Berliner Runde U11","url":"https://www.fussball.de/mannschaft/bsv-eintracht-mahlsdorf-3e--berliner-runde-u11-bsv-eintracht-mahlsdorf-berlin/-/saison/2627/team-id/011MIDR390000000VTVG0001VTR8C1K7","type":"Kinderfestival","home":"Oschatzer Ring 16, 12627 Berlin"}
+          ]
+          LOC = {
+            "TSV Mariendorf 1897 II":"Prühßstr. 90, 12105 Berlin",
+            "BSC Kickers 1900 II":"Monumentenstr. 13 C, 10829 Berlin",
+            "Türkiyemspor Berlin 1978 II":"Blücherstr. 46-47, 10961 Berlin",
+            "VfB Fortuna Biesdorf U12":"Grabensprung 56, 12683 Berlin",
+            "Lichtenberg 47 - Berliner Runde U11 - Kinderfestival":"Allee der Kosmonauten 20-22, 10315 Berlin",
+            "FSV Berolina Stralau U11 II - Berliner Runde U11 - Kinderfestival":"Persiusstr. 7 B, 10245 Berlin",
+            "SV Sparta Lichtenberg V - Berliner Runde U11 - Kinderfestival":"Hauffstr. 13-20, 10317 Berlin",
+            "VfB Berlin 1911 U11 - Berliner Runde U11 - Kinderfestival":"Virchowstr. 7, 10249 Berlin",
+            "SV Empor Berlin U10 - Berliner Runde U11 - Kinderfestival":"Cantianstr. 24, 10437 Berlin",
+            "BSV Eintracht Mahlsdorf 3.E - Berliner Runde U11 - Kinderfestival":"Oschatzer Ring 16, 12627 Berlin"
+          }
+
+          def clean(s):
+            return " ".join(s.replace("\xa0"," ").split())
+          def maps(q):
+            return "https://maps.apple.com/?q=" + quote(q)
+
+          old = json.loads(DATA.read_text(encoding="utf-8")) if DATA.exists() else {"games":[]}
+          old_by_child = {}
+          for g in old.get("games",[]):
+            old_by_child.setdefault(g.get("child"), []).append(g)
+
+          sess = requests.Session()
+          sess.headers["User-Agent"] = "Mozilla/5.0 Chrome/151 Safari/537.36"
+          date_re = re.compile(r"(Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag),\s*(\d{2}\.\d{2}\.\d{4})\s*-\s*(\d{2}:\d{2})\s*Uhr")
+          result_games = []
+          failures = []
+
+          for team in TEAMS:
+            try:
+              r = sess.get(team["url"], timeout=30)
+              r.raise_for_status()
+              soup = BeautifulSoup(r.text, "html.parser")
+              found = []
+              seen = set()
+
+              for node in soup.find_all(string=date_re):
+                m = date_re.search(clean(str(node)))
+                if not m:
+                  continue
+                date_iso = datetime.strptime(m.group(2), "%d.%m.%Y").strftime("%Y-%m-%d")
+                time = m.group(3)
+                container = node.parent
+                teams = []
+                for _ in range(8):
+                  if container is None:
+                    break
+                  names = []
+                  for a in container.find_all("a", href=True):
+                    txt = clean(a.get_text(" ", strip=True))
+                    if "/mannschaft/" in a.get("href","") and txt and txt not in names:
+                      names.append(txt)
+                  if team["own"] in names and len(names) >= 2:
+                    teams = names
+                    break
+                  container = container.parent
+                if not teams:
+                  continue
+                opp = next((x for x in teams if x != team["own"]), None)
+                if not opp:
+                  continue
+                key=(date_iso,time,opp)
+                if key in seen:
+                  continue
+                seen.add(key)
+                home = teams[0] == team["own"]
+                address = team["home"] if home else LOC.get(opp, clean(opp) + ", Berlin")
+                title = opp
+                if team["child"]=="Luis":
+                  title = re.sub(r"\s*-\s*Berliner Runde U11\s*-\s*Kinderfestival$", "", title)
+                found.append({"date":date_iso,"time":time,"child":team["child"],"type":team["type"],"title":title,"location":address,"maps":maps(address)})
+
+              if found:
+                result_games.extend(found)
+              else:
+                failures.append(team["child"])
+                result_games.extend(old_by_child.get(team["child"],[]))
+            except Exception as e:
+              print(team["child"], e)
+              failures.append(team["child"])
+              result_games.extend(old_by_child.get(team["child"],[]))
+
+          unique = {}
+          for g in result_games:
+            unique[(g.get("child"),g.get("date"),g.get("time"),g.get("title"))] = g
+
+          out = {
+            "updated": datetime.now().astimezone().isoformat(timespec="seconds"),
+            "games": sorted(unique.values(), key=lambda x:(x.get("date",""),x.get("time",""),x.get("child",""))),
+            "status":"fallback" if failures else "ok",
+            "fallback_children": failures
+          }
+          DATA.write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
+          print("Termine:", len(out["games"]), "Fallback:", failures)
+
+      - name: Änderungen speichern
+        run: |
+          git config user.name "family-fussball-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/events.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Tägliches Fußball-Update"
+          git push

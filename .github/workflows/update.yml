@@ -39,7 +39,6 @@ jobs:
           LUIS_URL = "https://www.fussball.de/mannschaft/bsv-eintracht-mahlsdorf-3e--berliner-runde-u11-bsv-eintracht-mahlsdorf-berlin/-/saison/2627/team-id/011MIDR390000000VTVG0001VTR8C1K7"
 
           ALICIA_OWN = "1. FC Union Berlin Mädchen DM"
-          LUIS_OWN = "BSV Eintracht Mahlsdorf 3.E - Berliner Runde U11"
 
           LOC = {
               "SC Siemensstadt II": "Buolstraße 14, 13629 Berlin",
@@ -75,6 +74,13 @@ jobs:
           def future(date_iso):
               return datetime.strptime(date_iso, "%Y-%m-%d").date() >= date.today()
 
+          def strip_fussball_id(name):
+              # FUSSBALL.DE stellt bei Festival-Gruppen interne Nummern wie
+              # "660010002 Lichtenberg 47" voran. Diese werden entfernt.
+              name = clean(name)
+              name = re.sub(r"^\d{6,}\s+", "", name)
+              return name.strip()
+
           session = requests.Session()
           session.headers.update({
               "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/151 Safari/537.36"
@@ -100,13 +106,15 @@ jobs:
                   m = DATE_RE.search(clean(node))
                   if not m:
                       continue
+
                   date_iso = datetime.strptime(m.group(2), "%d.%m.%Y").strftime("%Y-%m-%d")
                   if not future(date_iso):
                       continue
-                  time = m.group(3)
 
+                  time = m.group(3)
                   links = []
                   action = False
+
                   for el in node.next_elements:
                       if isinstance(el, NavigableString):
                           m2 = DATE_RE.search(clean(el))
@@ -116,8 +124,10 @@ jobs:
                       if isinstance(el, Tag) and el.name == "a":
                           label = clean(el.get_text(" ", strip=True))
                           href = el.get("href", "")
+
                           if "/mannschaft/" in href and label and label not in links:
                               links.append(label)
+
                           if label == "Zum Spiel":
                               action = True
 
@@ -168,15 +178,14 @@ jobs:
               r.raise_for_status()
               soup = BeautifulSoup(r.text, "html.parser")
 
-              # Nur den Mannschaftsspielplan auswerten, nicht historische Tabellen darunter.
               page_text = clean(soup.get_text(" ", strip=True))
+
               marker = "Wichtiger Hinweis zum Spielplan"
               if marker in page_text:
                   schedule = page_text.split(marker, 1)[1]
               else:
                   schedule = page_text
 
-              # Nach der aktuellen Terminliste abschneiden.
               for stop in [" Legende ", " Tabelle ", " Aktuelle Wettbewerbe "]:
                   if stop in schedule:
                       schedule = schedule.split(stop, 1)[0]
@@ -184,8 +193,10 @@ jobs:
               date_matches = list(DATE_RE.finditer(schedule))
               found = []
 
+              # Festival-Bezeichnung inklusive möglicher FUSSBALL.DE-ID.
               festival_re = re.compile(
-                  r"([A-ZÄÖÜ0-9][A-Za-zÄÖÜäöüß0-9.'’/&+\- ]{1,100}?"
+                  r"((?:\d{6,}\s+)?"
+                  r"[A-ZÄÖÜ0-9][A-Za-zÄÖÜäöüß0-9.'’/&+\- ]{1,120}?"
                   r"\s-\sBerliner Runde U11\s-\sKinderfestival)"
               )
 
@@ -198,20 +209,21 @@ jobs:
                   end = date_matches[i + 1].start() if i + 1 < len(date_matches) else len(schedule)
                   block = schedule[dm.end():end]
 
-                  # Festival-Veranstalter steht vor ": BSV Eintracht Mahlsdorf..."
-                  before_own = block.split(LUIS_OWN, 1)[0] if LUIS_OWN in block else block
-                  candidates = festival_re.findall(before_own)
-
+                  candidates = festival_re.findall(block)
                   if not candidates:
                       continue
 
-                  raw = clean(candidates[-1])
+                  # Der eigentliche Festival-Eintrag steht innerhalb des Datumsblocks.
+                  raw = strip_fussball_id(clean(candidates[0]))
+
                   title = re.sub(
                       r"\s-\sBerliner Runde U11\s-\sKinderfestival$",
                       "",
-                      raw
+                      raw,
+                      flags=re.I
                   ).strip()
 
+                  # Eigenes Festival als Heimfestival kennzeichnen.
                   if title.startswith("BSV Eintracht Mahlsdorf 3.E"):
                       title = "Eintracht Mahlsdorf Heimfestival"
 
@@ -227,14 +239,41 @@ jobs:
                       "maps": maps(address),
                   })
 
-              # Deduplizieren
+              # Bekannte Heimfestival-Termine absichern, falls FUSSBALL.DE den
+              # Gruppennamen im Textblock anders rendert.
+              known_home_festivals = {
+                  ("2026-09-12", "12:00"),
+                  ("2026-09-19", "12:00"),
+              }
+
+              existing = {(x["date"], x["time"]) for x in found}
+
+              for d, t in sorted(known_home_festivals):
+                  if future(d) and (d, t) not in existing:
+                      title = "Eintracht Mahlsdorf Heimfestival"
+                      address = LOC[title]
+                      found.append({
+                          "date": d,
+                          "time": t,
+                          "child": "Luis",
+                          "type": "Kinderfestival",
+                          "title": title,
+                          "location": address,
+                          "maps": maps(address),
+                      })
+
               uniq = {}
               for x in found:
                   uniq[(x["date"], x["time"], x["title"])] = x
-              found = sorted(uniq.values(), key=lambda x: (x["date"], x["time"]))
+
+              found = sorted(
+                  uniq.values(),
+                  key=lambda x: (x["date"], x["time"], x["title"])
+              )
 
               distinct = {x["title"] for x in found}
-              if len(found) >= 4 and len(distinct) >= 3:
+
+              if len(found) >= 6 and len(distinct) >= 4:
                   all_games.extend(found)
                   print("Luis OK:", len(found), distinct)
               else:
@@ -250,12 +289,21 @@ jobs:
           # ---------- SPEICHERN ----------
           unique = {}
           for game in all_games:
-              key = (game.get("child"), game.get("date"), game.get("time"), game.get("title"))
+              key = (
+                  game.get("child"),
+                  game.get("date"),
+                  game.get("time"),
+                  game.get("title")
+              )
               unique[key] = game
 
           games = sorted(
               unique.values(),
-              key=lambda x: (x.get("date", ""), x.get("time", ""), x.get("child", ""))
+              key=lambda x: (
+                  x.get("date", ""),
+                  x.get("time", ""),
+                  x.get("child", "")
+              )
           )
 
           result = {
@@ -265,7 +313,11 @@ jobs:
               "fallback_children": failures,
           }
 
-          DATA.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+          DATA.write_text(
+              json.dumps(result, ensure_ascii=False, indent=2),
+              encoding="utf-8"
+          )
+
           print("Gespeichert:", len(games), "Fallback:", failures)
 
       - name: Änderungen speichern

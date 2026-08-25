@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827"><title>Familien Fußball</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--text:#111827;--muted:#6b7280;--luis:#2563eb;--alicia:#db2777;--train:#0f766e}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
+header{background:#111827;color:#fff;padding:22px 18px 18px;position:sticky;top:0;z-index:5}
+h1{margin:0;font-size:24px}.sub{font-size:13px;color:#cbd5e1;margin-top:5px}
+main{max-width:920px;margin:auto;padding:16px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+button{border:0;border-radius:999px;padding:9px 13px;font-weight:700;background:#e5e7eb}button.active{background:#111827;color:#fff}
+.week{margin:20px 0}.week h2{font-size:17px;margin:0 0 10px}.grid{display:grid;gap:10px}
+.card{background:var(--card);border-radius:16px;padding:14px;box-shadow:0 5px 18px #00000010;border-left:5px solid #9ca3af}
+.card.Luis{border-left-color:var(--luis)}.card.Alicia{border-left-color:var(--alicia)}
+.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.who{font-weight:800}.Luis .who{color:var(--luis)}.Alicia .who{color:var(--alicia)}
+.time{font-size:22px;font-weight:900}.type{display:inline-block;margin-top:7px;font-size:12px;font-weight:800;background:#eef2ff;padding:4px 8px;border-radius:999px}
+.loc{margin:10px 0 0;color:#374151}.maps{display:inline-block;text-decoration:none;margin-top:11px;background:#111827;color:#fff;padding:9px 12px;border-radius:10px;font-weight:800}
+.empty{background:#fff;padding:18px;border-radius:14px;color:var(--muted)}footer{padding:24px 16px 36px;text-align:center;color:var(--muted);font-size:12px}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><h1>⚽ Familien Fußball</h1><div class="sub">Luis · Eintracht Mahlsdorf &nbsp; • &nbsp; Alicia · 1. FC Union Berlin</div></header>
+<main>
+<div class="toolbar"><button class="active" data-filter="all">Alle</button><button data-filter="Luis">Luis</button><button data-filter="Alicia">Alicia</button></div>
+<div id="app"></div>
+</main>
+<footer><div id="updated"></div><div>Als App installierbar · Apple Maps direkt aus jedem Termin</div></footer>
+<script>
+const trainings=[
+ {day:2,time:"16:30–18:00",child:"Luis",title:"Training",location:"Rosenhag, Berlin"},
+ {day:4,time:"17:00–18:30",child:"Luis",title:"Training",location:"Oschatzer Ring 16, 12627 Berlin"},
+ {day:2,time:"17:30–19:00",child:"Alicia",title:"Training",location:"Am Plänterwald 17, 12435 Berlin"},
+ {day:4,time:"18:00–19:30",child:"Alicia",title:"Training",location:"Am Plänterwald 17, 12435 Berlin"},
+ {day:5,time:"18:00–19:30",child:"Alicia",title:"Training",location:"Neue Krugallee 219, 12437 Berlin"}
+];
+let filter="all"; let source={games:[]};
+const map=(q)=>"https://maps.apple.com/?q="+encodeURIComponent(q);
+const pad=n=>String(n).padStart(2,"0");
+function iso(d){return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`}
+function weekNo(d){let x=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));x.setUTCDate(x.getUTCDate()+4-(x.getUTCDay()||7));let y=new Date(Date.UTC(x.getUTCFullYear(),0,1));return Math.ceil((((x-y)/86400000)+1)/7)}
+function monday(d){let x=new Date(d); let n=x.getDay()||7;x.setDate(x.getDate()-n+1);x.setHours(0,0,0,0);return x}
+function fmt(d){return d.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit"})}
+function buildTraining(start,end){
+ let out=[];for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){
+  let day=d.getDay();for(const t of trainings) if(t.day===day) out.push({date:iso(d),time:t.time,child:t.child,type:"Training",title:t.title,location:t.location,maps:map(t.location)});
+ }return out;
+}
+function render(){
+ const today=new Date(); today.setHours(0,0,0,0);
+ const end=new Date(today);end.setDate(end.getDate()+84);
+ let ev=[...source.games,...buildTraining(today,end)].filter(e=>new Date(e.date+"T23:59:00")>=today);
+ if(filter!=="all")ev=ev.filter(e=>e.child===filter);
+ ev.sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+ let groups={};for(const e of ev){let d=new Date(e.date+"T12:00:00");let k=`${d.getFullYear()}-${weekNo(d)}`;(groups[k]??=[]).push(e)}
+ let html="";
+ for(const [k,list] of Object.entries(groups)){
+   let d=new Date(list[0].date+"T12:00:00"),m=monday(d),s=new Date(m);s.setDate(s.getDate()+6);
+   html+=`<section class="week"><h2>KW ${weekNo(d)} · ${m.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"})}–${s.toLocaleDateString("de-DE")}</h2><div class="grid">`;
+   for(const e of list){let dt=new Date(e.date+"T12:00:00");html+=`<article class="card ${e.child}"><div class="top"><div><div class="who">${e.child}</div><div>${fmt(dt)}</div></div><div class="time">${e.time}</div></div><div class="type">${e.type}</div><h3>${e.title}</h3><div class="loc">📍 ${e.location}</div><a class="maps" href="${e.maps||map(e.location)}">Apple Maps →</a></article>`}
+   html+=`</div></section>`;
+ }
+ document.querySelector("#app").innerHTML=html||`<div class="empty">Keine Termine gefunden.</div>`;
+}
+fetch("data/events.json?"+Date.now()).then(r=>r.json()).then(d=>{source=d;document.querySelector("#updated").textContent="Zuletzt aktualisiert: "+new Date(d.updated).toLocaleString("de-DE");render()}).catch(render);
+document.querySelectorAll("button[data-filter]").forEach(b=>b.onclick=()=>{document.querySelectorAll("button").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.filter;render()});
+if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");
+</script></body></html>

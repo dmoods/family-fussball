@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T09:17:12+00:00",
+  "updated": "2026-08-25T09:20:22+00:00",
   "games": [
     {
       "date": "2026-09-06",
@@ -15,9 +15,9 @@
       "time": "14:30",
       "child": "Luis",
       "type": "Kinderfestival",
-      "title": "BSC Marzahn III",
-      "location": "Oschatzer Ring 16, 12627 Berlin",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"
+      "title": "660010002 Lichtenberg 47",
+      "location": "660010002 Lichtenberg 47, Berlin",
+      "maps": "https://maps.apple.com/?q=660010002%20Lichtenberg%2047%2C%20Berlin"
     },
     {
       "date": "2026-09-12",
@@ -27,24 +27,6 @@
       "title": "TSV Mariendorf 1897 II",
       "location": "Prühßstr. 90, 12105 Berlin",
       "maps": "https://maps.apple.com/?q=Pr%C3%BCh%C3%9Fstr.%2090%2C%2012105%20Berlin"
-    },
-    {
-      "date": "2026-09-12",
-      "time": "12:00",
-      "child": "Luis",
-      "type": "Kinderfestival",
-      "title": "BSC Marzahn III",
-      "location": "Oschatzer Ring 16, 12627 Berlin",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"
-    },
-    {
-      "date": "2026-09-19",
-      "time": "12:00",
-      "child": "Luis",
-      "type": "Kinderfestival",
-      "title": "BSC Marzahn III",
-      "location": "Oschatzer Ring 16, 12627 Berlin",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"
     },
     {
       "date": "2026-09-20",
@@ -69,9 +51,9 @@
       "time": "16:00",
       "child": "Luis",
       "type": "Kinderfestival",
-      "title": "BSC Marzahn III",
-      "location": "Oschatzer Ring 16, 12627 Berlin",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"
+      "title": "660010034 FSV Berolina Stralau U11 II",
+      "location": "660010034 FSV Berolina Stralau U11 II, Berlin",
+      "maps": "https://maps.apple.com/?q=660010034%20FSV%20Berolina%20Stralau%20U11%20II%2C%20Berlin"
     },
     {
       "date": "2026-10-04",
@@ -96,18 +78,18 @@
       "time": "11:00",
       "child": "Luis",
       "type": "Kinderfestival",
-      "title": "BSC Marzahn III",
-      "location": "Oschatzer Ring 16, 12627 Berlin",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"
+      "title": "660010043 SV Sparta Lichtenberg V",
+      "location": "660010043 SV Sparta Lichtenberg V, Berlin",
+      "maps": "https://maps.apple.com/?q=660010043%20SV%20Sparta%20Lichtenberg%20V%2C%20Berlin"
     },
     {
       "date": "2026-11-07",
       "time": "15:45",
       "child": "Luis",
       "type": "Kinderfestival",
-      "title": "BSC Marzahn III",
-      "location": "Oschatzer Ring 16, 12627 Berlin",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"
+      "title": "660010053 VfB Berlin 1911 U11",
+      "location": "660010053 VfB Berlin 1911 U11, Berlin",
+      "maps": "https://maps.apple.com/?q=660010053%20VfB%20Berlin%201911%20U11%2C%20Berlin"
     },
     {
       "date": "2026-11-08",
@@ -123,9 +105,9 @@
       "time": "12:00",
       "child": "Luis",
       "type": "Kinderfestival",
-      "title": "BSC Marzahn III",
-      "location": "Oschatzer Ring 16, 12627 Berlin",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"
+      "title": "660010065 SV Sparta Lichtenberg V",
+      "location": "660010065 SV Sparta Lichtenberg V, Berlin",
+      "maps": "https://maps.apple.com/?q=660010065%20SV%20Sparta%20Lichtenberg%20V%2C%20Berlin"
     },
     {
       "date": "2026-11-21",
@@ -141,9 +123,9 @@
       "time": "09:00",
       "child": "Luis",
       "type": "Kinderfestival",
-      "title": "BSC Marzahn III",
-      "location": "Oschatzer Ring 16, 12627 Berlin",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"
+      "title": "660010072 SV Empor Berlin U10",
+      "location": "660010072 SV Empor Berlin U10, Berlin",
+      "maps": "https://maps.apple.com/?q=660010072%20SV%20Empor%20Berlin%20U10%2C%20Berlin"
     },
     {
       "date": "2026-11-29",
@@ -164,8 +146,6 @@
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     }
   ],
-  "status": "fallback",
-  "fallback_children": [
-    "Luis"
-  ]
+  "status": "ok",
+  "fallback_children": []
 }

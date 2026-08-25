@@ -1,16 +1,16 @@
 {
-  "name": "Familien Fußball – Luis & Alicia",
-  "short_name": "Fußballplan",
+  "name": "Termine Kids",
+  "short_name": "Termine Kids",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f6f7fb",
   "theme_color": "#111827",
   "icons": [
     {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "src": "apple-touch-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }

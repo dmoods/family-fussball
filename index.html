@@ -1,70 +1,331 @@
-<!doctype html>
-<html lang="de">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827"><title>Familien Fußball</title>
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
-<style>
-:root{--bg:#f6f7fb;--card:#fff;--text:#111827;--muted:#6b7280;--luis:#2563eb;--alicia:#db2777;--train:#0f766e}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
-header{background:#111827;color:#fff;padding:22px 18px 18px;position:sticky;top:0;z-index:5}
-h1{margin:0;font-size:24px}.sub{font-size:13px;color:#cbd5e1;margin-top:5px}
-main{max-width:920px;margin:auto;padding:16px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-button{border:0;border-radius:999px;padding:9px 13px;font-weight:700;background:#e5e7eb}button.active{background:#111827;color:#fff}
-.week{margin:20px 0}.week h2{font-size:17px;margin:0 0 10px}.grid{display:grid;gap:10px}
-.card{background:var(--card);border-radius:16px;padding:14px;box-shadow:0 5px 18px #00000010;border-left:5px solid #9ca3af}
-.card.Luis{border-left-color:var(--luis)}.card.Alicia{border-left-color:var(--alicia)}
-.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.who{font-weight:800}.Luis .who{color:var(--luis)}.Alicia .who{color:var(--alicia)}
-.time{font-size:22px;font-weight:900}.type{display:inline-block;margin-top:7px;font-size:12px;font-weight:800;background:#eef2ff;padding:4px 8px;border-radius:999px}
-.loc{margin:10px 0 0;color:#374151}.maps{display:inline-block;text-decoration:none;margin-top:11px;background:#111827;color:#fff;padding:9px 12px;border-radius:10px;font-weight:800}
-.empty{background:#fff;padding:18px;border-radius:14px;color:var(--muted)}footer{padding:24px 16px 36px;text-align:center;color:var(--muted);font-size:12px}
-@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
-</style>
-</head>
-<body>
-<header><h1>⚽ Familien Fußball</h1><div class="sub">Luis · Eintracht Mahlsdorf &nbsp; • &nbsp; Alicia · 1. FC Union Berlin</div></header>
-<main>
-<div class="toolbar"><button class="active" data-filter="all">Alle</button><button data-filter="Luis">Luis</button><button data-filter="Alicia">Alicia</button></div>
-<div id="app"></div>
-</main>
-<footer><div id="updated"></div><div>Als App installierbar · Apple Maps direkt aus jedem Termin</div></footer>
-<script>
-const trainings=[
- {day:2,time:"16:30–18:00",child:"Luis",title:"Training",location:"Rosenhag, Berlin"},
- {day:4,time:"17:00–18:30",child:"Luis",title:"Training",location:"Oschatzer Ring 16, 12627 Berlin"},
- {day:2,time:"17:30–19:00",child:"Alicia",title:"Training",location:"Am Plänterwald 17, 12435 Berlin"},
- {day:4,time:"18:00–19:30",child:"Alicia",title:"Training",location:"Am Plänterwald 17, 12435 Berlin"},
- {day:5,time:"18:00–19:30",child:"Alicia",title:"Training",location:"Neue Krugallee 219, 12437 Berlin"}
-];
-let filter="all"; let source={games:[]};
-const map=(q)=>"https://maps.apple.com/?q="+encodeURIComponent(q);
-const pad=n=>String(n).padStart(2,"0");
-function iso(d){return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`}
-function weekNo(d){let x=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));x.setUTCDate(x.getUTCDate()+4-(x.getUTCDay()||7));let y=new Date(Date.UTC(x.getUTCFullYear(),0,1));return Math.ceil((((x-y)/86400000)+1)/7)}
-function monday(d){let x=new Date(d); let n=x.getDay()||7;x.setDate(x.getDate()-n+1);x.setHours(0,0,0,0);return x}
-function fmt(d){return d.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit"})}
-function buildTraining(start,end){
- let out=[];for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){
-  let day=d.getDay();for(const t of trainings) if(t.day===day) out.push({date:iso(d),time:t.time,child:t.child,type:"Training",title:t.title,location:t.location,maps:map(t.location)});
- }return out;
-}
-function render(){
- const today=new Date(); today.setHours(0,0,0,0);
- const end=new Date(today);end.setDate(end.getDate()+84);
- let ev=[...source.games,...buildTraining(today,end)].filter(e=>new Date(e.date+"T23:59:00")>=today);
- if(filter!=="all")ev=ev.filter(e=>e.child===filter);
- ev.sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
- let groups={};for(const e of ev){let d=new Date(e.date+"T12:00:00");let k=`${d.getFullYear()}-${weekNo(d)}`;(groups[k]??=[]).push(e)}
- let html="";
- for(const [k,list] of Object.entries(groups)){
-   let d=new Date(list[0].date+"T12:00:00"),m=monday(d),s=new Date(m);s.setDate(s.getDate()+6);
-   html+=`<section class="week"><h2>KW ${weekNo(d)} · ${m.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"})}–${s.toLocaleDateString("de-DE")}</h2><div class="grid">`;
-   for(const e of list){let dt=new Date(e.date+"T12:00:00");html+=`<article class="card ${e.child}"><div class="top"><div><div class="who">${e.child}</div><div>${fmt(dt)}</div></div><div class="time">${e.time}</div></div><div class="type">${e.type}</div><h3>${e.title}</h3><div class="loc">📍 ${e.location}</div><a class="maps" href="${e.maps||map(e.location)}">Apple Maps →</a></article>`}
-   html+=`</div></section>`;
- }
- document.querySelector("#app").innerHTML=html||`<div class="empty">Keine Termine gefunden.</div>`;
-}
-fetch("data/events.json?"+Date.now()).then(r=>r.json()).then(d=>{source=d;document.querySelector("#updated").textContent="Zuletzt aktualisiert: "+new Date(d.updated).toLocaleString("de-DE");render()}).catch(render);
-document.querySelectorAll("button[data-filter]").forEach(b=>b.onclick=()=>{document.querySelectorAll("button").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.filter;render()});
-if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");
-</script></body></html>
+name: Täglicher Fußball-Update
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests beautifulsoup4
+
+      - name: Spielpläne aktualisieren
+        shell: python
+        run: |
+          import json
+          import re
+          from datetime import datetime, date
+          from pathlib import Path
+          from urllib.parse import quote
+
+          import requests
+          from bs4 import BeautifulSoup, Tag, NavigableString
+
+          DATA = Path("data/events.json")
+
+          ALICIA_URL = "https://www.fussball.de/mannschaft/1-fc-union-berlin-maedchen-dm-1fc-union-berlin-berlin/-/saison/2627/team-id/011MIBV3NC000000VTVG0001VTR8C1K7"
+          LUIS_URL = "https://www.fussball.de/mannschaft/bsv-eintracht-mahlsdorf-3e--berliner-runde-u11-bsv-eintracht-mahlsdorf-berlin/-/saison/2627/team-id/011MIDR390000000VTVG0001VTR8C1K7"
+
+          ALICIA_OWN = "1. FC Union Berlin Mädchen DM"
+
+          LOC = {
+              "SC Siemensstadt II": "Buolstraße 14, 13629 Berlin",
+              "TSV Mariendorf 1897 II": "Prühßstr. 90, 12105 Berlin",
+              "SFC Stern 1900 II": "Kreuznacher Str. 29, 14197 Berlin",
+              "BSC Kickers 1900 II": "Monumentenstr. 13 C, 10829 Berlin",
+              "1.FC Wacker 1921 Lankwitz II": "Gallwitzallee 146, 12249 Berlin",
+              "Türkiyemspor Berlin 1978 II": "Blücherstr. 46-47, 10961 Berlin",
+              "NFC Rot-Weiß II": "Maybachufer 32, 12047 Berlin",
+              "VfB Fortuna Biesdorf U12": "Grabensprung 56, 12683 Berlin",
+              "FV Rot-Weiß 90 Hellersdorf II": "Teterower Ring 71, 12619 Berlin",
+              "Berliner SC II": "Hubertusallee 50, 14193 Berlin",
+
+              "Lichtenberg 47": "Allee der Kosmonauten 20-22, 10315 Berlin",
+              "FSV Berolina Stralau U11 II": "Persiusstr. 7 B, 10245 Berlin",
+              "SV Sparta Lichtenberg V": "Hauffstr. 13-20, 10317 Berlin",
+              "VfB Berlin 1911 U11": "Virchowstr. 7, 10249 Berlin",
+              "SV Empor Berlin U10": "Cantianstr. 24, 10437 Berlin",
+              "Eintracht Mahlsdorf Heimfestival": "Oschatzer Ring 16, 12627 Berlin",
+          }
+
+          DATE_RE = re.compile(
+              r"(Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag),\s*"
+              r"(\d{2}\.\d{2}\.\d{4})\s*-\s*(\d{2}:\d{2})\s*Uhr"
+          )
+
+          def clean(x):
+              return " ".join(str(x).replace("\xa0", " ").split())
+
+          def maps(address):
+              return "https://maps.apple.com/?q=" + quote(address)
+
+          def future(date_iso):
+              return datetime.strptime(date_iso, "%Y-%m-%d").date() >= date.today()
+
+          def strip_fussball_id(name):
+              # FUSSBALL.DE stellt bei Festival-Gruppen interne Nummern wie
+              # "660010002 Lichtenberg 47" voran. Diese werden entfernt.
+              name = clean(name)
+              name = re.sub(r"^\d{6,}\s+", "", name)
+              return name.strip()
+
+          session = requests.Session()
+          session.headers.update({
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/151 Safari/537.36"
+          })
+
+          old = json.loads(DATA.read_text(encoding="utf-8")) if DATA.exists() else {"games": []}
+          old_by_child = {}
+          for g in old.get("games", []):
+              old_by_child.setdefault(g.get("child"), []).append(g)
+
+          failures = []
+          all_games = []
+
+          # ---------- ALICIA ----------
+          try:
+              r = session.get(ALICIA_URL, timeout=30)
+              r.raise_for_status()
+              soup = BeautifulSoup(r.text, "html.parser")
+              found = []
+              seen = set()
+
+              for node in soup.find_all(string=DATE_RE):
+                  m = DATE_RE.search(clean(node))
+                  if not m:
+                      continue
+
+                  date_iso = datetime.strptime(m.group(2), "%d.%m.%Y").strftime("%Y-%m-%d")
+                  if not future(date_iso):
+                      continue
+
+                  time = m.group(3)
+                  links = []
+                  action = False
+
+                  for el in node.next_elements:
+                      if isinstance(el, NavigableString):
+                          m2 = DATE_RE.search(clean(el))
+                          if m2 and el is not node:
+                              break
+
+                      if isinstance(el, Tag) and el.name == "a":
+                          label = clean(el.get_text(" ", strip=True))
+                          href = el.get("href", "")
+
+                          if "/mannschaft/" in href and label and label not in links:
+                              links.append(label)
+
+                          if label == "Zum Spiel":
+                              action = True
+
+                      if len(links) >= 2 and action:
+                          break
+
+                  if ALICIA_OWN not in links or len(links) < 2:
+                      continue
+
+                  other = next((x for x in links if x != ALICIA_OWN), None)
+                  if not other:
+                      continue
+
+                  key = (date_iso, time, other)
+                  if key in seen:
+                      continue
+                  seen.add(key)
+
+                  home = links.index(ALICIA_OWN) < links.index(other)
+                  address = "Am Plänterwald 17, 12435 Berlin" if home else LOC.get(other, f"{other}, Berlin")
+
+                  found.append({
+                      "date": date_iso,
+                      "time": time,
+                      "child": "Alicia",
+                      "type": "Spiel",
+                      "title": other,
+                      "location": address,
+                      "maps": maps(address),
+                  })
+
+              if len(found) >= 2 and len({x["title"] for x in found}) >= 2:
+                  all_games.extend(found)
+                  print("Alicia OK:", len(found))
+              else:
+                  failures.append("Alicia")
+                  all_games.extend(old_by_child.get("Alicia", []))
+                  print("Alicia Fallback")
+
+          except Exception as e:
+              print("Alicia Fehler:", e)
+              failures.append("Alicia")
+              all_games.extend(old_by_child.get("Alicia", []))
+
+          # ---------- LUIS / FESTIVALS ----------
+          try:
+              r = session.get(LUIS_URL, timeout=30)
+              r.raise_for_status()
+              soup = BeautifulSoup(r.text, "html.parser")
+
+              page_text = clean(soup.get_text(" ", strip=True))
+
+              marker = "Wichtiger Hinweis zum Spielplan"
+              if marker in page_text:
+                  schedule = page_text.split(marker, 1)[1]
+              else:
+                  schedule = page_text
+
+              for stop in [" Legende ", " Tabelle ", " Aktuelle Wettbewerbe "]:
+                  if stop in schedule:
+                      schedule = schedule.split(stop, 1)[0]
+
+              date_matches = list(DATE_RE.finditer(schedule))
+              found = []
+
+              # Festival-Bezeichnung inklusive möglicher FUSSBALL.DE-ID.
+              festival_re = re.compile(
+                  r"((?:\d{6,}\s+)?"
+                  r"[A-ZÄÖÜ0-9][A-Za-zÄÖÜäöüß0-9.'’/&+\- ]{1,120}?"
+                  r"\s-\sBerliner Runde U11\s-\sKinderfestival)"
+              )
+
+              for i, dm in enumerate(date_matches):
+                  date_iso = datetime.strptime(dm.group(2), "%d.%m.%Y").strftime("%Y-%m-%d")
+                  if not future(date_iso):
+                      continue
+
+                  time = dm.group(3)
+                  end = date_matches[i + 1].start() if i + 1 < len(date_matches) else len(schedule)
+                  block = schedule[dm.end():end]
+
+                  candidates = festival_re.findall(block)
+                  if not candidates:
+                      continue
+
+                  # Der eigentliche Festival-Eintrag steht innerhalb des Datumsblocks.
+                  raw = strip_fussball_id(clean(candidates[0]))
+
+                  title = re.sub(
+                      r"\s-\sBerliner Runde U11\s-\sKinderfestival$",
+                      "",
+                      raw,
+                      flags=re.I
+                  ).strip()
+
+                  # Eigenes Festival als Heimfestival kennzeichnen.
+                  if title.startswith("BSV Eintracht Mahlsdorf 3.E"):
+                      title = "Eintracht Mahlsdorf Heimfestival"
+
+                  address = LOC.get(title, f"{title}, Berlin")
+
+                  found.append({
+                      "date": date_iso,
+                      "time": time,
+                      "child": "Luis",
+                      "type": "Kinderfestival",
+                      "title": title,
+                      "location": address,
+                      "maps": maps(address),
+                  })
+
+              # Bekannte Heimfestival-Termine absichern, falls FUSSBALL.DE den
+              # Gruppennamen im Textblock anders rendert.
+              known_home_festivals = {
+                  ("2026-09-12", "12:00"),
+                  ("2026-09-19", "12:00"),
+              }
+
+              existing = {(x["date"], x["time"]) for x in found}
+
+              for d, t in sorted(known_home_festivals):
+                  if future(d) and (d, t) not in existing:
+                      title = "Eintracht Mahlsdorf Heimfestival"
+                      address = LOC[title]
+                      found.append({
+                          "date": d,
+                          "time": t,
+                          "child": "Luis",
+                          "type": "Kinderfestival",
+                          "title": title,
+                          "location": address,
+                          "maps": maps(address),
+                      })
+
+              uniq = {}
+              for x in found:
+                  uniq[(x["date"], x["time"], x["title"])] = x
+
+              found = sorted(
+                  uniq.values(),
+                  key=lambda x: (x["date"], x["time"], x["title"])
+              )
+
+              distinct = {x["title"] for x in found}
+
+              if len(found) >= 6 and len(distinct) >= 4:
+                  all_games.extend(found)
+                  print("Luis OK:", len(found), distinct)
+              else:
+                  failures.append("Luis")
+                  all_games.extend(old_by_child.get("Luis", []))
+                  print("Luis Fallback:", len(found), distinct)
+
+          except Exception as e:
+              print("Luis Fehler:", e)
+              failures.append("Luis")
+              all_games.extend(old_by_child.get("Luis", []))
+
+          # ---------- SPEICHERN ----------
+          unique = {}
+          for game in all_games:
+              key = (
+                  game.get("child"),
+                  game.get("date"),
+                  game.get("time"),
+                  game.get("title")
+              )
+              unique[key] = game
+
+          games = sorted(
+              unique.values(),
+              key=lambda x: (
+                  x.get("date", ""),
+                  x.get("time", ""),
+                  x.get("child", "")
+              )
+          )
+
+          result = {
+              "updated": datetime.now().astimezone().isoformat(timespec="seconds"),
+              "games": games,
+              "status": "fallback" if failures else "ok",
+              "fallback_children": failures,
+          }
+
+          DATA.write_text(
+              json.dumps(result, ensure_ascii=False, indent=2),
+              encoding="utf-8"
+          )
+
+          print("Gespeichert:", len(games), "Fallback:", failures)
+
+      - name: Änderungen speichern
+        run: |
+          git config user.name "family-fussball-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/events.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Tägliches Fußball-Update"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -26,12 +26,12 @@ jobs:
         run: |
           import json
           import re
-          from datetime import datetime
+          from datetime import datetime, date
           from pathlib import Path
           from urllib.parse import quote
 
           import requests
-          from bs4 import BeautifulSoup
+          from bs4 import BeautifulSoup, Tag, NavigableString
 
           DATA = Path("data/events.json")
 
@@ -63,12 +63,13 @@ jobs:
               "VfB Fortuna Biesdorf U12": "Grabensprung 56, 12683 Berlin",
               "FV Rot-Weiß 90 Hellersdorf II": "Teterower Ring 71, 12619 Berlin",
               "Berliner SC II": "Hubertusallee 50, 14193 Berlin",
+
               "Lichtenberg 47": "Allee der Kosmonauten 20-22, 10315 Berlin",
               "FSV Berolina Stralau U11 II": "Persiusstr. 7 B, 10245 Berlin",
               "SV Sparta Lichtenberg V": "Hauffstr. 13-20, 10317 Berlin",
               "VfB Berlin 1911 U11": "Virchowstr. 7, 10249 Berlin",
               "SV Empor Berlin U10": "Cantianstr. 24, 10437 Berlin",
-              "BSC Marzahn III": "Allee der Kosmonauten 131, 12681 Berlin",
+              "BSV Eintracht Mahlsdorf 3.E": "Oschatzer Ring 16, 12627 Berlin",
           }
 
           DATE_RE = re.compile(
@@ -82,7 +83,7 @@ jobs:
           def maps(address):
               return "https://maps.apple.com/?q=" + quote(address)
 
-          def normalize_team(name):
+          def normalize(name):
               name = clean(name)
               name = re.sub(
                   r"\s*-\s*Berliner Runde U11\s*-\s*Kinderfestival$",
@@ -92,6 +93,9 @@ jobs:
               )
               return name
 
+          def future_or_today(date_iso):
+              return datetime.strptime(date_iso, "%Y-%m-%d").date() >= date.today()
+
           old = json.loads(DATA.read_text(encoding="utf-8")) if DATA.exists() else {"games": []}
           old_by_child = {}
           for g in old.get("games", []):
@@ -99,7 +103,10 @@ jobs:
 
           session = requests.Session()
           session.headers.update({
-              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/151 Safari/537.36"
+              "User-Agent": (
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 Chrome/151 Safari/537.36"
+              )
           })
 
           all_games = []
@@ -114,83 +121,131 @@ jobs:
                   found = []
                   seen = set()
 
-                  for node in soup.find_all(string=DATE_RE):
-                      node_text = clean(node)
-                      match = DATE_RE.search(node_text)
-                      if not match:
-                          continue
+                  # Alle sichtbaren Datums-Textknoten nehmen.
+                  date_nodes = []
+                  for node in soup.find_all(string=True):
+                      txt = clean(node)
+                      m = DATE_RE.search(txt)
+                      if m:
+                          date_iso = datetime.strptime(
+                              m.group(2), "%d.%m.%Y"
+                          ).strftime("%Y-%m-%d")
 
-                      date_iso = datetime.strptime(match.group(2), "%d.%m.%Y").strftime("%Y-%m-%d")
+                          if future_or_today(date_iso):
+                              date_nodes.append((node, m, date_iso))
+
+                  for node, match, date_iso in date_nodes:
                       time = match.group(3)
 
-                      selected_teams = []
-                      container = node.parent
+                      team_links = []
+                      action_link = None
 
-                      for _ in range(10):
-                          if container is None:
+                      # Ab dem Datum linear durch den DOM laufen.
+                      # Beim nächsten Datum ist dieser Spielblock beendet.
+                      for el in node.next_elements:
+                          if isinstance(el, NavigableString):
+                              txt = clean(el)
+                              m2 = DATE_RE.search(txt)
+                              if m2 and el is not node:
+                                  break
+
+                          if isinstance(el, Tag) and el.name == "a":
+                              label = clean(el.get_text(" ", strip=True))
+                              href = el.get("href", "")
+
+                              if "/mannschaft/" in href and label:
+                                  if label not in team_links:
+                                      team_links.append(label)
+
+                              if label in ("Zum Spiel", "Zur Gruppe"):
+                                  action_link = href
+
+                          # Zwei Mannschaften + Action-Link reichen.
+                          if len(team_links) >= 2 and action_link:
                               break
 
-                          text = clean(container.get_text(" ", strip=True))
-                          date_hits = DATE_RE.findall(text)
+                      # Nur echte Zeilen mit unserem Team akzeptieren.
+                      own_candidates = [
+                          x for x in team_links
+                          if x == team["own"]
+                          or (
+                              team["child"] == "Luis"
+                              and x.startswith("BSV Eintracht Mahlsdorf 3.E - Berliner Runde U11")
+                          )
+                      ]
 
-                          team_names = []
-                          for a in container.find_all("a", href=True):
-                              href = a.get("href", "")
-                              label = clean(a.get_text(" ", strip=True))
-                              if "/mannschaft/" not in href or not label:
-                                  continue
-                              if label not in team_names:
-                                  team_names.append(label)
-
-                          if (
-                              len(date_hits) == 1
-                              and team["own"] in team_names
-                              and 2 <= len(team_names) <= 4
-                          ):
-                              selected_teams = team_names
-                              break
-
-                          container = container.parent
-
-                      if not selected_teams:
+                      if not own_candidates or len(team_links) < 2:
                           continue
 
-                      opponents = [x for x in selected_teams if x != team["own"]]
-                      if not opponents:
+                      own_raw = own_candidates[-1]
+
+                      others = [x for x in team_links if x != own_raw]
+                      if not others:
                           continue
 
-                      own_index = selected_teams.index(team["own"])
-                      opponent_raw = min(
-                          opponents,
-                          key=lambda x: abs(selected_teams.index(x) - own_index)
-                      )
-                      opponent = normalize_team(opponent_raw)
+                      # Alicia: anderes Team = Gegner.
+                      # Luis: anderes Team ist der Festival-Veranstalter.
+                      other_raw = others[0]
+                      title = normalize(other_raw)
 
-                      key = (date_iso, time, opponent)
+                      # Wenn Luis' "anderes Team" ebenfalls Eintracht Mahlsdorf ist,
+                      # ist es ein eigenes Heimfestival.
+                      if team["child"] == "Luis" and title.startswith("BSV Eintracht Mahlsdorf 3.E"):
+                          title = "Eintracht Mahlsdorf Heimfestival"
+
+                      key = (date_iso, time, title)
                       if key in seen:
                           continue
                       seen.add(key)
 
-                      opponent_index = selected_teams.index(opponent_raw)
-                      is_home = own_index < opponent_index
+                      # Reihenfolge auf FUSSBALL.DE = Heim/Veranstalter links, Gast rechts.
+                      own_pos = team_links.index(own_raw)
+                      other_pos = team_links.index(other_raw)
+                      is_home = own_pos < other_pos
 
-                      address = team["home"] if is_home else LOCATIONS.get(opponent, f"{opponent}, Berlin")
+                      if team["child"] == "Luis":
+                          if title == "Eintracht Mahlsdorf Heimfestival":
+                              address = team["home"]
+                          else:
+                              address = LOCATIONS.get(title, f"{title}, Berlin")
+                      else:
+                          address = (
+                              team["home"]
+                              if is_home
+                              else LOCATIONS.get(title, f"{title}, Berlin")
+                          )
 
                       found.append({
                           "date": date_iso,
                           "time": time,
                           "child": team["child"],
                           "type": team["type"],
-                          "title": opponent,
+                          "title": title,
                           "location": address,
                           "maps": maps(address),
                       })
 
-                  if found:
+                  # Doppelte Termine entfernen.
+                  dedup = {}
+                  for g in found:
+                      dedup[(g["date"], g["time"], g["title"])] = g
+                  found = sorted(
+                      dedup.values(),
+                      key=lambda x: (x["date"], x["time"], x["title"]),
+                  )
+
+                  # Plausibilitätsprüfung:
+                  # Alicia hat mehrere verschiedene Gegner,
+                  # Luis mehrere Festivalveranstalter / Heimfestivals.
+                  distinct_titles = {x["title"] for x in found}
+
+                  if len(found) >= 2 and len(distinct_titles) >= 2:
                       all_games.extend(found)
+                      print(team["child"], "OK:", len(found), "Termine,", len(distinct_titles), "verschiedene Titel")
                   else:
                       failures.append(team["child"])
                       all_games.extend(old_by_child.get(team["child"], []))
+                      print(team["child"], "Fallback - unplausibles Ergebnis:", len(found), distinct_titles)
 
               except Exception as exc:
                   print(f"Fehler {team['child']}: {exc}")
@@ -236,7 +291,13 @@ jobs:
         run: |
           git config user.name "family-fussball-bot"
           git config user.email "actions@users.noreply.github.com"
+
           git add data/events.json
           git diff --cached --quiet && exit 0
+
           git commit -m "Tägliches Fußball-Update"
-          git push
+
+          # Falls GitHub Pages oder ein anderer Lauf inzwischen einen Commit
+          # erzeugt hat, zuerst sauber auf den neuesten main-Stand setzen.
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -1,0 +1,44 @@
+{
+  "trainings": [
+    {
+      "day": 2,
+      "day_name": "Dienstag",
+      "time": "16:30–18:00",
+      "child": "Luis",
+      "title": "Training",
+      "location": "Rosenhag, Berlin"
+    },
+    {
+      "day": 4,
+      "day_name": "Donnerstag",
+      "time": "17:00–18:30",
+      "child": "Luis",
+      "title": "Training",
+      "location": "Oschatzer Ring 16, 12627 Berlin"
+    },
+    {
+      "day": 2,
+      "day_name": "Dienstag",
+      "time": "17:30–19:00",
+      "child": "Alicia",
+      "title": "Training",
+      "location": "Am Plänterwald 17, 12435 Berlin"
+    },
+    {
+      "day": 4,
+      "day_name": "Donnerstag",
+      "time": "18:00–19:30",
+      "child": "Alicia",
+      "title": "Training",
+      "location": "Am Plänterwald 17, 12435 Berlin"
+    },
+    {
+      "day": 5,
+      "day_name": "Freitag",
+      "time": "18:00–19:30",
+      "child": "Alicia",
+      "title": "Training",
+      "location": "Neue Krugallee 219, 12437 Berlin"
+    }
+  ]
+}

@@ -44,13 +44,7 @@ footer{padding:24px 16px 36px;text-align:center;color:var(--muted);font-size:12p
 </main>
 <footer><div id="updated"></div><div>Als App installierbar · Apple Maps direkt aus jedem Termin</div></footer>
 <script>
-const trainings=[
- {day:2,time:"16:30–18:00",child:"Luis",title:"Training",location:"Rosenhag, Berlin"},
- {day:4,time:"17:00–18:30",child:"Luis",title:"Training",location:"Oschatzer Ring 16, 12627 Berlin"},
- {day:2,time:"17:30–19:00",child:"Alicia",title:"Training",location:"Am Plänterwald 17, 12435 Berlin"},
- {day:4,time:"18:00–19:30",child:"Alicia",title:"Training",location:"Am Plänterwald 17, 12435 Berlin"},
- {day:5,time:"18:00–19:30",child:"Alicia",title:"Training",location:"Neue Krugallee 219, 12437 Berlin"}
-];
+let trainings=[];
 let filter="all", view="week", source={games:[]};
 const map=q=>"https://maps.apple.com/?q="+encodeURIComponent(q);
 const pad=n=>String(n).padStart(2,"0");
@@ -90,7 +84,15 @@ function render(){
  }
  document.querySelector("#app").innerHTML=html||`<div class="empty">Keine Termine gefunden.</div>`;
 }
-fetch("data/events.json?"+Date.now()).then(r=>r.json()).then(d=>{source=d;document.querySelector("#updated").textContent="Zuletzt aktualisiert: "+new Date(d.updated).toLocaleString("de-DE");render()}).catch(render);
+Promise.all([
+  fetch("data/events.json?"+Date.now()).then(r=>r.json()),
+  fetch("data/trainings.json?"+Date.now()).then(r=>r.json())
+]).then(([gamesData, trainingsData])=>{
+  source=gamesData;
+  trainings=trainingsData.trainings||[];
+  document.querySelector("#updated").textContent="Zuletzt aktualisiert: "+new Date(gamesData.updated).toLocaleString("de-DE");
+  render();
+}).catch(render);
 document.querySelectorAll("button[data-filter]").forEach(b=>b.onclick=()=>{document.querySelectorAll("button[data-filter]").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.filter;render()});
 document.querySelectorAll("button[data-view]").forEach(b=>b.onclick=()=>{document.querySelectorAll("button[data-view]").forEach(x=>x.classList.remove("active"));b.classList.add("active");view=b.dataset.view;render()});
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");

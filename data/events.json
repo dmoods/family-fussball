@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T07:31:30+00:00",
+  "updated": "2026-08-25T09:09:19+00:00",
   "games": [
     {
       "date": "2026-09-06",
@@ -164,6 +164,9 @@
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     }
   ],
-  "status": "ok",
-  "fallback_children": []
+  "status": "fallback",
+  "fallback_children": [
+    "Alicia",
+    "Luis"
+  ]
 }

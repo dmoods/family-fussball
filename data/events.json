@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T09:09:19+00:00",
+  "updated": "2026-08-25T09:17:12+00:00",
   "games": [
     {
       "date": "2026-09-06",
@@ -24,9 +24,9 @@
       "time": "09:30",
       "child": "Alicia",
       "type": "Spiel",
-      "title": "SC Siemensstadt II",
-      "location": "Am Plänterwald 17, 12435 Berlin",
-      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+      "title": "TSV Mariendorf 1897 II",
+      "location": "Prühßstr. 90, 12105 Berlin",
+      "maps": "https://maps.apple.com/?q=Pr%C3%BCh%C3%9Fstr.%2090%2C%2012105%20Berlin"
     },
     {
       "date": "2026-09-12",
@@ -51,7 +51,7 @@
       "time": "10:00",
       "child": "Alicia",
       "type": "Spiel",
-      "title": "SC Siemensstadt II",
+      "title": "SFC Stern 1900 II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     },
@@ -60,9 +60,9 @@
       "time": "10:00",
       "child": "Alicia",
       "type": "Spiel",
-      "title": "SC Siemensstadt II",
-      "location": "Am Plänterwald 17, 12435 Berlin",
-      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+      "title": "BSC Kickers 1900 II",
+      "location": "Monumentenstr. 13 C, 10829 Berlin",
+      "maps": "https://maps.apple.com/?q=Monumentenstr.%2013%20C%2C%2010829%20Berlin"
     },
     {
       "date": "2026-09-26",
@@ -78,7 +78,7 @@
       "time": "10:00",
       "child": "Alicia",
       "type": "Spiel",
-      "title": "SC Siemensstadt II",
+      "title": "1.FC Wacker 1921 Lankwitz II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     },
@@ -87,9 +87,9 @@
       "time": "09:00",
       "child": "Alicia",
       "type": "Spiel",
-      "title": "SC Siemensstadt II",
-      "location": "Am Plänterwald 17, 12435 Berlin",
-      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+      "title": "Türkiyemspor Berlin 1978 II",
+      "location": "Blücherstr. 46-47, 10961 Berlin",
+      "maps": "https://maps.apple.com/?q=Bl%C3%BCcherstr.%2046-47%2C%2010961%20Berlin"
     },
     {
       "date": "2026-10-11",
@@ -114,7 +114,7 @@
       "time": "10:00",
       "child": "Alicia",
       "type": "Spiel",
-      "title": "SC Siemensstadt II",
+      "title": "NFC Rot-Weiß II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     },
@@ -132,9 +132,9 @@
       "time": "09:50",
       "child": "Alicia",
       "type": "Spiel",
-      "title": "SC Siemensstadt II",
-      "location": "Am Plänterwald 17, 12435 Berlin",
-      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+      "title": "VfB Fortuna Biesdorf U12",
+      "location": "Grabensprung 56, 12683 Berlin",
+      "maps": "https://maps.apple.com/?q=Grabensprung%2056%2C%2012683%20Berlin"
     },
     {
       "date": "2026-11-22",
@@ -150,7 +150,7 @@
       "time": "10:00",
       "child": "Alicia",
       "type": "Spiel",
-      "title": "SC Siemensstadt II",
+      "title": "FV Rot-Weiß 90 Hellersdorf II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     },
@@ -159,14 +159,13 @@
       "time": "10:00",
       "child": "Alicia",
       "type": "Spiel",
-      "title": "SC Siemensstadt II",
+      "title": "Berliner SC II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     }
   ],
   "status": "fallback",
   "fallback_children": [
-    "Alicia",
     "Luis"
   ]
 }

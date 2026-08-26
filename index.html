@@ -50,6 +50,7 @@ footer{padding:24px 16px 36px;text-align:center;color:var(--muted);font-size:12p
   <button class="active" data-view="week">Diese Woche</button>
   <button data-view="today">Heute</button>
   <button data-view="all">Alle Termine</button>
+  <button id="refreshBtn" type="button">🔄 Aktualisieren</button>
 </div>
 <div class="toolbar">
   <button class="active" data-filter="all">Alle</button>
@@ -101,19 +102,42 @@ function render(){
  }
  document.querySelector("#app").innerHTML=html||`<div class="empty">Keine Termine gefunden.</div>`;
 }
-Promise.all([
-  fetch("data/events.json?"+Date.now()).then(r=>r.json()),
-  fetch("data/trainings.json?"+Date.now()).then(r=>r.json()),
-  fetch("data/luis_myteam.json?"+Date.now()).then(r=>r.json())
-]).then(([gamesData, trainingsData, myteamData])=>{
-  source=gamesData;
-  trainings=trainingsData.trainings||[];
-  myteamEvents=myteamData.events||[];
-  const newest=[gamesData.updated,myteamData.updated].filter(Boolean).sort().pop();
-  document.querySelector("#updated").textContent="Zuletzt aktualisiert: "+new Date(newest).toLocaleString("de-DE");
-  render();
-}).catch(render);
+async function loadData(showFeedback=false){
+  const btn=document.querySelector("#refreshBtn");
+  if(showFeedback && btn){
+    btn.disabled=true;
+    btn.textContent="⏳ Aktualisiere…";
+  }
+  try{
+    const stamp=Date.now();
+    const [gamesData, trainingsData, myteamData]=await Promise.all([
+      fetch("data/events.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
+      fetch("data/trainings.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
+      fetch("data/luis_myteam.json?"+stamp,{cache:"no-store"}).then(r=>r.json())
+    ]);
+    source=gamesData;
+    trainings=trainingsData.trainings||[];
+    myteamEvents=myteamData.events||[];
+    const newest=[gamesData.updated,myteamData.updated].filter(Boolean).sort().pop();
+    document.querySelector("#updated").textContent="Zuletzt aktualisiert: "+new Date(newest).toLocaleString("de-DE");
+    render();
+    if(showFeedback && btn) btn.textContent="✅ Aktualisiert";
+  }catch(err){
+    console.error(err);
+    if(showFeedback && btn) btn.textContent="⚠️ Fehler";
+    render();
+  }finally{
+    if(showFeedback && btn){
+      setTimeout(()=>{
+        btn.disabled=false;
+        btn.textContent="🔄 Aktualisieren";
+      },1400);
+    }
+  }
+}
+loadData();
 document.querySelectorAll("button[data-filter]").forEach(b=>b.onclick=()=>{document.querySelectorAll("button[data-filter]").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.filter;render()});
 document.querySelectorAll("button[data-view]").forEach(b=>b.onclick=()=>{document.querySelectorAll("button[data-view]").forEach(x=>x.classList.remove("active"));b.classList.add("active");view=b.dataset.view;render()});
+document.querySelector("#refreshBtn").onclick=()=>loadData(true);
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");
 </script></body></html>

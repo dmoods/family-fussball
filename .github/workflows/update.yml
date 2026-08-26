@@ -19,10 +19,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install requests beautifulsoup4
+      - run: pip install requests beautifulsoup4 icalendar recurring-ical-events
 
-      - name: Spielpläne aktualisieren
+      - name: Spielpläne und Luis-Training aktualisieren
         shell: python
+        env:
+          MYTEAM_LUIS_ICS: ${{ secrets.MYTEAM_LUIS_ICS }}
         run: |
           import json
           import re
@@ -32,8 +34,13 @@ jobs:
 
           import requests
           from bs4 import BeautifulSoup, Tag, NavigableString
+          from icalendar import Calendar
+          import recurring_ical_events
+          from zoneinfo import ZoneInfo
+          from datetime import timedelta
 
           DATA = Path("data/events.json")
+          MYTEAM_DATA = Path("data/luis_myteam.json")
 
           ALICIA_URL = "https://www.fussball.de/mannschaft/1-fc-union-berlin-maedchen-dm-1fc-union-berlin-berlin/-/saison/2627/team-id/011MIBV3NC000000VTVG0001VTR8C1K7"
           LUIS_URL = "https://www.fussball.de/mannschaft/bsv-eintracht-mahlsdorf-3e--berliner-runde-u11-bsv-eintracht-mahlsdorf-berlin/-/saison/2627/team-id/011MIDR390000000VTVG0001VTR8C1K7"
@@ -286,6 +293,108 @@ jobs:
               failures.append("Luis")
               all_games.extend(old_by_child.get("Luis", []))
 
+          # ---------- LUIS TRAINING AUS MYTEAM ----------
+          myteam_old = {"updated": None, "events": [], "status": "empty"}
+          if MYTEAM_DATA.exists():
+              try:
+                  myteam_old = json.loads(MYTEAM_DATA.read_text(encoding="utf-8"))
+              except Exception:
+                  pass
+
+          try:
+              import os
+              feed_url = os.environ.get("MYTEAM_LUIS_ICS", "").strip()
+              if not feed_url:
+                  raise RuntimeError("MYTEAM_LUIS_ICS ist nicht gesetzt")
+
+              feed = session.get(feed_url, timeout=30)
+              feed.raise_for_status()
+
+              cal = Calendar.from_ical(feed.content)
+              tz = ZoneInfo("Europe/Berlin")
+              now_local = datetime.now(tz)
+              range_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
+              range_end = range_start + timedelta(days=120)
+
+              myteam_events = []
+
+              # Wiederkehrende Termine (RRULE) werden auf konkrete Termine erweitert.
+              occurrences = recurring_ical_events.of(cal).between(range_start, range_end)
+
+              for event in occurrences:
+                  summary = clean(event.get("SUMMARY", ""))
+                  if not summary:
+                      continue
+
+                  # Gewünscht sind zunächst nur Luis' Trainings.
+                  if "training" not in summary.lower():
+                      continue
+
+                  dtstart = event.decoded("DTSTART")
+                  dtend = event.decoded("DTEND") if event.get("DTEND") else None
+
+                  # Ganztagstermine überspringen.
+                  if not isinstance(dtstart, datetime):
+                      continue
+
+                  if dtstart.tzinfo is None:
+                      dtstart = dtstart.replace(tzinfo=tz)
+                  else:
+                      dtstart = dtstart.astimezone(tz)
+
+                  if isinstance(dtend, datetime):
+                      if dtend.tzinfo is None:
+                          dtend = dtend.replace(tzinfo=tz)
+                      else:
+                          dtend = dtend.astimezone(tz)
+                  else:
+                      dtend = dtstart + timedelta(hours=1)
+
+                  location = clean(event.get("LOCATION", "")) or "Berlin"
+                  start_s = dtstart.strftime("%H:%M")
+                  end_s = dtend.strftime("%H:%M")
+
+                  myteam_events.append({
+                      "date": dtstart.strftime("%Y-%m-%d"),
+                      "time": f"{start_s}–{end_s}",
+                      "child": "Luis",
+                      "type": "Training",
+                      "title": summary,
+                      "location": location,
+                      "maps": maps(location),
+                      "source": "myteam"
+                  })
+
+              # Doppelte Vorkommen entfernen
+              uniq_myteam = {}
+              for e in myteam_events:
+                  k = (e["date"], e["time"], e["title"], e["location"])
+                  uniq_myteam[k] = e
+
+              myteam_events = sorted(
+                  uniq_myteam.values(),
+                  key=lambda e: (e["date"], e["time"], e["title"])
+              )
+
+              MYTEAM_DATA.write_text(
+                  json.dumps({
+                      "updated": datetime.now(tz).isoformat(timespec="seconds"),
+                      "events": myteam_events,
+                      "status": "ok"
+                  }, ensure_ascii=False, indent=2),
+                  encoding="utf-8"
+              )
+
+              print("myteam Luis:", len(myteam_events), "Trainingstermine")
+
+          except Exception as e:
+              print("myteam Fehler, alte Daten bleiben erhalten:", e)
+              if not MYTEAM_DATA.exists():
+                  MYTEAM_DATA.write_text(
+                      json.dumps(myteam_old, ensure_ascii=False, indent=2),
+                      encoding="utf-8"
+                  )
+
           # ---------- SPEICHERN ----------
           unique = {}
           for game in all_games:
@@ -324,7 +433,7 @@ jobs:
         run: |
           git config user.name "family-fussball-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/events.json
+          git add data/events.json data/luis_myteam.json
           git diff --cached --quiet && exit 0
           git commit -m "Tägliches Fußball-Update"
           git pull --rebase origin main

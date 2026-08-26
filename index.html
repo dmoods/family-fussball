@@ -45,6 +45,7 @@ footer{padding:24px 16px 36px;text-align:center;color:var(--muted);font-size:12p
 <footer><div id="updated"></div><div>Als App installierbar · Apple Maps direkt aus jedem Termin</div></footer>
 <script>
 let trainings=[];
+let myteamEvents=[];
 let filter="all", view="week", source={games:[]};
 const map=q=>"https://maps.apple.com/?q="+encodeURIComponent(q);
 const pad=n=>String(n).padStart(2,"0");
@@ -52,7 +53,7 @@ function iso(d){return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDat
 function weekNo(d){let x=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));x.setUTCDate(x.getUTCDate()+4-(x.getUTCDay()||7));let y=new Date(Date.UTC(x.getUTCFullYear(),0,1));return Math.ceil((((x-y)/86400000)+1)/7)}
 function monday(d){let x=new Date(d);let n=x.getDay()||7;x.setDate(x.getDate()-n+1);x.setHours(0,0,0,0);return x}
 function fmt(d){return d.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit"})}
-function buildTraining(start,end){let out=[];for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){for(const t of trainings)if(t.day===d.getDay())out.push({date:iso(d),time:t.time,child:t.child,type:"Training",title:t.title,location:t.location,maps:map(t.location)})}return out}
+function buildTraining(start,end){let out=[];for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){for(const t of trainings)if(t.child==="Alicia"&&t.day===d.getDay())out.push({date:iso(d),time:t.time,child:t.child,type:"Training",title:t.title,location:t.location,maps:map(t.location)})}return out}
 function card(e){let dt=new Date(e.date+"T12:00:00");return `<article class="card ${e.child}"><div class="top"><div><div class="who">${e.child}</div><div>${fmt(dt)}</div></div><div class="time">${e.time}</div></div><div class="type">${e.type}</div><h3>${e.title}</h3><div class="loc">📍 ${e.location}</div><a class="maps" href="${e.maps||map(e.location)}">Apple Maps →</a></article>`}
 function twoCols(list){
  const l=list.filter(e=>e.child==="Luis"),a=list.filter(e=>e.child==="Alicia");
@@ -61,7 +62,7 @@ function twoCols(list){
 function render(){
  const today=new Date();today.setHours(0,0,0,0);
  const horizon=new Date(today);horizon.setDate(horizon.getDate()+84);
- let ev=[...source.games,...buildTraining(today,horizon)].filter(e=>new Date(e.date+"T23:59:00")>=today);
+ let ev=[...source.games,...myteamEvents,...buildTraining(today,horizon)].filter(e=>new Date(e.date+"T23:59:00")>=today);
  if(filter!=="all")ev=ev.filter(e=>e.child===filter);
  ev.sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
 
@@ -86,11 +87,14 @@ function render(){
 }
 Promise.all([
   fetch("data/events.json?"+Date.now()).then(r=>r.json()),
-  fetch("data/trainings.json?"+Date.now()).then(r=>r.json())
-]).then(([gamesData, trainingsData])=>{
+  fetch("data/trainings.json?"+Date.now()).then(r=>r.json()),
+  fetch("data/luis_myteam.json?"+Date.now()).then(r=>r.json())
+]).then(([gamesData, trainingsData, myteamData])=>{
   source=gamesData;
   trainings=trainingsData.trainings||[];
-  document.querySelector("#updated").textContent="Zuletzt aktualisiert: "+new Date(gamesData.updated).toLocaleString("de-DE");
+  myteamEvents=myteamData.events||[];
+  const newest=[gamesData.updated,myteamData.updated].filter(Boolean).sort().pop();
+  document.querySelector("#updated").textContent="Zuletzt aktualisiert: "+new Date(newest).toLocaleString("de-DE");
   render();
 }).catch(render);
 document.querySelectorAll("button[data-filter]").forEach(b=>b.onclick=()=>{document.querySelectorAll("button[data-filter]").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.filter;render()});

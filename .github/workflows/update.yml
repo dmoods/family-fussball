@@ -326,12 +326,21 @@ jobs:
                   if not summary:
                       continue
 
-                  # Relevante myteam-Mannschaftstermine übernehmen.
-                  # Spiele/Testspiele/Kinderfestivals/Turniere bleiben draußen,
-                  # damit sie nicht doppelt neben FUSSBALL.DE erscheinen.
+                  # Nur Training und echte Sondertermine aus myteam übernehmen.
+                  # Gegner-/Spieltermine bleiben vollständig FUSSBALL.DE überlassen,
+                  # damit keine Doppelungen entstehen.
                   s = summary.lower()
-                  excluded = ["spiel", "testspiel", "kinderfestival", "turnier", "festival"]
-                  if any(word in s for word in excluded):
+
+                  allowed = (
+                      "training" in s
+                      or "foto" in s
+                      or "portrait" in s
+                      or "eltern" in s
+                      or "versammlung" in s
+                      or "besprechung" in s
+                      or "meeting" in s
+                  )
+                  if not allowed:
                       continue
 
                   dtstart = event.decoded("DTSTART")

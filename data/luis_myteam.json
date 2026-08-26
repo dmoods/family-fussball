@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T10:09:16+02:00",
+  "updated": "2026-08-26T13:51:38+02:00",
   "events": [
     {
       "date": "2026-08-27",
@@ -9,6 +9,16 @@
       "title": "✅ Training Oschatzer",
       "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
       "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
+      "date": "2026-08-28",
+      "time": "17:00–19:00",
+      "child": "Luis",
+      "type": "Fototermin",
+      "title": "Mannschaftsfoto+portraitfoto",
+      "location": "Melanchthonstraße 53, 12623 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
+      "maps": "https://maps.apple.com/?q=Melanchthonstra%C3%9Fe%2053%2C%2012623%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
       "source": "myteam"
     },
     {
@@ -22,6 +32,16 @@
       "source": "myteam"
     },
     {
+      "date": "2026-09-01",
+      "time": "18:00–18:45",
+      "child": "Luis",
+      "type": "Elterntermin",
+      "title": "⁉️️ Elternversammlung",
+      "location": "Melanchthonstraße 53, 12623 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
+      "maps": "https://maps.apple.com/?q=Melanchthonstra%C3%9Fe%2053%2C%2012623%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
       "date": "2026-09-03",
       "time": "16:45–18:30",
       "child": "Luis",
@@ -29,6 +49,16 @@
       "title": "⁉️️ Training Oschatzer",
       "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
       "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
+      "date": "2026-09-06",
+      "time": "13:45–16:30",
+      "child": "Luis",
+      "type": "Teamtermin",
+      "title": "⁉️️ Lichtenberg 47",
+      "location": "Allee der Kosmonauten 20-22, 10315 Berlin, Deutschland",
+      "maps": "https://maps.apple.com/?q=Allee%20der%20Kosmonauten%2020-22%2C%2010315%20Berlin%2C%20Deutschland",
       "source": "myteam"
     },
     {
@@ -47,6 +77,16 @@
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Oschatzer",
+      "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
+      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
+      "date": "2026-09-12",
+      "time": "11:00–14:00",
+      "child": "Luis",
+      "type": "Teamtermin",
+      "title": "⁉️️ BSV Eintracht Mahlsdorf",
       "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
       "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
       "source": "myteam"
@@ -72,6 +112,16 @@
       "source": "myteam"
     },
     {
+      "date": "2026-09-19",
+      "time": "11:00–14:00",
+      "child": "Luis",
+      "type": "Teamtermin",
+      "title": "⁉️️ BSV Eintracht Mahlsdorf",
+      "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
+      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
       "date": "2026-09-22",
       "time": "16:15–18:00",
       "child": "Luis",
@@ -89,6 +139,16 @@
       "title": "⁉️️ Training Oschatzer",
       "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
       "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
+      "date": "2026-09-26",
+      "time": "15:15–18:00",
+      "child": "Luis",
+      "type": "Teamtermin",
+      "title": "⁉️️ FSV Berolina Stralau",
+      "location": "Persiusstraße 7 b, 10245 Berlin-Bezirk Friedrichshain-Kreuzberg, Deutschland",
+      "maps": "https://maps.apple.com/?q=Persiusstra%C3%9Fe%207%20b%2C%2010245%20Berlin-Bezirk%20Friedrichshain-Kreuzberg%2C%20Deutschland",
       "source": "myteam"
     },
     {
@@ -129,6 +189,16 @@
       "title": "⁉️️ Training Oschatzer",
       "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
       "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
+      "date": "2026-10-11",
+      "time": "10:15–13:00",
+      "child": "Luis",
+      "type": "Teamtermin",
+      "title": "⁉️️ SV Sparta Lichtenberg",
+      "location": "Hauffstraße 13-20, 10317 Berlin-Bezirk Lichtenberg, Deutschland",
+      "maps": "https://maps.apple.com/?q=Hauffstra%C3%9Fe%2013-20%2C%2010317%20Berlin-Bezirk%20Lichtenberg%2C%20Deutschland",
       "source": "myteam"
     },
     {
@@ -212,6 +282,16 @@
       "source": "myteam"
     },
     {
+      "date": "2026-11-07",
+      "time": "15:00–17:45",
+      "child": "Luis",
+      "type": "Teamtermin",
+      "title": "⁉️️ VfB Berlin 1911",
+      "location": "Virchowstraße 7, 10249 Berlin-Bezirk Friedrichshain-Kreuzberg, Deutschland",
+      "maps": "https://maps.apple.com/?q=Virchowstra%C3%9Fe%207%2C%2010249%20Berlin-Bezirk%20Friedrichshain-Kreuzberg%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
       "date": "2026-11-10",
       "time": "16:15–18:00",
       "child": "Luis",
@@ -232,6 +312,16 @@
       "source": "myteam"
     },
     {
+      "date": "2026-11-15",
+      "time": "11:15–14:00",
+      "child": "Luis",
+      "type": "Teamtermin",
+      "title": "⁉️️ SV Sparta Lichtenberg",
+      "location": "Hauffstraße 13-20, 10317 Berlin-Bezirk Lichtenberg, Deutschland",
+      "maps": "https://maps.apple.com/?q=Hauffstra%C3%9Fe%2013-20%2C%2010317%20Berlin-Bezirk%20Lichtenberg%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
       "date": "2026-11-17",
       "time": "16:15–18:00",
       "child": "Luis",
@@ -249,6 +339,16 @@
       "title": "⁉️️ Training Oschatzer",
       "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
       "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
+      "date": "2026-11-22",
+      "time": "08:15–11:00",
+      "child": "Luis",
+      "type": "Teamtermin",
+      "title": "⁉️️ SV Empor Berlin",
+      "location": "Cantianstraße 24, 10437 Berlin-Bezirk Pankow, Deutschland",
+      "maps": "https://maps.apple.com/?q=Cantianstra%C3%9Fe%2024%2C%2010437%20Berlin-Bezirk%20Pankow%2C%20Deutschland",
       "source": "myteam"
     },
     {

@@ -326,8 +326,12 @@ jobs:
                   if not summary:
                       continue
 
-                  # Gewünscht sind zunächst nur Luis' Trainings.
-                  if "training" not in summary.lower():
+                  # Relevante myteam-Mannschaftstermine übernehmen.
+                  # Spiele/Testspiele/Kinderfestivals/Turniere bleiben draußen,
+                  # damit sie nicht doppelt neben FUSSBALL.DE erscheinen.
+                  s = summary.lower()
+                  excluded = ["spiel", "testspiel", "kinderfestival", "turnier", "festival"]
+                  if any(word in s for word in excluded):
                       continue
 
                   dtstart = event.decoded("DTSTART")
@@ -354,11 +358,20 @@ jobs:
                   start_s = dtstart.strftime("%H:%M")
                   end_s = dtend.strftime("%H:%M")
 
+                  if "training" in s:
+                      event_type = "Training"
+                  elif "foto" in s or "portrait" in s:
+                      event_type = "Fototermin"
+                  elif "eltern" in s:
+                      event_type = "Elterntermin"
+                  else:
+                      event_type = "Teamtermin"
+
                   myteam_events.append({
                       "date": dtstart.strftime("%Y-%m-%d"),
                       "time": f"{start_s}–{end_s}",
                       "child": "Luis",
-                      "type": "Training",
+                      "type": event_type,
                       "title": summary,
                       "location": location,
                       "maps": maps(location),
@@ -385,7 +398,7 @@ jobs:
                   encoding="utf-8"
               )
 
-              print("myteam Luis:", len(myteam_events), "Trainingstermine")
+              print("myteam Luis:", len(myteam_events), "Mannschaftstermine")
 
           except Exception as e:
               print("myteam Fehler, alte Daten bleiben erhalten:", e)

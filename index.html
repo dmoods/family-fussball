@@ -24,7 +24,23 @@ button.active{background:#111827;color:#fff}
 .loc{margin:10px 0 0;color:#374151}.maps{display:inline-block;text-decoration:none;margin-top:11px;background:#111827;color:#fff;padding:9px 12px;border-radius:10px;font-weight:800}
 .empty{background:#fff;padding:18px;border-radius:14px;color:var(--muted)}
 footer{padding:24px 16px 36px;text-align:center;color:var(--muted);font-size:12px}
-.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}.kidcol{display:grid;gap:10px;align-content:start}@media(max-width:560px){.grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}.card{padding:10px;border-radius:12px}.time{font-size:17px}.who{font-size:14px}.card h3{font-size:14px;margin:9px 0}.loc{font-size:12px}.maps{font-size:12px;padding:7px 8px}}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:start}
+.kidcol{display:grid;gap:10px;align-content:start;min-width:0}
+.card{min-width:0;overflow:hidden}
+.card h3,.loc,.time,.who{overflow-wrap:anywhere;word-break:break-word}
+@media(max-width:560px){
+  main{padding:10px}
+  .grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+  .kidcol{min-width:0}
+  .card{padding:10px 9px;border-radius:12px;min-width:0}
+  .top{display:block}
+  .time{font-size:16px;line-height:1.15;margin-top:5px}
+  .who{font-size:14px}
+  .card h3{font-size:13px;line-height:1.25;margin:9px 0}
+  .type{font-size:10px;padding:3px 6px}
+  .loc{font-size:11px;line-height:1.3}
+  .maps{font-size:11px;padding:7px 8px;max-width:100%;white-space:normal;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -57,7 +73,7 @@ function buildTraining(start,end){let out=[];for(let d=new Date(start);d<=end;d.
 function card(e){let dt=new Date(e.date+"T12:00:00");return `<article class="card ${e.child}"><div class="top"><div><div class="who">${e.child}</div><div>${fmt(dt)}</div></div><div class="time">${e.time}</div></div><div class="type">${e.type}</div><h3>${e.title}</h3><div class="loc">📍 ${e.location}</div><a class="maps" href="${e.maps||map(e.location)}">Apple Maps →</a></article>`}
 function twoCols(list){
  const l=list.filter(e=>e.child==="Luis"),a=list.filter(e=>e.child==="Alicia");
- return `<div class="grid"><div class="kidcol">${l.map(card).join("")}</div><div class="kidcol">${a.map(card).join("")}</div></div>`;
+ return `<div class="grid"><div class="kidcol luis-col">${l.map(card).join("")}</div><div class="kidcol alicia-col">${a.map(card).join("")}</div></div>`;
 }
 function render(){
  const today=new Date();today.setHours(0,0,0,0);

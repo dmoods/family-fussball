@@ -208,7 +208,7 @@ footer{
   .loc{font-size:11px;line-height:1.3}
   .maps{font-size:11px;padding:7px 8px;max-width:100%;white-space:normal;text-align:center}
 }
-</style>
+.rsvp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-top:11px}.rsvp button{margin:0;padding:7px 3px;font-size:10px;line-height:1.1;border-radius:10px;background:rgba(255,255,255,.8);box-shadow:none;border:1px solid rgba(0,0,0,.08)}.rsvp button.selected{color:#fff}.Luis .rsvp button.selected{background:var(--luis);border-color:var(--luis)}.Alicia .rsvp button.selected{background:var(--alicia);border-color:var(--alicia)}@media(max-width:560px){.rsvp{gap:3px}.rsvp button{padding:6px 2px;font-size:9px}}</style>
 </head>
 <body>
 <header><h1>⚽ Familien Fußball</h1><div class="sub">Luis · Eintracht Mahlsdorf &nbsp; • &nbsp; Alicia · 1. FC Union Berlin</div></header>
@@ -238,7 +238,11 @@ function weekNo(d){let x=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDat
 function monday(d){let x=new Date(d);let n=x.getDay()||7;x.setDate(x.getDate()-n+1);x.setHours(0,0,0,0);return x}
 function fmt(d){return d.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit"})}
 function buildTraining(start,end){let out=[];for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){for(const t of trainings)if(t.child==="Alicia"&&t.day===d.getDay())out.push({date:iso(d),time:t.time,child:t.child,type:"Training",title:t.title,location:t.location,maps:map(t.location)})}return out}
-function card(e){let dt=new Date(e.date+"T12:00:00");return `<article class="card ${e.child}"><div class="top"><div><div class="who">${e.child}</div><div>${fmt(dt)}</div></div><div class="time">${e.time}</div></div><div class="type">${e.type}</div><h3>${e.title}</h3><div class="loc">📍 ${e.location}</div><a class="maps" href="${e.maps||map(e.location)}">Apple Maps →</a></article>`}
+function eventKey(e){return [e.child,e.date,e.time,e.title,e.location].join("|")}
+function getRsvp(e){try{return localStorage.getItem("rsvp:"+eventKey(e))||""}catch(_){return ""}}
+function setRsvp(key,status){try{let k="rsvp:"+key;if(localStorage.getItem(k)===status)localStorage.removeItem(k);else localStorage.setItem(k,status)}catch(_){}render()}
+function rsvpButtons(e){const k=eventKey(e).replace(/\\/g,"\\\\").replace(/'/g,"\\'");const s=getRsvp(e);return `<div class="rsvp"><button type="button" class="${s==="yes"?"selected":""}" onclick="setRsvp('${k}','yes')">✓ Zusage</button><button type="button" class="${s==="maybe"?"selected":""}" onclick="setRsvp('${k}','maybe')">? Vielleicht</button><button type="button" class="${s==="no"?"selected":""}" onclick="setRsvp('${k}','no')">✕ Absage</button></div>`}
+function card(e){let dt=new Date(e.date+"T12:00:00");return `<article class="card ${e.child}"><div class="top"><div><div class="who">${e.child}</div><div>${fmt(dt)}</div></div><div class="time">${e.time}</div></div><div class="type">${e.type}</div><h3>${e.title}</h3><div class="loc">📍 ${e.location}</div><a class="maps" href="${e.maps||map(e.location)}">Apple Maps →</a>${rsvpButtons(e)}</article>`}
 function twoCols(list){
  const l=list.filter(e=>e.child==="Luis"),a=list.filter(e=>e.child==="Alicia");
  return `<div class="grid"><div class="kidcol luis-col">${l.map(card).join("")}</div><div class="kidcol alicia-col">${a.map(card).join("")}</div></div>`;

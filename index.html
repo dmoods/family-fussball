@@ -230,6 +230,7 @@ footer{
 <script>
 let trainings=[];
 let myteamEvents=[];
+let aliciaUnionEvents=[];
 let filter="all", view="week", source={games:[]};
 const map=q=>"https://maps.apple.com/?q="+encodeURIComponent(q);
 const pad=n=>String(n).padStart(2,"0");
@@ -242,7 +243,7 @@ function eventKey(e){return [e.child,e.date,e.time,e.title,e.location].join("|")
 function getRsvp(e){try{return localStorage.getItem("rsvp:"+eventKey(e))||""}catch(_){return ""}}
 function setRsvp(key,status){try{let k="rsvp:"+key;if(localStorage.getItem(k)===status)localStorage.removeItem(k);else localStorage.setItem(k,status)}catch(_){}render()}
 function rsvpButtons(e){const k=eventKey(e).replace(/\\/g,"\\\\").replace(/'/g,"\\'");const s=getRsvp(e);return `<div class="rsvp"><button type="button" data-status="yes" class="${s==="yes"?"selected":""}" onclick="setRsvp('${k}','yes')">✓ Zusage</button><button type="button" data-status="maybe" class="${s==="maybe"?"selected":""}" onclick="setRsvp('${k}','maybe')">? Vielleicht</button><button type="button" data-status="no" class="${s==="no"?"selected":""}" onclick="setRsvp('${k}','no')">✕ Absage</button></div>`}
-function card(e){let dt=new Date(e.date+"T12:00:00");return `<article class="card ${e.child}"><div class="top"><div><div class="who">${e.child}</div><div>${fmt(dt)}</div></div><div class="time">${e.time}</div></div><div class="type">${e.type}</div><h3>${e.title}</h3><div class="loc">📍 ${e.location}</div><a class="maps" href="${e.maps||map(e.location)}">Apple Maps →</a>${rsvpButtons(e)}</article>`}
+function card(e){let dt=new Date(e.date+"T12:00:00");let mapsBtn=e.maps?`<a class="maps" href="${e.maps}">Apple Maps →</a>`:"";return `<article class="card ${e.child}"><div class="top"><div><div class="who">${e.child}</div><div>${fmt(dt)}</div></div><div class="time">${e.time}</div></div><div class="type">${e.type}</div><h3>${e.title}</h3><div class="loc">📍 ${e.location}</div>${mapsBtn}${rsvpButtons(e)}</article>`}
 function twoCols(list){
  const l=list.filter(e=>e.child==="Luis"),a=list.filter(e=>e.child==="Alicia");
  return `<div class="grid"><div class="kidcol luis-col">${l.map(card).join("")}</div><div class="kidcol alicia-col">${a.map(card).join("")}</div></div>`;
@@ -250,7 +251,7 @@ function twoCols(list){
 function render(){
  const today=new Date();today.setHours(0,0,0,0);
  const horizon=new Date(today);horizon.setDate(horizon.getDate()+84);
- let ev=[...source.games,...myteamEvents,...buildTraining(today,horizon)].filter(e=>new Date(e.date+"T23:59:00")>=today);
+ let ev=[...source.games,...myteamEvents,...aliciaUnionEvents,...buildTraining(today,horizon)].filter(e=>new Date(e.date+"T23:59:00")>=today);
  if(filter!=="all")ev=ev.filter(e=>e.child===filter);
  ev.sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
 
@@ -281,15 +282,17 @@ async function loadData(showFeedback=false){
   }
   try{
     const stamp=Date.now();
-    const [gamesData, trainingsData, myteamData]=await Promise.all([
+    const [gamesData, trainingsData, myteamData, unionData]=await Promise.all([
       fetch("data/events.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
       fetch("data/trainings.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
-      fetch("data/luis_myteam.json?"+stamp,{cache:"no-store"}).then(r=>r.json())
+      fetch("data/luis_myteam.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
+      fetch("data/alicia_union.json?"+stamp,{cache:"no-store"}).then(r=>r.json())
     ]);
     source=gamesData;
     trainings=trainingsData.trainings||[];
     myteamEvents=myteamData.events||[];
-    const newest=[gamesData.updated,myteamData.updated].filter(Boolean).sort().pop();
+    aliciaUnionEvents=unionData.events||[];
+    const newest=[gamesData.updated,myteamData.updated,unionData.updated].filter(Boolean).sort().pop();
     document.querySelector("#updated").textContent="Zuletzt aktualisiert: "+new Date(newest).toLocaleString("de-DE");
     render();
     if(showFeedback && btn) btn.textContent="✅ Aktualisiert";

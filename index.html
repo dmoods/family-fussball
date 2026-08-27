@@ -16,7 +16,6 @@
   --card:#ffffff;
   --text:#111111;
   --muted:#6e6e73;
-  --line:#d1d1d6;
   --luis:#6f2dbd;
   --luis-soft:#f2eaff;
   --alicia:#d80027;
@@ -41,18 +40,32 @@ body{
     env(safe-area-inset-right)
     env(safe-area-inset-bottom)
     env(safe-area-inset-left);
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
   background:
     radial-gradient(circle at top left,rgba(111,45,189,.08),transparent 34%),
     radial-gradient(circle at top right,rgba(216,0,39,.08),transparent 34%),
     var(--bg);
+
   color:var(--text);
 }
+
+/* HEADER */
 
 header{
   background:linear-gradient(135deg,#0b0b0f,#15151c);
   color:white;
-  padding:22px 18px 18px;
+  padding:20px 18px 16px;
   position:sticky;
   top:0;
   z-index:10;
@@ -68,23 +81,25 @@ h1{
 .sub{
   font-size:13px;
   color:#d1d1d6;
-  margin-top:6px;
+  margin-top:5px;
   line-height:1.35;
 }
 
 main{
   max-width:920px;
   margin:auto;
-  padding:16px;
+  padding:14px;
 }
+
+/* BUTTONS */
 
 .toolbar,
 .viewbar,
 .rangebar{
   display:flex;
-  gap:8px;
+  gap:7px;
   flex-wrap:wrap;
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 
 button{
@@ -92,7 +107,7 @@ button{
   border-radius:999px;
   padding:9px 14px;
   font-weight:750;
-  background:rgba(255,255,255,.9);
+  background:rgba(255,255,255,.92);
   color:#1c1c1e;
   cursor:pointer;
   box-shadow:0 2px 10px rgba(0,0,0,.05);
@@ -117,17 +132,17 @@ button.active{
 
 .dashboard{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin:10px 0 14px;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:8px;
+  margin:8px 0 10px;
 }
 
 .nextcard{
   border:0;
   width:100%;
   text-align:left;
-  border-radius:20px;
-  padding:14px;
+  border-radius:19px;
+  padding:12px;
   color:white;
   box-shadow:var(--shadow);
   min-width:0;
@@ -143,20 +158,20 @@ button.active{
 }
 
 .nextlabel{
-  font-size:11px;
+  font-size:10px;
   font-weight:800;
-  opacity:.85;
+  opacity:.82;
   text-transform:uppercase;
 }
 
 .nextname{
   font-size:18px;
   font-weight:900;
-  margin:2px 0 8px;
+  margin:2px 0 7px;
 }
 
 .nextwhen{
-  font-size:16px;
+  font-size:15px;
   font-weight:900;
 }
 
@@ -164,12 +179,14 @@ button.active{
   font-size:12px;
   font-weight:750;
   margin-top:5px;
+  line-height:1.25;
 }
 
 .nextloc{
   font-size:10px;
   opacity:.86;
   margin-top:5px;
+  line-height:1.25;
 }
 
 /* STATUS */
@@ -177,25 +194,25 @@ button.active{
 .statusbar{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:7px;
-  margin-bottom:12px;
+  gap:6px;
+  margin:8px 0 10px;
 }
 
 .stat{
   background:white;
-  border-radius:14px;
-  padding:10px 6px;
+  border-radius:13px;
+  padding:8px 4px;
   text-align:center;
   box-shadow:0 3px 12px rgba(0,0,0,.05);
 }
 
 .stat b{
   display:block;
-  font-size:18px;
+  font-size:17px;
 }
 
 .stat span{
-  font-size:10px;
+  font-size:9px;
   color:var(--muted);
   font-weight:750;
 }
@@ -216,7 +233,7 @@ button.active{
   border:1px solid #ffd98a;
   border-radius:14px;
   padding:10px 12px;
-  margin-bottom:12px;
+  margin-bottom:10px;
   font-size:12px;
   font-weight:750;
   line-height:1.4;
@@ -232,53 +249,51 @@ button.active{
   font-weight:650;
 }
 
-/* QUELLEN */
+/* DATENQUELLEN NICHT MEHR IN HAUPTANSICHT */
 
 .sourcechips{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-  margin-bottom:12px;
-}
-
-.sourcechip{
-  font-size:10px;
-  font-weight:750;
-  background:white;
-  padding:6px 8px;
-  border-radius:999px;
+  display:none !important;
 }
 
 /* KALENDER */
 
 .calendarControls{
-  display:flex;
-  justify-content:space-between;
+  display:grid;
+  grid-template-columns:44px 1fr 44px;
   align-items:center;
-  gap:8px;
-  margin-bottom:8px;
+  gap:7px;
+  margin:5px 0;
 }
 
 .calendarControls button{
-  padding:7px 10px;
+  height:38px;
+  padding:0 8px;
   font-size:11px;
+}
+
+#prevWeekBtn,
+#nextWeekBtn{
+  font-size:25px;
+  line-height:1;
 }
 
 .calendarStrip{
   display:grid;
-  grid-template-columns:repeat(7,1fr);
+  grid-template-columns:repeat(7,minmax(0,1fr));
   gap:4px;
-  margin:10px 0 14px;
+  margin:6px 0 12px;
 }
 
 .daybox{
   appearance:none;
   -webkit-appearance:none;
   width:100%;
+  min-width:0;
+  min-height:54px;
   margin:0;
-  padding:8px 2px;
+  padding:6px 1px;
   border:0;
-  border-radius:12px;
+  border-radius:11px;
   background:white;
   color:#111;
   text-align:center;
@@ -325,27 +340,27 @@ button.active{
 .hero{
   background:linear-gradient(135deg,#111116,#1f1f27);
   color:white;
-  border-radius:22px;
-  padding:17px;
-  margin:8px 0 16px;
-  box-shadow:0 12px 30px rgba(0,0,0,.16);
+  border-radius:20px;
+  padding:15px;
+  margin:7px 0 13px;
+  box-shadow:0 10px 26px rgba(0,0,0,.14);
 }
 
 .hero h2{
   margin:0 0 4px;
-  font-size:20px;
+  font-size:19px;
 }
 
 .hero p{
   margin:0;
   color:#c7c7cc;
-  font-size:13px;
+  font-size:12px;
 }
 
 /* TERMINE */
 
 .week{
-  margin:20px 0;
+  margin:18px 0;
 }
 
 .week h2{
@@ -356,20 +371,24 @@ button.active{
 .grid{
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:10px;
+  gap:9px;
   align-items:start;
 }
 
 .kidcol{
   display:grid;
-  gap:10px;
+  gap:9px;
   min-width:0;
 }
 
+/* WICHTIG:
+   Luis ist IMMER die erste Spalte,
+   Alicia IMMER die zweite Spalte */
+
 .card{
   background:white;
-  border-radius:20px;
-  padding:14px;
+  border-radius:18px;
+  padding:12px;
   box-shadow:var(--shadow);
   position:relative;
   overflow:hidden;
@@ -422,7 +441,7 @@ button.active{
 .top{
   display:flex;
   justify-content:space-between;
-  gap:12px;
+  gap:8px;
 }
 
 .who{
@@ -439,14 +458,14 @@ button.active{
 }
 
 .time{
-  font-size:21px;
+  font-size:19px;
   font-weight:900;
 }
 
 .type{
   display:inline-block;
   margin-top:8px;
-  font-size:11px;
+  font-size:10px;
   font-weight:850;
   padding:5px 8px;
   border-radius:999px;
@@ -463,15 +482,16 @@ button.active{
 }
 
 .card h3{
-  margin:10px 0 0;
-  font-size:16px;
+  margin:9px 0 0;
+  font-size:15px;
   line-height:1.25;
 }
 
 .loc{
-  margin-top:10px;
+  margin-top:9px;
   color:#3a3a3c;
   line-height:1.35;
+  font-size:13px;
 }
 
 .meet{
@@ -488,12 +508,13 @@ button.active{
   align-items:center;
   width:100%;
   text-decoration:none;
-  margin-top:12px;
+  margin-top:10px;
   background:#111116;
   color:white;
-  padding:10px 12px;
-  border-radius:12px;
+  padding:9px 10px;
+  border-radius:11px;
   font-weight:800;
+  font-size:12px;
 }
 
 /* ZUSAGEN */
@@ -501,15 +522,15 @@ button.active{
 .rsvp{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:5px;
-  margin-top:11px;
+  gap:4px;
+  margin-top:9px;
 }
 
 .rsvp button{
   margin:0;
-  padding:7px 3px;
-  font-size:10px;
-  border-radius:10px;
+  padding:7px 2px;
+  font-size:9px;
+  border-radius:9px;
   background:white;
   box-shadow:none;
 }
@@ -532,19 +553,23 @@ button.active{
 
 .empty{
   background:white;
-  padding:18px;
-  border-radius:18px;
+  padding:17px;
+  border-radius:17px;
   color:var(--muted);
 }
 
 /* ZEITRAUM */
+
+.rangebar{
+  display:none;
+}
 
 .rangebar button{
   font-size:11px;
   padding:7px 10px;
 }
 
-/* VERGANGENE TERMINE */
+/* VERGANGENE */
 
 .pastWrap{
   margin-top:18px;
@@ -572,20 +597,25 @@ button.active{
   display:block;
 }
 
-/* NAVIGATION UNTEN */
+/* BOTTOM NAV */
 
 .bottomnav{
   position:sticky;
   bottom:8px;
   z-index:4;
+
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:5px;
+
   background:rgba(20,20,24,.92);
   backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
   padding:6px;
   border-radius:18px;
-  margin:18px 0 4px;
+
+  margin:28px 0 12px;
 }
 
 .bottomnav button{
@@ -670,16 +700,35 @@ button.active{
 }
 
 footer{
-  padding:24px 16px 36px;
+  padding:20px 16px 36px;
   text-align:center;
   color:var(--muted);
-  font-size:12px;
+  font-size:11px;
 }
+
+#app{
+  scroll-margin-top:150px;
+}
+
+/* IPHONE */
 
 @media(max-width:560px){
 
   main{
     padding:10px;
+  }
+
+  header{
+    padding:18px 18px 15px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  .viewbar,
+  .toolbar{
+    margin-bottom:8px;
   }
 
   .dashboard{
@@ -688,6 +737,15 @@ footer{
 
   .nextcard{
     padding:11px;
+    min-height:140px;
+  }
+
+  .nextname{
+    font-size:17px;
+  }
+
+  .nextwhen{
+    font-size:14px;
   }
 
   .statusbar{
@@ -695,11 +753,15 @@ footer{
   }
 
   .stat{
-    padding:8px 4px;
+    padding:8px 3px;
+  }
+
+  .stat b{
+    font-size:17px;
   }
 
   .grid{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
     gap:8px;
   }
 
@@ -733,11 +795,6 @@ footer{
     padding:6px 2px;
   }
 
-  .calendarControls button{
-    font-size:10px;
-    padding:7px 8px;
-  }
-
   .modal{
     padding:0;
   }
@@ -754,6 +811,7 @@ footer{
 
 <header>
 <h1>⚽ Familien Fußball</h1>
+
 <div class="sub">
 Luis · Eintracht Mahlsdorf • Alicia · 1. FC Union Berlin
 </div>
@@ -808,7 +866,7 @@ Alicia
 <div class="calendarControls">
 
 <button id="prevWeekBtn">
-← Woche
+‹
 </button>
 
 <button id="currentWeekBtn">
@@ -816,14 +874,14 @@ Diese Woche
 </button>
 
 <button id="nextWeekBtn">
-Woche →
+›
 </button>
 
 </div>
 
 <div id="calendarStrip" class="calendarStrip"></div>
 
-<div class="rangebar">
+<div id="rangebar" class="rangebar">
 
 <button class="active" data-range="14">
 14 Tage
@@ -902,7 +960,6 @@ Termin
 <div id="modalBody"></div>
 
 </div>
-
 </div>
 
 <script>
@@ -913,7 +970,10 @@ let aliciaUnionEvents=[];
 
 let filter="all";
 let view="week";
-let source={games:[]};
+
+let source={
+  games:[]
+};
 
 let openOnly=false;
 let selectedDate="";
@@ -924,66 +984,64 @@ const pad=n=>String(n).padStart(2,"0");
 
 function iso(d){
 
-return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 
 }
 
 function weekNo(d){
 
-let x=
-new Date(
-Date.UTC(
-d.getFullYear(),
-d.getMonth(),
-d.getDate()
-)
-);
+  let x=new Date(
+    Date.UTC(
+      d.getFullYear(),
+      d.getMonth(),
+      d.getDate()
+    )
+  );
 
-x.setUTCDate(
-x.getUTCDate()+4-(x.getUTCDay()||7)
-);
+  x.setUTCDate(
+    x.getUTCDate()+4-(x.getUTCDay()||7)
+  );
 
-let y=
-new Date(
-Date.UTC(
-x.getUTCFullYear(),
-0,
-1
-)
-);
+  let y=new Date(
+    Date.UTC(
+      x.getUTCFullYear(),
+      0,
+      1
+    )
+  );
 
-return Math.ceil(
-(((x-y)/86400000)+1)/7
-);
+  return Math.ceil(
+    (((x-y)/86400000)+1)/7
+  );
 
 }
 
 function monday(d){
 
-let x=new Date(d);
+  let x=new Date(d);
 
-let n=x.getDay()||7;
+  let n=x.getDay()||7;
 
-x.setDate(
-x.getDate()-n+1
-);
+  x.setDate(
+    x.getDate()-n+1
+  );
 
-x.setHours(0,0,0,0);
+  x.setHours(0,0,0,0);
 
-return x;
+  return x;
 
 }
 
 function fmt(d){
 
-return d.toLocaleDateString(
-"de-DE",
-{
-weekday:"short",
-day:"2-digit",
-month:"2-digit"
-}
-);
+  return d.toLocaleDateString(
+    "de-DE",
+    {
+      weekday:"short",
+      day:"2-digit",
+      month:"2-digit"
+    }
+  );
 
 }
 
@@ -991,43 +1049,45 @@ month:"2-digit"
 
 function buildTraining(start,end){
 
-let out=[];
+  let out=[];
 
-for(
-let d=new Date(start);
-d<=end;
-d.setDate(d.getDate()+1)
-){
+  for(
+    let d=new Date(start);
+    d<=end;
+    d.setDate(d.getDate()+1)
+  ){
 
-for(const t of trainings){
+    for(const t of trainings){
 
-if(
-t.child==="Alicia" &&
-t.day===d.getDay()
-){
+      if(
+        t.child==="Alicia" &&
+        t.day===d.getDay()
+      ){
 
-out.push({
+        out.push({
 
-date:iso(d),
-time:t.time,
-child:t.child,
-type:"Training",
-title:t.title,
-location:t.location,
-maps:
-"https://maps.apple.com/?q="+
-encodeURIComponent(t.location),
-source:"union-training"
+          date:iso(d),
+          time:t.time,
+          child:t.child,
+          type:"Training",
+          title:t.title,
+          location:t.location,
 
-});
+          maps:
+            "https://maps.apple.com/?q="+
+            encodeURIComponent(t.location),
 
-}
+          source:"union-training"
 
-}
+        });
 
-}
+      }
 
-return out;
+    }
+
+  }
+
+  return out;
 
 }
 
@@ -1035,262 +1095,259 @@ return out;
 
 function rawEvents(){
 
-const today=new Date();
+  const today=new Date();
 
-today.setHours(0,0,0,0);
+  today.setHours(0,0,0,0);
 
-const start=
-new Date(today);
+  const start=new Date(today);
 
-start.setDate(
-start.getDate()-30
-);
+  start.setDate(
+    start.getDate()-30
+  );
 
-const end=
-new Date(today);
+  const end=new Date(today);
 
-end.setDate(
-end.getDate()+120
-);
+  end.setDate(
+    end.getDate()+120
+  );
 
-return [
+  return [
 
-...source.games,
-...myteamEvents,
-...aliciaUnionEvents,
-...buildTraining(start,end)
+    ...source.games,
+    ...myteamEvents,
+    ...aliciaUnionEvents,
+    ...buildTraining(start,end)
 
-]
-
-.sort(
-(a,b)=>
-(a.date+a.time)
-.localeCompare(
-b.date+b.time
-)
-);
+  ].sort(
+    (a,b)=>
+      (a.date+a.time)
+      .localeCompare(
+        b.date+b.time
+      )
+  );
 
 }
 
-/* ZUKÜNFTIGE */
+/* ZUKUNFT */
 
 function futureEvents(){
 
-const today=new Date();
+  const today=new Date();
 
-today.setHours(0,0,0,0);
+  today.setHours(0,0,0,0);
 
-return rawEvents()
-.filter(
-e=>
-new Date(
-e.date+"T23:59:00"
-)>=today
-);
+  return rawEvents().filter(
+    e=>
+      new Date(
+        e.date+"T23:59:00"
+      )>=today
+  );
 
 }
 
-/* VERGANGENE */
+/* VERGANGEN */
 
 function pastEvents(){
 
-const today=new Date();
+  const today=new Date();
 
-today.setHours(0,0,0,0);
+  today.setHours(0,0,0,0);
 
-return rawEvents()
-.filter(
-e=>
-new Date(
-e.date+"T23:59:00"
-)<today
-)
-.sort(
-(a,b)=>
-(b.date+b.time)
-.localeCompare(
-a.date+a.time
-)
-);
+  return rawEvents()
+    .filter(
+      e=>
+        new Date(
+          e.date+"T23:59:00"
+        )<today
+    )
+    .sort(
+      (a,b)=>
+        (b.date+b.time)
+        .localeCompare(
+          a.date+a.time
+        )
+    );
 
 }
 
-/* STATUS */
+/* RSVP */
 
 function eventKey(e){
 
-return [
-e.child,
-e.date,
-e.time,
-e.title,
-e.location
-].join("|");
+  return [
+    e.child,
+    e.date,
+    e.time,
+    e.title,
+    e.location
+  ].join("|");
 
 }
 
 function eventIdentity(e){
 
-return [
-e.child||"",
-(e.type||"").toLowerCase(),
-(e.title||"").toLowerCase()
-].join("|");
+  return [
+    e.child||"",
+    (e.type||"").toLowerCase(),
+    (e.title||"").toLowerCase()
+  ].join("|");
 
 }
 
 function getRsvp(e){
 
-try{
+  try{
 
-return localStorage.getItem(
-"rsvp:"+eventKey(e)
-)||"";
+    return localStorage.getItem(
+      "rsvp:"+eventKey(e)
+    )||"";
 
-}catch(_){
+  }catch(_){
 
-return "";
+    return "";
 
-}
+  }
 
 }
 
 function setRsvp(key,status){
 
-try{
+  try{
 
-const k=
-"rsvp:"+key;
+    const k="rsvp:"+key;
 
-if(
-localStorage.getItem(k)===status
-){
+    if(
+      localStorage.getItem(k)===status
+    ){
 
-localStorage.removeItem(k);
+      localStorage.removeItem(k);
 
-}else{
+    }else{
 
-localStorage.setItem(
-k,
-status
-);
+      localStorage.setItem(
+        k,
+        status
+      );
+
+    }
+
+  }catch(_){}
+
+  render();
 
 }
-
-}catch(_){}
-
-render();
-
-}
-
-/* ZUSAGE BUTTONS */
 
 function rsvpButtons(e){
 
-const key=
-eventKey(e)
-.replace(/\\/g,"\\\\")
-.replace(/'/g,"\\'");
+  const key=
+    eventKey(e)
+    .replace(/\\/g,"\\\\")
+    .replace(/'/g,"\\'");
 
-const s=
-getRsvp(e);
+  const s=getRsvp(e);
 
-return `
+  return `
 
-<div class="rsvp" data-no-detail="1">
+  <div class="rsvp" data-no-detail="1">
 
-<button
-data-status="yes"
-class="${s==="yes"?"selected":""}"
-onclick="setRsvp('${key}','yes')">
+    <button
+      data-status="yes"
+      class="${s==="yes"?"selected":""}"
+      onclick="setRsvp('${key}','yes')">
+      ✓ Zusage
+    </button>
 
-✓ Zusage
+    <button
+      data-status="maybe"
+      class="${s==="maybe"?"selected":""}"
+      onclick="setRsvp('${key}','maybe')">
+      ? Vielleicht
+    </button>
 
-</button>
+    <button
+      data-status="no"
+      class="${s==="no"?"selected":""}"
+      onclick="setRsvp('${key}','no')">
+      ✕ Absage
+    </button>
 
-<button
-data-status="maybe"
-class="${s==="maybe"?"selected":""}"
-onclick="setRsvp('${key}','maybe')">
+  </div>
 
-? Vielleicht
-
-</button>
-
-<button
-data-status="no"
-class="${s==="no"?"selected":""}"
-onclick="setRsvp('${key}','no')">
-
-✕ Absage
-
-</button>
-
-</div>
-
-`;
+  `;
 
 }
 
-/* TERMIN SYMBOL */
+/* ICON */
 
 function typeIcon(e){
 
-const s=
-(
-(e.type||"")+" "+
-(e.title||"")
-).toLowerCase();
+  const s=(
+    (e.type||"")+" "+
+    (e.title||"")
+  ).toLowerCase();
 
-if(s.includes("training"))
-return "🏃";
+  if(s.includes("training"))
+    return "🏃";
 
-if(
-s.includes("foto") ||
-s.includes("portrait")
-)
-return "📸";
+  if(
+    s.includes("foto") ||
+    s.includes("portrait")
+  )
+    return "📸";
 
-if(
-s.includes("eltern") ||
-s.includes("versammlung")
-)
-return "👥";
+  if(
+    s.includes("eltern") ||
+    s.includes("versammlung")
+  )
+    return "👥";
 
-if(
-s.includes("turnier") ||
-s.includes("festival")
-)
-return "🏆";
+  if(
+    s.includes("turnier") ||
+    s.includes("festival")
+  )
+    return "🏆";
 
-if(
-s.includes("spiel") ||
-s.includes("liga") ||
-s.includes("freundschaft")
-)
-return "⚽";
+  if(
+    s.includes("spiel") ||
+    s.includes("liga") ||
+    s.includes("freundschaft")
+  )
+    return "⚽";
 
-return "📌";
+  return "📌";
 
 }
 
-/* SPIEL ERKENNEN */
-
 function isGame(e){
 
-const s=
-(
-(e.type||"")+" "+
-(e.title||"")
-).toLowerCase();
+  const s=(
+    (e.type||"")+" "+
+    (e.title||"")
+  ).toLowerCase();
 
-return (
-s.includes("spiel") ||
-s.includes("liga") ||
-s.includes("freundschaft") ||
-s.includes("festival") ||
-s.includes("turnier")
-);
+  return (
+    s.includes("spiel") ||
+    s.includes("liga") ||
+    s.includes("freundschaft") ||
+    s.includes("festival") ||
+    s.includes("turnier")
+  );
+
+}
+
+/* 30-TAGE-GRENZE */
+
+function thirtyDayLimit(){
+
+  const end=new Date();
+
+  end.setHours(23,59,59,999);
+
+  end.setDate(
+    end.getDate()+30
+  );
+
+  return end;
 
 }
 
@@ -1298,55 +1355,67 @@ s.includes("turnier")
 
 function filteredFutureEvents(){
 
-let ev=
-futureEvents();
+  let ev=futureEvents();
 
-if(filter!=="all"){
+  if(filter!=="all"){
 
-ev=
-ev.filter(
-e=>e.child===filter
-);
+    ev=ev.filter(
+      e=>e.child===filter
+    );
 
-}
+  }
 
-if(openOnly){
+  /* OFFENE RÜCKMELDUNGEN:
+     NUR NÄCHSTE 30 TAGE */
 
-ev=
-ev.filter(
-e=>!getRsvp(e)
-);
+  if(openOnly){
 
-}
+    const end=thirtyDayLimit();
 
-if(
-view==="all" &&
-rangeMode!=="all"
-){
+    ev=ev.filter(e=>{
 
-const today=new Date();
+      const d=
+        new Date(
+          e.date+"T23:59:00"
+        );
 
-today.setHours(0,0,0,0);
+      return (
+        d<=end &&
+        !getRsvp(e)
+      );
 
-const end=
-new Date(today);
+    });
 
-end.setDate(
-end.getDate()+
-Number(rangeMode)
-);
+  }
 
-ev=
-ev.filter(
-e=>
-new Date(
-e.date+"T12:00:00"
-)<=end
-);
+  /* ALLE TERMINE */
 
-}
+  if(
+    view==="all" &&
+    rangeMode!=="all"
+  ){
 
-return ev;
+    const today=new Date();
+
+    today.setHours(0,0,0,0);
+
+    const end=new Date(today);
+
+    end.setDate(
+      end.getDate()+
+      Number(rangeMode)
+    );
+
+    ev=ev.filter(
+      e=>
+        new Date(
+          e.date+"T12:00:00"
+        )<=end
+    );
+
+  }
+
+  return ev;
 
 }
 
@@ -1354,10 +1423,9 @@ return ev;
 
 function nextFor(child){
 
-return futureEvents()
-.find(
-e=>e.child===child
-);
+  return futureEvents().find(
+    e=>e.child===child
+  );
 
 }
 
@@ -1365,475 +1433,467 @@ e=>e.child===child
 
 function renderExtras(){
 
-const ev=
-futureEvents();
+  const ev=futureEvents();
+  const now=new Date();
 
-const now=
-new Date();
+  function nextCard(child,cls){
 
-function nextCard(child,cls){
+    const e=nextFor(child);
 
-const e=
-nextFor(child);
+    if(!e){
 
-if(!e){
+      return `
 
-return `
+      <button class="nextcard ${cls}">
 
-<button class="nextcard ${cls}">
+        <div class="nextlabel">
+          Nächster Termin
+        </div>
 
-<div class="nextlabel">
-Nächster Termin
-</div>
+        <div class="nextname">
+          ${child}
+        </div>
 
-<div class="nextname">
-${child}
-</div>
+        <div class="nexttitle">
+          Kein Termin
+        </div>
 
-<div class="nexttitle">
-Kein Termin
-</div>
+      </button>
 
-</button>
+      `;
 
-`;
+    }
+
+    const d=
+      new Date(
+        e.date+"T12:00:00"
+      );
+
+    const key=
+      eventKey(e)
+      .replace(/"/g,"&quot;");
+
+    return `
+
+    <button
+      class="nextcard ${cls}"
+      data-event-key="${key}">
+
+      <div class="nextlabel">
+        Nächster Termin
+      </div>
+
+      <div class="nextname">
+        ${child}
+      </div>
+
+      <div class="nextwhen">
+        ${typeIcon(e)}
+        ${fmt(d)}
+        ·
+        ${e.time}
+      </div>
+
+      <div class="nexttitle">
+        ${e.title}
+      </div>
+
+      <div class="nextloc">
+        📍 ${e.location}
+      </div>
+
+    </button>
+
+    `;
+
+  }
+
+  /* Luis IMMER zuerst = links */
+
+  document.querySelector(
+    "#dashboard"
+  ).innerHTML=
+
+    nextCard("Luis","luis")+
+    nextCard("Alicia","alicia");
+
+  /* NÄCHSTE-TERMIN-KARTEN */
+
+  document
+    .querySelectorAll(
+      ".nextcard[data-event-key]"
+    )
+    .forEach(btn=>{
+
+      btn.onclick=()=>{
+
+        const e=
+          rawEvents().find(
+            x=>
+              eventKey(x)===
+              btn.dataset.eventKey
+          );
+
+        if(!e)
+          return;
+
+        selectedDate=e.date;
+
+        view="day";
+        openOnly=false;
+
+        render();
+
+        setTimeout(()=>{
+
+          document
+            .querySelector("#app")
+            ?.scrollIntoView({
+              behavior:"smooth",
+              block:"start"
+            });
+
+        },50);
+
+      };
+
+    });
+
+  /* STATUS */
+
+  const statusEnd=
+    thirtyDayLimit();
+
+  /* Statistik ebenfalls nur nächste 30 Tage */
+
+  const statusEvents=
+    ev.filter(e=>{
+
+      const d=
+        new Date(
+          e.date+"T23:59:00"
+        );
+
+      return d<=statusEnd;
+
+    });
+
+  const yes=
+    statusEvents.filter(
+      e=>getRsvp(e)==="yes"
+    ).length;
+
+  const maybe=
+    statusEvents.filter(
+      e=>getRsvp(e)==="maybe"
+    ).length;
+
+  const no=
+    statusEvents.filter(
+      e=>getRsvp(e)==="no"
+    ).length;
+
+  const open=
+    statusEvents.filter(
+      e=>!getRsvp(e)
+    ).length;
+
+  document.querySelector(
+    "#stats"
+  ).innerHTML=`
+
+    <div class="stat">
+
+      <b>${yes}</b>
+
+      <span>
+        zugesagt
+      </span>
+
+    </div>
+
+    <div class="stat">
+
+      <b>${maybe}</b>
+
+      <span>
+        vielleicht
+      </span>
+
+    </div>
+
+    <div class="stat">
+
+      <b>${no}</b>
+
+      <span>
+        abgesagt
+      </span>
+
+    </div>
+
+    <div
+      class="stat open"
+      id="openStat">
+
+      <b>${open}</b>
+
+      <span>
+        offen · 30 Tage
+      </span>
+
+    </div>
+
+  `;
+
+  document.querySelector(
+    "#openStat"
+  ).onclick=()=>{
+
+    openOnly=true;
+
+    /*
+      "Offen" soll alle offenen Termine
+      der nächsten 30 Tage zeigen,
+      nicht nur diese Kalenderwoche.
+    */
+
+    view="all";
+    rangeMode="30";
+    selectedDate="";
+
+    render();
+
+  };
+
+  /* KALENDER */
+
+  const base=monday(now);
+
+  base.setDate(
+    base.getDate()+
+    calendarWeekOffset*7
+  );
+
+  const days=[];
+
+  for(let i=0;i<7;i++){
+
+    const d=new Date(base);
+
+    d.setDate(
+      d.getDate()+i
+    );
+
+    const ds=iso(d);
+
+    const dayEvents=
+      ev.filter(
+        e=>e.date===ds
+      );
+
+    const luis=
+      dayEvents.some(
+        e=>e.child==="Luis"
+      );
+
+    const alicia=
+      dayEvents.some(
+        e=>e.child==="Alicia"
+      );
+
+    days.push(`
+
+      <button
+        class="
+          daybox
+          ${ds===iso(now)?"today":""}
+          ${ds===selectedDate?"selected":""}
+        "
+        data-date="${ds}">
+
+        ${d
+          .toLocaleDateString(
+            "de-DE",
+            {weekday:"short"}
+          )
+          .slice(0,2)}
+
+        <br>
+
+        <b>
+          ${d.getDate()}
+        </b>
+
+        <div class="dots">
+
+          ${
+            luis
+            ?'<i class="dot luis"></i>'
+            :""
+          }
+
+          ${
+            alicia
+            ?'<i class="dot alicia"></i>'
+            :""
+          }
+
+        </div>
+
+      </button>
+
+    `);
+
+  }
+
+  document.querySelector(
+    "#calendarStrip"
+  ).innerHTML=
+    days.join("");
+
+  renderChanges(ev);
 
 }
 
-const d=
-new Date(
-e.date+"T12:00:00"
-);
-
-const key=
-eventKey(e)
-.replace(/"/g,"&quot;");
-
-return `
-
-<button
-class="nextcard ${cls}"
-data-event-key="${key}"
->
-
-<div class="nextlabel">
-Nächster Termin
-</div>
-
-<div class="nextname">
-${child}
-</div>
-
-<div class="nextwhen">
-
-${typeIcon(e)}
-${fmt(d)}
-·
-${e.time}
-
-</div>
-
-<div class="nexttitle">
-${e.title}
-</div>
-
-<div class="nextloc">
-📍 ${e.location}
-</div>
-
-</button>
-
-`;
-
-}
-
-document.querySelector(
-"#dashboard"
-).innerHTML=
-
-nextCard("Luis","luis")+
-nextCard("Alicia","alicia");
-
-/* NEXT CARD KLICK */
-
-document
-.querySelectorAll(
-".nextcard[data-event-key]"
-)
-.forEach(btn=>{
-
-btn.onclick=()=>{
-
-const e=
-rawEvents()
-.find(
-x=>
-eventKey(x)===
-btn.dataset.eventKey
-);
-
-if(!e)
-return;
-
-selectedDate=
-e.date;
-
-view="day";
-
-openOnly=false;
-
-render();
-
-setTimeout(()=>{
-
-document
-.querySelector("#app")
-?.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-},50);
-
-};
-
-});
-
-/* STATUS */
-
-const yes=
-ev.filter(
-e=>getRsvp(e)==="yes"
-).length;
-
-const maybe=
-ev.filter(
-e=>getRsvp(e)==="maybe"
-).length;
-
-const no=
-ev.filter(
-e=>getRsvp(e)==="no"
-).length;
-
-const open=
-ev.filter(
-e=>!getRsvp(e)
-).length;
-
-document.querySelector(
-"#stats"
-).innerHTML=`
-
-<div class="stat">
-
-<b>${yes}</b>
-
-<span>
-zugesagt
-</span>
-
-</div>
-
-<div class="stat">
-
-<b>${maybe}</b>
-
-<span>
-vielleicht
-</span>
-
-</div>
-
-<div class="stat">
-
-<b>${no}</b>
-
-<span>
-abgesagt
-</span>
-
-</div>
-
-<div
-class="stat open"
-id="openStat"
->
-
-<b>${open}</b>
-
-<span>
-noch offen
-</span>
-
-</div>
-
-`;
-
-/* OFFEN KLICKEN */
-
-document.querySelector(
-"#openStat"
-).onclick=()=>{
-
-openOnly=true;
-
-view="week";
-
-selectedDate="";
-
-render();
-
-};
-
-/* QUELLEN */
-
-document.querySelector(
-"#sources"
-).innerHTML=`
-
-<span class="sourcechip">
-⚽ FUSSBALL.DE
-</span>
-
-<span class="sourcechip">
-🟣 Luis · myteam
-</span>
-
-<span class="sourcechip">
-🔴 Alicia · Union
-</span>
-
-`;
-
-/* KALENDER */
-
-const base=
-monday(now);
-
-base.setDate(
-base.getDate()+
-calendarWeekOffset*7
-);
-
-const days=[];
-
-for(let i=0;i<7;i++){
-
-const d=
-new Date(base);
-
-d.setDate(
-d.getDate()+i
-);
-
-const ds=
-iso(d);
-
-const dayEvents=
-ev.filter(
-e=>e.date===ds
-);
-
-const luis=
-dayEvents.some(
-e=>e.child==="Luis"
-);
-
-const alicia=
-dayEvents.some(
-e=>e.child==="Alicia"
-);
-
-days.push(`
-
-<button
-class="
-daybox
-${ds===iso(now)?"today":""}
-${ds===selectedDate?"selected":""}
-"
-data-date="${ds}"
->
-
-${d
-.toLocaleDateString(
-"de-DE",
-{weekday:"short"}
-)
-.slice(0,2)}
-
-<br>
-
-<b>
-${d.getDate()}
-</b>
-
-<div class="dots">
-
-${luis
-?
-'<i class="dot luis"></i>'
-:
-""
-}
-
-${alicia
-?
-'<i class="dot alicia"></i>'
-:
-""
-}
-
-</div>
-
-</button>
-
-`);
-
-}
-
-document.querySelector(
-"#calendarStrip"
-).innerHTML=
-days.join("");
-
-renderChanges(ev);
-
-}
-
-/* ÄNDERUNGEN ERKENNEN */
+/* ÄNDERUNGEN */
 
 function renderChanges(ev){
 
-try{
+  try{
 
-const current=
-ev.map(e=>({
+    const current=
+      ev.map(e=>({
 
-id:eventIdentity(e),
+        id:eventIdentity(e),
+        child:e.child,
+        title:e.title,
+        type:e.type,
+        date:e.date,
+        time:e.time,
+        location:e.location
 
-child:e.child,
+      }));
 
-title:e.title,
+    const oldRaw=
+      localStorage.getItem(
+        "eventsSnapshotV2"
+      );
 
-type:e.type,
+    const ch=
+      document.querySelector(
+        "#changes"
+      );
 
-date:e.date,
+    if(oldRaw){
 
-time:e.time,
+      const old=
+        JSON.parse(oldRaw);
 
-location:e.location
+      const oldMap=
+        new Map(
+          old.map(
+            x=>[x.id,x]
+          )
+        );
 
-}));
+      const newMap=
+        new Map(
+          current.map(
+            x=>[x.id,x]
+          )
+        );
 
-const oldRaw=
-localStorage.getItem(
-"eventsSnapshotV2"
-);
+      const changes=[];
 
-const ch=
-document.querySelector(
-"#changes"
-);
+      for(
+        const [id,n]
+        of newMap
+      ){
 
-if(oldRaw){
+        const o=
+          oldMap.get(id);
 
-const old=
-JSON.parse(oldRaw);
+        if(!o){
 
-const oldMap=
-new Map(
-old.map(
-x=>[x.id,x]
-)
-);
+          changes.push(
+            `${n.child}: neuer Termin „${n.title}“`
+          );
 
-const newMap=
-new Map(
-current.map(
-x=>[x.id,x]
-)
-);
+        }else{
 
-const changes=[];
+          const diffs=[];
 
-for(
-const [id,n]
-of newMap
-){
+          if(o.date!==n.date)
+            diffs.push(
+              "Datum geändert"
+            );
 
-const o=
-oldMap.get(id);
+          if(o.time!==n.time)
+            diffs.push(
+              "Zeit geändert"
+            );
 
-if(!o){
+          if(o.location!==n.location)
+            diffs.push(
+              "Ort geändert"
+            );
 
-changes.push(
-`${n.child}: neuer Termin „${n.title}“`
-);
+          if(diffs.length){
 
-}else{
+            changes.push(
+              `${n.child}: „${n.title}“ – ${diffs.join(", ")}`
+            );
 
-const diffs=[];
+          }
 
-if(o.date!==n.date)
-diffs.push("Datum geändert");
+        }
 
-if(o.time!==n.time)
-diffs.push("Zeit geändert");
+      }
 
-if(o.location!==n.location)
-diffs.push("Ort geändert");
+      if(changes.length){
 
-if(diffs.length){
+        ch.innerHTML=`
 
-changes.push(
-`${n.child}: „${n.title}“ – ${diffs.join(", ")}`
-);
+          ⚠️
+          <b>
+            ${changes.length}
+            Änderung${changes.length===1?"":"en"}
+          </b>
 
-}
+          <ul>
 
-}
+            ${changes
+              .slice(0,5)
+              .map(
+                x=>`<li>${x}</li>`
+              )
+              .join("")}
 
-}
+          </ul>
 
-if(changes.length){
+        `;
 
-ch.innerHTML=
+        ch.classList.add(
+          "show"
+        );
 
-`⚠️ <b>${changes.length} Änderung${changes.length===1?"":"en"}</b>
+      }else{
 
-<ul>
+        ch.classList.remove(
+          "show"
+        );
 
-${changes
-.slice(0,5)
-.map(
-x=>`<li>${x}</li>`
-)
-.join("")}
+      }
 
-</ul>`;
+    }
 
-ch.classList.add(
-"show"
-);
+    localStorage.setItem(
+      "eventsSnapshotV2",
+      JSON.stringify(current)
+    );
 
-}else{
-
-ch.classList.remove(
-"show"
-);
-
-}
-
-}
-
-localStorage.setItem(
-"eventsSnapshotV2",
-JSON.stringify(current)
-);
-
-}catch(_){}
+  }catch(_){}
 
 }
 
@@ -1841,105 +1901,99 @@ JSON.stringify(current)
 
 function card(e){
 
-const dt=
-new Date(
-e.date+"T12:00:00"
-);
+  const dt=
+    new Date(
+      e.date+"T12:00:00"
+    );
 
-const key=
-eventKey(e)
-.replace(/"/g,"&quot;");
+  const key=
+    eventKey(e)
+    .replace(/"/g,"&quot;");
 
-const mapsBtn=
-e.maps
-?
-`
-<a
-class="maps"
-data-no-detail="1"
-href="${e.maps}"
->
+  const mapsBtn=
+    e.maps
+    ?
+    `
+      <a
+        class="maps"
+        data-no-detail="1"
+        href="${e.maps}">
+        🧭 Route →
+      </a>
+    `
+    :
+    "";
 
-🧭 Route →
+  const meet=
+    e.meetTime ||
+    e.meetingTime ||
+    e.treffzeit ||
+    "";
 
-</a>
-`
-:
-"";
+  const gameClass=
+    isGame(e)
+    ?"game"
+    :"";
 
-const meet=
-e.meetTime ||
-e.meetingTime ||
-e.treffzeit ||
-"";
+  return `
 
-const gameClass=
-isGame(e)
-?
-"game"
-:
-"";
+  <article
+    class="card ${e.child} ${gameClass}"
+    data-event-key="${key}">
 
-return `
+    <div class="top">
 
-<article
-class="card ${e.child} ${gameClass}"
-data-event-key="${key}"
->
+      <div>
 
-<div class="top">
+        <div class="who">
+          ${e.child}
+        </div>
 
-<div>
+        <div>
+          ${fmt(dt)}
+        </div>
 
-<div class="who">
-${e.child}
-</div>
+      </div>
 
-<div>
-${fmt(dt)}
-</div>
+      <div class="time">
+        ${e.time}
+      </div>
 
-</div>
+    </div>
 
-<div class="time">
-${e.time}
-</div>
+    <div class="type">
 
-</div>
+      ${typeIcon(e)}
+      ${e.type}
 
-<div class="type">
+    </div>
 
-${typeIcon(e)}
-${e.type}
+    <h3>
+      ${e.title}
+    </h3>
 
-</div>
+    ${
+      meet
+      ?
+      `
+        <div class="meet">
+          ⏰ Treffen: ${meet}
+        </div>
+      `
+      :""
+    }
 
-<h3>
-${e.title}
-</h3>
+    <div class="loc">
+      📍 ${e.location}
+    </div>
 
-${meet
-?
-`
-<div class="meet">
-⏰ Treffen: ${meet}
-</div>
-`
-:
-""
-}
+    ${mapsBtn}
 
-<div class="loc">
-📍 ${e.location}
-</div>
+    ${rsvpButtons(e)}
 
-${mapsBtn}
+  </article>
 
-${rsvpButtons(e)}
-
-</article>
-
-`;
+  `;
 
 }
 
@@ -1947,39 +2001,43 @@ ${rsvpButtons(e)}
 
 function twoCols(list){
 
-const luis=
-list.filter(
-e=>e.child==="Luis"
-);
+  const luis=
+    list.filter(
+      e=>e.child==="Luis"
+    );
 
-const alicia=
-list.filter(
-e=>e.child==="Alicia"
-);
+  const alicia=
+    list.filter(
+      e=>e.child==="Alicia"
+    );
 
-return `
+  return `
 
-<div class="grid">
+  <div class="grid">
 
-<div class="kidcol">
+    <!-- Luis bleibt links -->
 
-${luis
-.map(card)
-.join("")}
+    <div class="kidcol">
 
-</div>
+      ${luis
+        .map(card)
+        .join("")}
 
-<div class="kidcol">
+    </div>
 
-${alicia
-.map(card)
-.join("")}
+    <!-- Alicia bleibt rechts -->
 
-</div>
+    <div class="kidcol">
 
-</div>
+      ${alicia
+        .map(card)
+        .join("")}
 
-`;
+    </div>
+
+  </div>
+
+  `;
 
 }
 
@@ -1987,34 +2045,29 @@ ${alicia
 
 function renderPast(){
 
-let ev=
-pastEvents();
+  let ev=pastEvents();
 
-if(filter!=="all"){
+  if(filter!=="all"){
 
-ev=
-ev.filter(
-e=>e.child===filter
-);
+    ev=ev.filter(
+      e=>e.child===filter
+    );
 
-}
+  }
 
-ev=
-ev.slice(0,20);
+  ev=ev.slice(0,20);
 
-document.querySelector(
-"#pastContent"
-).innerHTML=
+  document.querySelector(
+    "#pastContent"
+  ).innerHTML=
 
-ev.length
-?
-twoCols(ev)
-:
-`
-<div class="empty">
-Keine vergangenen Termine vorhanden.
-</div>
-`;
+    ev.length
+    ?twoCols(ev)
+    :`
+      <div class="empty">
+        Keine vergangenen Termine vorhanden.
+      </div>
+    `;
 
 }
 
@@ -2022,290 +2075,313 @@ Keine vergangenen Termine vorhanden.
 
 function render(){
 
-const today=
-new Date();
+  const today=new Date();
 
-today.setHours(0,0,0,0);
+  today.setHours(0,0,0,0);
 
-let ev=
-filteredFutureEvents();
+  /* ZEITRAUM NUR BEI "ALLE" */
 
-renderExtras();
+  const rangebar=
+    document.querySelector(
+      "#rangebar"
+    );
 
-renderPast();
+  if(rangebar){
 
-let html="";
+    rangebar.style.display=
+      (
+        view==="all" &&
+        !openOnly
+      )
+      ?"flex"
+      :"none";
 
-/* TAG */
+  }
 
-if(
-view==="day" &&
-selectedDate
-){
+  let ev=
+    filteredFutureEvents();
 
-const d=
-new Date(
-selectedDate+"T12:00:00"
-);
+  renderExtras();
+  renderPast();
 
-const list=
-ev.filter(
-e=>e.date===selectedDate
-);
+  let html="";
 
-html=`
+  /* AUSGEWÄHLTER TAG */
 
-<div class="hero">
+  if(
+    view==="day" &&
+    selectedDate
+  ){
 
-<h2>
+    const d=
+      new Date(
+        selectedDate+"T12:00:00"
+      );
 
-${d.toLocaleDateString(
-"de-DE",
-{
-weekday:"long",
-day:"2-digit",
-month:"long"
-}
-)}
+    const list=
+      ev.filter(
+        e=>e.date===selectedDate
+      );
 
-</h2>
+    html=`
 
-<p>
-Ausgewählter Tag
-</p>
+      <div class="hero">
 
-</div>
+        <h2>
 
-`;
+          ${d.toLocaleDateString(
+            "de-DE",
+            {
+              weekday:"long",
+              day:"2-digit",
+              month:"long"
+            }
+          )}
 
-html+=
-list.length
-?
-twoCols(list)
-:
-`
-<div class="empty">
-An diesem Tag stehen keine Fußballtermine an.
-</div>
-`;
+        </h2>
 
-}
+        <p>
+          Ausgewählter Tag
+        </p>
 
-/* HEUTE */
+      </div>
 
-else if(view==="today"){
+    `;
 
-const list=
-ev.filter(
-e=>e.date===iso(today)
-);
+    html+=
+      list.length
+      ?twoCols(list)
+      :`
+        <div class="empty">
+          An diesem Tag stehen keine Fußballtermine an.
+        </div>
+      `;
 
-html=`
+  }
 
-<div class="hero">
+  /* HEUTE */
 
-<h2>
-Heute
-</h2>
+  else if(view==="today"){
 
-<p>
+    const list=
+      ev.filter(
+        e=>e.date===iso(today)
+      );
 
-${today.toLocaleDateString(
-"de-DE",
-{
-weekday:"long",
-day:"2-digit",
-month:"long"
-}
-)}
+    html=`
 
-</p>
+      <div class="hero">
 
-</div>
+        <h2>
+          Heute
+        </h2>
 
-`;
+        <p>
 
-html+=
-list.length
-?
-twoCols(list)
-:
-`
-<div class="empty">
-Heute stehen keine Fußballtermine an.
-</div>
-`;
+          ${today.toLocaleDateString(
+            "de-DE",
+            {
+              weekday:"long",
+              day:"2-digit",
+              month:"long"
+            }
+          )}
 
-}
+        </p>
 
-/* WOCHE */
+      </div>
 
-else if(view==="week"){
+    `;
 
-const m=
-monday(today);
+    html+=
+      list.length
+      ?twoCols(list)
+      :`
+        <div class="empty">
+          Heute stehen keine Fußballtermine an.
+        </div>
+      `;
 
-const s=
-new Date(m);
+  }
 
-s.setDate(
-s.getDate()+6
-);
+  /* DIESE WOCHE */
 
-const list=
-ev.filter(e=>{
+  else if(view==="week"){
 
-const d=
-new Date(
-e.date+"T12:00:00"
-);
+    const m=
+      monday(today);
 
-return d>=m && d<=s;
+    const s=
+      new Date(m);
 
-});
+    s.setDate(
+      s.getDate()+6
+    );
 
-html=`
+    const list=
+      ev.filter(e=>{
 
-<div class="hero">
+        const d=
+          new Date(
+            e.date+"T12:00:00"
+          );
 
-<h2>
+        return (
+          d>=m &&
+          d<=s
+        );
 
-${openOnly
-?
-"Offene Rückmeldungen"
-:
-"Diese Woche · KW "+weekNo(today)
-}
+      });
 
-</h2>
+    html=`
 
-<p>
+      <div class="hero">
 
-${m.toLocaleDateString(
-"de-DE",
-{
-day:"2-digit",
-month:"2-digit"
-}
-)}
+        <h2>
+          Diese Woche · KW ${weekNo(today)}
+        </h2>
 
-–
+        <p>
 
-${s.toLocaleDateString(
-"de-DE"
-)}
+          ${m.toLocaleDateString(
+            "de-DE",
+            {
+              day:"2-digit",
+              month:"2-digit"
+            }
+          )}
 
-</p>
+          –
 
-</div>
+          ${s.toLocaleDateString(
+            "de-DE"
+          )}
 
-`;
+        </p>
 
-html+=
-list.length
-?
-twoCols(list)
-:
-`
-<div class="empty">
+      </div>
 
-${openOnly
-?
-"Diese Woche sind alle Rückmeldungen erledigt."
-:
-"Diese Woche stehen keine Fußballtermine an."
-}
+    `;
 
-</div>
-`;
+    html+=
+      list.length
+      ?twoCols(list)
+      :`
+        <div class="empty">
+          Diese Woche stehen keine Fußballtermine an.
+        </div>
+      `;
 
-}
+  }
 
-/* ALLE */
+  /* ALLE / OFFEN */
 
-else{
+  else{
 
-const groups={};
+    if(openOnly){
 
-for(const e of ev){
+      html+=`
 
-const d=
-new Date(
-e.date+"T12:00:00"
-);
+        <div class="hero">
 
-const k=
-`${d.getFullYear()}-${weekNo(d)}`;
+          <h2>
+            Offene Rückmeldungen
+          </h2>
 
-if(!groups[k])
-groups[k]=[];
+          <p>
+            Nächste 30 Tage
+          </p>
 
-groups[k].push(e);
+        </div>
 
-}
+      `;
 
-for(
-const list
-of Object.values(groups)
-){
+    }
 
-const d=
-new Date(
-list[0].date+"T12:00:00"
-);
+    const groups={};
 
-const m=
-monday(d);
+    for(const e of ev){
 
-const s=
-new Date(m);
+      const d=
+        new Date(
+          e.date+"T12:00:00"
+        );
 
-s.setDate(
-s.getDate()+6
-);
+      const k=
+        `${d.getFullYear()}-${weekNo(d)}`;
 
-html+=`
+      if(!groups[k])
+        groups[k]=[];
 
-<section class="week">
+      groups[k].push(e);
 
-<h2>
+    }
 
-KW ${weekNo(d)}
-·
-${m.toLocaleDateString(
-"de-DE",
-{
-day:"2-digit",
-month:"2-digit"
-}
-)}
-–
-${s.toLocaleDateString(
-"de-DE"
-)}
+    for(
+      const list
+      of Object.values(groups)
+    ){
 
-</h2>
+      const d=
+        new Date(
+          list[0].date+"T12:00:00"
+        );
 
-${twoCols(list)}
+      const m=
+        monday(d);
 
-</section>
+      const s=
+        new Date(m);
 
-`;
+      s.setDate(
+        s.getDate()+6
+      );
 
-}
+      html+=`
 
-}
+        <section class="week">
 
-document.querySelector(
-"#app"
-).innerHTML=
+          <h2>
 
-html ||
-`
-<div class="empty">
-Keine Termine gefunden.
-</div>
-`;
+            KW ${weekNo(d)}
+            ·
+
+            ${m.toLocaleDateString(
+              "de-DE",
+              {
+                day:"2-digit",
+                month:"2-digit"
+              }
+            )}
+
+            –
+
+            ${s.toLocaleDateString(
+              "de-DE"
+            )}
+
+          </h2>
+
+          ${twoCols(list)}
+
+        </section>
+
+      `;
+
+    }
+
+  }
+
+  document.querySelector(
+    "#app"
+  ).innerHTML=
+
+    html ||
+    `
+      <div class="empty">
+        Keine Termine gefunden.
+      </div>
+    `;
 
 }
 
@@ -2313,163 +2389,158 @@ Keine Termine gefunden.
 
 function openModal(e){
 
-const modal=
-document.querySelector(
-"#eventModal"
-);
+  const modal=
+    document.querySelector(
+      "#eventModal"
+    );
 
-const body=
-document.querySelector(
-"#modalBody"
-);
+  const body=
+    document.querySelector(
+      "#modalBody"
+    );
 
-const d=
-new Date(
-e.date+"T12:00:00"
-);
+  const d=
+    new Date(
+      e.date+"T12:00:00"
+    );
 
-const meet=
-e.meetTime ||
-e.meetingTime ||
-e.treffzeit ||
-"";
+  const meet=
+    e.meetTime ||
+    e.meetingTime ||
+    e.treffzeit ||
+    "";
 
-document.querySelector(
-"#modalTitle"
-).textContent=
+  document.querySelector(
+    "#modalTitle"
+  ).textContent=
 
-`${typeIcon(e)} ${e.title}`;
+    `${typeIcon(e)} ${e.title}`;
 
-body.innerHTML=`
+  body.innerHTML=`
 
-<div class="detailList">
+    <div class="detailList">
 
-<div class="detailItem">
+      <div class="detailItem">
 
-<div class="detailLabel">
-Kind
-</div>
+        <div class="detailLabel">
+          Kind
+        </div>
 
-<b>
-${e.child}
-</b>
+        <b>
+          ${e.child}
+        </b>
 
-</div>
+      </div>
 
-<div class="detailItem">
+      <div class="detailItem">
 
-<div class="detailLabel">
-Datum
-</div>
+        <div class="detailLabel">
+          Datum
+        </div>
 
-<b>
+        <b>
 
-${d.toLocaleDateString(
-"de-DE",
-{
-weekday:"long",
-day:"2-digit",
-month:"long",
-year:"numeric"
-}
-)}
+          ${d.toLocaleDateString(
+            "de-DE",
+            {
+              weekday:"long",
+              day:"2-digit",
+              month:"long",
+              year:"numeric"
+            }
+          )}
 
-</b>
+        </b>
 
-</div>
+      </div>
 
-<div class="detailItem">
+      <div class="detailItem">
 
-<div class="detailLabel">
-Uhrzeit
-</div>
+        <div class="detailLabel">
+          Uhrzeit
+        </div>
 
-<b>
-${e.time}
-</b>
+        <b>
+          ${e.time}
+        </b>
 
-</div>
+      </div>
 
-${meet
-?
-`
-<div class="detailItem">
+      ${
+        meet
+        ?
+        `
+          <div class="detailItem">
 
-<div class="detailLabel">
-Treffzeit
-</div>
+            <div class="detailLabel">
+              Treffzeit
+            </div>
 
-<b>
-${meet}
-</b>
+            <b>
+              ${meet}
+            </b>
 
-</div>
-`
-:
-""
-}
+          </div>
+        `
+        :""
+      }
 
-<div class="detailItem">
+      <div class="detailItem">
 
-<div class="detailLabel">
-Art
-</div>
+        <div class="detailLabel">
+          Art
+        </div>
 
-<b>
-${e.type}
-</b>
+        <b>
+          ${e.type}
+        </b>
 
-</div>
+      </div>
 
-<div class="detailItem">
+      <div class="detailItem">
 
-<div class="detailLabel">
-Ort
-</div>
+        <div class="detailLabel">
+          Ort
+        </div>
 
-<b>
-${e.location}
-</b>
+        <b>
+          ${e.location}
+        </b>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-${e.maps
-?
-`
-<a
-class="maps"
-href="${e.maps}"
->
+    ${
+      e.maps
+      ?
+      `
+        <a
+          class="maps"
+          href="${e.maps}">
+          🧭 Route →
+        </a>
+      `
+      :""
+    }
 
-🧭 Route →
+    ${rsvpButtons(e)}
 
-</a>
-`
-:
-""
-}
+  `;
 
-${rsvpButtons(e)}
-
-`;
-
-modal.classList.add(
-"show"
-);
+  modal.classList.add(
+    "show"
+  );
 
 }
-
-/* MODAL SCHLIESSEN */
 
 function closeModal(){
 
-document.querySelector(
-"#eventModal"
-).classList.remove(
-"show"
-);
+  document.querySelector(
+    "#eventModal"
+  ).classList.remove(
+    "show"
+  );
 
 }
 
@@ -2477,525 +2548,516 @@ document.querySelector(
 
 async function loadData(showFeedback=false){
 
-const btn=
-document.querySelector(
-"#refreshBtn"
-);
+  const btn=
+    document.querySelector(
+      "#refreshBtn"
+    );
 
-if(showFeedback){
+  if(showFeedback){
 
-btn.disabled=true;
+    btn.disabled=true;
 
-btn.textContent=
-"⏳ Aktualisiere…";
+    btn.textContent=
+      "⏳ Aktualisiere…";
 
-}
+  }
 
-try{
+  try{
 
-const stamp=
-Date.now();
+    const stamp=Date.now();
 
-const [
-gamesData,
-trainingsData,
-myteamData,
-unionData
-]
-=
-await Promise.all([
+    const [
+      gamesData,
+      trainingsData,
+      myteamData,
+      unionData
+    ]=
+    await Promise.all([
 
-fetch(
-"data/events.json?"+stamp,
-{cache:"no-store"}
-).then(
-r=>r.json()
-),
+      fetch(
+        "data/events.json?"+stamp,
+        {cache:"no-store"}
+      ).then(
+        r=>r.json()
+      ),
 
-fetch(
-"data/trainings.json?"+stamp,
-{cache:"no-store"}
-).then(
-r=>r.json()
-),
+      fetch(
+        "data/trainings.json?"+stamp,
+        {cache:"no-store"}
+      ).then(
+        r=>r.json()
+      ),
 
-fetch(
-"data/luis_myteam.json?"+stamp,
-{cache:"no-store"}
-).then(
-r=>r.json()
-),
+      fetch(
+        "data/luis_myteam.json?"+stamp,
+        {cache:"no-store"}
+      ).then(
+        r=>r.json()
+      ),
 
-fetch(
-"data/alicia_union.json?"+stamp,
-{cache:"no-store"}
-).then(
-r=>r.json()
-)
+      fetch(
+        "data/alicia_union.json?"+stamp,
+        {cache:"no-store"}
+      ).then(
+        r=>r.json()
+      )
 
-]);
+    ]);
 
-source=
-gamesData;
+    source=gamesData;
 
-trainings=
-trainingsData.trainings||[];
+    trainings=
+      trainingsData.trainings||[];
 
-myteamEvents=
-myteamData.events||[];
+    myteamEvents=
+      myteamData.events||[];
 
-aliciaUnionEvents=
-unionData.events||[];
+    aliciaUnionEvents=
+      unionData.events||[];
 
-const newest=
-[
-gamesData.updated,
-myteamData.updated,
-unionData.updated
-]
-.filter(Boolean)
-.sort()
-.pop();
+    const newest=
+      [
+        gamesData.updated,
+        myteamData.updated,
+        unionData.updated
+      ]
+      .filter(Boolean)
+      .sort()
+      .pop();
 
-document.querySelector(
-"#updated"
-).textContent=
+    document.querySelector(
+      "#updated"
+    ).textContent=
 
-newest
-?
-"Zuletzt aktualisiert: "+
-new Date(newest)
-.toLocaleString("de-DE")
-:
-"";
+      newest
+      ?
+      "Zuletzt aktualisiert: "+
+      new Date(newest)
+      .toLocaleString("de-DE")
+      :"";
 
-render();
+    render();
 
-if(showFeedback){
+    if(showFeedback){
 
-btn.textContent=
-"✅ Aktualisiert";
+      btn.textContent=
+        "✅ Aktualisiert";
 
-}
+    }
 
-}catch(err){
+  }catch(err){
 
-console.error(err);
+    console.error(err);
 
-if(showFeedback){
+    if(showFeedback){
 
-btn.textContent=
-"⚠️ Fehler";
+      btn.textContent=
+        "⚠️ Fehler";
 
-}
+    }
 
-render();
+    render();
 
-}finally{
+  }finally{
 
-if(showFeedback){
+    if(showFeedback){
 
-setTimeout(()=>{
+      setTimeout(()=>{
 
-btn.disabled=false;
+        btn.disabled=false;
 
-btn.textContent=
-"🔄 Aktualisieren";
+        btn.textContent=
+          "🔄 Aktualisieren";
 
-},1200);
+      },1200);
 
-}
+    }
+
+  }
 
 }
 
-}
-
-/* FILTER */
+/* FILTER KIND */
 
 document
-.querySelectorAll(
-"button[data-filter]"
-)
-.forEach(b=>{
+  .querySelectorAll(
+    "button[data-filter]"
+  )
+  .forEach(b=>{
 
-b.onclick=()=>{
+    b.onclick=()=>{
 
-document
-.querySelectorAll(
-"button[data-filter]"
-)
-.forEach(
-x=>x.classList.remove("active")
-);
+      document
+        .querySelectorAll(
+          "button[data-filter]"
+        )
+        .forEach(
+          x=>x.classList.remove("active")
+        );
 
-b.classList.add(
-"active"
-);
+      b.classList.add(
+        "active"
+      );
 
-filter=
-b.dataset.filter;
+      filter=
+        b.dataset.filter;
 
-render();
+      render();
 
-};
+    };
 
-});
+  });
 
-/* OBERER VIEW */
-
-document
-.querySelectorAll(
-"button[data-view]"
-)
-.forEach(b=>{
-
-b.onclick=()=>{
+/* OBERE ANSICHT */
 
 document
-.querySelectorAll(
-"button[data-view]"
-)
-.forEach(
-x=>x.classList.remove("active")
-);
+  .querySelectorAll(
+    "button[data-view]"
+  )
+  .forEach(b=>{
 
-b.classList.add(
-"active"
-);
+    b.onclick=()=>{
 
-selectedDate="";
+      document
+        .querySelectorAll(
+          "button[data-view]"
+        )
+        .forEach(
+          x=>x.classList.remove("active")
+        );
 
-calendarWeekOffset=0;
+      b.classList.add(
+        "active"
+      );
 
-openOnly=false;
+      selectedDate="";
+      calendarWeekOffset=0;
+      openOnly=false;
 
-view=
-b.dataset.view;
+      view=
+        b.dataset.view;
 
-render();
+      render();
 
-};
+    };
 
-});
+  });
 
 /* KALENDERTAG */
 
 document
-.querySelector(
-"#calendarStrip"
-)
-.addEventListener(
-"click",
-event=>{
+  .querySelector(
+    "#calendarStrip"
+  )
+  .addEventListener(
+    "click",
+    event=>{
 
-const day=
-event.target.closest(
-"button.daybox[data-date]"
-);
+      const day=
+        event.target.closest(
+          "button.daybox[data-date]"
+        );
 
-if(!day)
-return;
+      if(!day)
+        return;
 
-selectedDate=
-day.dataset.date;
+      selectedDate=
+        day.dataset.date;
 
-view=
-"day";
+      view="day";
+      openOnly=false;
 
-openOnly=false;
+      render();
 
-render();
+      setTimeout(()=>{
 
-setTimeout(()=>{
+        document
+          .querySelector("#app")
+          ?.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+          });
 
-document
-.querySelector("#app")
-?.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
+      },50);
 
-},50);
+    }
+  );
 
-}
-);
-
-/* WOCHEN */
+/* KALENDERWOCHE */
 
 document.querySelector(
-"#prevWeekBtn"
+  "#prevWeekBtn"
 ).onclick=()=>{
 
-calendarWeekOffset--;
+  calendarWeekOffset--;
 
-selectedDate="";
+  selectedDate="";
 
-render();
+  render();
 
 };
 
 document.querySelector(
-"#nextWeekBtn"
+  "#nextWeekBtn"
 ).onclick=()=>{
 
-calendarWeekOffset++;
+  calendarWeekOffset++;
 
-selectedDate="";
+  selectedDate="";
 
-render();
+  render();
 
 };
 
 document.querySelector(
-"#currentWeekBtn"
+  "#currentWeekBtn"
 ).onclick=()=>{
 
-calendarWeekOffset=0;
+  calendarWeekOffset=0;
+  selectedDate="";
+  openOnly=false;
+  view="week";
 
-selectedDate="";
-
-view="week";
-
-render();
+  render();
 
 };
 
 /* AKTUALISIEREN */
 
 document.querySelector(
-"#refreshBtn"
+  "#refreshBtn"
 ).onclick=()=>{
 
-loadData(true);
+  loadData(true);
 
 };
 
-/* UNTERE NAV */
+/* BOTTOM NAV */
 
 document
-.querySelectorAll(
-"button[data-nav]"
-)
-.forEach(b=>{
+  .querySelectorAll(
+    "button[data-nav]"
+  )
+  .forEach(b=>{
 
-b.onclick=()=>{
+    b.onclick=()=>{
 
-document
-.querySelectorAll(
-"button[data-nav]"
-)
-.forEach(
-x=>x.classList.remove("active")
-);
+      document
+        .querySelectorAll(
+          "button[data-nav]"
+        )
+        .forEach(
+          x=>x.classList.remove("active")
+        );
 
-b.classList.add(
-"active"
-);
+      b.classList.add(
+        "active"
+      );
 
-const n=
-b.dataset.nav;
+      const n=
+        b.dataset.nav;
 
-selectedDate="";
+      selectedDate="";
+      calendarWeekOffset=0;
 
-calendarWeekOffset=0;
+      if(n==="open"){
 
-openOnly=
-n==="open";
+        openOnly=true;
+        view="all";
+        rangeMode="30";
 
-if(n==="today"){
+      }else{
 
-view="today";
+        openOnly=false;
 
-}else if(
-n==="all"
-){
+        if(n==="today"){
 
-view="all";
+          view="today";
 
-}else{
+        }else if(n==="all"){
 
-view="week";
+          view="all";
 
-}
+        }else{
 
-render();
+          view="week";
 
-};
+        }
 
-});
+      }
+
+      render();
+
+    };
+
+  });
 
 /* ZEITRAUM */
 
 document
-.querySelectorAll(
-"button[data-range]"
-)
-.forEach(b=>{
+  .querySelectorAll(
+    "button[data-range]"
+  )
+  .forEach(b=>{
 
-b.onclick=()=>{
+    b.onclick=()=>{
 
-document
-.querySelectorAll(
-"button[data-range]"
-)
-.forEach(
-x=>x.classList.remove("active")
-);
+      document
+        .querySelectorAll(
+          "button[data-range]"
+        )
+        .forEach(
+          x=>x.classList.remove("active")
+        );
 
-b.classList.add(
-"active"
-);
+      b.classList.add(
+        "active"
+      );
 
-rangeMode=
-b.dataset.range;
+      rangeMode=
+        b.dataset.range;
 
-view="all";
+      view="all";
+      openOnly=false;
+      selectedDate="";
 
-openOnly=false;
+      render();
 
-selectedDate="";
+    };
 
-render();
-
-};
-
-});
+  });
 
 /* VERGANGENE */
 
 document.querySelector(
-"#pastToggle"
+  "#pastToggle"
 ).onclick=()=>{
 
-const content=
-document.querySelector(
-"#pastContent"
-);
+  const content=
+    document.querySelector(
+      "#pastContent"
+    );
 
-const open=
-content.classList.toggle(
-"show"
-);
+  const open=
+    content.classList.toggle(
+      "show"
+    );
 
-document.querySelector(
-"#pastToggle"
-).textContent=
+  document.querySelector(
+    "#pastToggle"
+  ).textContent=
 
-open
-?
-"▾ Vergangene Termine"
-:
-"▸ Vergangene Termine";
+    open
+    ?"▾ Vergangene Termine"
+    :"▸ Vergangene Termine";
 
 };
 
-/* KARTEN KLICK */
+/* TERMINDETAIL */
 
 document
-.querySelector(
-"#app"
-)
-.addEventListener(
-"click",
-event=>{
+  .querySelector(
+    "#app"
+  )
+  .addEventListener(
+    "click",
+    event=>{
 
-if(
-event.target.closest(
-"[data-no-detail='1']"
-)
-)
-return;
+      if(
+        event.target.closest(
+          "[data-no-detail='1']"
+        )
+      )
+        return;
 
-const cardEl=
-event.target.closest(
-".card[data-event-key]"
-);
+      const cardEl=
+        event.target.closest(
+          ".card[data-event-key]"
+        );
 
-if(!cardEl)
-return;
+      if(!cardEl)
+        return;
 
-const e=
-rawEvents()
-.find(
-x=>
-eventKey(x)===
-cardEl.dataset.eventKey
-);
+      const e=
+        rawEvents().find(
+          x=>
+            eventKey(x)===
+            cardEl.dataset.eventKey
+        );
 
-if(e)
-openModal(e);
+      if(e)
+        openModal(e);
 
-}
-);
+    }
+  );
 
 document
-.querySelector(
-"#pastContent"
-)
-.addEventListener(
-"click",
-event=>{
+  .querySelector(
+    "#pastContent"
+  )
+  .addEventListener(
+    "click",
+    event=>{
 
-if(
-event.target.closest(
-"[data-no-detail='1']"
-)
-)
-return;
+      if(
+        event.target.closest(
+          "[data-no-detail='1']"
+        )
+      )
+        return;
 
-const cardEl=
-event.target.closest(
-".card[data-event-key]"
-);
+      const cardEl=
+        event.target.closest(
+          ".card[data-event-key]"
+        );
 
-if(!cardEl)
-return;
+      if(!cardEl)
+        return;
 
-const e=
-rawEvents()
-.find(
-x=>
-eventKey(x)===
-cardEl.dataset.eventKey
-);
+      const e=
+        rawEvents().find(
+          x=>
+            eventKey(x)===
+            cardEl.dataset.eventKey
+        );
 
-if(e)
-openModal(e);
+      if(e)
+        openModal(e);
 
-}
-);
+    }
+  );
 
 /* MODAL */
 
 document.querySelector(
-"#closeModalBtn"
+  "#closeModalBtn"
 ).onclick=
-closeModal;
+  closeModal;
 
 document.querySelector(
-"#eventModal"
+  "#eventModal"
 ).onclick=event=>{
 
-if(
-event.target.id===
-"eventModal"
-){
+  if(
+    event.target.id===
+    "eventModal"
+  ){
 
-closeModal();
+    closeModal();
 
-}
+  }
 
 };
 
 /* SERVICE WORKER */
 
 if(
-"serviceWorker" in navigator
+  "serviceWorker" in navigator
 ){
 
-navigator.serviceWorker.register(
-"sw.js"
-);
+  navigator.serviceWorker.register(
+    "sw.js"
+  );
 
 }
 

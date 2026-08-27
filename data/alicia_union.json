@@ -1,6 +1,18 @@
 {
-  "updated": "2026-08-27T06:17:00+02:00",
+  "updated": "2026-08-27T09:27:00+02:00",
   "events": [
+    {
+      "date": "2026-08-30",
+      "time": "15:00",
+      "child": "Alicia",
+      "type": "Testspiel",
+      "title": "Testspiel U13w FCU",
+      "location": "Bruno-Bürgel-Weg 63, 12439 Berlin (TZO)",
+      "maps": "https://maps.apple.com/?q=Bruno-B%C3%BCrgel-Weg%2063%2C%2012439%20Berlin",
+      "meetTime": "14:00",
+      "endTime": "ca. 16:30",
+      "source": "union-mail"
+    },
     {
       "date": "2026-09-04",
       "time": "18:30",

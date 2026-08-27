@@ -13,7 +13,6 @@
 <style>
 :root{
   --bg:#f2f2f7;
-  --card:#ffffff;
   --text:#111111;
   --muted:#6e6e73;
   --luis:#6f2dbd;
@@ -41,16 +40,8 @@ body{
     env(safe-area-inset-bottom)
     env(safe-area-inset-left);
 
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "SF Pro Text",
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",
+  "SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 
   background:
     radial-gradient(circle at top left,rgba(111,45,189,.08),transparent 34%),
@@ -59,8 +50,6 @@ body{
 
   color:var(--text);
 }
-
-/* HEADER */
 
 header{
   background:linear-gradient(135deg,#0b0b0f,#15151c);
@@ -82,7 +71,6 @@ h1{
   font-size:13px;
   color:#d1d1d6;
   margin-top:5px;
-  line-height:1.35;
 }
 
 main{
@@ -90,8 +78,6 @@ main{
   margin:auto;
   padding:14px;
 }
-
-/* BUTTONS */
 
 .toolbar,
 .viewbar,
@@ -111,22 +97,16 @@ button{
   color:#1c1c1e;
   cursor:pointer;
   box-shadow:0 2px 10px rgba(0,0,0,.05);
-  transition:.15s ease;
-  -webkit-tap-highlight-color:transparent;
 }
 
-button:active{
-  transform:scale(.97);
-}
+button:active{transform:scale(.97)}
 
 button.active{
   background:#111;
   color:white;
 }
 
-#refreshBtn{
-  margin-left:auto;
-}
+#refreshBtn{margin-left:auto}
 
 /* DASHBOARD */
 
@@ -179,14 +159,17 @@ button.active{
   font-size:12px;
   font-weight:750;
   margin-top:5px;
-  line-height:1.25;
 }
 
 .nextloc{
   font-size:10px;
-  opacity:.86;
-  margin-top:5px;
-  line-height:1.25;
+  opacity:.9;
+  margin-top:6px;
+  line-height:1.3;
+}
+
+.nextloc strong{
+  font-size:11px;
 }
 
 /* STATUS */
@@ -217,15 +200,9 @@ button.active{
   font-weight:750;
 }
 
-.stat.open{
-  cursor:pointer;
-}
+.stat.open{cursor:pointer}
 
-.stat.open b{
-  color:var(--orange);
-}
-
-/* ÄNDERUNGEN */
+.stat.open b{color:var(--orange)}
 
 .changes{
   display:none;
@@ -235,25 +212,16 @@ button.active{
   padding:10px 12px;
   margin-bottom:10px;
   font-size:12px;
-  font-weight:750;
-  line-height:1.4;
 }
 
-.changes.show{
-  display:block;
-}
+.changes.show{display:block}
 
 .changes ul{
   margin:6px 0 0;
   padding-left:18px;
-  font-weight:650;
 }
 
-/* DATENQUELLEN NICHT MEHR IN HAUPTANSICHT */
-
-.sourcechips{
-  display:none !important;
-}
+.sourcechips{display:none!important}
 
 /* KALENDER */
 
@@ -274,7 +242,6 @@ button.active{
 #prevWeekBtn,
 #nextWeekBtn{
   font-size:25px;
-  line-height:1;
 }
 
 .calendarStrip{
@@ -298,15 +265,10 @@ button.active{
   color:#111;
   text-align:center;
   font-size:10px;
-  line-height:1.2;
   box-shadow:0 2px 8px rgba(0,0,0,.05);
-  cursor:pointer;
-  touch-action:manipulation;
 }
 
-.daybox.today{
-  outline:2px solid #111;
-}
+.daybox.today{outline:2px solid #111}
 
 .daybox.selected{
   background:#111;
@@ -327,13 +289,8 @@ button.active{
   margin:0 1px;
 }
 
-.dot.luis{
-  background:var(--luis);
-}
-
-.dot.alicia{
-  background:var(--alicia);
-}
+.dot.luis{background:var(--luis)}
+.dot.alicia{background:var(--alicia)}
 
 /* HERO */
 
@@ -359,9 +316,7 @@ button.active{
 
 /* TERMINE */
 
-.week{
-  margin:18px 0;
-}
+.week{margin:18px 0}
 
 .week h2{
   font-size:17px;
@@ -380,10 +335,6 @@ button.active{
   gap:9px;
   min-width:0;
 }
-
-/* WICHTIG:
-   Luis ist IMMER die erste Spalte,
-   Alicia IMMER die zweite Spalte */
 
 .card{
   background:white;
@@ -405,13 +356,8 @@ button.active{
   width:5px;
 }
 
-.card.Luis::before{
-  background:var(--luis);
-}
-
-.card.Alicia::before{
-  background:var(--alicia);
-}
+.card.Luis::before{background:var(--luis)}
+.card.Alicia::before{background:var(--alicia)}
 
 .card.Luis{
   background:linear-gradient(180deg,#fff,var(--luis-soft));
@@ -449,13 +395,8 @@ button.active{
   font-size:15px;
 }
 
-.Luis .who{
-  color:var(--luis);
-}
-
-.Alicia .who{
-  color:var(--alicia);
-}
+.Luis .who{color:var(--luis)}
+.Alicia .who{color:var(--alicia)}
 
 .time{
   font-size:19px;
@@ -487,11 +428,27 @@ button.active{
   line-height:1.25;
 }
 
+/* ORT */
+
 .loc{
   margin-top:9px;
   color:#3a3a3c;
   line-height:1.35;
   font-size:13px;
+}
+
+.venueName{
+  font-size:14px;
+  font-weight:900;
+  color:#111;
+}
+
+.venueAddress{
+  display:block;
+  margin-top:2px;
+  font-size:11px;
+  color:#636366;
+  line-height:1.3;
 }
 
 .meet{
@@ -517,7 +474,7 @@ button.active{
   font-size:12px;
 }
 
-/* ZUSAGEN */
+/* RSVP */
 
 .rsvp{
   display:grid;
@@ -535,21 +492,10 @@ button.active{
   box-shadow:none;
 }
 
-.rsvp button.selected{
-  color:white;
-}
-
-.rsvp button[data-status="yes"].selected{
-  background:var(--green);
-}
-
-.rsvp button[data-status="maybe"].selected{
-  background:var(--orange);
-}
-
-.rsvp button[data-status="no"].selected{
-  background:var(--red);
-}
+.rsvp button.selected{color:white}
+.rsvp button[data-status="yes"].selected{background:var(--green)}
+.rsvp button[data-status="maybe"].selected{background:var(--orange)}
+.rsvp button[data-status="no"].selected{background:var(--red)}
 
 .empty{
   background:white;
@@ -558,11 +504,7 @@ button.active{
   color:var(--muted);
 }
 
-/* ZEITRAUM */
-
-.rangebar{
-  display:none;
-}
+.rangebar{display:none}
 
 .rangebar button{
   font-size:11px;
@@ -593,28 +535,22 @@ button.active{
   padding:0 10px 10px;
 }
 
-#pastContent.show{
-  display:block;
-}
+#pastContent.show{display:block}
 
-/* BOTTOM NAV */
+/* NAVIGATION */
 
 .bottomnav{
   position:sticky;
   bottom:8px;
   z-index:4;
-
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:5px;
-
   background:rgba(20,20,24,.92);
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
-
   padding:6px;
   border-radius:18px;
-
   margin:28px 0 12px;
 }
 
@@ -633,7 +569,7 @@ button.active{
   color:#111;
 }
 
-/* DETAILANSICHT */
+/* MODAL */
 
 .modal{
   position:fixed;
@@ -646,9 +582,7 @@ button.active{
   padding:12px;
 }
 
-.modal.show{
-  display:flex;
-}
+.modal.show{display:flex}
 
 .modalCard{
   width:min(620px,100%);
@@ -657,7 +591,6 @@ button.active{
   background:#f9f9fb;
   border-radius:24px 24px 18px 18px;
   padding:16px;
-  box-shadow:0 20px 60px rgba(0,0,0,.28);
 }
 
 .modalHead{
@@ -706,59 +639,40 @@ footer{
   font-size:11px;
 }
 
-#app{
-  scroll-margin-top:150px;
-}
-
-/* IPHONE */
+#app{scroll-margin-top:150px}
 
 @media(max-width:560px){
 
-  main{
-    padding:10px;
-  }
+  main{padding:10px}
 
   header{
     padding:18px 18px 15px;
   }
 
-  h1{
-    font-size:24px;
-  }
+  h1{font-size:24px}
 
   .viewbar,
   .toolbar{
     margin-bottom:8px;
   }
 
-  .dashboard{
-    gap:7px;
-  }
+  .dashboard{gap:7px}
 
   .nextcard{
     padding:11px;
     min-height:140px;
   }
 
-  .nextname{
-    font-size:17px;
-  }
+  .nextname{font-size:17px}
+  .nextwhen{font-size:14px}
 
-  .nextwhen{
-    font-size:14px;
-  }
-
-  .statusbar{
-    gap:5px;
-  }
+  .statusbar{gap:5px}
 
   .stat{
     padding:8px 3px;
   }
 
-  .stat b{
-    font-size:17px;
-  }
+  .stat b{font-size:17px}
 
   .grid{
     grid-template-columns:minmax(0,1fr) minmax(0,1fr);
@@ -769,40 +683,33 @@ footer{
     padding:10px 9px;
   }
 
-  .top{
-    display:block;
-  }
+  .top{display:block}
 
   .time{
     font-size:16px;
     margin-top:5px;
   }
 
-  .card h3{
-    font-size:13px;
-  }
+  .card h3{font-size:13px}
 
-  .loc{
-    font-size:11px;
-  }
+  .loc{font-size:11px}
 
-  .rsvp{
-    gap:3px;
-  }
+  .venueName{font-size:12px}
+
+  .venueAddress{font-size:10px}
+
+  .rsvp{gap:3px}
 
   .rsvp button{
     font-size:9px;
     padding:6px 2px;
   }
 
-  .modal{
-    padding:0;
-  }
+  .modal{padding:0}
 
   .modalCard{
     border-radius:24px 24px 0 0;
   }
-
 }
 </style>
 </head>
@@ -811,7 +718,6 @@ footer{
 
 <header>
 <h1>⚽ Familien Fußball</h1>
-
 <div class="sub">
 Luis · Eintracht Mahlsdorf • Alicia · 1. FC Union Berlin
 </div>
@@ -820,39 +726,16 @@ Luis · Eintracht Mahlsdorf • Alicia · 1. FC Union Berlin
 <main>
 
 <div class="viewbar">
-
-<button class="active" data-view="week">
-Diese Woche
-</button>
-
-<button data-view="today">
-Heute
-</button>
-
-<button data-view="all">
-Alle Termine
-</button>
-
-<button id="refreshBtn">
-🔄 Aktualisieren
-</button>
-
+<button class="active" data-view="week">Diese Woche</button>
+<button data-view="today">Heute</button>
+<button data-view="all">Alle Termine</button>
+<button id="refreshBtn">🔄 Aktualisieren</button>
 </div>
 
 <div class="toolbar">
-
-<button class="active" data-filter="all">
-Alle
-</button>
-
-<button data-filter="Luis">
-Luis
-</button>
-
-<button data-filter="Alicia">
-Alicia
-</button>
-
+<button class="active" data-filter="all">Alle</button>
+<button data-filter="Luis">Luis</button>
+<button data-filter="Alicia">Alicia</button>
 </div>
 
 <div id="changes" class="changes"></div>
@@ -861,100 +744,49 @@ Alicia
 
 <div id="stats" class="statusbar"></div>
 
-<div id="sources" class="sourcechips"></div>
-
 <div class="calendarControls">
-
-<button id="prevWeekBtn">
-‹
-</button>
-
-<button id="currentWeekBtn">
-Diese Woche
-</button>
-
-<button id="nextWeekBtn">
-›
-</button>
-
+<button id="prevWeekBtn">‹</button>
+<button id="currentWeekBtn">Diese Woche</button>
+<button id="nextWeekBtn">›</button>
 </div>
 
 <div id="calendarStrip" class="calendarStrip"></div>
 
 <div id="rangebar" class="rangebar">
-
-<button class="active" data-range="14">
-14 Tage
-</button>
-
-<button data-range="30">
-30 Tage
-</button>
-
-<button data-range="all">
-Alle
-</button>
-
+<button class="active" data-range="14">14 Tage</button>
+<button data-range="30">30 Tage</button>
+<button data-range="all">Alle</button>
 </div>
 
 <div id="app"></div>
 
 <div class="pastWrap">
-
 <button id="pastToggle" class="pastToggle">
 ▸ Vergangene Termine
 </button>
-
 <div id="pastContent"></div>
-
 </div>
 
 <div class="bottomnav">
-
-<button class="active" data-nav="week">
-🏠<br>Übersicht
-</button>
-
-<button data-nav="today">
-📅<br>Heute
-</button>
-
-<button data-nav="open">
-✓<br>Offen
-</button>
-
-<button data-nav="all">
-☰<br>Alle
-</button>
-
+<button class="active" data-nav="week">🏠<br>Übersicht</button>
+<button data-nav="today">📅<br>Heute</button>
+<button data-nav="open">✓<br>Offen</button>
+<button data-nav="all">☰<br>Alle</button>
 </div>
 
 </main>
 
 <footer>
-
 <div id="updated"></div>
-
-<div>
-Als App installierbar · Route direkt aus jedem Termin
-</div>
-
+<div>Als App installierbar · Route direkt aus jedem Termin</div>
 </footer>
 
 <div id="eventModal" class="modal">
-
 <div class="modalCard">
 
 <div class="modalHead">
-
-<h2 id="modalTitle">
-Termin
-</h2>
-
-<button id="closeModalBtn" class="closeBtn">
-×
-</button>
-
+<h2 id="modalTitle">Termin</h2>
+<button id="closeModalBtn" class="closeBtn">×</button>
 </div>
 
 <div id="modalBody"></div>
@@ -970,10 +802,7 @@ let aliciaUnionEvents=[];
 
 let filter="all";
 let view="week";
-
-let source={
-  games:[]
-};
+let source={games:[]};
 
 let openOnly=false;
 let selectedDate="";
@@ -983,9 +812,7 @@ let rangeMode="14";
 const pad=n=>String(n).padStart(2,"0");
 
 function iso(d){
-
   return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
-
 }
 
 function weekNo(d){
@@ -1013,23 +840,17 @@ function weekNo(d){
   return Math.ceil(
     (((x-y)/86400000)+1)/7
   );
-
 }
 
 function monday(d){
 
   let x=new Date(d);
-
   let n=x.getDay()||7;
 
-  x.setDate(
-    x.getDate()-n+1
-  );
-
+  x.setDate(x.getDate()-n+1);
   x.setHours(0,0,0,0);
 
   return x;
-
 }
 
 function fmt(d){
@@ -1042,7 +863,81 @@ function fmt(d){
       month:"2-digit"
     }
   );
+}
 
+/* ==========================================
+   SPORTSTÄTTEN
+   ========================================== */
+
+function venueInfo(location){
+
+  const loc=(location||"").trim();
+  const s=loc.toLowerCase();
+
+  /* AM ROSENHAG */
+
+  if(
+    s.includes("melanchthonstraße 53") ||
+    s.includes("melanchthonstrasse 53") ||
+    s.includes("melanchthonstr. 53")
+  ){
+    return {
+      name:"Am Rosenhag",
+      address:loc
+    };
+  }
+
+  /* TZO */
+
+  if(
+    s.includes("bruno-bürgel-weg 63") ||
+    s.includes("bruno-buergel-weg 63") ||
+    s.includes("bruno-bürgel-weg")
+  ){
+    return {
+      name:"TZO",
+      address:loc
+    };
+  }
+
+  /* TZPW */
+
+  if(
+    s.includes("plänterwald") ||
+    s.includes("plaenterwald") ||
+    s.includes("neue krugallee")
+  ){
+    return {
+      name:"TZPW",
+      address:loc
+    };
+  }
+
+  return {
+    name:"",
+    address:loc
+  };
+}
+
+function venueHtml(location){
+
+  const v=venueInfo(location);
+
+  if(v.name){
+
+    return `
+      <div class="loc">
+        📍 <span class="venueName">${v.name}</span>
+        <span class="venueAddress">${v.address}</span>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="loc">
+      📍 ${v.address}
+    </div>
+  `;
 }
 
 /* ALICIA TRAINING */
@@ -1065,30 +960,23 @@ function buildTraining(start,end){
       ){
 
         out.push({
-
           date:iso(d),
           time:t.time,
           child:t.child,
           type:"Training",
           title:t.title,
           location:t.location,
-
           maps:
             "https://maps.apple.com/?q="+
             encodeURIComponent(t.location),
-
           source:"union-training"
-
         });
 
       }
-
     }
-
   }
 
   return out;
-
 }
 
 /* ALLE DATEN */
@@ -1096,78 +984,50 @@ function buildTraining(start,end){
 function rawEvents(){
 
   const today=new Date();
-
   today.setHours(0,0,0,0);
 
   const start=new Date(today);
-
-  start.setDate(
-    start.getDate()-30
-  );
+  start.setDate(start.getDate()-30);
 
   const end=new Date(today);
-
-  end.setDate(
-    end.getDate()+120
-  );
+  end.setDate(end.getDate()+120);
 
   return [
-
     ...source.games,
     ...myteamEvents,
     ...aliciaUnionEvents,
     ...buildTraining(start,end)
-
   ].sort(
     (a,b)=>
       (a.date+a.time)
-      .localeCompare(
-        b.date+b.time
-      )
+      .localeCompare(b.date+b.time)
   );
-
 }
-
-/* ZUKUNFT */
 
 function futureEvents(){
 
   const today=new Date();
-
   today.setHours(0,0,0,0);
 
   return rawEvents().filter(
-    e=>
-      new Date(
-        e.date+"T23:59:00"
-      )>=today
+    e=>new Date(e.date+"T23:59:00")>=today
   );
-
 }
-
-/* VERGANGEN */
 
 function pastEvents(){
 
   const today=new Date();
-
   today.setHours(0,0,0,0);
 
   return rawEvents()
     .filter(
-      e=>
-        new Date(
-          e.date+"T23:59:00"
-        )<today
+      e=>new Date(e.date+"T23:59:00")<today
     )
     .sort(
       (a,b)=>
         (b.date+b.time)
-        .localeCompare(
-          a.date+a.time
-        )
+        .localeCompare(a.date+a.time)
     );
-
 }
 
 /* RSVP */
@@ -1181,7 +1041,6 @@ function eventKey(e){
     e.title,
     e.location
   ].join("|");
-
 }
 
 function eventIdentity(e){
@@ -1191,23 +1050,17 @@ function eventIdentity(e){
     (e.type||"").toLowerCase(),
     (e.title||"").toLowerCase()
   ].join("|");
-
 }
 
 function getRsvp(e){
 
   try{
-
     return localStorage.getItem(
       "rsvp:"+eventKey(e)
     )||"";
-
   }catch(_){
-
     return "";
-
   }
-
 }
 
 function setRsvp(key,status){
@@ -1216,68 +1069,55 @@ function setRsvp(key,status){
 
     const k="rsvp:"+key;
 
-    if(
-      localStorage.getItem(k)===status
-    ){
-
+    if(localStorage.getItem(k)===status){
       localStorage.removeItem(k);
-
     }else{
-
-      localStorage.setItem(
-        k,
-        status
-      );
-
+      localStorage.setItem(k,status);
     }
 
   }catch(_){}
 
   render();
-
 }
 
 function rsvpButtons(e){
 
   const key=
     eventKey(e)
-    .replace(/\\/g,"\\\\")
-    .replace(/'/g,"\\'");
+      .replace(/\\/g,"\\\\")
+      .replace(/'/g,"\\'");
 
   const s=getRsvp(e);
 
   return `
+    <div class="rsvp" data-no-detail="1">
 
-  <div class="rsvp" data-no-detail="1">
+      <button
+        data-status="yes"
+        class="${s==="yes"?"selected":""}"
+        onclick="setRsvp('${key}','yes')">
+        ✓ Zusage
+      </button>
 
-    <button
-      data-status="yes"
-      class="${s==="yes"?"selected":""}"
-      onclick="setRsvp('${key}','yes')">
-      ✓ Zusage
-    </button>
+      <button
+        data-status="maybe"
+        class="${s==="maybe"?"selected":""}"
+        onclick="setRsvp('${key}','maybe')">
+        ? Vielleicht
+      </button>
 
-    <button
-      data-status="maybe"
-      class="${s==="maybe"?"selected":""}"
-      onclick="setRsvp('${key}','maybe')">
-      ? Vielleicht
-    </button>
+      <button
+        data-status="no"
+        class="${s==="no"?"selected":""}"
+        onclick="setRsvp('${key}','no')">
+        ✕ Absage
+      </button>
 
-    <button
-      data-status="no"
-      class="${s==="no"?"selected":""}"
-      onclick="setRsvp('${key}','no')">
-      ✕ Absage
-    </button>
-
-  </div>
-
+    </div>
   `;
-
 }
 
-/* ICON */
+/* TERMINART */
 
 function typeIcon(e){
 
@@ -1286,36 +1126,31 @@ function typeIcon(e){
     (e.title||"")
   ).toLowerCase();
 
-  if(s.includes("training"))
-    return "🏃";
+  if(s.includes("training")) return "🏃";
 
   if(
     s.includes("foto") ||
     s.includes("portrait")
-  )
-    return "📸";
+  ) return "📸";
 
   if(
     s.includes("eltern") ||
     s.includes("versammlung")
-  )
-    return "👥";
+  ) return "👥";
 
   if(
     s.includes("turnier") ||
     s.includes("festival")
-  )
-    return "🏆";
+  ) return "🏆";
 
   if(
     s.includes("spiel") ||
     s.includes("liga") ||
-    s.includes("freundschaft")
-  )
-    return "⚽";
+    s.includes("freundschaft") ||
+    s.includes("testspiel")
+  ) return "⚽";
 
   return "📌";
-
 }
 
 function isGame(e){
@@ -1332,23 +1167,18 @@ function isGame(e){
     s.includes("festival") ||
     s.includes("turnier")
   );
-
 }
 
-/* 30-TAGE-GRENZE */
+/* 30 TAGE */
 
 function thirtyDayLimit(){
 
   const end=new Date();
 
   end.setHours(23,59,59,999);
-
-  end.setDate(
-    end.getDate()+30
-  );
+  end.setDate(end.getDate()+30);
 
   return end;
-
 }
 
 /* FILTER */
@@ -1362,11 +1192,7 @@ function filteredFutureEvents(){
     ev=ev.filter(
       e=>e.child===filter
     );
-
   }
-
-  /* OFFENE RÜCKMELDUNGEN:
-     NUR NÄCHSTE 30 TAGE */
 
   if(openOnly){
 
@@ -1375,20 +1201,11 @@ function filteredFutureEvents(){
     ev=ev.filter(e=>{
 
       const d=
-        new Date(
-          e.date+"T23:59:00"
-        );
+        new Date(e.date+"T23:59:00");
 
-      return (
-        d<=end &&
-        !getRsvp(e)
-      );
-
+      return d<=end && !getRsvp(e);
     });
-
   }
-
-  /* ALLE TERMINE */
 
   if(
     view==="all" &&
@@ -1396,37 +1213,27 @@ function filteredFutureEvents(){
   ){
 
     const today=new Date();
-
     today.setHours(0,0,0,0);
 
     const end=new Date(today);
 
     end.setDate(
-      end.getDate()+
-      Number(rangeMode)
+      end.getDate()+Number(rangeMode)
     );
 
     ev=ev.filter(
-      e=>
-        new Date(
-          e.date+"T12:00:00"
-        )<=end
+      e=>new Date(e.date+"T12:00:00")<=end
     );
-
   }
 
   return ev;
-
 }
-
-/* NÄCHSTER TERMIN */
 
 function nextFor(child){
 
   return futureEvents().find(
     e=>e.child===child
   );
-
 }
 
 /* DASHBOARD */
@@ -1443,8 +1250,35 @@ function renderExtras(){
     if(!e){
 
       return `
+        <button class="nextcard ${cls}">
+          <div class="nextlabel">Nächster Termin</div>
+          <div class="nextname">${child}</div>
+          <div class="nexttitle">Kein Termin</div>
+        </button>
+      `;
+    }
 
-      <button class="nextcard ${cls}">
+    const d=
+      new Date(e.date+"T12:00:00");
+
+    const key=
+      eventKey(e)
+      .replace(/"/g,"&quot;");
+
+    const venue=
+      venueInfo(e.location);
+
+    const locationDisplay=
+      venue.name
+      ?
+      `📍 <strong>${venue.name}</strong><br>${venue.address}`
+      :
+      `📍 ${e.location}`;
+
+    return `
+      <button
+        class="nextcard ${cls}"
+        data-event-key="${key}">
 
         <div class="nextlabel">
           Nächster Termin
@@ -1454,70 +1288,29 @@ function renderExtras(){
           ${child}
         </div>
 
+        <div class="nextwhen">
+          ${typeIcon(e)} ${fmt(d)} · ${e.time}
+        </div>
+
         <div class="nexttitle">
-          Kein Termin
+          ${e.title}
+        </div>
+
+        <div class="nextloc">
+          ${locationDisplay}
         </div>
 
       </button>
-
-      `;
-
-    }
-
-    const d=
-      new Date(
-        e.date+"T12:00:00"
-      );
-
-    const key=
-      eventKey(e)
-      .replace(/"/g,"&quot;");
-
-    return `
-
-    <button
-      class="nextcard ${cls}"
-      data-event-key="${key}">
-
-      <div class="nextlabel">
-        Nächster Termin
-      </div>
-
-      <div class="nextname">
-        ${child}
-      </div>
-
-      <div class="nextwhen">
-        ${typeIcon(e)}
-        ${fmt(d)}
-        ·
-        ${e.time}
-      </div>
-
-      <div class="nexttitle">
-        ${e.title}
-      </div>
-
-      <div class="nextloc">
-        📍 ${e.location}
-      </div>
-
-    </button>
-
     `;
-
   }
 
-  /* Luis IMMER zuerst = links */
+  /* Luis links – Alicia rechts */
 
   document.querySelector(
     "#dashboard"
   ).innerHTML=
-
     nextCard("Luis","luis")+
     nextCard("Alicia","alicia");
-
-  /* NÄCHSTE-TERMIN-KARTEN */
 
   document
     .querySelectorAll(
@@ -1529,16 +1322,12 @@ function renderExtras(){
 
         const e=
           rawEvents().find(
-            x=>
-              eventKey(x)===
-              btn.dataset.eventKey
+            x=>eventKey(x)===btn.dataset.eventKey
           );
 
-        if(!e)
-          return;
+        if(!e) return;
 
         selectedDate=e.date;
-
         view="day";
         openOnly=false;
 
@@ -1554,29 +1343,18 @@ function renderExtras(){
             });
 
         },50);
-
       };
-
     });
 
-  /* STATUS */
+  /* STATUS – NUR 30 TAGE */
 
   const statusEnd=
     thirtyDayLimit();
 
-  /* Statistik ebenfalls nur nächste 30 Tage */
-
   const statusEvents=
-    ev.filter(e=>{
-
-      const d=
-        new Date(
-          e.date+"T23:59:00"
-        );
-
-      return d<=statusEnd;
-
-    });
+    ev.filter(
+      e=>new Date(e.date+"T23:59:00")<=statusEnd
+    );
 
   const yes=
     statusEvents.filter(
@@ -1603,47 +1381,24 @@ function renderExtras(){
   ).innerHTML=`
 
     <div class="stat">
-
       <b>${yes}</b>
-
-      <span>
-        zugesagt
-      </span>
-
+      <span>zugesagt</span>
     </div>
 
     <div class="stat">
-
       <b>${maybe}</b>
-
-      <span>
-        vielleicht
-      </span>
-
+      <span>vielleicht</span>
     </div>
 
     <div class="stat">
-
       <b>${no}</b>
-
-      <span>
-        abgesagt
-      </span>
-
+      <span>abgesagt</span>
     </div>
 
-    <div
-      class="stat open"
-      id="openStat">
-
+    <div class="stat open" id="openStat">
       <b>${open}</b>
-
-      <span>
-        offen · 30 Tage
-      </span>
-
+      <span>offen · 30 Tage</span>
     </div>
-
   `;
 
   document.querySelector(
@@ -1651,19 +1406,11 @@ function renderExtras(){
   ).onclick=()=>{
 
     openOnly=true;
-
-    /*
-      "Offen" soll alle offenen Termine
-      der nächsten 30 Tage zeigen,
-      nicht nur diese Kalenderwoche.
-    */
-
     view="all";
     rangeMode="30";
     selectedDate="";
 
     render();
-
   };
 
   /* KALENDER */
@@ -1671,8 +1418,7 @@ function renderExtras(){
   const base=monday(now);
 
   base.setDate(
-    base.getDate()+
-    calendarWeekOffset*7
+    base.getDate()+calendarWeekOffset*7
   );
 
   const days=[];
@@ -1688,9 +1434,7 @@ function renderExtras(){
     const ds=iso(d);
 
     const dayEvents=
-      ev.filter(
-        e=>e.date===ds
-      );
+      ev.filter(e=>e.date===ds);
 
     const luis=
       dayEvents.some(
@@ -1705,11 +1449,9 @@ function renderExtras(){
     days.push(`
 
       <button
-        class="
-          daybox
+        class="daybox
           ${ds===iso(now)?"today":""}
-          ${ds===selectedDate?"selected":""}
-        "
+          ${ds===selectedDate?"selected":""}"
         data-date="${ds}">
 
         ${d
@@ -1721,39 +1463,22 @@ function renderExtras(){
 
         <br>
 
-        <b>
-          ${d.getDate()}
-        </b>
+        <b>${d.getDate()}</b>
 
         <div class="dots">
-
-          ${
-            luis
-            ?'<i class="dot luis"></i>'
-            :""
-          }
-
-          ${
-            alicia
-            ?'<i class="dot alicia"></i>'
-            :""
-          }
-
+          ${luis?'<i class="dot luis"></i>':""}
+          ${alicia?'<i class="dot alicia"></i>':""}
         </div>
 
       </button>
-
     `);
-
   }
 
   document.querySelector(
     "#calendarStrip"
-  ).innerHTML=
-    days.join("");
+  ).innerHTML=days.join("");
 
   renderChanges(ev);
-
 }
 
 /* ÄNDERUNGEN */
@@ -1764,7 +1489,6 @@ function renderChanges(ev){
 
     const current=
       ev.map(e=>({
-
         id:eventIdentity(e),
         child:e.child,
         title:e.title,
@@ -1772,7 +1496,6 @@ function renderChanges(ev){
         date:e.date,
         time:e.time,
         location:e.location
-
       }));
 
     const oldRaw=
@@ -1787,32 +1510,23 @@ function renderChanges(ev){
 
     if(oldRaw){
 
-      const old=
-        JSON.parse(oldRaw);
+      const old=JSON.parse(oldRaw);
 
       const oldMap=
         new Map(
-          old.map(
-            x=>[x.id,x]
-          )
+          old.map(x=>[x.id,x])
         );
 
       const newMap=
         new Map(
-          current.map(
-            x=>[x.id,x]
-          )
+          current.map(x=>[x.id,x])
         );
 
       const changes=[];
 
-      for(
-        const [id,n]
-        of newMap
-      ){
+      for(const [id,n] of newMap){
 
-        const o=
-          oldMap.get(id);
+        const o=oldMap.get(id);
 
         if(!o){
 
@@ -1825,67 +1539,43 @@ function renderChanges(ev){
           const diffs=[];
 
           if(o.date!==n.date)
-            diffs.push(
-              "Datum geändert"
-            );
+            diffs.push("Datum geändert");
 
           if(o.time!==n.time)
-            diffs.push(
-              "Zeit geändert"
-            );
+            diffs.push("Zeit geändert");
 
           if(o.location!==n.location)
-            diffs.push(
-              "Ort geändert"
-            );
+            diffs.push("Ort geändert");
 
           if(diffs.length){
 
             changes.push(
               `${n.child}: „${n.title}“ – ${diffs.join(", ")}`
             );
-
           }
-
         }
-
       }
 
       if(changes.length){
 
         ch.innerHTML=`
-
-          ⚠️
-          <b>
-            ${changes.length}
-            Änderung${changes.length===1?"":"en"}
-          </b>
+          ⚠️ <b>${changes.length}
+          Änderung${changes.length===1?"":"en"}</b>
 
           <ul>
-
             ${changes
               .slice(0,5)
-              .map(
-                x=>`<li>${x}</li>`
-              )
+              .map(x=>`<li>${x}</li>`)
               .join("")}
-
           </ul>
-
         `;
 
-        ch.classList.add(
-          "show"
-        );
+        ch.classList.add("show");
 
       }else{
 
-        ch.classList.remove(
-          "show"
-        );
-
+        ch.classList.remove("show");
       }
-
     }
 
     localStorage.setItem(
@@ -1894,17 +1584,14 @@ function renderChanges(ev){
     );
 
   }catch(_){}
-
 }
 
-/* KARTE */
+/* TERMIN-KARTE */
 
 function card(e){
 
   const dt=
-    new Date(
-      e.date+"T12:00:00"
-    );
+    new Date(e.date+"T12:00:00");
 
   const key=
     eventKey(e)
@@ -1931,73 +1618,62 @@ function card(e){
     "";
 
   const gameClass=
-    isGame(e)
-    ?"game"
-    :"";
+    isGame(e)?"game":"";
 
   return `
 
-  <article
-    class="card ${e.child} ${gameClass}"
-    data-event-key="${key}">
+    <article
+      class="card ${e.child} ${gameClass}"
+      data-event-key="${key}">
 
-    <div class="top">
-
-      <div>
-
-        <div class="who">
-          ${e.child}
-        </div>
+      <div class="top">
 
         <div>
-          ${fmt(dt)}
+
+          <div class="who">
+            ${e.child}
+          </div>
+
+          <div>
+            ${fmt(dt)}
+          </div>
+
+        </div>
+
+        <div class="time">
+          ${e.time}
         </div>
 
       </div>
 
-      <div class="time">
-        ${e.time}
+      <div class="type">
+        ${typeIcon(e)} ${e.type}
       </div>
 
-    </div>
+      <h3>
+        ${e.title}
+      </h3>
 
-    <div class="type">
-
-      ${typeIcon(e)}
-      ${e.type}
-
-    </div>
-
-    <h3>
-      ${e.title}
-    </h3>
-
-    ${
-      meet
-      ?
-      `
-        <div class="meet">
+      ${
+        meet
+        ?
+        `<div class="meet">
           ⏰ Treffen: ${meet}
-        </div>
-      `
-      :""
-    }
+        </div>`
+        :""
+      }
 
-    <div class="loc">
-      📍 ${e.location}
-    </div>
+      ${venueHtml(e.location)}
 
-    ${mapsBtn}
+      ${mapsBtn}
 
-    ${rsvpButtons(e)}
+      ${rsvpButtons(e)}
 
-  </article>
-
+    </article>
   `;
-
 }
 
-/* 2 SPALTEN */
+/* LUIS IMMER LINKS / ALICIA IMMER RECHTS */
 
 function twoCols(list){
 
@@ -2013,32 +1689,18 @@ function twoCols(list){
 
   return `
 
-  <div class="grid">
+    <div class="grid">
 
-    <!-- Luis bleibt links -->
+      <div class="kidcol">
+        ${luis.map(card).join("")}
+      </div>
 
-    <div class="kidcol">
-
-      ${luis
-        .map(card)
-        .join("")}
-
-    </div>
-
-    <!-- Alicia bleibt rechts -->
-
-    <div class="kidcol">
-
-      ${alicia
-        .map(card)
-        .join("")}
+      <div class="kidcol">
+        ${alicia.map(card).join("")}
+      </div>
 
     </div>
-
-  </div>
-
   `;
-
 }
 
 /* VERGANGENE */
@@ -2052,7 +1714,6 @@ function renderPast(){
     ev=ev.filter(
       e=>e.child===filter
     );
-
   }
 
   ev=ev.slice(0,20);
@@ -2068,7 +1729,6 @@ function renderPast(){
         Keine vergangenen Termine vorhanden.
       </div>
     `;
-
 }
 
 /* HAUPTANSICHT */
@@ -2076,10 +1736,7 @@ function renderPast(){
 function render(){
 
   const today=new Date();
-
   today.setHours(0,0,0,0);
-
-  /* ZEITRAUM NUR BEI "ALLE" */
 
   const rangebar=
     document.querySelector(
@@ -2095,7 +1752,6 @@ function render(){
       )
       ?"flex"
       :"none";
-
   }
 
   let ev=
@@ -2106,7 +1762,7 @@ function render(){
 
   let html="";
 
-  /* AUSGEWÄHLTER TAG */
+  /* TAG */
 
   if(
     view==="day" &&
@@ -2128,7 +1784,6 @@ function render(){
       <div class="hero">
 
         <h2>
-
           ${d.toLocaleDateString(
             "de-DE",
             {
@@ -2137,15 +1792,11 @@ function render(){
               month:"long"
             }
           )}
-
         </h2>
 
-        <p>
-          Ausgewählter Tag
-        </p>
+        <p>Ausgewählter Tag</p>
 
       </div>
-
     `;
 
     html+=
@@ -2156,7 +1807,6 @@ function render(){
           An diesem Tag stehen keine Fußballtermine an.
         </div>
       `;
-
   }
 
   /* HEUTE */
@@ -2172,12 +1822,9 @@ function render(){
 
       <div class="hero">
 
-        <h2>
-          Heute
-        </h2>
+        <h2>Heute</h2>
 
         <p>
-
           ${today.toLocaleDateString(
             "de-DE",
             {
@@ -2186,11 +1833,9 @@ function render(){
               month:"long"
             }
           )}
-
         </p>
 
       </div>
-
     `;
 
     html+=
@@ -2201,18 +1846,14 @@ function render(){
           Heute stehen keine Fußballtermine an.
         </div>
       `;
-
   }
 
   /* DIESE WOCHE */
 
   else if(view==="week"){
 
-    const m=
-      monday(today);
-
-    const s=
-      new Date(m);
+    const m=monday(today);
+    const s=new Date(m);
 
     s.setDate(
       s.getDate()+6
@@ -2222,15 +1863,9 @@ function render(){
       ev.filter(e=>{
 
         const d=
-          new Date(
-            e.date+"T12:00:00"
-          );
+          new Date(e.date+"T12:00:00");
 
-        return (
-          d>=m &&
-          d<=s
-        );
-
+        return d>=m && d<=s;
       });
 
     html=`
@@ -2242,7 +1877,6 @@ function render(){
         </h2>
 
         <p>
-
           ${m.toLocaleDateString(
             "de-DE",
             {
@@ -2250,17 +1884,11 @@ function render(){
               month:"2-digit"
             }
           )}
-
           –
-
-          ${s.toLocaleDateString(
-            "de-DE"
-          )}
-
+          ${s.toLocaleDateString("de-DE")}
         </p>
 
       </div>
-
     `;
 
     html+=
@@ -2271,7 +1899,6 @@ function render(){
           Diese Woche stehen keine Fußballtermine an.
         </div>
       `;
-
   }
 
   /* ALLE / OFFEN */
@@ -2293,9 +1920,7 @@ function render(){
           </p>
 
         </div>
-
       `;
-
     }
 
     const groups={};
@@ -2303,9 +1928,7 @@ function render(){
     for(const e of ev){
 
       const d=
-        new Date(
-          e.date+"T12:00:00"
-        );
+        new Date(e.date+"T12:00:00");
 
       const k=
         `${d.getFullYear()}-${weekNo(d)}`;
@@ -2314,7 +1937,6 @@ function render(){
         groups[k]=[];
 
       groups[k].push(e);
-
     }
 
     for(
@@ -2327,11 +1949,8 @@ function render(){
           list[0].date+"T12:00:00"
         );
 
-      const m=
-        monday(d);
-
-      const s=
-        new Date(m);
+      const m=monday(d);
+      const s=new Date(m);
 
       s.setDate(
         s.getDate()+6
@@ -2342,10 +1961,8 @@ function render(){
         <section class="week">
 
           <h2>
-
             KW ${weekNo(d)}
             ·
-
             ${m.toLocaleDateString(
               "de-DE",
               {
@@ -2353,23 +1970,15 @@ function render(){
                 month:"2-digit"
               }
             )}
-
             –
-
-            ${s.toLocaleDateString(
-              "de-DE"
-            )}
-
+            ${s.toLocaleDateString("de-DE")}
           </h2>
 
           ${twoCols(list)}
 
         </section>
-
       `;
-
     }
-
   }
 
   document.querySelector(
@@ -2382,10 +1991,9 @@ function render(){
         Keine Termine gefunden.
       </div>
     `;
-
 }
 
-/* DETAILANSICHT */
+/* DETAIL */
 
 function openModal(e){
 
@@ -2400,9 +2008,7 @@ function openModal(e){
     );
 
   const d=
-    new Date(
-      e.date+"T12:00:00"
-    );
+    new Date(e.date+"T12:00:00");
 
   const meet=
     e.meetTime ||
@@ -2410,10 +2016,12 @@ function openModal(e){
     e.treffzeit ||
     "";
 
+  const venue=
+    venueInfo(e.location);
+
   document.querySelector(
     "#modalTitle"
   ).textContent=
-
     `${typeIcon(e)} ${e.title}`;
 
   body.innerHTML=`
@@ -2421,15 +2029,8 @@ function openModal(e){
     <div class="detailList">
 
       <div class="detailItem">
-
-        <div class="detailLabel">
-          Kind
-        </div>
-
-        <b>
-          ${e.child}
-        </b>
-
+        <div class="detailLabel">Kind</div>
+        <b>${e.child}</b>
       </div>
 
       <div class="detailItem">
@@ -2439,7 +2040,6 @@ function openModal(e){
         </div>
 
         <b>
-
           ${d.toLocaleDateString(
             "de-DE",
             {
@@ -2449,21 +2049,13 @@ function openModal(e){
               year:"numeric"
             }
           )}
-
         </b>
 
       </div>
 
       <div class="detailItem">
-
-        <div class="detailLabel">
-          Uhrzeit
-        </div>
-
-        <b>
-          ${e.time}
-        </b>
-
+        <div class="detailLabel">Uhrzeit</div>
+        <b>${e.time}</b>
       </div>
 
       ${
@@ -2471,30 +2063,18 @@ function openModal(e){
         ?
         `
           <div class="detailItem">
-
             <div class="detailLabel">
               Treffzeit
             </div>
-
-            <b>
-              ${meet}
-            </b>
-
+            <b>${meet}</b>
           </div>
         `
         :""
       }
 
       <div class="detailItem">
-
-        <div class="detailLabel">
-          Art
-        </div>
-
-        <b>
-          ${e.type}
-        </b>
-
+        <div class="detailLabel">Art</div>
+        <b>${e.type}</b>
       </div>
 
       <div class="detailItem">
@@ -2504,6 +2084,11 @@ function openModal(e){
         </div>
 
         <b>
+          ${
+            venue.name
+            ?venue.name+"<br>"
+            :""
+          }
           ${e.location}
         </b>
 
@@ -2525,23 +2110,16 @@ function openModal(e){
     }
 
     ${rsvpButtons(e)}
-
   `;
 
-  modal.classList.add(
-    "show"
-  );
-
+  modal.classList.add("show");
 }
 
 function closeModal(){
 
   document.querySelector(
     "#eventModal"
-  ).classList.remove(
-    "show"
-  );
-
+  ).classList.remove("show");
 }
 
 /* DATEN LADEN */
@@ -2556,10 +2134,7 @@ async function loadData(showFeedback=false){
   if(showFeedback){
 
     btn.disabled=true;
-
-    btn.textContent=
-      "⏳ Aktualisiere…";
-
+    btn.textContent="⏳ Aktualisiere…";
   }
 
   try{
@@ -2577,30 +2152,22 @@ async function loadData(showFeedback=false){
       fetch(
         "data/events.json?"+stamp,
         {cache:"no-store"}
-      ).then(
-        r=>r.json()
-      ),
+      ).then(r=>r.json()),
 
       fetch(
         "data/trainings.json?"+stamp,
         {cache:"no-store"}
-      ).then(
-        r=>r.json()
-      ),
+      ).then(r=>r.json()),
 
       fetch(
         "data/luis_myteam.json?"+stamp,
         {cache:"no-store"}
-      ).then(
-        r=>r.json()
-      ),
+      ).then(r=>r.json()),
 
       fetch(
         "data/alicia_union.json?"+stamp,
         {cache:"no-store"}
-      ).then(
-        r=>r.json()
-      )
+      ).then(r=>r.json())
 
     ]);
 
@@ -2639,10 +2206,7 @@ async function loadData(showFeedback=false){
     render();
 
     if(showFeedback){
-
-      btn.textContent=
-        "✅ Aktualisiert";
-
+      btn.textContent="✅ Aktualisiert";
     }
 
   }catch(err){
@@ -2650,10 +2214,7 @@ async function loadData(showFeedback=false){
     console.error(err);
 
     if(showFeedback){
-
-      btn.textContent=
-        "⚠️ Fehler";
-
+      btn.textContent="⚠️ Fehler";
     }
 
     render();
@@ -2665,136 +2226,116 @@ async function loadData(showFeedback=false){
       setTimeout(()=>{
 
         btn.disabled=false;
-
-        btn.textContent=
-          "🔄 Aktualisieren";
+        btn.textContent="🔄 Aktualisieren";
 
       },1200);
-
     }
-
   }
-
 }
 
-/* FILTER KIND */
+/* KINDERFILTER */
 
 document
-  .querySelectorAll(
-    "button[data-filter]"
-  )
-  .forEach(b=>{
+.querySelectorAll(
+  "button[data-filter]"
+)
+.forEach(b=>{
 
-    b.onclick=()=>{
+  b.onclick=()=>{
 
-      document
-        .querySelectorAll(
-          "button[data-filter]"
-        )
-        .forEach(
-          x=>x.classList.remove("active")
-        );
+    document
+    .querySelectorAll(
+      "button[data-filter]"
+    )
+    .forEach(
+      x=>x.classList.remove("active")
+    );
 
-      b.classList.add(
-        "active"
-      );
+    b.classList.add("active");
 
-      filter=
-        b.dataset.filter;
+    filter=b.dataset.filter;
 
-      render();
-
-    };
-
-  });
+    render();
+  };
+});
 
 /* OBERE ANSICHT */
 
 document
-  .querySelectorAll(
-    "button[data-view]"
-  )
-  .forEach(b=>{
+.querySelectorAll(
+  "button[data-view]"
+)
+.forEach(b=>{
 
-    b.onclick=()=>{
+  b.onclick=()=>{
 
-      document
-        .querySelectorAll(
-          "button[data-view]"
-        )
-        .forEach(
-          x=>x.classList.remove("active")
-        );
+    document
+    .querySelectorAll(
+      "button[data-view]"
+    )
+    .forEach(
+      x=>x.classList.remove("active")
+    );
 
-      b.classList.add(
-        "active"
-      );
+    b.classList.add("active");
 
-      selectedDate="";
-      calendarWeekOffset=0;
-      openOnly=false;
+    selectedDate="";
+    calendarWeekOffset=0;
+    openOnly=false;
 
-      view=
-        b.dataset.view;
+    view=b.dataset.view;
 
-      render();
-
-    };
-
-  });
+    render();
+  };
+});
 
 /* KALENDERTAG */
 
 document
-  .querySelector(
-    "#calendarStrip"
-  )
-  .addEventListener(
-    "click",
-    event=>{
+.querySelector(
+  "#calendarStrip"
+)
+.addEventListener(
+  "click",
+  event=>{
 
-      const day=
-        event.target.closest(
-          "button.daybox[data-date]"
-        );
+    const day=
+      event.target.closest(
+        "button.daybox[data-date]"
+      );
 
-      if(!day)
-        return;
+    if(!day) return;
 
-      selectedDate=
-        day.dataset.date;
+    selectedDate=
+      day.dataset.date;
 
-      view="day";
-      openOnly=false;
+    view="day";
+    openOnly=false;
 
-      render();
+    render();
 
-      setTimeout(()=>{
+    setTimeout(()=>{
 
-        document
-          .querySelector("#app")
-          ?.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-          });
+      document
+      .querySelector("#app")
+      ?.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
 
-      },50);
+    },50);
+  }
+);
 
-    }
-  );
-
-/* KALENDERWOCHE */
+/* WOCHEN */
 
 document.querySelector(
   "#prevWeekBtn"
 ).onclick=()=>{
 
   calendarWeekOffset--;
-
   selectedDate="";
-
   render();
-
 };
 
 document.querySelector(
@@ -2802,11 +2343,8 @@ document.querySelector(
 ).onclick=()=>{
 
   calendarWeekOffset++;
-
   selectedDate="";
-
   render();
-
 };
 
 document.querySelector(
@@ -2819,7 +2357,6 @@ document.querySelector(
   view="week";
 
   render();
-
 };
 
 /* AKTUALISIEREN */
@@ -2829,103 +2366,86 @@ document.querySelector(
 ).onclick=()=>{
 
   loadData(true);
-
 };
 
 /* BOTTOM NAV */
 
 document
-  .querySelectorAll(
-    "button[data-nav]"
-  )
-  .forEach(b=>{
+.querySelectorAll(
+  "button[data-nav]"
+)
+.forEach(b=>{
 
-    b.onclick=()=>{
+  b.onclick=()=>{
 
-      document
-        .querySelectorAll(
-          "button[data-nav]"
-        )
-        .forEach(
-          x=>x.classList.remove("active")
-        );
+    document
+    .querySelectorAll(
+      "button[data-nav]"
+    )
+    .forEach(
+      x=>x.classList.remove("active")
+    );
 
-      b.classList.add(
-        "active"
-      );
+    b.classList.add("active");
 
-      const n=
-        b.dataset.nav;
+    const n=b.dataset.nav;
 
-      selectedDate="";
-      calendarWeekOffset=0;
+    selectedDate="";
+    calendarWeekOffset=0;
 
-      if(n==="open"){
+    if(n==="open"){
 
-        openOnly=true;
-        view="all";
-        rangeMode="30";
+      openOnly=true;
+      view="all";
+      rangeMode="30";
 
-      }else{
+    }else{
 
-        openOnly=false;
+      openOnly=false;
 
-        if(n==="today"){
-
-          view="today";
-
-        }else if(n==="all"){
-
-          view="all";
-
-        }else{
-
-          view="week";
-
-        }
-
+      if(n==="today"){
+        view="today";
       }
+      else if(n==="all"){
+        view="all";
+      }
+      else{
+        view="week";
+      }
+    }
 
-      render();
-
-    };
-
-  });
+    render();
+  };
+});
 
 /* ZEITRAUM */
 
 document
-  .querySelectorAll(
-    "button[data-range]"
-  )
-  .forEach(b=>{
+.querySelectorAll(
+  "button[data-range]"
+)
+.forEach(b=>{
 
-    b.onclick=()=>{
+  b.onclick=()=>{
 
-      document
-        .querySelectorAll(
-          "button[data-range]"
-        )
-        .forEach(
-          x=>x.classList.remove("active")
-        );
+    document
+    .querySelectorAll(
+      "button[data-range]"
+    )
+    .forEach(
+      x=>x.classList.remove("active")
+    );
 
-      b.classList.add(
-        "active"
-      );
+    b.classList.add("active");
 
-      rangeMode=
-        b.dataset.range;
+    rangeMode=b.dataset.range;
+    view="all";
+    openOnly=false;
+    selectedDate="";
 
-      view="all";
-      openOnly=false;
-      selectedDate="";
-
-      render();
-
-    };
-
-  });
+    render();
+  };
+});
 
 /* VERGANGENE */
 
@@ -2950,115 +2470,92 @@ document.querySelector(
     open
     ?"▾ Vergangene Termine"
     :"▸ Vergangene Termine";
-
 };
 
-/* TERMINDETAIL */
+/* KARTEN */
 
 document
-  .querySelector(
-    "#app"
-  )
-  .addEventListener(
-    "click",
-    event=>{
+.querySelector("#app")
+.addEventListener(
+  "click",
+  event=>{
 
-      if(
-        event.target.closest(
-          "[data-no-detail='1']"
-        )
+    if(
+      event.target.closest(
+        "[data-no-detail='1']"
       )
-        return;
+    ) return;
 
-      const cardEl=
-        event.target.closest(
-          ".card[data-event-key]"
-        );
+    const cardEl=
+      event.target.closest(
+        ".card[data-event-key]"
+      );
 
-      if(!cardEl)
-        return;
+    if(!cardEl) return;
 
-      const e=
-        rawEvents().find(
-          x=>
-            eventKey(x)===
-            cardEl.dataset.eventKey
-        );
+    const e=
+      rawEvents().find(
+        x=>
+          eventKey(x)===
+          cardEl.dataset.eventKey
+      );
 
-      if(e)
-        openModal(e);
-
-    }
-  );
+    if(e) openModal(e);
+  }
+);
 
 document
-  .querySelector(
-    "#pastContent"
-  )
-  .addEventListener(
-    "click",
-    event=>{
+.querySelector("#pastContent")
+.addEventListener(
+  "click",
+  event=>{
 
-      if(
-        event.target.closest(
-          "[data-no-detail='1']"
-        )
+    if(
+      event.target.closest(
+        "[data-no-detail='1']"
       )
-        return;
+    ) return;
 
-      const cardEl=
-        event.target.closest(
-          ".card[data-event-key]"
-        );
+    const cardEl=
+      event.target.closest(
+        ".card[data-event-key]"
+      );
 
-      if(!cardEl)
-        return;
+    if(!cardEl) return;
 
-      const e=
-        rawEvents().find(
-          x=>
-            eventKey(x)===
-            cardEl.dataset.eventKey
-        );
+    const e=
+      rawEvents().find(
+        x=>
+          eventKey(x)===
+          cardEl.dataset.eventKey
+      );
 
-      if(e)
-        openModal(e);
-
-    }
-  );
+    if(e) openModal(e);
+  }
+);
 
 /* MODAL */
 
 document.querySelector(
   "#closeModalBtn"
-).onclick=
-  closeModal;
+).onclick=closeModal;
 
 document.querySelector(
   "#eventModal"
 ).onclick=event=>{
 
-  if(
-    event.target.id===
-    "eventModal"
-  ){
-
+  if(event.target.id==="eventModal"){
     closeModal();
-
   }
-
 };
 
 /* SERVICE WORKER */
 
-if(
-  "serviceWorker" in navigator
-){
+if("serviceWorker" in navigator){
 
   navigator.serviceWorker.register(
     "sw.js"
   );
-
 }
 
 /* START */

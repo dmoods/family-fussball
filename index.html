@@ -13,93 +13,58 @@
 <style>
 :root{
   --bg:#f2f2f7;
-  --card:rgba(255,255,255,.92);
-  --text:#111111;
+  --card:#fff;
+  --text:#111;
   --muted:#6e6e73;
-  --line:#d1d1d6;
   --luis:#6f2dbd;
   --luis-soft:#f2eaff;
   --alicia:#d80027;
   --alicia-soft:#fff0f2;
   --shadow:0 10px 30px rgba(0,0,0,.08);
 }
-
 *{box-sizing:border-box}
-
 html{-webkit-text-size-adjust:100%}
-
 body{
   margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,Arial,sans-serif;
   background:
     radial-gradient(circle at top left,rgba(111,45,189,.08),transparent 34%),
     radial-gradient(circle at top right,rgba(216,0,39,.08),transparent 34%),
     var(--bg);
   color:var(--text);
-  letter-spacing:-.01em;
 }
-
 header{
   background:linear-gradient(135deg,#0b0b0f,#15151c);
-  color:white;
+  color:#fff;
   padding:22px 18px 18px;
   position:sticky;
   top:0;
   z-index:5;
   box-shadow:0 8px 24px rgba(0,0,0,.16);
 }
+h1{margin:0;font-size:25px;font-weight:850}
+.sub{font-size:13px;color:#d1d1d6;margin-top:6px}
+main{max-width:920px;margin:auto;padding:16px}
 
-h1{
-  margin:0;
-  font-size:25px;
-  font-weight:850;
-}
-
-.sub{
-  font-size:13px;
-  color:#d1d1d6;
-  margin-top:6px;
-}
-
-main{
-  max-width:920px;
-  margin:auto;
-  padding:16px;
-}
-
-.toolbar,
-.viewbar{
+.toolbar,.viewbar{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
   margin-bottom:12px;
 }
-
 button{
   border:1px solid rgba(0,0,0,.06);
   border-radius:999px;
   padding:9px 14px;
   font-weight:750;
-  background:rgba(255,255,255,.86);
+  background:rgba(255,255,255,.9);
   color:#1c1c1e;
   cursor:pointer;
   box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
-
-button:active{
-  transform:scale(.97);
-}
-
-button.active{
-  background:#111;
-  color:white;
-}
-
-#refreshBtn{
-  margin-left:auto;
-}
-
-/* DASHBOARD */
+button:active{transform:scale(.97)}
+button.active{background:#111;color:#fff}
+#refreshBtn{margin-left:auto}
 
 .dashboard{
   display:grid;
@@ -107,54 +72,20 @@ button.active{
   gap:10px;
   margin:10px 0 14px;
 }
-
 .nextcard{
   border-radius:20px;
   padding:14px;
-  color:white;
+  color:#fff;
   box-shadow:var(--shadow);
   min-width:0;
 }
-
-.nextcard.luis{
-  background:linear-gradient(135deg,#55208f,#7f3fd0);
-}
-
-.nextcard.alicia{
-  background:linear-gradient(135deg,#a90020,#e11d3f);
-}
-
-.nextlabel{
-  font-size:11px;
-  font-weight:800;
-  opacity:.85;
-  text-transform:uppercase;
-}
-
-.nextname{
-  font-size:18px;
-  font-weight:900;
-  margin:2px 0 8px;
-}
-
-.nextwhen{
-  font-size:16px;
-  font-weight:900;
-}
-
-.nexttitle{
-  font-size:12px;
-  font-weight:750;
-  margin-top:5px;
-}
-
-.nextloc{
-  font-size:10px;
-  opacity:.86;
-  margin-top:5px;
-}
-
-/* STATUS */
+.nextcard.luis{background:linear-gradient(135deg,#55208f,#7f3fd0)}
+.nextcard.alicia{background:linear-gradient(135deg,#a90020,#e11d3f)}
+.nextlabel{font-size:11px;font-weight:800;opacity:.85;text-transform:uppercase}
+.nextname{font-size:18px;font-weight:900;margin:2px 0 8px}
+.nextwhen{font-size:16px;font-weight:900}
+.nexttitle{font-size:12px;font-weight:750;margin-top:5px}
+.nextloc{font-size:10px;opacity:.86;margin-top:5px}
 
 .statusbar{
   display:grid;
@@ -162,27 +93,15 @@ button.active{
   gap:7px;
   margin-bottom:12px;
 }
-
 .stat{
-  background:white;
+  background:#fff;
   border-radius:14px;
   padding:10px;
   text-align:center;
   box-shadow:0 3px 12px rgba(0,0,0,.05);
 }
-
-.stat b{
-  display:block;
-  font-size:18px;
-}
-
-.stat span{
-  font-size:10px;
-  color:var(--muted);
-  font-weight:750;
-}
-
-/* ÄNDERUNGEN */
+.stat b{display:block;font-size:18px}
+.stat span{font-size:10px;color:var(--muted);font-weight:750}
 
 .changes{
   display:none;
@@ -194,12 +113,7 @@ button.active{
   font-size:12px;
   font-weight:750;
 }
-
-.changes.show{
-  display:block;
-}
-
-/* QUELLEN */
+.changes.show{display:block}
 
 .sourcechips{
   display:flex;
@@ -207,16 +121,13 @@ button.active{
   flex-wrap:wrap;
   margin-bottom:12px;
 }
-
 .sourcechip{
   font-size:10px;
   font-weight:750;
-  background:white;
+  background:#fff;
   padding:6px 8px;
   border-radius:999px;
 }
-
-/* KALENDER */
 
 .calendarControls{
   display:flex;
@@ -225,11 +136,7 @@ button.active{
   gap:8px;
   margin-bottom:8px;
 }
-
-.calendarControls button{
-  padding:7px 10px;
-  font-size:11px;
-}
+.calendarControls button{padding:7px 10px;font-size:11px}
 
 .calendarStrip{
   display:grid;
@@ -239,30 +146,30 @@ button.active{
 }
 
 .daybox{
-  background:white;
+  appearance:none;
+  -webkit-appearance:none;
+  width:100%;
+  margin:0;
+  padding:8px 2px;
+  border:0;
   border-radius:12px;
-  padding:7px 2px;
+  background:#fff;
+  color:#111;
   text-align:center;
   font-size:10px;
-  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  line-height:1.2;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
   cursor:pointer;
+  touch-action:manipulation;
 }
-
-.daybox.today{
-  outline:2px solid #111;
-}
-
+.daybox.today{outline:2px solid #111}
 .daybox.selected{
   background:#111;
-  color:white;
+  color:#fff;
   outline:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
 }
-
-.dots{
-  height:7px;
-  margin-top:4px;
-}
-
+.dots{height:7px;margin-top:4px}
 .dot{
   display:inline-block;
   width:6px;
@@ -270,47 +177,23 @@ button.active{
   border-radius:50%;
   margin:0 1px;
 }
-
-.dot.luis{
-  background:var(--luis);
-}
-
-.dot.alicia{
-  background:var(--alicia);
-}
-
-/* HERO */
+.dot.luis{background:var(--luis)}
+.dot.alicia{background:var(--alicia)}
+.daybox.selected .dot{box-shadow:0 0 0 1px #fff}
 
 .hero{
   background:linear-gradient(135deg,#111116,#1f1f27);
-  color:white;
+  color:#fff;
   border-radius:22px;
   padding:17px;
   margin:8px 0 16px;
   box-shadow:0 12px 30px rgba(0,0,0,.16);
 }
+.hero h2{margin:0 0 4px;font-size:20px}
+.hero p{margin:0;color:#c7c7cc;font-size:13px}
 
-.hero h2{
-  margin:0 0 4px;
-  font-size:20px;
-}
-
-.hero p{
-  margin:0;
-  color:#c7c7cc;
-  font-size:13px;
-}
-
-/* TERMINE */
-
-.week{
-  margin:20px 0;
-}
-
-.week h2{
-  font-size:17px;
-  margin-bottom:10px;
-}
+.week{margin:20px 0}
+.week h2{font-size:17px;margin:0 0 10px}
 
 .grid{
   display:grid;
@@ -318,22 +201,17 @@ button.active{
   gap:10px;
   align-items:start;
 }
-
-.kidcol{
-  display:grid;
-  gap:10px;
-  min-width:0;
-}
+.kidcol{display:grid;gap:10px;min-width:0}
 
 .card{
-  background:white;
+  background:#fff;
   border-radius:20px;
   padding:14px;
   box-shadow:var(--shadow);
   position:relative;
   overflow:hidden;
+  min-width:0;
 }
-
 .card::before{
   content:"";
   position:absolute;
@@ -342,46 +220,20 @@ button.active{
   bottom:0;
   width:5px;
 }
-
-.card.Luis::before{
-  background:var(--luis);
-}
-
-.card.Alicia::before{
-  background:var(--alicia);
-}
-
-.card.Luis{
-  background:linear-gradient(180deg,#fff,var(--luis-soft));
-}
-
-.card.Alicia{
-  background:linear-gradient(180deg,#fff,var(--alicia-soft));
-}
+.card.Luis::before{background:var(--luis)}
+.card.Alicia::before{background:var(--alicia)}
+.card.Luis{background:linear-gradient(180deg,#fff,var(--luis-soft))}
+.card.Alicia{background:linear-gradient(180deg,#fff,var(--alicia-soft))}
 
 .top{
   display:flex;
   justify-content:space-between;
   gap:12px;
 }
-
-.who{
-  font-weight:900;
-  font-size:15px;
-}
-
-.Luis .who{
-  color:var(--luis);
-}
-
-.Alicia .who{
-  color:var(--alicia);
-}
-
-.time{
-  font-size:21px;
-  font-weight:900;
-}
+.who{font-weight:900;font-size:15px}
+.Luis .who{color:var(--luis)}
+.Alicia .who{color:var(--alicia)}
+.time{font-size:21px;font-weight:900}
 
 .type{
   display:inline-block;
@@ -391,40 +243,21 @@ button.active{
   padding:5px 8px;
   border-radius:999px;
 }
+.Luis .type{background:var(--luis-soft);color:var(--luis)}
+.Alicia .type{background:var(--alicia-soft);color:var(--alicia)}
 
-.Luis .type{
-  background:var(--luis-soft);
-  color:var(--luis);
-}
-
-.Alicia .type{
-  background:var(--alicia-soft);
-  color:var(--alicia);
-}
-
-.card h3{
-  margin:10px 0 0;
-  font-size:16px;
-}
-
-.loc{
-  margin-top:10px;
-  color:#3a3a3c;
-  line-height:1.35;
-}
-
+.card h3{margin:10px 0 0;font-size:16px}
+.loc{margin-top:10px;color:#3a3a3c;line-height:1.35}
 .maps{
   display:inline-flex;
   text-decoration:none;
   margin-top:12px;
   background:#111116;
-  color:white;
+  color:#fff;
   padding:9px 12px;
   border-radius:12px;
   font-weight:800;
 }
-
-/* ZUSAGEN */
 
 .rsvp{
   display:grid;
@@ -432,40 +265,25 @@ button.active{
   gap:5px;
   margin-top:11px;
 }
-
 .rsvp button{
   margin:0;
   padding:7px 3px;
   font-size:10px;
   border-radius:10px;
-  background:white;
+  background:#fff;
   box-shadow:none;
 }
-
-.rsvp button.selected{
-  color:white;
-}
-
-.rsvp button[data-status="yes"].selected{
-  background:#34c759;
-}
-
-.rsvp button[data-status="maybe"].selected{
-  background:#ff9500;
-}
-
-.rsvp button[data-status="no"].selected{
-  background:#ff3b30;
-}
+.rsvp button.selected{color:#fff}
+.rsvp button[data-status="yes"].selected{background:#34c759}
+.rsvp button[data-status="maybe"].selected{background:#ff9500}
+.rsvp button[data-status="no"].selected{background:#ff3b30}
 
 .empty{
-  background:white;
+  background:#fff;
   padding:18px;
   border-radius:18px;
   color:var(--muted);
 }
-
-/* UNTERE NAVIGATION */
 
 .bottomnav{
   position:sticky;
@@ -474,12 +292,12 @@ button.active{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:5px;
-  background:rgba(20,20,24,.9);
+  background:rgba(20,20,24,.92);
   padding:6px;
   border-radius:18px;
   margin:18px 0 4px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
-
 .bottomnav button{
   background:transparent;
   color:#ddd;
@@ -489,11 +307,7 @@ button.active{
   padding:9px 3px;
   font-size:10px;
 }
-
-.bottomnav button.active{
-  background:white;
-  color:#111;
-}
+.bottomnav button.active{background:#fff;color:#111}
 
 footer{
   padding:24px 16px 36px;
@@ -503,53 +317,18 @@ footer{
 }
 
 @media(max-width:560px){
-
-  main{
-    padding:10px;
-  }
-
-  .dashboard{
-    gap:7px;
-  }
-
-  .nextcard{
-    padding:11px;
-  }
-
-  .grid{
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-  }
-
-  .card{
-    padding:10px 9px;
-  }
-
-  .top{
-    display:block;
-  }
-
-  .time{
-    font-size:16px;
-    margin-top:5px;
-  }
-
-  .card h3{
-    font-size:13px;
-  }
-
-  .loc{
-    font-size:11px;
-  }
-
-  .rsvp{
-    gap:3px;
-  }
-
-  .rsvp button{
-    font-size:9px;
-    padding:6px 2px;
-  }
+  main{padding:10px}
+  .dashboard{gap:7px}
+  .nextcard{padding:11px}
+  .grid{grid-template-columns:1fr 1fr;gap:8px}
+  .card{padding:10px 9px}
+  .top{display:block}
+  .time{font-size:16px;margin-top:5px}
+  .card h3{font-size:13px}
+  .loc{font-size:11px}
+  .rsvp{gap:3px}
+  .rsvp button{font-size:9px;padding:6px 2px}
+  .calendarControls button{font-size:10px;padding:7px 8px}
 }
 </style>
 </head>
@@ -557,109 +336,60 @@ footer{
 <body>
 
 <header>
-<h1>⚽ Familien Fußball</h1>
-<div class="sub">
-Luis · Eintracht Mahlsdorf • Alicia · 1. FC Union Berlin
-</div>
+  <h1>⚽ Familien Fußball</h1>
+  <div class="sub">Luis · Eintracht Mahlsdorf • Alicia · 1. FC Union Berlin</div>
 </header>
 
 <main>
 
 <div class="viewbar">
-
-<button class="active" data-view="week">
-Diese Woche
-</button>
-
-<button data-view="today">
-Heute
-</button>
-
-<button data-view="all">
-Alle Termine
-</button>
-
-<button id="refreshBtn">
-🔄 Aktualisieren
-</button>
-
+  <button class="active" data-view="week">Diese Woche</button>
+  <button data-view="today">Heute</button>
+  <button data-view="all">Alle Termine</button>
+  <button id="refreshBtn" type="button">🔄 Aktualisieren</button>
 </div>
 
 <div class="toolbar">
-
-<button class="active" data-filter="all">Alle</button>
-
-<button data-filter="Luis">Luis</button>
-
-<button data-filter="Alicia">Alicia</button>
-
+  <button class="active" data-filter="all">Alle</button>
+  <button data-filter="Luis">Luis</button>
+  <button data-filter="Alicia">Alicia</button>
 </div>
 
 <div id="changes" class="changes"></div>
-
 <div id="dashboard" class="dashboard"></div>
-
 <div id="stats" class="statusbar"></div>
-
 <div id="sources" class="sourcechips"></div>
 
 <div class="calendarControls">
-
-<button id="prevWeekBtn">
-← Woche
-</button>
-
-<button id="currentWeekBtn">
-Diese Woche
-</button>
-
-<button id="nextWeekBtn">
-Woche →
-</button>
-
+  <button id="prevWeekBtn" type="button">← Woche</button>
+  <button id="currentWeekBtn" type="button">Diese Woche</button>
+  <button id="nextWeekBtn" type="button">Woche →</button>
 </div>
 
 <div id="calendarStrip" class="calendarStrip"></div>
-
 <div id="app"></div>
 
 <div class="bottomnav">
-
-<button class="active" data-nav="week">
-🏠<br>Übersicht
-</button>
-
-<button data-nav="today">
-📅<br>Heute
-</button>
-
-<button data-nav="open">
-✓<br>Offen
-</button>
-
-<button data-nav="all">
-☰<br>Alle
-</button>
-
+  <button class="active" data-nav="week">🏠<br>Übersicht</button>
+  <button data-nav="today">📅<br>Heute</button>
+  <button data-nav="open">✓<br>Offen</button>
+  <button data-nav="all">☰<br>Alle</button>
 </div>
 
 </main>
 
 <footer>
-<div id="updated"></div>
-<div>Als App installierbar · Apple Maps direkt aus jedem Termin</div>
+  <div id="updated"></div>
+  <div>Als App installierbar · Apple Maps direkt aus jedem Termin</div>
 </footer>
 
 <script>
-
 let trainings=[];
 let myteamEvents=[];
 let aliciaUnionEvents=[];
-
 let filter="all";
 let view="week";
 let source={games:[]};
-
 let openOnly=false;
 let selectedDate="";
 let calendarWeekOffset=0;
@@ -667,1300 +397,584 @@ let calendarWeekOffset=0;
 const pad=n=>String(n).padStart(2,"0");
 
 function iso(d){
-return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 }
 
 function weekNo(d){
-
-let x=new Date(
-Date.UTC(
-d.getFullYear(),
-d.getMonth(),
-d.getDate()
-)
-);
-
-x.setUTCDate(
-x.getUTCDate()+4-(x.getUTCDay()||7)
-);
-
-let y=new Date(
-Date.UTC(x.getUTCFullYear(),0,1)
-);
-
-return Math.ceil(
-(((x-y)/86400000)+1)/7
-);
-
+  let x=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));
+  x.setUTCDate(x.getUTCDate()+4-(x.getUTCDay()||7));
+  let y=new Date(Date.UTC(x.getUTCFullYear(),0,1));
+  return Math.ceil((((x-y)/86400000)+1)/7);
 }
 
 function monday(d){
-
-let x=new Date(d);
-
-let n=x.getDay()||7;
-
-x.setDate(
-x.getDate()-n+1
-);
-
-x.setHours(0,0,0,0);
-
-return x;
-
+  let x=new Date(d);
+  let n=x.getDay()||7;
+  x.setDate(x.getDate()-n+1);
+  x.setHours(0,0,0,0);
+  return x;
 }
 
 function fmt(d){
-
-return d.toLocaleDateString(
-"de-DE",
-{
-weekday:"short",
-day:"2-digit",
-month:"2-digit"
+  return d.toLocaleDateString("de-DE",{
+    weekday:"short",
+    day:"2-digit",
+    month:"2-digit"
+  });
 }
-);
-
-}
-
-/* TRAINING ALICIA */
 
 function buildTraining(start,end){
-
-let out=[];
-
-for(
-let d=new Date(start);
-d<=end;
-d.setDate(d.getDate()+1)
-){
-
-for(const t of trainings){
-
-if(
-t.child==="Alicia" &&
-t.day===d.getDay()
-){
-
-out.push({
-
-date:iso(d),
-time:t.time,
-child:t.child,
-type:"Training",
-title:t.title,
-location:t.location,
-maps:
-"https://maps.apple.com/?q="+
-encodeURIComponent(t.location)
-
-});
-
+  let out=[];
+  for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){
+    for(const t of trainings){
+      if(t.child==="Alicia" && t.day===d.getDay()){
+        out.push({
+          date:iso(d),
+          time:t.time,
+          child:t.child,
+          type:"Training",
+          title:t.title,
+          location:t.location,
+          maps:"https://maps.apple.com/?q="+encodeURIComponent(t.location)
+        });
+      }
+    }
+  }
+  return out;
 }
-
-}
-
-}
-
-return out;
-
-}
-
-/* STATUS */
 
 function eventKey(e){
-
-return [
-e.child,
-e.date,
-e.time,
-e.title,
-e.location
-].join("|");
-
+  return [e.child,e.date,e.time,e.title,e.location].join("|");
 }
 
 function getRsvp(e){
-
-try{
-
-return localStorage.getItem(
-"rsvp:"+eventKey(e)
-)||"";
-
-}catch(_){
-
-return "";
-
-}
-
+  try{
+    return localStorage.getItem("rsvp:"+eventKey(e))||"";
+  }catch(_){
+    return "";
+  }
 }
 
 function setRsvp(key,status){
-
-try{
-
-let k="rsvp:"+key;
-
-if(
-localStorage.getItem(k)===status
-){
-
-localStorage.removeItem(k);
-
-}else{
-
-localStorage.setItem(
-k,
-status
-);
-
-}
-
-}catch(_){}
-
-render();
-
+  try{
+    const k="rsvp:"+key;
+    if(localStorage.getItem(k)===status){
+      localStorage.removeItem(k);
+    }else{
+      localStorage.setItem(k,status);
+    }
+  }catch(_){}
+  render();
 }
 
 function rsvpButtons(e){
+  const key=eventKey(e)
+    .replace(/\\/g,"\\\\")
+    .replace(/'/g,"\\'");
+  const s=getRsvp(e);
 
-const k=
-eventKey(e)
-.replace(/\\/g,"\\\\")
-.replace(/'/g,"\\'");
+  return `
+    <div class="rsvp">
+      <button type="button" data-status="yes"
+        class="${s==="yes"?"selected":""}"
+        onclick="setRsvp('${key}','yes')">✓ Zusage</button>
 
-const s=getRsvp(e);
+      <button type="button" data-status="maybe"
+        class="${s==="maybe"?"selected":""}"
+        onclick="setRsvp('${key}','maybe')">? Vielleicht</button>
 
-return `
-
-<div class="rsvp">
-
-<button
-data-status="yes"
-class="${s==="yes"?"selected":""}"
-onclick="setRsvp('${k}','yes')">
-
-✓ Zusage
-
-</button>
-
-<button
-data-status="maybe"
-class="${s==="maybe"?"selected":""}"
-onclick="setRsvp('${k}','maybe')">
-
-? Vielleicht
-
-</button>
-
-<button
-data-status="no"
-class="${s==="no"?"selected":""}"
-onclick="setRsvp('${k}','no')">
-
-✕ Absage
-
-</button>
-
-</div>
-
-`;
-
+      <button type="button" data-status="no"
+        class="${s==="no"?"selected":""}"
+        onclick="setRsvp('${key}','no')">✕ Absage</button>
+    </div>
+  `;
 }
-
-/* TERMINART */
 
 function typeIcon(e){
+  const s=((e.type||"")+" "+(e.title||"")).toLowerCase();
 
-const s=
-(
-(e.type||"")+" "+
-(e.title||"")
-).toLowerCase();
+  if(s.includes("training")) return "🏃";
+  if(s.includes("foto")||s.includes("portrait")) return "📸";
+  if(s.includes("eltern")||s.includes("versammlung")) return "👥";
+  if(s.includes("turnier")||s.includes("festival")) return "🏆";
+  if(s.includes("spiel")||s.includes("liga")||s.includes("freundschaft")) return "⚽";
 
-if(s.includes("training"))
-return "🏃";
-
-if(
-s.includes("foto") ||
-s.includes("portrait")
-)
-return "📸";
-
-if(
-s.includes("eltern") ||
-s.includes("versammlung")
-)
-return "👥";
-
-if(
-s.includes("turnier") ||
-s.includes("festival")
-)
-return "🏆";
-
-if(
-s.includes("spiel") ||
-s.includes("liga") ||
-s.includes("freundschaft")
-)
-return "⚽";
-
-return "📌";
-
+  return "📌";
 }
-
-/* ALLE TERMINE */
 
 function allEvents(){
+  const today=new Date();
+  today.setHours(0,0,0,0);
 
-const today=new Date();
+  const horizon=new Date(today);
+  horizon.setDate(horizon.getDate()+84);
 
-today.setHours(0,0,0,0);
-
-const horizon=new Date(today);
-
-horizon.setDate(
-horizon.getDate()+84
-);
-
-return [
-
-...source.games,
-...myteamEvents,
-...aliciaUnionEvents,
-...buildTraining(today,horizon)
-
-]
-
-.filter(
-e=>
-new Date(
-e.date+"T23:59:00"
-)>=today
-)
-
-.sort(
-(a,b)=>
-(a.date+a.time)
-.localeCompare(
-b.date+b.time
-)
-);
-
+  return [
+    ...source.games,
+    ...myteamEvents,
+    ...aliciaUnionEvents,
+    ...buildTraining(today,horizon)
+  ]
+  .filter(e=>new Date(e.date+"T23:59:00")>=today)
+  .sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
 }
-
-/* DASHBOARD */
 
 function renderExtras(){
+  const ev=allEvents();
+  const now=new Date();
 
-const ev=allEvents();
+  const next=child=>ev.find(e=>e.child===child);
 
-const now=new Date();
+  function nextCard(child,cls){
+    const e=next(child);
 
-function next(child){
+    if(!e){
+      return `
+        <div class="nextcard ${cls}">
+          <div class="nextlabel">Nächster Termin</div>
+          <div class="nextname">${child}</div>
+          <div class="nexttitle">Kein Termin</div>
+        </div>
+      `;
+    }
 
-return ev.find(
-e=>e.child===child
-);
+    const d=new Date(e.date+"T12:00:00");
 
+    return `
+      <div class="nextcard ${cls}">
+        <div class="nextlabel">Nächster Termin</div>
+        <div class="nextname">${child}</div>
+        <div class="nextwhen">${typeIcon(e)} ${fmt(d)} · ${e.time}</div>
+        <div class="nexttitle">${e.title}</div>
+        <div class="nextloc">📍 ${e.location}</div>
+      </div>
+    `;
+  }
+
+  document.querySelector("#dashboard").innerHTML=
+    nextCard("Luis","luis")+
+    nextCard("Alicia","alicia");
+
+  const yes=ev.filter(e=>getRsvp(e)==="yes").length;
+  const maybe=ev.filter(e=>getRsvp(e)==="maybe").length;
+  const open=ev.filter(e=>!getRsvp(e)).length;
+
+  document.querySelector("#stats").innerHTML=`
+    <div class="stat"><b>${yes}</b><span>zugesagt</span></div>
+    <div class="stat"><b>${maybe}</b><span>vielleicht</span></div>
+    <div class="stat"><b>${open}</b><span>noch offen</span></div>
+  `;
+
+  document.querySelector("#sources").innerHTML=`
+    <span class="sourcechip">⚽ FUSSBALL.DE</span>
+    <span class="sourcechip">🟣 Luis · myteam</span>
+    <span class="sourcechip">🔴 Alicia · Union</span>
+  `;
+
+  const base=monday(now);
+  base.setDate(base.getDate()+calendarWeekOffset*7);
+
+  const days=[];
+
+  for(let i=0;i<7;i++){
+    const d=new Date(base);
+    d.setDate(d.getDate()+i);
+
+    const ds=iso(d);
+    const dayEvents=ev.filter(e=>e.date===ds);
+
+    const luis=dayEvents.some(e=>e.child==="Luis");
+    const alicia=dayEvents.some(e=>e.child==="Alicia");
+
+    days.push(`
+      <button
+        type="button"
+        class="daybox ${ds===iso(now)?"today":""} ${ds===selectedDate?"selected":""}"
+        data-date="${ds}"
+        aria-label="${d.toLocaleDateString("de-DE")}">
+        ${d.toLocaleDateString("de-DE",{weekday:"short"}).slice(0,2)}
+        <br>
+        <b>${d.getDate()}</b>
+        <div class="dots">
+          ${luis?'<i class="dot luis"></i>':""}
+          ${alicia?'<i class="dot alicia"></i>':""}
+        </div>
+      </button>
+    `);
+  }
+
+  document.querySelector("#calendarStrip").innerHTML=days.join("");
+
+  try{
+    const sig=JSON.stringify(
+      ev.map(e=>[e.child,e.date,e.time,e.title,e.location])
+    );
+
+    const old=localStorage.getItem("eventsSignature");
+    const ch=document.querySelector("#changes");
+
+    if(old && old!==sig){
+      ch.textContent="⚠️ Termine wurden seit deinem letzten Besuch aktualisiert.";
+      ch.classList.add("show");
+    }else{
+      ch.classList.remove("show");
+    }
+
+    localStorage.setItem("eventsSignature",sig);
+  }catch(_){}
 }
-
-function ncard(child,cls){
-
-const e=next(child);
-
-if(!e){
-
-return `
-
-<div class="nextcard ${cls}">
-
-<div class="nextlabel">
-Nächster Termin
-</div>
-
-<div class="nextname">
-${child}
-</div>
-
-<div class="nexttitle">
-Kein Termin
-</div>
-
-</div>
-
-`;
-
-}
-
-const d=
-new Date(
-e.date+"T12:00:00"
-);
-
-return `
-
-<div class="nextcard ${cls}">
-
-<div class="nextlabel">
-Nächster Termin
-</div>
-
-<div class="nextname">
-${child}
-</div>
-
-<div class="nextwhen">
-
-${typeIcon(e)}
-${fmt(d)}
-·
-${e.time}
-
-</div>
-
-<div class="nexttitle">
-${e.title}
-</div>
-
-<div class="nextloc">
-📍 ${e.location}
-</div>
-
-</div>
-
-`;
-
-}
-
-document.querySelector(
-"#dashboard"
-).innerHTML=
-
-ncard("Luis","luis")+
-ncard("Alicia","alicia");
-
-/* STATUS */
-
-const yes=
-ev.filter(
-e=>getRsvp(e)==="yes"
-).length;
-
-const maybe=
-ev.filter(
-e=>getRsvp(e)==="maybe"
-).length;
-
-const open=
-ev.filter(
-e=>!getRsvp(e)
-).length;
-
-document.querySelector(
-"#stats"
-).innerHTML=`
-
-<div class="stat">
-
-<b>${yes}</b>
-
-<span>zugesagt</span>
-
-</div>
-
-<div class="stat">
-
-<b>${maybe}</b>
-
-<span>vielleicht</span>
-
-</div>
-
-<div class="stat">
-
-<b>${open}</b>
-
-<span>noch offen</span>
-
-</div>
-
-`;
-
-/* QUELLEN */
-
-document.querySelector(
-"#sources"
-).innerHTML=`
-
-<span class="sourcechip">
-⚽ FUSSBALL.DE
-</span>
-
-<span class="sourcechip">
-🔵 Luis · myteam
-</span>
-
-<span class="sourcechip">
-🔴 Alicia · Union
-</span>
-
-`;
-
-/* WOCHENKALENDER */
-
-const base=monday(now);
-
-base.setDate(
-base.getDate()+
-calendarWeekOffset*7
-);
-
-const days=[];
-
-for(let i=0;i<7;i++){
-
-let d=new Date(base);
-
-d.setDate(
-d.getDate()+i
-);
-
-let de=
-ev.filter(
-e=>e.date===iso(d)
-);
-
-const ds=iso(d);
-
-days.push(`
-
-<div
-class="
-daybox
-${ds===iso(now)?"today":""}
-${ds===selectedDate?"selected":""}
-"
-data-date="${ds}"
->
-
-${d
-.toLocaleDateString(
-"de-DE",
-{weekday:"short"}
-)
-.slice(0,2)}
-
-<br>
-
-<b>
-${d.getDate()}
-</b>
-
-<div class="dots">
-
-${
-de.some(
-e=>e.child==="Luis"
-)
-?
-'<i class="dot luis"></i>'
-:
-""
-}
-
-${
-de.some(
-e=>e.child==="Alicia"
-)
-?
-'<i class="dot alicia"></i>'
-:
-""
-}
-
-</div>
-
-</div>
-
-`);
-
-}
-
-document.querySelector(
-"#calendarStrip"
-).innerHTML=
-days.join("");
-
-document
-.querySelectorAll(
-".daybox[data-date]"
-)
-.forEach(el=>{
-
-el.onclick=()=>{
-
-const d=
-el.dataset.date;
-
-selectedDate=
-selectedDate===d
-?
-""
-:
-d;
-
-if(selectedDate){
-
-view="day";
-openOnly=false;
-
-}else{
-
-view="week";
-
-}
-
-render();
-
-};
-
-});
-
-/* ÄNDERUNGEN */
-
-try{
-
-const sig=
-JSON.stringify(
-ev.map(
-e=>[
-e.child,
-e.date,
-e.time,
-e.title,
-e.location
-]
-)
-);
-
-const old=
-localStorage.getItem(
-"eventsSignature"
-);
-
-const ch=
-document.querySelector(
-"#changes"
-);
-
-if(
-old &&
-old!==sig
-){
-
-ch.textContent=
-"⚠️ Termine wurden seit deinem letzten Besuch aktualisiert.";
-
-ch.classList.add(
-"show"
-);
-
-}else{
-
-ch.classList.remove(
-"show"
-);
-
-}
-
-localStorage.setItem(
-"eventsSignature",
-sig
-);
-
-}catch(_){}
-
-}
-
-/* TERMIN-KARTE */
 
 function card(e){
+  const dt=new Date(e.date+"T12:00:00");
 
-let dt=
-new Date(
-e.date+"T12:00:00"
-);
+  const mapsBtn=e.maps
+    ? `<a class="maps" href="${e.maps}">Apple Maps →</a>`
+    : "";
 
-let mapsBtn=
-e.maps
-?
-`
-<a
-class="maps"
-href="${e.maps}">
-Apple Maps →
-</a>
-`
-:
-"";
+  return `
+    <article class="card ${e.child}">
+      <div class="top">
+        <div>
+          <div class="who">${e.child}</div>
+          <div>${fmt(dt)}</div>
+        </div>
+        <div class="time">${e.time}</div>
+      </div>
 
-return `
+      <div class="type">${typeIcon(e)} ${e.type}</div>
 
-<article class="card ${e.child}">
+      <h3>${e.title}</h3>
 
-<div class="top">
+      <div class="loc">📍 ${e.location}</div>
 
-<div>
-
-<div class="who">
-${e.child}
-</div>
-
-<div>
-${fmt(dt)}
-</div>
-
-</div>
-
-<div class="time">
-${e.time}
-</div>
-
-</div>
-
-<div class="type">
-
-${typeIcon(e)}
-${e.type}
-
-</div>
-
-<h3>
-${e.title}
-</h3>
-
-<div class="loc">
-📍 ${e.location}
-</div>
-
-${mapsBtn}
-
-${rsvpButtons(e)}
-
-</article>
-
-`;
-
+      ${mapsBtn}
+      ${rsvpButtons(e)}
+    </article>
+  `;
 }
-
-/* LUIS LINKS / ALICIA RECHTS */
 
 function twoCols(list){
+  const luis=list.filter(e=>e.child==="Luis");
+  const alicia=list.filter(e=>e.child==="Alicia");
 
-const l=
-list.filter(
-e=>e.child==="Luis"
-);
-
-const a=
-list.filter(
-e=>e.child==="Alicia"
-);
-
-return `
-
-<div class="grid">
-
-<div class="kidcol">
-${l.map(card).join("")}
-</div>
-
-<div class="kidcol">
-${a.map(card).join("")}
-</div>
-
-</div>
-
-`;
-
+  return `
+    <div class="grid">
+      <div class="kidcol">${luis.map(card).join("")}</div>
+      <div class="kidcol">${alicia.map(card).join("")}</div>
+    </div>
+  `;
 }
-
-/* HAUPTANSICHT */
 
 function render(){
+  const today=new Date();
+  today.setHours(0,0,0,0);
 
-const today=new Date();
+  let ev=allEvents();
 
-today.setHours(0,0,0,0);
+  if(filter!=="all"){
+    ev=ev.filter(e=>e.child===filter);
+  }
 
-let ev=
-allEvents();
+  if(openOnly){
+    ev=ev.filter(e=>!getRsvp(e));
+  }
 
-if(filter!=="all"){
+  renderExtras();
 
-ev=
-ev.filter(
-e=>e.child===filter
-);
+  let html="";
 
+  if(view==="day" && selectedDate){
+
+    const d=new Date(selectedDate+"T12:00:00");
+    const list=ev.filter(e=>e.date===selectedDate);
+
+    html=`
+      <div class="hero">
+        <h2>${d.toLocaleDateString("de-DE",{
+          weekday:"long",
+          day:"2-digit",
+          month:"long"
+        })}</h2>
+        <p>Ausgewählter Tag</p>
+      </div>
+    `;
+
+    html+=list.length
+      ? twoCols(list)
+      : `<div class="empty">An diesem Tag stehen keine Fußballtermine an.</div>`;
+
+  }else if(view==="today"){
+
+    const list=ev.filter(e=>e.date===iso(today));
+
+    html=`
+      <div class="hero">
+        <h2>Heute</h2>
+        <p>${today.toLocaleDateString("de-DE",{
+          weekday:"long",
+          day:"2-digit",
+          month:"long"
+        })}</p>
+      </div>
+    `;
+
+    html+=list.length
+      ? twoCols(list)
+      : `<div class="empty">Heute stehen keine Fußballtermine an.</div>`;
+
+  }else if(view==="week"){
+
+    const m=monday(today);
+    const s=new Date(m);
+    s.setDate(s.getDate()+6);
+
+    const list=ev.filter(e=>{
+      const d=new Date(e.date+"T12:00:00");
+      return d>=m && d<=s;
+    });
+
+    html=`
+      <div class="hero">
+        <h2>Diese Woche · KW ${weekNo(today)}</h2>
+        <p>
+          ${m.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"})}
+          –
+          ${s.toLocaleDateString("de-DE")}
+        </p>
+      </div>
+    `;
+
+    html+=list.length
+      ? twoCols(list)
+      : `<div class="empty">Diese Woche stehen keine Fußballtermine an.</div>`;
+
+  }else{
+
+    const groups={};
+
+    for(const e of ev){
+      const d=new Date(e.date+"T12:00:00");
+      const k=`${d.getFullYear()}-${weekNo(d)}`;
+
+      if(!groups[k]){
+        groups[k]=[];
+      }
+
+      groups[k].push(e);
+    }
+
+    for(const list of Object.values(groups)){
+      const d=new Date(list[0].date+"T12:00:00");
+      const m=monday(d);
+      const s=new Date(m);
+      s.setDate(s.getDate()+6);
+
+      html+=`
+        <section class="week">
+          <h2>
+            KW ${weekNo(d)} ·
+            ${m.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"})}
+            –
+            ${s.toLocaleDateString("de-DE")}
+          </h2>
+          ${twoCols(list)}
+        </section>
+      `;
+    }
+  }
+
+  document.querySelector("#app").innerHTML=
+    html || `<div class="empty">Keine Termine gefunden.</div>`;
 }
 
-if(openOnly){
+async function loadData(showFeedback=false){
+  const btn=document.querySelector("#refreshBtn");
 
-ev=
-ev.filter(
-e=>!getRsvp(e)
-);
+  if(showFeedback){
+    btn.disabled=true;
+    btn.textContent="⏳ Aktualisiere…";
+  }
 
+  try{
+    const stamp=Date.now();
+
+    const [
+      gamesData,
+      trainingsData,
+      myteamData,
+      unionData
+    ]=await Promise.all([
+      fetch("data/events.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
+      fetch("data/trainings.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
+      fetch("data/luis_myteam.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
+      fetch("data/alicia_union.json?"+stamp,{cache:"no-store"}).then(r=>r.json())
+    ]);
+
+    source=gamesData;
+    trainings=trainingsData.trainings||[];
+    myteamEvents=myteamData.events||[];
+    aliciaUnionEvents=unionData.events||[];
+
+    const newest=[
+      gamesData.updated,
+      myteamData.updated,
+      unionData.updated
+    ].filter(Boolean).sort().pop();
+
+    document.querySelector("#updated").textContent=
+      newest
+        ? "Zuletzt aktualisiert: "+new Date(newest).toLocaleString("de-DE")
+        : "";
+
+    render();
+
+    if(showFeedback){
+      btn.textContent="✅ Aktualisiert";
+    }
+
+  }catch(err){
+
+    console.error(err);
+
+    if(showFeedback){
+      btn.textContent="⚠️ Fehler";
+    }
+
+    render();
+
+  }finally{
+
+    if(showFeedback){
+      setTimeout(()=>{
+        btn.disabled=false;
+        btn.textContent="🔄 Aktualisieren";
+      },1200);
+    }
+  }
 }
 
-renderExtras();
+/* FILTER */
+document.querySelectorAll("button[data-filter]").forEach(b=>{
+  b.addEventListener("click",()=>{
+    document.querySelectorAll("button[data-filter]")
+      .forEach(x=>x.classList.remove("active"));
 
-let html="";
+    b.classList.add("active");
 
-/* AUSGEWÄHLTER TAG */
-
-if(
-view==="day" &&
-selectedDate
-){
-
-const d=
-new Date(
-selectedDate+"T12:00:00"
-);
-
-const list=
-ev.filter(
-e=>e.date===selectedDate
-);
-
-html=`
-
-<div class="hero">
-
-<h2>
-
-${d.toLocaleDateString(
-"de-DE",
-{
-weekday:"long",
-day:"2-digit",
-month:"long"
-}
-)}
-
-</h2>
-
-<p>
-Ausgewählter Tag
-</p>
-
-</div>
-
-`;
-
-html+=
-list.length
-?
-twoCols(list)
-:
-`
-<div class="empty">
-An diesem Tag stehen keine Fußballtermine an.
-</div>
-`;
-
-}
-
-/* HEUTE */
-
-else if(view==="today"){
-
-const list=
-ev.filter(
-e=>e.date===iso(today)
-);
-
-html=`
-
-<div class="hero">
-
-<h2>
-Heute
-</h2>
-
-<p>
-
-${today.toLocaleDateString(
-"de-DE",
-{
-weekday:"long",
-day:"2-digit",
-month:"long"
-}
-)}
-
-</p>
-
-</div>
-
-`;
-
-html+=
-list.length
-?
-twoCols(list)
-:
-`
-<div class="empty">
-Heute stehen keine Fußballtermine an.
-</div>
-`;
-
-}
-
-/* DIESE WOCHE */
-
-else if(view==="week"){
-
-const m=
-monday(today);
-
-const s=
-new Date(m);
-
-s.setDate(
-s.getDate()+6
-);
-
-const list=
-ev.filter(e=>{
-
-let d=
-new Date(
-e.date+"T12:00:00"
-);
-
-return d>=m && d<=s;
-
+    filter=b.dataset.filter;
+    render();
+  });
 });
 
-html=`
-
-<div class="hero">
-
-<h2>
-Diese Woche · KW ${weekNo(today)}
-</h2>
-
-<p>
-
-${m.toLocaleDateString(
-"de-DE",
-{
-day:"2-digit",
-month:"2-digit"
-}
-)}
-
-–
-
-${s.toLocaleDateString(
-"de-DE"
-)}
-
-</p>
-
-</div>
-
-`;
-
-html+=
-list.length
-?
-twoCols(list)
-:
-`
-<div class="empty">
-Diese Woche stehen keine Fußballtermine an.
-</div>
-`;
-
-}
-
-/* ALLE */
-
-else{
-
-let groups={};
-
-for(const e of ev){
-
-let d=
-new Date(
-e.date+"T12:00:00"
-);
-
-let k=
-`${d.getFullYear()}-${weekNo(d)}`;
-
-(groups[k]??=[]).push(e);
-
-}
-
-for(
-const list of
-Object.values(groups)
-){
-
-let d=
-new Date(
-list[0].date+"T12:00:00"
-);
-
-let m=
-monday(d);
-
-let s=
-new Date(m);
-
-s.setDate(
-s.getDate()+6
-);
-
-html+=`
-
-<section class="week">
-
-<h2>
-
-KW ${weekNo(d)}
-
-·
-
-${m.toLocaleDateString(
-"de-DE",
-{
-day:"2-digit",
-month:"2-digit"
-}
-)}
-
-–
-
-${s.toLocaleDateString(
-"de-DE"
-)}
-
-</h2>
-
-${twoCols(list)}
-
-</section>
-
-`;
-
-}
-
-}
-
-document.querySelector(
-"#app"
-).innerHTML=
-html;
-
-}
-
-/* DATEN LADEN */
-
-async function load(){
-
-const stamp=
-Date.now();
-
-try{
-
-const [
-gamesData,
-trainingsData,
-myteamData,
-unionData
-]
-=
-await Promise.all([
-
-fetch(
-"data/events.json?"+stamp,
-{cache:"no-store"}
-).then(r=>r.json()),
-
-fetch(
-"data/trainings.json?"+stamp,
-{cache:"no-store"}
-).then(r=>r.json()),
-
-fetch(
-"data/luis_myteam.json?"+stamp,
-{cache:"no-store"}
-).then(r=>r.json()),
-
-fetch(
-"data/alicia_union.json?"+stamp,
-{cache:"no-store"}
-).then(r=>r.json())
-
-]);
-
-source=
-gamesData;
-
-trainings=
-trainingsData.trainings||[];
-
-myteamEvents=
-myteamData.events||[];
-
-aliciaUnionEvents=
-unionData.events||[];
-
-const newest=[
-gamesData.updated,
-myteamData.updated,
-unionData.updated
-]
-.filter(Boolean)
-.sort()
-.pop();
-
-document.querySelector(
-"#updated"
-).textContent=
-
-newest
-?
-"Zuletzt aktualisiert: "+
-new Date(newest)
-.toLocaleString("de-DE")
-:
-"";
-
-render();
-
-}catch(err){
-
-document.querySelector(
-"#app"
-).innerHTML=
-
-`
-<div class="empty">
-Termine konnten nicht geladen werden.
-</div>
-`;
-
-console.error(err);
-
-}
-
-}
-
-/* OBERER FILTER */
-
-document
-.querySelectorAll(
-"button[data-filter]"
-)
-.forEach(b=>{
-
-b.onclick=()=>{
-
-document
-.querySelectorAll(
-"button[data-filter]"
-)
-.forEach(
-x=>x.classList.remove("active")
-);
-
-b.classList.add(
-"active"
-);
-
-filter=
-b.dataset.filter;
-
-render();
-
-};
-
+/* OBERE ANSICHT */
+document.querySelectorAll("button[data-view]").forEach(b=>{
+  b.addEventListener("click",()=>{
+    document.querySelectorAll("button[data-view]")
+      .forEach(x=>x.classList.remove("active"));
+
+    b.classList.add("active");
+
+    selectedDate="";
+    calendarWeekOffset=0;
+    openOnly=false;
+    view=b.dataset.view;
+
+    render();
+  });
 });
 
-/* OBERER ANSICHTSFILTER */
+/* KALENDERTAG */
+document.querySelector("#calendarStrip").addEventListener("click",event=>{
+  const day=event.target.closest("button.daybox[data-date]");
 
-document
-.querySelectorAll(
-"button[data-view]"
-)
-.forEach(b=>{
+  if(!day){
+    return;
+  }
 
-b.onclick=()=>{
+  selectedDate=day.dataset.date;
+  view="day";
+  openOnly=false;
 
-document
-.querySelectorAll(
-"button[data-view]"
-)
-.forEach(
-x=>x.classList.remove("active")
-);
+  document.querySelectorAll("button[data-view]")
+    .forEach(x=>x.classList.remove("active"));
 
-b.classList.add(
-"active"
-);
+  document.querySelectorAll("button[data-nav]")
+    .forEach(x=>x.classList.remove("active"));
 
-selectedDate="";
-calendarWeekOffset=0;
+  render();
 
-view=
-b.dataset.view;
+  setTimeout(()=>{
+    const app=document.querySelector("#app");
+    if(app){
+      app.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+    }
+  },50);
+});
 
-openOnly=false;
+/* WOCHEN BLÄTTERN */
+document.querySelector("#prevWeekBtn").addEventListener("click",()=>{
+  calendarWeekOffset--;
+  selectedDate="";
+  view="week";
+  openOnly=false;
+  render();
+});
 
-render();
+document.querySelector("#nextWeekBtn").addEventListener("click",()=>{
+  calendarWeekOffset++;
+  selectedDate="";
+  view="week";
+  openOnly=false;
+  render();
+});
 
-};
-
+document.querySelector("#currentWeekBtn").addEventListener("click",()=>{
+  calendarWeekOffset=0;
+  selectedDate="";
+  view="week";
+  openOnly=false;
+  render();
 });
 
 /* AKTUALISIEREN */
-
-document.querySelector(
-"#refreshBtn"
-).onclick=()=>{
-
-document.querySelector(
-"#refreshBtn"
-).textContent=
-"⏳ Aktualisiere…";
-
-load().finally(()=>{
-
-document.querySelector(
-"#refreshBtn"
-).textContent=
-"🔄 Aktualisieren";
-
+document.querySelector("#refreshBtn").addEventListener("click",()=>{
+  loadData(true);
 });
-
-};
-
-/* WOCHEN BLÄTTERN */
-
-document.querySelector(
-"#prevWeekBtn"
-).onclick=()=>{
-
-calendarWeekOffset--;
-
-selectedDate="";
-
-render();
-
-};
-
-document.querySelector(
-"#nextWeekBtn"
-).onclick=()=>{
-
-calendarWeekOffset++;
-
-selectedDate="";
-
-render();
-
-};
-
-document.querySelector(
-"#currentWeekBtn"
-).onclick=()=>{
-
-calendarWeekOffset=0;
-
-selectedDate="";
-
-view="week";
-
-render();
-
-};
 
 /* UNTERE NAVIGATION */
+document.querySelectorAll("button[data-nav]").forEach(b=>{
+  b.addEventListener("click",()=>{
+    document.querySelectorAll("button[data-nav]")
+      .forEach(x=>x.classList.remove("active"));
 
-document
-.querySelectorAll(
-"button[data-nav]"
-)
-.forEach(b=>{
+    b.classList.add("active");
 
-b.onclick=()=>{
+    const n=b.dataset.nav;
 
-document
-.querySelectorAll(
-"button[data-nav]"
-)
-.forEach(
-x=>x.classList.remove("active")
-);
+    selectedDate="";
+    calendarWeekOffset=0;
+    openOnly=n==="open";
 
-b.classList.add(
-"active"
-);
+    if(n==="today"){
+      view="today";
+    }else if(n==="all"){
+      view="all";
+    }else{
+      view="week";
+    }
 
-const n=
-b.dataset.nav;
-
-selectedDate="";
-calendarWeekOffset=0;
-
-openOnly=
-n==="open";
-
-view=
-n==="today"
-?
-"today"
-:
-n==="all"
-?
-"all"
-:
-"week";
-
-render();
-
-};
-
+    render();
+  });
 });
 
-/* SERVICE WORKER */
-
-if(
-"serviceWorker" in navigator
-){
-
-navigator
-.serviceWorker
-.register("sw.js");
-
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("sw.js");
 }
 
-/* START */
-
-load();
-
+loadData();
 </script>
 
 </body>

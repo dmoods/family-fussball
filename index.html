@@ -1,10 +1,15 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827"><title>Familien Fußball</title>
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<title>Familien Fußball</title>
+
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 <style>
 :root{
   --bg:#f2f2f7;
@@ -12,50 +17,64 @@
   --text:#111111;
   --muted:#6e6e73;
   --line:#d1d1d6;
-  --header:#0b0b0f;
   --luis:#6f2dbd;
   --luis-soft:#f2eaff;
   --alicia:#d80027;
   --alicia-soft:#fff0f2;
-  --accent:#ffffff;
   --shadow:0 10px 30px rgba(0,0,0,.08);
 }
+
 *{box-sizing:border-box}
+
 html{-webkit-text-size-adjust:100%}
+
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(111,45,189,.08), transparent 34%),
-    radial-gradient(circle at top right, rgba(216,0,39,.08), transparent 34%),
+    radial-gradient(circle at top left,rgba(111,45,189,.08),transparent 34%),
+    radial-gradient(circle at top right,rgba(216,0,39,.08),transparent 34%),
     var(--bg);
   color:var(--text);
   letter-spacing:-.01em;
 }
+
 header{
-  background:linear-gradient(135deg,#0b0b0f 0%,#15151c 100%);
-  color:#fff;
+  background:linear-gradient(135deg,#0b0b0f,#15151c);
+  color:white;
   padding:22px 18px 18px;
   position:sticky;
   top:0;
   z-index:5;
-  border-bottom:1px solid rgba(255,255,255,.06);
   box-shadow:0 8px 24px rgba(0,0,0,.16);
 }
+
 h1{
   margin:0;
   font-size:25px;
   font-weight:850;
-  letter-spacing:-.03em;
 }
+
 .sub{
   font-size:13px;
   color:#d1d1d6;
   margin-top:6px;
-  line-height:1.35;
 }
-main{max-width:920px;margin:auto;padding:16px}
-.toolbar,.viewbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+
+main{
+  max-width:920px;
+  margin:auto;
+  padding:16px;
+}
+
+.toolbar,
+.viewbar{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+
 button{
   border:1px solid rgba(0,0,0,.06);
   border-radius:999px;
@@ -65,332 +84,1884 @@ button{
   color:#1c1c1e;
   cursor:pointer;
   box-shadow:0 2px 10px rgba(0,0,0,.05);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
 }
-button:active{transform:scale(.97)}
+
+button:active{
+  transform:scale(.97);
+}
+
 button.active{
   background:#111;
-  color:#fff;
-  box-shadow:0 4px 14px rgba(0,0,0,.16);
+  color:white;
 }
+
 #refreshBtn{
   margin-left:auto;
-  background:linear-gradient(135deg,#fff,#f7f7fa);
 }
+
+/* DASHBOARD */
+
+.dashboard{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:10px 0 14px;
+}
+
+.nextcard{
+  border-radius:20px;
+  padding:14px;
+  color:white;
+  box-shadow:var(--shadow);
+  min-width:0;
+}
+
+.nextcard.luis{
+  background:linear-gradient(135deg,#55208f,#7f3fd0);
+}
+
+.nextcard.alicia{
+  background:linear-gradient(135deg,#a90020,#e11d3f);
+}
+
+.nextlabel{
+  font-size:11px;
+  font-weight:800;
+  opacity:.85;
+  text-transform:uppercase;
+}
+
+.nextname{
+  font-size:18px;
+  font-weight:900;
+  margin:2px 0 8px;
+}
+
+.nextwhen{
+  font-size:16px;
+  font-weight:900;
+}
+
+.nexttitle{
+  font-size:12px;
+  font-weight:750;
+  margin-top:5px;
+}
+
+.nextloc{
+  font-size:10px;
+  opacity:.86;
+  margin-top:5px;
+}
+
+/* STATUS */
+
+.statusbar{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+  margin-bottom:12px;
+}
+
+.stat{
+  background:white;
+  border-radius:14px;
+  padding:10px;
+  text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
+}
+
+.stat b{
+  display:block;
+  font-size:18px;
+}
+
+.stat span{
+  font-size:10px;
+  color:var(--muted);
+  font-weight:750;
+}
+
+/* ÄNDERUNGEN */
+
+.changes{
+  display:none;
+  background:#fff8e7;
+  border:1px solid #ffd98a;
+  border-radius:14px;
+  padding:10px 12px;
+  margin-bottom:12px;
+  font-size:12px;
+  font-weight:750;
+}
+
+.changes.show{
+  display:block;
+}
+
+/* QUELLEN */
+
+.sourcechips{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+
+.sourcechip{
+  font-size:10px;
+  font-weight:750;
+  background:white;
+  padding:6px 8px;
+  border-radius:999px;
+}
+
+/* KALENDER */
+
+.calendarControls{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+}
+
+.calendarControls button{
+  padding:7px 10px;
+  font-size:11px;
+}
+
+.calendarStrip{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:4px;
+  margin:10px 0 14px;
+}
+
+.daybox{
+  background:white;
+  border-radius:12px;
+  padding:7px 2px;
+  text-align:center;
+  font-size:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  cursor:pointer;
+}
+
+.daybox.today{
+  outline:2px solid #111;
+}
+
+.daybox.selected{
+  background:#111;
+  color:white;
+  outline:none;
+}
+
+.dots{
+  height:7px;
+  margin-top:4px;
+}
+
+.dot{
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  margin:0 1px;
+}
+
+.dot.luis{
+  background:var(--luis);
+}
+
+.dot.alicia{
+  background:var(--alicia);
+}
+
+/* HERO */
+
 .hero{
-  background:linear-gradient(135deg,#111116 0%,#1f1f27 100%);
-  color:#fff;
+  background:linear-gradient(135deg,#111116,#1f1f27);
+  color:white;
   border-radius:22px;
   padding:17px;
   margin:8px 0 16px;
   box-shadow:0 12px 30px rgba(0,0,0,.16);
 }
-.hero h2{margin:0 0 4px;font-size:20px;font-weight:850;letter-spacing:-.02em}
-.hero p{margin:0;color:#c7c7cc;font-size:13px}
-.section{margin:18px 0}
-.section h2,.week h2{font-size:17px;margin:0 0 10px;font-weight:850;letter-spacing:-.02em}
-.week{margin:20px 0}
+
+.hero h2{
+  margin:0 0 4px;
+  font-size:20px;
+}
+
+.hero p{
+  margin:0;
+  color:#c7c7cc;
+  font-size:13px;
+}
+
+/* TERMINE */
+
+.week{
+  margin:20px 0;
+}
+
+.week h2{
+  font-size:17px;
+  margin-bottom:10px;
+}
+
 .grid{
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   gap:10px;
   align-items:start;
 }
-.kidcol{display:grid;gap:10px;align-content:start;min-width:0}
+
+.kidcol{
+  display:grid;
+  gap:10px;
+  min-width:0;
+}
+
 .card{
-  background:var(--card);
+  background:white;
   border-radius:20px;
   padding:14px;
   box-shadow:var(--shadow);
-  border:1px solid rgba(255,255,255,.65);
-  min-width:0;
-  overflow:hidden;
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
   position:relative;
+  overflow:hidden;
 }
+
 .card::before{
   content:"";
   position:absolute;
-  inset:0 auto 0 0;
+  left:0;
+  top:0;
+  bottom:0;
   width:5px;
-  border-radius:20px 0 0 20px;
-  background:#9ca3af;
 }
-.card.Luis::before{background:var(--luis)}
-.card.Alicia::before{background:var(--alicia)}
-.card.Luis{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(242,234,255,.86))}
-.card.Alicia{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,240,242,.88))}
+
+.card.Luis::before{
+  background:var(--luis);
+}
+
+.card.Alicia::before{
+  background:var(--alicia);
+}
+
+.card.Luis{
+  background:linear-gradient(180deg,#fff,var(--luis-soft));
+}
+
+.card.Alicia{
+  background:linear-gradient(180deg,#fff,var(--alicia-soft));
+}
+
 .top{
   display:flex;
   justify-content:space-between;
   gap:12px;
-  align-items:flex-start;
 }
+
 .who{
   font-weight:900;
   font-size:15px;
-  letter-spacing:-.02em;
 }
-.Luis .who{color:var(--luis)}
-.Alicia .who{color:var(--alicia)}
+
+.Luis .who{
+  color:var(--luis);
+}
+
+.Alicia .who{
+  color:var(--alicia);
+}
+
 .time{
   font-size:21px;
   font-weight:900;
-  letter-spacing:-.03em;
 }
+
 .type{
   display:inline-block;
   margin-top:8px;
   font-size:11px;
   font-weight:850;
-  background:rgba(17,17,17,.06);
   padding:5px 8px;
   border-radius:999px;
 }
-.Luis .type{background:var(--luis-soft);color:var(--luis)}
-.Alicia .type{background:var(--alicia-soft);color:var(--alicia)}
+
+.Luis .type{
+  background:var(--luis-soft);
+  color:var(--luis);
+}
+
+.Alicia .type{
+  background:var(--alicia-soft);
+  color:var(--alicia);
+}
+
 .card h3{
   margin:10px 0 0;
   font-size:16px;
-  line-height:1.25;
-  font-weight:850;
-  letter-spacing:-.02em;
 }
+
 .loc{
-  margin:10px 0 0;
+  margin-top:10px;
   color:#3a3a3c;
   line-height:1.35;
 }
+
 .maps{
   display:inline-flex;
-  align-items:center;
-  justify-content:center;
   text-decoration:none;
   margin-top:12px;
   background:#111116;
-  color:#fff;
+  color:white;
   padding:9px 12px;
   border-radius:12px;
   font-weight:800;
-  box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
+
+/* ZUSAGEN */
+
+.rsvp{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:5px;
+  margin-top:11px;
+}
+
+.rsvp button{
+  margin:0;
+  padding:7px 3px;
+  font-size:10px;
+  border-radius:10px;
+  background:white;
+  box-shadow:none;
+}
+
+.rsvp button.selected{
+  color:white;
+}
+
+.rsvp button[data-status="yes"].selected{
+  background:#34c759;
+}
+
+.rsvp button[data-status="maybe"].selected{
+  background:#ff9500;
+}
+
+.rsvp button[data-status="no"].selected{
+  background:#ff3b30;
+}
+
 .empty{
-  background:rgba(255,255,255,.88);
+  background:white;
   padding:18px;
   border-radius:18px;
   color:var(--muted);
-  box-shadow:var(--shadow);
 }
+
+/* UNTERE NAVIGATION */
+
+.bottomnav{
+  position:sticky;
+  bottom:8px;
+  z-index:4;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
+  background:rgba(20,20,24,.9);
+  padding:6px;
+  border-radius:18px;
+  margin:18px 0 4px;
+}
+
+.bottomnav button{
+  background:transparent;
+  color:#ddd;
+  border:0;
+  box-shadow:none;
+  border-radius:13px;
+  padding:9px 3px;
+  font-size:10px;
+}
+
+.bottomnav button.active{
+  background:white;
+  color:#111;
+}
+
 footer{
   padding:24px 16px 36px;
   text-align:center;
   color:var(--muted);
   font-size:12px;
 }
-.card h3,.loc,.time,.who{overflow-wrap:anywhere;word-break:break-word}
-@media(max-width:560px){
-  main{padding:10px}
-  .viewbar,.toolbar{gap:6px}
-  button{padding:8px 11px;font-size:12px}
-  #refreshBtn{margin-left:0}
-  .grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
-  .kidcol{min-width:0}
-  .card{padding:10px 9px;border-radius:16px}
-  .card::before{border-radius:16px 0 0 16px}
-  .top{display:block}
-  .time{font-size:16px;line-height:1.15;margin-top:5px}
-  .who{font-size:14px}
-  .card h3{font-size:13px;line-height:1.25;margin:9px 0}
-  .type{font-size:10px;padding:3px 6px}
-  .loc{font-size:11px;line-height:1.3}
-  .maps{font-size:11px;padding:7px 8px;max-width:100%;white-space:normal;text-align:center}
-}
-.rsvp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-top:11px}.rsvp button{margin:0;padding:7px 3px;font-size:10px;line-height:1.1;border-radius:10px;background:rgba(255,255,255,.8);box-shadow:none;border:1px solid rgba(0,0,0,.08)}.rsvp button.selected{color:#fff}.rsvp button[data-status="yes"].selected{background:#34c759;border-color:#34c759}.rsvp button[data-status="maybe"].selected{background:#ff9500;border-color:#ff9500}.rsvp button[data-status="no"].selected{background:#ff3b30;border-color:#ff3b30}@media(max-width:560px){.rsvp{gap:3px}.rsvp button{padding:6px 2px;font-size:9px}}
-/* Optimierte App-Bausteine */
-.dashboard{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 14px}
-.nextcard{border-radius:20px;padding:14px;color:#fff;box-shadow:var(--shadow);min-width:0}
-.nextcard.luis{background:linear-gradient(135deg,#55208f,#7f3fd0)}
-.nextcard.alicia{background:linear-gradient(135deg,#a90020,#e11d3f)}
-.nextlabel{font-size:11px;font-weight:800;opacity:.85;text-transform:uppercase;letter-spacing:.04em}
-.nextname{font-size:18px;font-weight:900;margin:2px 0 8px}
-.nextwhen{font-size:16px;font-weight:900}
-.nexttitle{font-size:12px;font-weight:750;margin-top:5px;line-height:1.25}
-.nextloc{font-size:10px;opacity:.86;margin-top:5px;line-height:1.25}
-.statusbar{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:0 0 12px}
-.stat{background:rgba(255,255,255,.9);border-radius:14px;padding:10px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.05)}
-.stat b{display:block;font-size:18px}.stat span{font-size:10px;color:var(--muted);font-weight:750}
-.changes{display:none;background:#fff8e7;border:1px solid #ffd98a;border-radius:14px;padding:10px 12px;margin-bottom:12px;font-size:12px;font-weight:750}
-.changes.show{display:block}
-.typeicon{font-size:13px;margin-right:4px}
-.sourcechips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
-.sourcechip{font-size:10px;font-weight:750;background:rgba(255,255,255,.86);padding:6px 8px;border-radius:999px;border:1px solid rgba(0,0,0,.06)}
-.bottomnav{position:sticky;bottom:8px;z-index:4;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;background:rgba(20,20,24,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:6px;border-radius:18px;margin:18px 0 4px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-.bottomnav button{background:transparent;color:#ddd;border:0;box-shadow:none;border-radius:13px;padding:9px 3px;font-size:10px}
-.bottomnav button.active{background:#fff;color:#111}
-.open-only-note{font-size:11px;color:var(--muted);margin:-4px 0 10px}
-.detailrow{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
-.calendarStrip{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:10px 0 14px}
-.daybox{background:rgba(255,255,255,.9);border-radius:12px;padding:7px 2px;text-align:center;font-size:10px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.daybox.today{outline:2px solid #111}
-.dots{height:7px;margin-top:4px}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin:0 1px}.dot.luis{background:var(--luis)}.dot.alicia{background:var(--alicia)}
-@media(max-width:560px){.dashboard{gap:7px}.nextcard{padding:11px;border-radius:16px}.nextname{font-size:16px}.nextwhen{font-size:14px}.statusbar{gap:5px}.stat{padding:8px 4px}.bottomnav{bottom:5px}}
 
+@media(max-width:560px){
+
+  main{
+    padding:10px;
+  }
+
+  .dashboard{
+    gap:7px;
+  }
+
+  .nextcard{
+    padding:11px;
+  }
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+
+  .card{
+    padding:10px 9px;
+  }
+
+  .top{
+    display:block;
+  }
+
+  .time{
+    font-size:16px;
+    margin-top:5px;
+  }
+
+  .card h3{
+    font-size:13px;
+  }
+
+  .loc{
+    font-size:11px;
+  }
+
+  .rsvp{
+    gap:3px;
+  }
+
+  .rsvp button{
+    font-size:9px;
+    padding:6px 2px;
+  }
+}
 </style>
 </head>
+
 <body>
-<header><h1>⚽ Familien Fußball</h1><div class="sub">Luis · Eintracht Mahlsdorf &nbsp; • &nbsp; Alicia · 1. FC Union Berlin</div></header>
+
+<header>
+<h1>⚽ Familien Fußball</h1>
+<div class="sub">
+Luis · Eintracht Mahlsdorf • Alicia · 1. FC Union Berlin
+</div>
+</header>
+
 <main>
+
 <div class="viewbar">
-  <button class="active" data-view="week">Diese Woche</button>
-  <button data-view="today">Heute</button>
-  <button data-view="all">Alle Termine</button>
-  <button id="refreshBtn" type="button">🔄 Aktualisieren</button>
+
+<button class="active" data-view="week">
+Diese Woche
+</button>
+
+<button data-view="today">
+Heute
+</button>
+
+<button data-view="all">
+Alle Termine
+</button>
+
+<button id="refreshBtn">
+🔄 Aktualisieren
+</button>
+
 </div>
+
 <div class="toolbar">
-  <button class="active" data-filter="all">Alle</button>
-  <button data-filter="Luis">Luis</button>
-  <button data-filter="Alicia">Alicia</button>
+
+<button class="active" data-filter="all">Alle</button>
+
+<button data-filter="Luis">Luis</button>
+
+<button data-filter="Alicia">Alicia</button>
+
 </div>
+
 <div id="changes" class="changes"></div>
+
 <div id="dashboard" class="dashboard"></div>
+
 <div id="stats" class="statusbar"></div>
+
 <div id="sources" class="sourcechips"></div>
-<div id="calendarStrip" class="calendarStrip"></div>
-<div id="app"></div>
-<div class="bottomnav">
-  <button class="active" data-nav="week">🏠<br>Übersicht</button>
-  <button data-nav="today">📅<br>Heute</button>
-  <button data-nav="open">✓<br>Offen</button>
-  <button data-nav="all">☰<br>Alle</button>
+
+<div class="calendarControls">
+
+<button id="prevWeekBtn">
+← Woche
+</button>
+
+<button id="currentWeekBtn">
+Diese Woche
+</button>
+
+<button id="nextWeekBtn">
+Woche →
+</button>
+
 </div>
+
+<div id="calendarStrip" class="calendarStrip"></div>
+
+<div id="app"></div>
+
+<div class="bottomnav">
+
+<button class="active" data-nav="week">
+🏠<br>Übersicht
+</button>
+
+<button data-nav="today">
+📅<br>Heute
+</button>
+
+<button data-nav="open">
+✓<br>Offen
+</button>
+
+<button data-nav="all">
+☰<br>Alle
+</button>
+
+</div>
+
 </main>
-<footer><div id="updated"></div><div>Als App installierbar · Apple Maps direkt aus jedem Termin</div></footer>
+
+<footer>
+<div id="updated"></div>
+<div>Als App installierbar · Apple Maps direkt aus jedem Termin</div>
+</footer>
+
 <script>
+
 let trainings=[];
 let myteamEvents=[];
 let aliciaUnionEvents=[];
-let filter="all", view="week", source={games:[]}; let openOnly=false;
-const map=q=>"https://maps.apple.com/?q="+encodeURIComponent(q);
-const pad=n=>String(n).padStart(2,"0");
-function iso(d){return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`}
-function weekNo(d){let x=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));x.setUTCDate(x.getUTCDate()+4-(x.getUTCDay()||7));let y=new Date(Date.UTC(x.getUTCFullYear(),0,1));return Math.ceil((((x-y)/86400000)+1)/7)}
-function monday(d){let x=new Date(d);let n=x.getDay()||7;x.setDate(x.getDate()-n+1);x.setHours(0,0,0,0);return x}
-function fmt(d){return d.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit"})}
-function buildTraining(start,end){let out=[];for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){for(const t of trainings)if(t.child==="Alicia"&&t.day===d.getDay())out.push({date:iso(d),time:t.time,child:t.child,type:"Training",title:t.title,location:t.location,maps:map(t.location)})}return out}
-function eventKey(e){return [e.child,e.date,e.time,e.title,e.location].join("|")}
-function getRsvp(e){try{return localStorage.getItem("rsvp:"+eventKey(e))||""}catch(_){return ""}}
-function setRsvp(key,status){try{let k="rsvp:"+key;if(localStorage.getItem(k)===status)localStorage.removeItem(k);else localStorage.setItem(k,status)}catch(_){}render()}
-function rsvpButtons(e){const k=eventKey(e).replace(/\\/g,"\\\\").replace(/'/g,"\\'");const s=getRsvp(e);return `<div class="rsvp"><button type="button" data-status="yes" class="${s==="yes"?"selected":""}" onclick="setRsvp('${k}','yes')">✓ Zusage</button><button type="button" data-status="maybe" class="${s==="maybe"?"selected":""}" onclick="setRsvp('${k}','maybe')">? Vielleicht</button><button type="button" data-status="no" class="${s==="no"?"selected":""}" onclick="setRsvp('${k}','no')">✕ Absage</button></div>`}
-function typeIcon(e){
-  const s=((e.type||"")+" "+(e.title||"")).toLowerCase();
-  if(s.includes("training"))return "🏃";
-  if(s.includes("foto")||s.includes("portrait"))return "📸";
-  if(s.includes("eltern")||s.includes("versammlung"))return "👥";
-  if(s.includes("turnier")||s.includes("festival"))return "🏆";
-  if(s.includes("spiel")||s.includes("liga")||s.includes("freundschaft"))return "⚽";
-  return "📌";
-}
-function allEvents(){
- const today=new Date();today.setHours(0,0,0,0);const horizon=new Date(today);horizon.setDate(horizon.getDate()+84);
- return [...source.games,...myteamEvents,...aliciaUnionEvents,...buildTraining(today,horizon)]
-  .filter(e=>new Date(e.date+"T23:59:00")>=today)
-  .sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
-}
-function renderExtras(){
- const ev=allEvents(), now=new Date();
- const next=child=>ev.find(e=>e.child===child);
- const ncard=(child,cls)=>{const e=next(child);if(!e)return `<div class="nextcard ${cls}"><div class="nextlabel">Nächster Termin</div><div class="nextname">${child}</div><div class="nexttitle">Kein Termin</div></div>`;
-   const d=new Date(e.date+"T12:00:00");return `<div class="nextcard ${cls}"><div class="nextlabel">Nächster Termin</div><div class="nextname">${child}</div><div class="nextwhen">${typeIcon(e)} ${fmt(d)} · ${e.time}</div><div class="nexttitle">${e.title}</div><div class="nextloc">📍 ${e.location}</div></div>`};
- document.querySelector("#dashboard").innerHTML=ncard("Luis","luis")+ncard("Alicia","alicia");
- const yes=ev.filter(e=>getRsvp(e)==="yes").length, maybe=ev.filter(e=>getRsvp(e)==="maybe").length, open=ev.filter(e=>!getRsvp(e)).length;
- document.querySelector("#stats").innerHTML=`<div class="stat"><b>${yes}</b><span>zugesagt</span></div><div class="stat"><b>${maybe}</b><span>vielleicht</span></div><div class="stat"><b>${open}</b><span>noch offen</span></div>`;
- document.querySelector("#sources").innerHTML=`<span class="sourcechip">⚽ FUSSBALL.DE</span><span class="sourcechip">🔵 Luis · myteam</span><span class="sourcechip">🔴 Alicia · Union</span>`;
- const m=monday(now), days=[];for(let i=0;i<7;i++){let d=new Date(m);d.setDate(d.getDate()+i);let de=ev.filter(e=>e.date===iso(d));days.push(`<div class="daybox ${iso(d)===iso(now)?"today":""}">${d.toLocaleDateString("de-DE",{weekday:"short"}).slice(0,2)}<br><b>${d.getDate()}</b><div class="dots">${de.some(e=>e.child==="Luis")?'<i class="dot luis"></i>':""}${de.some(e=>e.child==="Alicia")?'<i class="dot alicia"></i>':""}</div></div>`)}document.querySelector("#calendarStrip").innerHTML=days.join("");
- try{
-   const sig=JSON.stringify(ev.map(e=>[e.child,e.date,e.time,e.title,e.location]));
-   const old=localStorage.getItem("eventsSignature");
-   const ch=document.querySelector("#changes");
-   if(old&&old!==sig){ch.textContent="⚠️ Termine wurden seit deinem letzten Besuch aktualisiert.";ch.classList.add("show")}else ch.classList.remove("show");
-   localStorage.setItem("eventsSignature",sig);
- }catch(_){}
-}
-function card(e){let dt=new Date(e.date+"T12:00:00");let mapsBtn=e.maps?`<a class="maps" href="${e.maps}">Apple Maps →</a>`:"";return `<article class="card ${e.child}"><div class="top"><div><div class="who">${e.child}</div><div>${fmt(dt)}</div></div><div class="time">${e.time}</div></div><div class="type"><span class="typeicon">${typeIcon(e)}</span>${e.type}</div><h3>${e.title}</h3><div class="loc">📍 ${e.location}</div>${mapsBtn}${rsvpButtons(e)}</article>`}
-function twoCols(list){
- const l=list.filter(e=>e.child==="Luis"),a=list.filter(e=>e.child==="Alicia");
- return `<div class="grid"><div class="kidcol luis-col">${l.map(card).join("")}</div><div class="kidcol alicia-col">${a.map(card).join("")}</div></div>`;
-}
-function render(){
- const today=new Date();today.setHours(0,0,0,0);
- let ev=allEvents();
- if(filter!=="all")ev=ev.filter(e=>e.child===filter);
- if(openOnly)ev=ev.filter(e=>!getRsvp(e));
- ev.sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
- renderExtras();
 
- let html="";
- if(view==="today"){
-   const list=ev.filter(e=>e.date===iso(today));
-   html=`<div class="hero"><h2>Heute</h2><p>${today.toLocaleDateString("de-DE",{weekday:"long",day:"2-digit",month:"long"})}</p></div>`;
-   html+=list.length?twoCols(list):`<div class="empty">Heute stehen keine Fußballtermine an.</div>`;
- } else if(view==="week"){
-   const m=monday(today),s=new Date(m);s.setDate(s.getDate()+6);
-   const list=ev.filter(e=>{let d=new Date(e.date+"T12:00:00");return d>=m&&d<=s});
-   html=`<div class="hero"><h2>Diese Woche · KW ${weekNo(today)}</h2><p>${m.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"})}–${s.toLocaleDateString("de-DE")}</p></div>`;
-   html+=list.length?twoCols(list):`<div class="empty">Diese Woche stehen keine Fußballtermine an.</div>`;
- } else {
-   let groups={};for(const e of ev){let d=new Date(e.date+"T12:00:00");let k=`${d.getFullYear()}-${weekNo(d)}`;(groups[k]??=[]).push(e)}
-   for(const list of Object.values(groups)){
-     let d=new Date(list[0].date+"T12:00:00"),m=monday(d),s=new Date(m);s.setDate(s.getDate()+6);
-     html+=`<section class="week"><h2>KW ${weekNo(d)} · ${m.toLocaleDateString("de-DE",{day:"2-digit",month:"2-digit"})}–${s.toLocaleDateString("de-DE")}</h2>${twoCols(list)}</section>`;
-   }
- }
- document.querySelector("#app").innerHTML=html||`<div class="empty">Keine Termine gefunden.</div>`;
+let filter="all";
+let view="week";
+let source={games:[]};
+
+let openOnly=false;
+let selectedDate="";
+let calendarWeekOffset=0;
+
+const pad=n=>String(n).padStart(2,"0");
+
+function iso(d){
+return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 }
-async function loadData(showFeedback=false){
-  const btn=document.querySelector("#refreshBtn");
-  if(showFeedback && btn){
-    btn.disabled=true;
-    btn.textContent="⏳ Aktualisiere…";
-  }
-  try{
-    const stamp=Date.now();
-    const [gamesData, trainingsData, myteamData, unionData]=await Promise.all([
-      fetch("data/events.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
-      fetch("data/trainings.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
-      fetch("data/luis_myteam.json?"+stamp,{cache:"no-store"}).then(r=>r.json()),
-      fetch("data/alicia_union.json?"+stamp,{cache:"no-store"}).then(r=>r.json())
-    ]);
-    source=gamesData;
-    trainings=trainingsData.trainings||[];
-    myteamEvents=myteamData.events||[];
-    aliciaUnionEvents=unionData.events||[];
-    const newest=[gamesData.updated,myteamData.updated,unionData.updated].filter(Boolean).sort().pop();
-    document.querySelector("#updated").textContent="Zuletzt aktualisiert: "+new Date(newest).toLocaleString("de-DE");
-    render();
-    if(showFeedback && btn) btn.textContent="✅ Aktualisiert";
-  }catch(err){
-    console.error(err);
-    if(showFeedback && btn) btn.textContent="⚠️ Fehler";
-    render();
-  }finally{
-    if(showFeedback && btn){
-      setTimeout(()=>{
-        btn.disabled=false;
-        btn.textContent="🔄 Aktualisieren";
-      },1400);
-    }
-  }
+
+function weekNo(d){
+
+let x=new Date(
+Date.UTC(
+d.getFullYear(),
+d.getMonth(),
+d.getDate()
+)
+);
+
+x.setUTCDate(
+x.getUTCDate()+4-(x.getUTCDay()||7)
+);
+
+let y=new Date(
+Date.UTC(x.getUTCFullYear(),0,1)
+);
+
+return Math.ceil(
+(((x-y)/86400000)+1)/7
+);
+
 }
-loadData();
-document.querySelectorAll("button[data-filter]").forEach(b=>b.onclick=()=>{document.querySelectorAll("button[data-filter]").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.filter;render()});
-document.querySelectorAll("button[data-view]").forEach(b=>b.onclick=()=>{document.querySelectorAll("button[data-view]").forEach(x=>x.classList.remove("active"));b.classList.add("active");view=b.dataset.view;render()});
-document.querySelector("#refreshBtn").onclick=()=>loadData(true);
-document.querySelectorAll("button[data-nav]").forEach(b=>b.onclick=()=>{
- document.querySelectorAll("button[data-nav]").forEach(x=>x.classList.remove("active"));b.classList.add("active");
- const n=b.dataset.nav;openOnly=n==="open";view=n==="today"?"today":n==="all"?"all":"week";render();
+
+function monday(d){
+
+let x=new Date(d);
+
+let n=x.getDay()||7;
+
+x.setDate(
+x.getDate()-n+1
+);
+
+x.setHours(0,0,0,0);
+
+return x;
+
+}
+
+function fmt(d){
+
+return d.toLocaleDateString(
+"de-DE",
+{
+weekday:"short",
+day:"2-digit",
+month:"2-digit"
+}
+);
+
+}
+
+/* TRAINING ALICIA */
+
+function buildTraining(start,end){
+
+let out=[];
+
+for(
+let d=new Date(start);
+d<=end;
+d.setDate(d.getDate()+1)
+){
+
+for(const t of trainings){
+
+if(
+t.child==="Alicia" &&
+t.day===d.getDay()
+){
+
+out.push({
+
+date:iso(d),
+time:t.time,
+child:t.child,
+type:"Training",
+title:t.title,
+location:t.location,
+maps:
+"https://maps.apple.com/?q="+
+encodeURIComponent(t.location)
+
 });
-if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");
-</script></body></html>
+
+}
+
+}
+
+}
+
+return out;
+
+}
+
+/* STATUS */
+
+function eventKey(e){
+
+return [
+e.child,
+e.date,
+e.time,
+e.title,
+e.location
+].join("|");
+
+}
+
+function getRsvp(e){
+
+try{
+
+return localStorage.getItem(
+"rsvp:"+eventKey(e)
+)||"";
+
+}catch(_){
+
+return "";
+
+}
+
+}
+
+function setRsvp(key,status){
+
+try{
+
+let k="rsvp:"+key;
+
+if(
+localStorage.getItem(k)===status
+){
+
+localStorage.removeItem(k);
+
+}else{
+
+localStorage.setItem(
+k,
+status
+);
+
+}
+
+}catch(_){}
+
+render();
+
+}
+
+function rsvpButtons(e){
+
+const k=
+eventKey(e)
+.replace(/\\/g,"\\\\")
+.replace(/'/g,"\\'");
+
+const s=getRsvp(e);
+
+return `
+
+<div class="rsvp">
+
+<button
+data-status="yes"
+class="${s==="yes"?"selected":""}"
+onclick="setRsvp('${k}','yes')">
+
+✓ Zusage
+
+</button>
+
+<button
+data-status="maybe"
+class="${s==="maybe"?"selected":""}"
+onclick="setRsvp('${k}','maybe')">
+
+? Vielleicht
+
+</button>
+
+<button
+data-status="no"
+class="${s==="no"?"selected":""}"
+onclick="setRsvp('${k}','no')">
+
+✕ Absage
+
+</button>
+
+</div>
+
+`;
+
+}
+
+/* TERMINART */
+
+function typeIcon(e){
+
+const s=
+(
+(e.type||"")+" "+
+(e.title||"")
+).toLowerCase();
+
+if(s.includes("training"))
+return "🏃";
+
+if(
+s.includes("foto") ||
+s.includes("portrait")
+)
+return "📸";
+
+if(
+s.includes("eltern") ||
+s.includes("versammlung")
+)
+return "👥";
+
+if(
+s.includes("turnier") ||
+s.includes("festival")
+)
+return "🏆";
+
+if(
+s.includes("spiel") ||
+s.includes("liga") ||
+s.includes("freundschaft")
+)
+return "⚽";
+
+return "📌";
+
+}
+
+/* ALLE TERMINE */
+
+function allEvents(){
+
+const today=new Date();
+
+today.setHours(0,0,0,0);
+
+const horizon=new Date(today);
+
+horizon.setDate(
+horizon.getDate()+84
+);
+
+return [
+
+...source.games,
+...myteamEvents,
+...aliciaUnionEvents,
+...buildTraining(today,horizon)
+
+]
+
+.filter(
+e=>
+new Date(
+e.date+"T23:59:00"
+)>=today
+)
+
+.sort(
+(a,b)=>
+(a.date+a.time)
+.localeCompare(
+b.date+b.time
+)
+);
+
+}
+
+/* DASHBOARD */
+
+function renderExtras(){
+
+const ev=allEvents();
+
+const now=new Date();
+
+function next(child){
+
+return ev.find(
+e=>e.child===child
+);
+
+}
+
+function ncard(child,cls){
+
+const e=next(child);
+
+if(!e){
+
+return `
+
+<div class="nextcard ${cls}">
+
+<div class="nextlabel">
+Nächster Termin
+</div>
+
+<div class="nextname">
+${child}
+</div>
+
+<div class="nexttitle">
+Kein Termin
+</div>
+
+</div>
+
+`;
+
+}
+
+const d=
+new Date(
+e.date+"T12:00:00"
+);
+
+return `
+
+<div class="nextcard ${cls}">
+
+<div class="nextlabel">
+Nächster Termin
+</div>
+
+<div class="nextname">
+${child}
+</div>
+
+<div class="nextwhen">
+
+${typeIcon(e)}
+${fmt(d)}
+·
+${e.time}
+
+</div>
+
+<div class="nexttitle">
+${e.title}
+</div>
+
+<div class="nextloc">
+📍 ${e.location}
+</div>
+
+</div>
+
+`;
+
+}
+
+document.querySelector(
+"#dashboard"
+).innerHTML=
+
+ncard("Luis","luis")+
+ncard("Alicia","alicia");
+
+/* STATUS */
+
+const yes=
+ev.filter(
+e=>getRsvp(e)==="yes"
+).length;
+
+const maybe=
+ev.filter(
+e=>getRsvp(e)==="maybe"
+).length;
+
+const open=
+ev.filter(
+e=>!getRsvp(e)
+).length;
+
+document.querySelector(
+"#stats"
+).innerHTML=`
+
+<div class="stat">
+
+<b>${yes}</b>
+
+<span>zugesagt</span>
+
+</div>
+
+<div class="stat">
+
+<b>${maybe}</b>
+
+<span>vielleicht</span>
+
+</div>
+
+<div class="stat">
+
+<b>${open}</b>
+
+<span>noch offen</span>
+
+</div>
+
+`;
+
+/* QUELLEN */
+
+document.querySelector(
+"#sources"
+).innerHTML=`
+
+<span class="sourcechip">
+⚽ FUSSBALL.DE
+</span>
+
+<span class="sourcechip">
+🔵 Luis · myteam
+</span>
+
+<span class="sourcechip">
+🔴 Alicia · Union
+</span>
+
+`;
+
+/* WOCHENKALENDER */
+
+const base=monday(now);
+
+base.setDate(
+base.getDate()+
+calendarWeekOffset*7
+);
+
+const days=[];
+
+for(let i=0;i<7;i++){
+
+let d=new Date(base);
+
+d.setDate(
+d.getDate()+i
+);
+
+let de=
+ev.filter(
+e=>e.date===iso(d)
+);
+
+const ds=iso(d);
+
+days.push(`
+
+<div
+class="
+daybox
+${ds===iso(now)?"today":""}
+${ds===selectedDate?"selected":""}
+"
+data-date="${ds}"
+>
+
+${d
+.toLocaleDateString(
+"de-DE",
+{weekday:"short"}
+)
+.slice(0,2)}
+
+<br>
+
+<b>
+${d.getDate()}
+</b>
+
+<div class="dots">
+
+${
+de.some(
+e=>e.child==="Luis"
+)
+?
+'<i class="dot luis"></i>'
+:
+""
+}
+
+${
+de.some(
+e=>e.child==="Alicia"
+)
+?
+'<i class="dot alicia"></i>'
+:
+""
+}
+
+</div>
+
+</div>
+
+`);
+
+}
+
+document.querySelector(
+"#calendarStrip"
+).innerHTML=
+days.join("");
+
+document
+.querySelectorAll(
+".daybox[data-date]"
+)
+.forEach(el=>{
+
+el.onclick=()=>{
+
+const d=
+el.dataset.date;
+
+selectedDate=
+selectedDate===d
+?
+""
+:
+d;
+
+if(selectedDate){
+
+view="day";
+openOnly=false;
+
+}else{
+
+view="week";
+
+}
+
+render();
+
+};
+
+});
+
+/* ÄNDERUNGEN */
+
+try{
+
+const sig=
+JSON.stringify(
+ev.map(
+e=>[
+e.child,
+e.date,
+e.time,
+e.title,
+e.location
+]
+)
+);
+
+const old=
+localStorage.getItem(
+"eventsSignature"
+);
+
+const ch=
+document.querySelector(
+"#changes"
+);
+
+if(
+old &&
+old!==sig
+){
+
+ch.textContent=
+"⚠️ Termine wurden seit deinem letzten Besuch aktualisiert.";
+
+ch.classList.add(
+"show"
+);
+
+}else{
+
+ch.classList.remove(
+"show"
+);
+
+}
+
+localStorage.setItem(
+"eventsSignature",
+sig
+);
+
+}catch(_){}
+
+}
+
+/* TERMIN-KARTE */
+
+function card(e){
+
+let dt=
+new Date(
+e.date+"T12:00:00"
+);
+
+let mapsBtn=
+e.maps
+?
+`
+<a
+class="maps"
+href="${e.maps}">
+Apple Maps →
+</a>
+`
+:
+"";
+
+return `
+
+<article class="card ${e.child}">
+
+<div class="top">
+
+<div>
+
+<div class="who">
+${e.child}
+</div>
+
+<div>
+${fmt(dt)}
+</div>
+
+</div>
+
+<div class="time">
+${e.time}
+</div>
+
+</div>
+
+<div class="type">
+
+${typeIcon(e)}
+${e.type}
+
+</div>
+
+<h3>
+${e.title}
+</h3>
+
+<div class="loc">
+📍 ${e.location}
+</div>
+
+${mapsBtn}
+
+${rsvpButtons(e)}
+
+</article>
+
+`;
+
+}
+
+/* LUIS LINKS / ALICIA RECHTS */
+
+function twoCols(list){
+
+const l=
+list.filter(
+e=>e.child==="Luis"
+);
+
+const a=
+list.filter(
+e=>e.child==="Alicia"
+);
+
+return `
+
+<div class="grid">
+
+<div class="kidcol">
+${l.map(card).join("")}
+</div>
+
+<div class="kidcol">
+${a.map(card).join("")}
+</div>
+
+</div>
+
+`;
+
+}
+
+/* HAUPTANSICHT */
+
+function render(){
+
+const today=new Date();
+
+today.setHours(0,0,0,0);
+
+let ev=
+allEvents();
+
+if(filter!=="all"){
+
+ev=
+ev.filter(
+e=>e.child===filter
+);
+
+}
+
+if(openOnly){
+
+ev=
+ev.filter(
+e=>!getRsvp(e)
+);
+
+}
+
+renderExtras();
+
+let html="";
+
+/* AUSGEWÄHLTER TAG */
+
+if(
+view==="day" &&
+selectedDate
+){
+
+const d=
+new Date(
+selectedDate+"T12:00:00"
+);
+
+const list=
+ev.filter(
+e=>e.date===selectedDate
+);
+
+html=`
+
+<div class="hero">
+
+<h2>
+
+${d.toLocaleDateString(
+"de-DE",
+{
+weekday:"long",
+day:"2-digit",
+month:"long"
+}
+)}
+
+</h2>
+
+<p>
+Ausgewählter Tag
+</p>
+
+</div>
+
+`;
+
+html+=
+list.length
+?
+twoCols(list)
+:
+`
+<div class="empty">
+An diesem Tag stehen keine Fußballtermine an.
+</div>
+`;
+
+}
+
+/* HEUTE */
+
+else if(view==="today"){
+
+const list=
+ev.filter(
+e=>e.date===iso(today)
+);
+
+html=`
+
+<div class="hero">
+
+<h2>
+Heute
+</h2>
+
+<p>
+
+${today.toLocaleDateString(
+"de-DE",
+{
+weekday:"long",
+day:"2-digit",
+month:"long"
+}
+)}
+
+</p>
+
+</div>
+
+`;
+
+html+=
+list.length
+?
+twoCols(list)
+:
+`
+<div class="empty">
+Heute stehen keine Fußballtermine an.
+</div>
+`;
+
+}
+
+/* DIESE WOCHE */
+
+else if(view==="week"){
+
+const m=
+monday(today);
+
+const s=
+new Date(m);
+
+s.setDate(
+s.getDate()+6
+);
+
+const list=
+ev.filter(e=>{
+
+let d=
+new Date(
+e.date+"T12:00:00"
+);
+
+return d>=m && d<=s;
+
+});
+
+html=`
+
+<div class="hero">
+
+<h2>
+Diese Woche · KW ${weekNo(today)}
+</h2>
+
+<p>
+
+${m.toLocaleDateString(
+"de-DE",
+{
+day:"2-digit",
+month:"2-digit"
+}
+)}
+
+–
+
+${s.toLocaleDateString(
+"de-DE"
+)}
+
+</p>
+
+</div>
+
+`;
+
+html+=
+list.length
+?
+twoCols(list)
+:
+`
+<div class="empty">
+Diese Woche stehen keine Fußballtermine an.
+</div>
+`;
+
+}
+
+/* ALLE */
+
+else{
+
+let groups={};
+
+for(const e of ev){
+
+let d=
+new Date(
+e.date+"T12:00:00"
+);
+
+let k=
+`${d.getFullYear()}-${weekNo(d)}`;
+
+(groups[k]??=[]).push(e);
+
+}
+
+for(
+const list of
+Object.values(groups)
+){
+
+let d=
+new Date(
+list[0].date+"T12:00:00"
+);
+
+let m=
+monday(d);
+
+let s=
+new Date(m);
+
+s.setDate(
+s.getDate()+6
+);
+
+html+=`
+
+<section class="week">
+
+<h2>
+
+KW ${weekNo(d)}
+
+·
+
+${m.toLocaleDateString(
+"de-DE",
+{
+day:"2-digit",
+month:"2-digit"
+}
+)}
+
+–
+
+${s.toLocaleDateString(
+"de-DE"
+)}
+
+</h2>
+
+${twoCols(list)}
+
+</section>
+
+`;
+
+}
+
+}
+
+document.querySelector(
+"#app"
+).innerHTML=
+html;
+
+}
+
+/* DATEN LADEN */
+
+async function load(){
+
+const stamp=
+Date.now();
+
+try{
+
+const [
+gamesData,
+trainingsData,
+myteamData,
+unionData
+]
+=
+await Promise.all([
+
+fetch(
+"data/events.json?"+stamp,
+{cache:"no-store"}
+).then(r=>r.json()),
+
+fetch(
+"data/trainings.json?"+stamp,
+{cache:"no-store"}
+).then(r=>r.json()),
+
+fetch(
+"data/luis_myteam.json?"+stamp,
+{cache:"no-store"}
+).then(r=>r.json()),
+
+fetch(
+"data/alicia_union.json?"+stamp,
+{cache:"no-store"}
+).then(r=>r.json())
+
+]);
+
+source=
+gamesData;
+
+trainings=
+trainingsData.trainings||[];
+
+myteamEvents=
+myteamData.events||[];
+
+aliciaUnionEvents=
+unionData.events||[];
+
+const newest=[
+gamesData.updated,
+myteamData.updated,
+unionData.updated
+]
+.filter(Boolean)
+.sort()
+.pop();
+
+document.querySelector(
+"#updated"
+).textContent=
+
+newest
+?
+"Zuletzt aktualisiert: "+
+new Date(newest)
+.toLocaleString("de-DE")
+:
+"";
+
+render();
+
+}catch(err){
+
+document.querySelector(
+"#app"
+).innerHTML=
+
+`
+<div class="empty">
+Termine konnten nicht geladen werden.
+</div>
+`;
+
+console.error(err);
+
+}
+
+}
+
+/* OBERER FILTER */
+
+document
+.querySelectorAll(
+"button[data-filter]"
+)
+.forEach(b=>{
+
+b.onclick=()=>{
+
+document
+.querySelectorAll(
+"button[data-filter]"
+)
+.forEach(
+x=>x.classList.remove("active")
+);
+
+b.classList.add(
+"active"
+);
+
+filter=
+b.dataset.filter;
+
+render();
+
+};
+
+});
+
+/* OBERER ANSICHTSFILTER */
+
+document
+.querySelectorAll(
+"button[data-view]"
+)
+.forEach(b=>{
+
+b.onclick=()=>{
+
+document
+.querySelectorAll(
+"button[data-view]"
+)
+.forEach(
+x=>x.classList.remove("active")
+);
+
+b.classList.add(
+"active"
+);
+
+selectedDate="";
+calendarWeekOffset=0;
+
+view=
+b.dataset.view;
+
+openOnly=false;
+
+render();
+
+};
+
+});
+
+/* AKTUALISIEREN */
+
+document.querySelector(
+"#refreshBtn"
+).onclick=()=>{
+
+document.querySelector(
+"#refreshBtn"
+).textContent=
+"⏳ Aktualisiere…";
+
+load().finally(()=>{
+
+document.querySelector(
+"#refreshBtn"
+).textContent=
+"🔄 Aktualisieren";
+
+});
+
+};
+
+/* WOCHEN BLÄTTERN */
+
+document.querySelector(
+"#prevWeekBtn"
+).onclick=()=>{
+
+calendarWeekOffset--;
+
+selectedDate="";
+
+render();
+
+};
+
+document.querySelector(
+"#nextWeekBtn"
+).onclick=()=>{
+
+calendarWeekOffset++;
+
+selectedDate="";
+
+render();
+
+};
+
+document.querySelector(
+"#currentWeekBtn"
+).onclick=()=>{
+
+calendarWeekOffset=0;
+
+selectedDate="";
+
+view="week";
+
+render();
+
+};
+
+/* UNTERE NAVIGATION */
+
+document
+.querySelectorAll(
+"button[data-nav]"
+)
+.forEach(b=>{
+
+b.onclick=()=>{
+
+document
+.querySelectorAll(
+"button[data-nav]"
+)
+.forEach(
+x=>x.classList.remove("active")
+);
+
+b.classList.add(
+"active"
+);
+
+const n=
+b.dataset.nav;
+
+selectedDate="";
+calendarWeekOffset=0;
+
+openOnly=
+n==="open";
+
+view=
+n==="today"
+?
+"today"
+:
+n==="all"
+?
+"all"
+:
+"week";
+
+render();
+
+};
+
+});
+
+/* SERVICE WORKER */
+
+if(
+"serviceWorker" in navigator
+){
+
+navigator
+.serviceWorker
+.register("sw.js");
+
+}
+
+/* START */
+
+load();
+
+</script>
+
+</body>
+</html>

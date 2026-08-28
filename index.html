@@ -1,124 +1,2568 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#111318">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="SternDesOstens">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <title>SternDesOstens – Kicktipp AI</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111116">
+<title>Familien Fußball</title>
+
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<style>
+:root{
+  --bg:#f2f2f7;
+  --text:#111111;
+  --muted:#6e6e73;
+  --luis:#6f2dbd;
+  --luis-soft:#f2eaff;
+  --alicia:#d80027;
+  --alicia-soft:#fff0f2;
+  --green:#34c759;
+  --orange:#ff9500;
+  --red:#ff3b30;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  padding:
+    env(safe-area-inset-top)
+    env(safe-area-inset-right)
+    env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
+
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",
+  "SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+  background:
+    radial-gradient(circle at top left,rgba(111,45,189,.08),transparent 34%),
+    radial-gradient(circle at top right,rgba(216,0,39,.08),transparent 34%),
+    var(--bg);
+
+  color:var(--text);
+}
+
+header{
+  background:linear-gradient(135deg,#0b0b0f,#15151c);
+  color:white;
+  padding:20px 18px 16px;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 8px 24px rgba(0,0,0,.16);
+}
+
+h1{
+  margin:0;
+  font-size:25px;
+  font-weight:850;
+}
+
+.sub{
+  font-size:13px;
+  color:#d1d1d6;
+  margin-top:5px;
+}
+
+main{
+  max-width:920px;
+  margin:auto;
+  padding:14px;
+}
+
+.toolbar,
+.viewbar,
+.rangebar{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+
+button{
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:999px;
+  padding:9px 14px;
+  font-weight:750;
+  background:rgba(255,255,255,.92);
+  color:#1c1c1e;
+  cursor:pointer;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+button:active{transform:scale(.97)}
+
+button.active{
+  background:#111;
+  color:white;
+}
+
+#refreshBtn{margin-left:auto}
+
+/* DASHBOARD */
+
+.dashboard{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:8px;
+  margin:8px 0 10px;
+}
+
+.nextcard{
+  border:0;
+  width:100%;
+  text-align:left;
+  border-radius:19px;
+  padding:12px;
+  color:white;
+  box-shadow:var(--shadow);
+  min-width:0;
+  cursor:pointer;
+}
+
+.nextcard.luis{
+  background:linear-gradient(135deg,#55208f,#7f3fd0);
+}
+
+.nextcard.alicia{
+  background:linear-gradient(135deg,#a90020,#e11d3f);
+}
+
+.nextlabel{
+  font-size:10px;
+  font-weight:800;
+  opacity:.82;
+  text-transform:uppercase;
+}
+
+.nextname{
+  font-size:18px;
+  font-weight:900;
+  margin:2px 0 7px;
+}
+
+.nextwhen{
+  font-size:15px;
+  font-weight:900;
+}
+
+.nexttitle{
+  font-size:12px;
+  font-weight:750;
+  margin-top:5px;
+}
+
+.nextloc{
+  font-size:10px;
+  opacity:.9;
+  margin-top:6px;
+  line-height:1.3;
+}
+
+.nextloc strong{
+  font-size:11px;
+}
+
+/* STATUS */
+
+.statusbar{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:6px;
+  margin:8px 0 10px;
+}
+
+.stat{
+  background:white;
+  border-radius:13px;
+  padding:8px 4px;
+  text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
+}
+
+.stat b{
+  display:block;
+  font-size:17px;
+}
+
+.stat span{
+  font-size:9px;
+  color:var(--muted);
+  font-weight:750;
+}
+
+.stat.open{cursor:pointer}
+
+.stat.open b{color:var(--orange)}
+
+.changes{
+  display:none;
+  background:#fff8e7;
+  border:1px solid #ffd98a;
+  border-radius:14px;
+  padding:10px 12px;
+  margin-bottom:10px;
+  font-size:12px;
+}
+
+.changes.show{display:block}
+
+.changes ul{
+  margin:6px 0 0;
+  padding-left:18px;
+}
+
+.sourcechips{display:none!important}
+
+/* KALENDER */
+
+.calendarControls{
+  display:grid;
+  grid-template-columns:44px 1fr 44px;
+  align-items:center;
+  gap:7px;
+  margin:5px 0;
+}
+
+.calendarControls button{
+  height:38px;
+  padding:0 8px;
+  font-size:11px;
+}
+
+#prevWeekBtn,
+#nextWeekBtn{
+  font-size:25px;
+}
+
+.calendarStrip{
+  display:grid;
+  grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:4px;
+  margin:6px 0 12px;
+}
+
+.daybox{
+  appearance:none;
+  -webkit-appearance:none;
+  width:100%;
+  min-width:0;
+  min-height:54px;
+  margin:0;
+  padding:6px 1px;
+  border:0;
+  border-radius:11px;
+  background:white;
+  color:#111;
+  text-align:center;
+  font-size:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.daybox.today{outline:2px solid #111}
+
+.daybox.selected{
+  background:#111;
+  color:white;
+  outline:none;
+}
+
+.dots{
+  height:7px;
+  margin-top:4px;
+}
+
+.dot{
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  margin:0 1px;
+}
+
+.dot.luis{background:var(--luis)}
+.dot.alicia{background:var(--alicia)}
+
+/* HERO */
+
+.hero{
+  background:linear-gradient(135deg,#111116,#1f1f27);
+  color:white;
+  border-radius:20px;
+  padding:15px;
+  margin:7px 0 13px;
+  box-shadow:0 10px 26px rgba(0,0,0,.14);
+}
+
+.hero h2{
+  margin:0 0 4px;
+  font-size:19px;
+}
+
+.hero p{
+  margin:0;
+  color:#c7c7cc;
+  font-size:12px;
+}
+
+/* TERMINE */
+
+.week{margin:18px 0}
+
+.week h2{
+  font-size:17px;
+  margin:0 0 10px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:9px;
+  align-items:start;
+}
+
+.kidcol{
+  display:grid;
+  gap:9px;
+  min-width:0;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:12px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+  min-width:0;
+  cursor:pointer;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:5px;
+}
+
+.card.Luis::before{background:var(--luis)}
+.card.Alicia::before{background:var(--alicia)}
+
+.card.Luis{
+  background:linear-gradient(180deg,#fff,var(--luis-soft));
+}
+
+.card.Alicia{
+  background:linear-gradient(180deg,#fff,var(--alicia-soft));
+}
+
+.card.game{
+  box-shadow:0 12px 28px rgba(0,0,0,.11);
+}
+
+.card.game::after{
+  content:"SPIELTAG";
+  position:absolute;
+  top:8px;
+  right:-24px;
+  transform:rotate(35deg);
+  background:#111;
+  color:white;
+  font-size:8px;
+  font-weight:900;
+  padding:4px 28px;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.who{
+  font-weight:900;
+  font-size:15px;
+}
+
+.Luis .who{color:var(--luis)}
+.Alicia .who{color:var(--alicia)}
+
+.time{
+  font-size:19px;
+  font-weight:900;
+}
+
+.type{
+  display:inline-block;
+  margin-top:8px;
+  font-size:10px;
+  font-weight:850;
+  padding:5px 8px;
+  border-radius:999px;
+}
+
+.Luis .type{
+  background:var(--luis-soft);
+  color:var(--luis);
+}
+
+.Alicia .type{
+  background:var(--alicia-soft);
+  color:var(--alicia);
+}
+
+.card h3{
+  margin:9px 0 0;
+  font-size:15px;
+  line-height:1.25;
+}
+
+/* ORT */
+
+.loc{
+  margin-top:9px;
+  color:#3a3a3c;
+  line-height:1.35;
+  font-size:13px;
+}
+
+.venueName{
+  font-size:14px;
+  font-weight:900;
+  color:#111;
+}
+
+.venueAddress{
+  display:block;
+  margin-top:2px;
+  font-size:11px;
+  color:#636366;
+  line-height:1.3;
+}
+
+.meet{
+  margin-top:8px;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* ROUTE */
+
+.maps{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  text-decoration:none;
+  margin-top:10px;
+  background:#111116;
+  color:white;
+  padding:9px 10px;
+  border-radius:11px;
+  font-weight:800;
+  font-size:12px;
+}
+
+/* RSVP */
+
+.rsvp{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:4px;
+  margin-top:9px;
+}
+
+.rsvp button{
+  margin:0;
+  padding:7px 2px;
+  font-size:9px;
+  border-radius:9px;
+  background:white;
+  box-shadow:none;
+}
+
+.rsvp button.selected{color:white}
+.rsvp button[data-status="yes"].selected{background:var(--green)}
+.rsvp button[data-status="maybe"].selected{background:var(--orange)}
+.rsvp button[data-status="no"].selected{background:var(--red)}
+
+.empty{
+  background:white;
+  padding:17px;
+  border-radius:17px;
+  color:var(--muted);
+}
+
+.rangebar{display:none}
+
+.rangebar button{
+  font-size:11px;
+  padding:7px 10px;
+}
+
+/* VERGANGENE */
+
+.pastWrap{
+  margin-top:18px;
+  background:rgba(255,255,255,.65);
+  border-radius:16px;
+  overflow:hidden;
+}
+
+.pastToggle{
+  width:100%;
+  text-align:left;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  padding:12px 14px;
+}
+
+#pastContent{
+  display:none;
+  padding:0 10px 10px;
+}
+
+#pastContent.show{display:block}
+
+/* NAVIGATION */
+
+.bottomnav{
+  position:sticky;
+  bottom:8px;
+  z-index:4;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
+  background:rgba(20,20,24,.92);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  padding:6px;
+  border-radius:18px;
+  margin:28px 0 12px;
+}
+
+.bottomnav button{
+  background:transparent;
+  color:#ddd;
+  border:0;
+  box-shadow:none;
+  border-radius:13px;
+  padding:9px 3px;
+  font-size:10px;
+}
+
+.bottomnav button.active{
+  background:white;
+  color:#111;
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  background:rgba(0,0,0,.38);
+  z-index:50;
+  padding:12px;
+}
+
+.modal.show{display:flex}
+
+.modalCard{
+  width:min(620px,100%);
+  max-height:88vh;
+  overflow:auto;
+  background:#f9f9fb;
+  border-radius:24px 24px 18px 18px;
+  padding:16px;
+}
+
+.modalHead{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.modalHead h2{
+  margin:0;
+  font-size:21px;
+}
+
+.closeBtn{
+  border-radius:50%;
+  padding:6px 10px;
+  font-size:16px;
+  box-shadow:none;
+}
+
+.detailList{
+  display:grid;
+  gap:9px;
+  margin-top:14px;
+}
+
+.detailItem{
+  background:white;
+  border-radius:14px;
+  padding:11px 12px;
+  font-size:13px;
+}
+
+.detailLabel{
+  font-size:10px;
+  color:var(--muted);
+  font-weight:800;
+  text-transform:uppercase;
+  margin-bottom:3px;
+}
+
+footer{
+  padding:20px 16px 36px;
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+}
+
+#app{scroll-margin-top:150px}
+
+@media(max-width:560px){
+
+  main{padding:10px}
+
+  header{
+    padding:18px 18px 15px;
+  }
+
+  h1{font-size:24px}
+
+  .viewbar,
+  .toolbar{
+    margin-bottom:8px;
+  }
+
+  .dashboard{gap:7px}
+
+  .nextcard{
+    padding:11px;
+    min-height:140px;
+  }
+
+  .nextname{font-size:17px}
+  .nextwhen{font-size:14px}
+
+  .statusbar{gap:5px}
+
+  .stat{
+    padding:8px 3px;
+  }
+
+  .stat b{font-size:17px}
+
+  .grid{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:8px;
+  }
+
+  .card{
+    padding:10px 9px;
+  }
+
+  .top{display:block}
+
+  .time{
+    font-size:16px;
+    margin-top:5px;
+  }
+
+  .card h3{font-size:13px}
+
+  .loc{font-size:11px}
+
+  .venueName{font-size:12px}
+
+  .venueAddress{font-size:10px}
+
+  .rsvp{gap:3px}
+
+  .rsvp button{
+    font-size:9px;
+    padding:6px 2px;
+  }
+
+  .modal{padding:0}
+
+  .modalCard{
+    border-radius:24px 24px 0 0;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div>
-      <div class="eyebrow">SternDesOstens</div>
-      <h1>Kicktipp AI</h1>
+
+<header>
+<h1>⚽ Familien Fußball</h1>
+<div class="sub">
+Luis · Eintracht Mahlsdorf • Alicia · 1. FC Union Berlin
+</div>
+</header>
+
+<main>
+
+<div class="viewbar">
+<button class="active" data-view="week">Diese Woche</button>
+<button data-view="today">Heute</button>
+<button data-view="all">Alle Termine</button>
+<button id="refreshBtn">🔄 Aktualisieren</button>
+</div>
+
+<div class="toolbar">
+<button class="active" data-filter="all">Alle</button>
+<button data-filter="Luis">Luis</button>
+<button data-filter="Alicia">Alicia</button>
+</div>
+
+<div id="changes" class="changes"></div>
+
+<div id="dashboard" class="dashboard"></div>
+
+<div id="stats" class="statusbar"></div>
+
+<div class="calendarControls">
+<button id="prevWeekBtn">‹</button>
+<button id="currentWeekBtn">Diese Woche</button>
+<button id="nextWeekBtn">›</button>
+</div>
+
+<div id="calendarStrip" class="calendarStrip"></div>
+
+<div id="rangebar" class="rangebar">
+<button class="active" data-range="14">14 Tage</button>
+<button data-range="30">30 Tage</button>
+<button data-range="all">Alle</button>
+</div>
+
+<div id="app"></div>
+
+<div class="pastWrap">
+<button id="pastToggle" class="pastToggle">
+▸ Vergangene Termine
+</button>
+<div id="pastContent"></div>
+</div>
+
+<div class="bottomnav">
+<button class="active" data-nav="week">🏠<br>Übersicht</button>
+<button data-nav="today">📅<br>Heute</button>
+<button data-nav="open">✓<br>Offen</button>
+<button data-nav="all">☰<br>Alle</button>
+</div>
+
+</main>
+
+<footer>
+<div id="updated"></div>
+<div>Als App installierbar · Route direkt aus jedem Termin</div>
+</footer>
+
+<div id="eventModal" class="modal">
+<div class="modalCard">
+
+<div class="modalHead">
+<h2 id="modalTitle">Termin</h2>
+<button id="closeModalBtn" class="closeBtn">×</button>
+</div>
+
+<div id="modalBody"></div>
+
+</div>
+</div>
+
+<script>
+
+let trainings=[];
+let myteamEvents=[];
+let aliciaUnionEvents=[];
+
+let filter="all";
+let view="week";
+let source={games:[]};
+
+let openOnly=false;
+let selectedDate="";
+let calendarWeekOffset=0;
+let rangeMode="14";
+
+const pad=n=>String(n).padStart(2,"0");
+
+function iso(d){
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+}
+
+function weekNo(d){
+
+  let x=new Date(
+    Date.UTC(
+      d.getFullYear(),
+      d.getMonth(),
+      d.getDate()
+    )
+  );
+
+  x.setUTCDate(
+    x.getUTCDate()+4-(x.getUTCDay()||7)
+  );
+
+  let y=new Date(
+    Date.UTC(
+      x.getUTCFullYear(),
+      0,
+      1
+    )
+  );
+
+  return Math.ceil(
+    (((x-y)/86400000)+1)/7
+  );
+}
+
+function monday(d){
+
+  let x=new Date(d);
+  let n=x.getDay()||7;
+
+  x.setDate(x.getDate()-n+1);
+  x.setHours(0,0,0,0);
+
+  return x;
+}
+
+function fmt(d){
+
+  return d.toLocaleDateString(
+    "de-DE",
+    {
+      weekday:"short",
+      day:"2-digit",
+      month:"2-digit"
+    }
+  );
+}
+
+/* ==========================================
+   SPORTSTÄTTEN
+   ========================================== */
+
+function venueInfo(location){
+
+  const loc=(location||"").trim();
+  const s=loc.toLowerCase();
+
+  /* AM ROSENHAG */
+
+  if(
+    s.includes("melanchthonstraße 53") ||
+    s.includes("melanchthonstrasse 53") ||
+    s.includes("melanchthonstr. 53")
+  ){
+    return {
+      name:"Am Rosenhag",
+      address:loc
+    };
+  }
+
+  /* TZO */
+
+  if(
+    s.includes("bruno-bürgel-weg 63") ||
+    s.includes("bruno-buergel-weg 63") ||
+    s.includes("bruno-bürgel-weg")
+  ){
+    return {
+      name:"TZO",
+      address:loc
+    };
+  }
+
+  /* TZPW */
+
+  if(
+    s.includes("plänterwald") ||
+    s.includes("plaenterwald") ||
+    s.includes("neue krugallee")
+  ){
+    return {
+      name:"TZPW",
+      address:loc
+    };
+  }
+
+  return {
+    name:"",
+    address:loc
+  };
+}
+
+function venueHtml(location){
+
+  const v=venueInfo(location);
+
+  if(v.name){
+
+    return `
+      <div class="loc">
+        📍 <span class="venueName">${v.name}</span>
+        <span class="venueAddress">${v.address}</span>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="loc">
+      📍 ${v.address}
     </div>
-    <button id="installBtn" class="iconbtn" hidden aria-label="App installieren">＋</button>
-  </header>
+  `;
+}
 
-  <main>
-    <section id="home" class="view active">
-      <div class="hero card">
+/* ALICIA TRAINING */
+
+function buildTraining(start,end){
+
+  let out=[];
+
+  for(
+    let d=new Date(start);
+    d<=end;
+    d.setDate(d.getDate()+1)
+  ){
+
+    for(const t of trainings){
+
+      if(
+        t.child==="Alicia" &&
+        t.day===d.getDay()
+      ){
+
+        out.push({
+          date:iso(d),
+          time:t.time,
+          child:t.child,
+          type:"Training",
+          title:t.title,
+          location:t.location,
+          maps:
+            "https://maps.apple.com/?q="+
+            encodeURIComponent(t.location),
+          source:"union-training"
+        });
+
+      }
+    }
+  }
+
+  return out;
+}
+
+/* ALLE DATEN */
+
+function rawEvents(){
+
+  const today=new Date();
+  today.setHours(0,0,0,0);
+
+  const start=new Date(today);
+  start.setDate(start.getDate()-30);
+
+  const end=new Date(today);
+  end.setDate(end.getDate()+120);
+
+  return [
+    ...source.games,
+    ...myteamEvents,
+    ...aliciaUnionEvents,
+    ...buildTraining(start,end)
+  ].sort(
+    (a,b)=>
+      (a.date+a.time)
+      .localeCompare(b.date+b.time)
+  );
+}
+
+function futureEvents(){
+
+  const today=new Date();
+  today.setHours(0,0,0,0);
+
+  return rawEvents().filter(
+    e=>new Date(e.date+"T23:59:00")>=today
+  );
+}
+
+function pastEvents(){
+
+  const today=new Date();
+  today.setHours(0,0,0,0);
+
+  return rawEvents()
+    .filter(
+      e=>new Date(e.date+"T23:59:00")<today
+    )
+    .sort(
+      (a,b)=>
+        (b.date+b.time)
+        .localeCompare(a.date+a.time)
+    );
+}
+
+/* RSVP */
+
+function eventKey(e){
+
+  return [
+    e.child,
+    e.date,
+    e.time,
+    e.title,
+    e.location
+  ].join("|");
+}
+
+function eventIdentity(e){
+
+  return [
+    e.child||"",
+    (e.type||"").toLowerCase(),
+    (e.title||"").toLowerCase()
+  ].join("|");
+}
+
+function getRsvp(e){
+
+  try{
+    return localStorage.getItem(
+      "rsvp:"+eventKey(e)
+    )||"";
+  }catch(_){
+    return "";
+  }
+}
+
+function setRsvp(key,status){
+
+  try{
+
+    const k="rsvp:"+key;
+
+    if(localStorage.getItem(k)===status){
+      localStorage.removeItem(k);
+    }else{
+      localStorage.setItem(k,status);
+    }
+
+  }catch(_){}
+
+  render();
+}
+
+function rsvpButtons(e){
+
+  const key=
+    eventKey(e)
+      .replace(/\\/g,"\\\\")
+      .replace(/'/g,"\\'");
+
+  const s=getRsvp(e);
+
+  return `
+    <div class="rsvp" data-no-detail="1">
+
+      <button
+        data-status="yes"
+        class="${s==="yes"?"selected":""}"
+        onclick="setRsvp('${key}','yes')">
+        ✓ Zusage
+      </button>
+
+      <button
+        data-status="maybe"
+        class="${s==="maybe"?"selected":""}"
+        onclick="setRsvp('${key}','maybe')">
+        ? Vielleicht
+      </button>
+
+      <button
+        data-status="no"
+        class="${s==="no"?"selected":""}"
+        onclick="setRsvp('${key}','no')">
+        ✕ Absage
+      </button>
+
+    </div>
+  `;
+}
+
+/* TERMINART */
+
+function typeIcon(e){
+
+  const s=(
+    (e.type||"")+" "+
+    (e.title||"")
+  ).toLowerCase();
+
+  if(s.includes("training")) return "🏃";
+
+  if(
+    s.includes("foto") ||
+    s.includes("portrait")
+  ) return "📸";
+
+  if(
+    s.includes("eltern") ||
+    s.includes("versammlung")
+  ) return "👥";
+
+  if(
+    s.includes("turnier") ||
+    s.includes("festival")
+  ) return "🏆";
+
+  if(
+    s.includes("spiel") ||
+    s.includes("liga") ||
+    s.includes("freundschaft") ||
+    s.includes("testspiel")
+  ) return "⚽";
+
+  return "📌";
+}
+
+function isGame(e){
+
+  const s=(
+    (e.type||"")+" "+
+    (e.title||"")
+  ).toLowerCase();
+
+  return (
+    s.includes("spiel") ||
+    s.includes("liga") ||
+    s.includes("freundschaft") ||
+    s.includes("festival") ||
+    s.includes("turnier")
+  );
+}
+
+/* 30 TAGE */
+
+function thirtyDayLimit(){
+
+  const end=new Date();
+
+  end.setHours(23,59,59,999);
+  end.setDate(end.getDate()+30);
+
+  return end;
+}
+
+/* FILTER */
+
+function filteredFutureEvents(){
+
+  let ev=futureEvents();
+
+  if(filter!=="all"){
+
+    ev=ev.filter(
+      e=>e.child===filter
+    );
+  }
+
+  if(openOnly){
+
+    const end=thirtyDayLimit();
+
+    ev=ev.filter(e=>{
+
+      const d=
+        new Date(e.date+"T23:59:00");
+
+      return d<=end && !getRsvp(e);
+    });
+  }
+
+  if(
+    view==="all" &&
+    rangeMode!=="all"
+  ){
+
+    const today=new Date();
+    today.setHours(0,0,0,0);
+
+    const end=new Date(today);
+
+    end.setDate(
+      end.getDate()+Number(rangeMode)
+    );
+
+    ev=ev.filter(
+      e=>new Date(e.date+"T12:00:00")<=end
+    );
+  }
+
+  return ev;
+}
+
+function nextFor(child){
+
+  return futureEvents().find(
+    e=>e.child===child
+  );
+}
+
+/* DASHBOARD */
+
+function renderExtras(){
+
+  const ev=futureEvents();
+  const now=new Date();
+
+  function nextCard(child,cls){
+
+    const e=nextFor(child);
+
+    if(!e){
+
+      return `
+        <button class="nextcard ${cls}">
+          <div class="nextlabel">Nächster Termin</div>
+          <div class="nextname">${child}</div>
+          <div class="nexttitle">Kein Termin</div>
+        </button>
+      `;
+    }
+
+    const d=
+      new Date(e.date+"T12:00:00");
+
+    const key=
+      eventKey(e)
+      .replace(/"/g,"&quot;");
+
+    const venue=
+      venueInfo(e.location);
+
+    const locationDisplay=
+      venue.name
+      ?
+      `📍 <strong>${venue.name}</strong><br>${venue.address}`
+      :
+      `📍 ${e.location}`;
+
+    return `
+      <button
+        class="nextcard ${cls}"
+        data-event-key="${key}">
+
+        <div class="nextlabel">
+          Nächster Termin
+        </div>
+
+        <div class="nextname">
+          ${child}
+        </div>
+
+        <div class="nextwhen">
+          ${typeIcon(e)} ${fmt(d)} · ${e.time}
+        </div>
+
+        <div class="nexttitle">
+          ${e.title}
+        </div>
+
+        <div class="nextloc">
+          ${locationDisplay}
+        </div>
+
+      </button>
+    `;
+  }
+
+  /* Luis links – Alicia rechts */
+
+  document.querySelector(
+    "#dashboard"
+  ).innerHTML=
+    nextCard("Luis","luis")+
+    nextCard("Alicia","alicia");
+
+  document
+    .querySelectorAll(
+      ".nextcard[data-event-key]"
+    )
+    .forEach(btn=>{
+
+      btn.onclick=()=>{
+
+        const e=
+          rawEvents().find(
+            x=>eventKey(x)===btn.dataset.eventKey
+          );
+
+        if(!e) return;
+
+        selectedDate=e.date;
+        view="day";
+        openOnly=false;
+
+        render();
+
+        setTimeout(()=>{
+
+          document
+            .querySelector("#app")
+            ?.scrollIntoView({
+              behavior:"smooth",
+              block:"start"
+            });
+
+        },50);
+      };
+    });
+
+  /* STATUS – NUR 30 TAGE */
+
+  const statusEnd=
+    thirtyDayLimit();
+
+  const statusEvents=
+    ev.filter(
+      e=>new Date(e.date+"T23:59:00")<=statusEnd
+    );
+
+  const yes=
+    statusEvents.filter(
+      e=>getRsvp(e)==="yes"
+    ).length;
+
+  const maybe=
+    statusEvents.filter(
+      e=>getRsvp(e)==="maybe"
+    ).length;
+
+  const no=
+    statusEvents.filter(
+      e=>getRsvp(e)==="no"
+    ).length;
+
+  const open=
+    statusEvents.filter(
+      e=>!getRsvp(e)
+    ).length;
+
+  document.querySelector(
+    "#stats"
+  ).innerHTML=`
+
+    <div class="stat">
+      <b>${yes}</b>
+      <span>zugesagt</span>
+    </div>
+
+    <div class="stat">
+      <b>${maybe}</b>
+      <span>vielleicht</span>
+    </div>
+
+    <div class="stat">
+      <b>${no}</b>
+      <span>abgesagt</span>
+    </div>
+
+    <div class="stat open" id="openStat">
+      <b>${open}</b>
+      <span>offen · 30 Tage</span>
+    </div>
+  `;
+
+  document.querySelector(
+    "#openStat"
+  ).onclick=()=>{
+
+    openOnly=true;
+    view="all";
+    rangeMode="30";
+    selectedDate="";
+
+    render();
+  };
+
+  /* KALENDER */
+
+  const base=monday(now);
+
+  base.setDate(
+    base.getDate()+calendarWeekOffset*7
+  );
+
+  const days=[];
+
+  for(let i=0;i<7;i++){
+
+    const d=new Date(base);
+
+    d.setDate(
+      d.getDate()+i
+    );
+
+    const ds=iso(d);
+
+    const dayEvents=
+      ev.filter(e=>e.date===ds);
+
+    const luis=
+      dayEvents.some(
+        e=>e.child==="Luis"
+      );
+
+    const alicia=
+      dayEvents.some(
+        e=>e.child==="Alicia"
+      );
+
+    days.push(`
+
+      <button
+        class="daybox
+          ${ds===iso(now)?"today":""}
+          ${ds===selectedDate?"selected":""}"
+        data-date="${ds}">
+
+        ${d
+          .toLocaleDateString(
+            "de-DE",
+            {weekday:"short"}
+          )
+          .slice(0,2)}
+
+        <br>
+
+        <b>${d.getDate()}</b>
+
+        <div class="dots">
+          ${luis?'<i class="dot luis"></i>':""}
+          ${alicia?'<i class="dot alicia"></i>':""}
+        </div>
+
+      </button>
+    `);
+  }
+
+  document.querySelector(
+    "#calendarStrip"
+  ).innerHTML=days.join("");
+
+  renderChanges(ev);
+}
+
+/* ÄNDERUNGEN */
+
+function renderChanges(ev){
+
+  try{
+
+    const current=
+      ev.map(e=>({
+        id:eventIdentity(e),
+        child:e.child,
+        title:e.title,
+        type:e.type,
+        date:e.date,
+        time:e.time,
+        location:e.location
+      }));
+
+    const oldRaw=
+      localStorage.getItem(
+        "eventsSnapshotV2"
+      );
+
+    const ch=
+      document.querySelector(
+        "#changes"
+      );
+
+    if(oldRaw){
+
+      const old=JSON.parse(oldRaw);
+
+      const oldMap=
+        new Map(
+          old.map(x=>[x.id,x])
+        );
+
+      const newMap=
+        new Map(
+          current.map(x=>[x.id,x])
+        );
+
+      const changes=[];
+
+      for(const [id,n] of newMap){
+
+        const o=oldMap.get(id);
+
+        if(!o){
+
+          changes.push(
+            `${n.child}: neuer Termin „${n.title}“`
+          );
+
+        }else{
+
+          const diffs=[];
+
+          if(o.date!==n.date)
+            diffs.push("Datum geändert");
+
+          if(o.time!==n.time)
+            diffs.push("Zeit geändert");
+
+          if(o.location!==n.location)
+            diffs.push("Ort geändert");
+
+          if(diffs.length){
+
+            changes.push(
+              `${n.child}: „${n.title}“ – ${diffs.join(", ")}`
+            );
+          }
+        }
+      }
+
+      if(changes.length){
+
+        ch.innerHTML=`
+          ⚠️ <b>${changes.length}
+          Änderung${changes.length===1?"":"en"}</b>
+
+          <ul>
+            ${changes
+              .slice(0,5)
+              .map(x=>`<li>${x}</li>`)
+              .join("")}
+          </ul>
+        `;
+
+        ch.classList.add("show");
+
+      }else{
+
+        ch.classList.remove("show");
+      }
+    }
+
+    localStorage.setItem(
+      "eventsSnapshotV2",
+      JSON.stringify(current)
+    );
+
+  }catch(_){}
+}
+
+/* TERMIN-KARTE */
+
+function card(e){
+
+  const dt=
+    new Date(e.date+"T12:00:00");
+
+  const key=
+    eventKey(e)
+    .replace(/"/g,"&quot;");
+
+  const mapsBtn=
+    e.maps
+    ?
+    `
+      <a
+        class="maps"
+        data-no-detail="1"
+        href="${e.maps}">
+        🧭 Route →
+      </a>
+    `
+    :
+    "";
+
+  const meet=
+    e.meetTime ||
+    e.meetingTime ||
+    e.treffzeit ||
+    "";
+
+  const gameClass=
+    isGame(e)?"game":"";
+
+  return `
+
+    <article
+      class="card ${e.child} ${gameClass}"
+      data-event-key="${key}">
+
+      <div class="top">
+
         <div>
-          <div class="eyebrow" id="seasonLabel">Bundesliga 2026/27</div>
-          <h2 id="matchdayTitle">1. Spieltag</h2>
-          <p id="updatedLabel" class="muted">Stand: lokal</p>
-        </div>
-        <div class="hero-actions">
-          <button id="refreshBtn" class="btn primary">↻ Daten aktualisieren</button>
-          <button id="copyBtn" class="btn secondary">📋 Tipps kopieren</button>
-        </div>
-      </div>
 
-      <div id="alertBox" class="alert card hidden"></div>
-      <div id="matches"></div>
+          <div class="who">
+            ${e.child}
+          </div>
 
-      <div class="action-grid">
-        <button id="openKicktippBtn" class="btn primary">↗ Kicktipp öffnen</button>
-        <button id="exportBtn" class="btn secondary">⬆ JSON exportieren</button>
-      </div>
-    </section>
+          <div>
+            ${fmt(dt)}
+          </div>
 
-    <section id="analysis" class="view">
-      <div class="card">
-        <div class="eyebrow">Premium-Analyse</div>
-        <h2>Spieltag-Übersicht</h2>
-        <p class="muted">Form, Ausfälle, Sperren, Aufstellungs-Sicherheit und Risiko je Partie.</p>
-      </div>
-      <div id="analysisList"></div>
-    </section>
-
-    <section id="stats" class="view">
-      <div class="card">
-        <div class="eyebrow">Auswertung</div>
-        <h2>Meine Tippbilanz</h2>
-        <div class="stat-grid">
-          <div class="stat"><span id="statPoints">0</span><small>Punkte</small></div>
-          <div class="stat"><span id="statExact">0</span><small>Exakt</small></div>
-          <div class="stat"><span id="statTendency">0</span><small>Tendenz</small></div>
-          <div class="stat"><span id="statMatches">0</span><small>Gewertet</small></div>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Ergebnisse eintragen</h3>
-        <p class="muted">Nach dem Spiel kannst du die echten Ergebnisse eintragen. Die App berechnet deine Bilanz lokal.</p>
-        <div id="resultEditor"></div>
-      </div>
-    </section>
-
-    <section id="settings" class="view">
-      <div class="card">
-        <div class="eyebrow">Einstellungen</div>
-        <h2>App konfigurieren</h2>
-
-        <label>Kicktipp-Link
-          <input id="kicktippUrl" type="url" placeholder="https://www.kicktipp.de/deine-runde/tippabgabe">
-        </label>
-
-        <label>Live-Daten-Endpunkt (optional)
-          <input id="apiEndpoint" type="url" placeholder="https://.../data.json">
-        </label>
-
-        <label>API-Key (optional)
-          <input id="apiKey" type="password" placeholder="wird nur lokal gespeichert">
-        </label>
-
-        <div class="split">
-          <button id="saveSettingsBtn" class="btn primary">Speichern</button>
-          <button id="importBtn" class="btn secondary">JSON importieren</button>
-          <input id="importFile" type="file" accept="application/json" hidden>
         </div>
 
-        <hr>
-        <h3>Auf iPhone installieren</h3>
-        <p class="muted">
-          In Safari öffnen → Teilen → „Zum Home-Bildschirm“ → „Hinzufügen“.
-          Danach startet die App ohne Safari-Leiste wie eine normale App.
+        <div class="time">
+          ${e.time}
+        </div>
+
+      </div>
+
+      <div class="type">
+        ${typeIcon(e)} ${e.type}
+      </div>
+
+      <h3>
+        ${e.title}
+      </h3>
+
+      ${
+        meet
+        ?
+        `<div class="meet">
+          ⏰ Treffen: ${meet}
+        </div>`
+        :""
+      }
+
+      ${venueHtml(e.location)}
+
+      ${mapsBtn}
+
+      ${rsvpButtons(e)}
+
+    </article>
+  `;
+}
+
+/* LUIS IMMER LINKS / ALICIA IMMER RECHTS */
+
+function twoCols(list){
+
+  const luis=
+    list.filter(
+      e=>e.child==="Luis"
+    );
+
+  const alicia=
+    list.filter(
+      e=>e.child==="Alicia"
+    );
+
+  return `
+
+    <div class="grid">
+
+      <div class="kidcol">
+        ${luis.map(card).join("")}
+      </div>
+
+      <div class="kidcol">
+        ${alicia.map(card).join("")}
+      </div>
+
+    </div>
+  `;
+}
+
+/* VERGANGENE */
+
+function renderPast(){
+
+  let ev=pastEvents();
+
+  if(filter!=="all"){
+
+    ev=ev.filter(
+      e=>e.child===filter
+    );
+  }
+
+  ev=ev.slice(0,20);
+
+  document.querySelector(
+    "#pastContent"
+  ).innerHTML=
+
+    ev.length
+    ?twoCols(ev)
+    :`
+      <div class="empty">
+        Keine vergangenen Termine vorhanden.
+      </div>
+    `;
+}
+
+/* HAUPTANSICHT */
+
+function render(){
+
+  const today=new Date();
+  today.setHours(0,0,0,0);
+
+  const rangebar=
+    document.querySelector(
+      "#rangebar"
+    );
+
+  if(rangebar){
+
+    rangebar.style.display=
+      (
+        view==="all" &&
+        !openOnly
+      )
+      ?"flex"
+      :"none";
+  }
+
+  let ev=
+    filteredFutureEvents();
+
+  renderExtras();
+  renderPast();
+
+  let html="";
+
+  /* TAG */
+
+  if(
+    view==="day" &&
+    selectedDate
+  ){
+
+    const d=
+      new Date(
+        selectedDate+"T12:00:00"
+      );
+
+    const list=
+      ev.filter(
+        e=>e.date===selectedDate
+      );
+
+    html=`
+
+      <div class="hero">
+
+        <h2>
+          ${d.toLocaleDateString(
+            "de-DE",
+            {
+              weekday:"long",
+              day:"2-digit",
+              month:"long"
+            }
+          )}
+        </h2>
+
+        <p>Ausgewählter Tag</p>
+
+      </div>
+    `;
+
+    html+=
+      list.length
+      ?twoCols(list)
+      :`
+        <div class="empty">
+          An diesem Tag stehen keine Fußballtermine an.
+        </div>
+      `;
+  }
+
+  /* HEUTE */
+
+  else if(view==="today"){
+
+    const list=
+      ev.filter(
+        e=>e.date===iso(today)
+      );
+
+    html=`
+
+      <div class="hero">
+
+        <h2>Heute</h2>
+
+        <p>
+          ${today.toLocaleDateString(
+            "de-DE",
+            {
+              weekday:"long",
+              day:"2-digit",
+              month:"long"
+            }
+          )}
         </p>
-      </div>
 
-      <div class="card">
-        <h3>Hinweis zu Live-Daten</h3>
-        <p class="muted">
-          Die App kann aktuelle Daten laden, sobald du einen eigenen JSON-Endpunkt oder später eine Fußball-API hinterlegst.
-          Ohne Endpunkt läuft sie vollständig lokal/offline mit den gespeicherten Spieltagsdaten.
+      </div>
+    `;
+
+    html+=
+      list.length
+      ?twoCols(list)
+      :`
+        <div class="empty">
+          Heute stehen keine Fußballtermine an.
+        </div>
+      `;
+  }
+
+  /* DIESE WOCHE */
+
+  else if(view==="week"){
+
+    const m=monday(today);
+    const s=new Date(m);
+
+    s.setDate(
+      s.getDate()+6
+    );
+
+    const list=
+      ev.filter(e=>{
+
+        const d=
+          new Date(e.date+"T12:00:00");
+
+        return d>=m && d<=s;
+      });
+
+    html=`
+
+      <div class="hero">
+
+        <h2>
+          Diese Woche · KW ${weekNo(today)}
+        </h2>
+
+        <p>
+          ${m.toLocaleDateString(
+            "de-DE",
+            {
+              day:"2-digit",
+              month:"2-digit"
+            }
+          )}
+          –
+          ${s.toLocaleDateString("de-DE")}
         </p>
+
       </div>
-    </section>
-  </main>
+    `;
 
-  <nav class="tabbar">
-    <button data-view="home" class="tab active">⚽<span>Tipps</span></button>
-    <button data-view="analysis" class="tab">📊<span>Analyse</span></button>
-    <button data-view="stats" class="tab">🏆<span>Bilanz</span></button>
-    <button data-view="settings" class="tab">⚙️<span>Setup</span></button>
-  </nav>
+    html+=
+      list.length
+      ?twoCols(list)
+      :`
+        <div class="empty">
+          Diese Woche stehen keine Fußballtermine an.
+        </div>
+      `;
+  }
 
-  <script src="app.js"></script>
+  /* ALLE / OFFEN */
+
+  else{
+
+    if(openOnly){
+
+      html+=`
+
+        <div class="hero">
+
+          <h2>
+            Offene Rückmeldungen
+          </h2>
+
+          <p>
+            Nächste 30 Tage
+          </p>
+
+        </div>
+      `;
+    }
+
+    const groups={};
+
+    for(const e of ev){
+
+      const d=
+        new Date(e.date+"T12:00:00");
+
+      const k=
+        `${d.getFullYear()}-${weekNo(d)}`;
+
+      if(!groups[k])
+        groups[k]=[];
+
+      groups[k].push(e);
+    }
+
+    for(
+      const list
+      of Object.values(groups)
+    ){
+
+      const d=
+        new Date(
+          list[0].date+"T12:00:00"
+        );
+
+      const m=monday(d);
+      const s=new Date(m);
+
+      s.setDate(
+        s.getDate()+6
+      );
+
+      html+=`
+
+        <section class="week">
+
+          <h2>
+            KW ${weekNo(d)}
+            ·
+            ${m.toLocaleDateString(
+              "de-DE",
+              {
+                day:"2-digit",
+                month:"2-digit"
+              }
+            )}
+            –
+            ${s.toLocaleDateString("de-DE")}
+          </h2>
+
+          ${twoCols(list)}
+
+        </section>
+      `;
+    }
+  }
+
+  document.querySelector(
+    "#app"
+  ).innerHTML=
+
+    html ||
+    `
+      <div class="empty">
+        Keine Termine gefunden.
+      </div>
+    `;
+}
+
+/* DETAIL */
+
+function openModal(e){
+
+  const modal=
+    document.querySelector(
+      "#eventModal"
+    );
+
+  const body=
+    document.querySelector(
+      "#modalBody"
+    );
+
+  const d=
+    new Date(e.date+"T12:00:00");
+
+  const meet=
+    e.meetTime ||
+    e.meetingTime ||
+    e.treffzeit ||
+    "";
+
+  const venue=
+    venueInfo(e.location);
+
+  document.querySelector(
+    "#modalTitle"
+  ).textContent=
+    `${typeIcon(e)} ${e.title}`;
+
+  body.innerHTML=`
+
+    <div class="detailList">
+
+      <div class="detailItem">
+        <div class="detailLabel">Kind</div>
+        <b>${e.child}</b>
+      </div>
+
+      <div class="detailItem">
+
+        <div class="detailLabel">
+          Datum
+        </div>
+
+        <b>
+          ${d.toLocaleDateString(
+            "de-DE",
+            {
+              weekday:"long",
+              day:"2-digit",
+              month:"long",
+              year:"numeric"
+            }
+          )}
+        </b>
+
+      </div>
+
+      <div class="detailItem">
+        <div class="detailLabel">Uhrzeit</div>
+        <b>${e.time}</b>
+      </div>
+
+      ${
+        meet
+        ?
+        `
+          <div class="detailItem">
+            <div class="detailLabel">
+              Treffzeit
+            </div>
+            <b>${meet}</b>
+          </div>
+        `
+        :""
+      }
+
+      <div class="detailItem">
+        <div class="detailLabel">Art</div>
+        <b>${e.type}</b>
+      </div>
+
+      <div class="detailItem">
+
+        <div class="detailLabel">
+          Ort
+        </div>
+
+        <b>
+          ${
+            venue.name
+            ?venue.name+"<br>"
+            :""
+          }
+          ${e.location}
+        </b>
+
+      </div>
+
+    </div>
+
+    ${
+      e.maps
+      ?
+      `
+        <a
+          class="maps"
+          href="${e.maps}">
+          🧭 Route →
+        </a>
+      `
+      :""
+    }
+
+    ${rsvpButtons(e)}
+  `;
+
+  modal.classList.add("show");
+}
+
+function closeModal(){
+
+  document.querySelector(
+    "#eventModal"
+  ).classList.remove("show");
+}
+
+/* DATEN LADEN */
+
+async function loadData(showFeedback=false){
+
+  const btn=
+    document.querySelector(
+      "#refreshBtn"
+    );
+
+  if(showFeedback){
+
+    btn.disabled=true;
+    btn.textContent="⏳ Aktualisiere…";
+  }
+
+  try{
+
+    const stamp=Date.now();
+
+    const [
+      gamesData,
+      trainingsData,
+      myteamData,
+      unionData
+    ]=
+    await Promise.all([
+
+      fetch(
+        "data/events.json?"+stamp,
+        {cache:"no-store"}
+      ).then(r=>r.json()),
+
+      fetch(
+        "data/trainings.json?"+stamp,
+        {cache:"no-store"}
+      ).then(r=>r.json()),
+
+      fetch(
+        "data/luis_myteam.json?"+stamp,
+        {cache:"no-store"}
+      ).then(r=>r.json()),
+
+      fetch(
+        "data/alicia_union.json?"+stamp,
+        {cache:"no-store"}
+      ).then(r=>r.json())
+
+    ]);
+
+    source=gamesData;
+
+    trainings=
+      trainingsData.trainings||[];
+
+    myteamEvents=
+      myteamData.events||[];
+
+    aliciaUnionEvents=
+      unionData.events||[];
+
+    const newest=
+      [
+        gamesData.updated,
+        myteamData.updated,
+        unionData.updated
+      ]
+      .filter(Boolean)
+      .sort()
+      .pop();
+
+    document.querySelector(
+      "#updated"
+    ).textContent=
+
+      newest
+      ?
+      "Zuletzt aktualisiert: "+
+      new Date(newest)
+      .toLocaleString("de-DE")
+      :"";
+
+    render();
+
+    if(showFeedback){
+      btn.textContent="✅ Aktualisiert";
+    }
+
+  }catch(err){
+
+    console.error(err);
+
+    if(showFeedback){
+      btn.textContent="⚠️ Fehler";
+    }
+
+    render();
+
+  }finally{
+
+    if(showFeedback){
+
+      setTimeout(()=>{
+
+        btn.disabled=false;
+        btn.textContent="🔄 Aktualisieren";
+
+      },1200);
+    }
+  }
+}
+
+/* KINDERFILTER */
+
+document
+.querySelectorAll(
+  "button[data-filter]"
+)
+.forEach(b=>{
+
+  b.onclick=()=>{
+
+    document
+    .querySelectorAll(
+      "button[data-filter]"
+    )
+    .forEach(
+      x=>x.classList.remove("active")
+    );
+
+    b.classList.add("active");
+
+    filter=b.dataset.filter;
+
+    render();
+  };
+});
+
+/* OBERE ANSICHT */
+
+document
+.querySelectorAll(
+  "button[data-view]"
+)
+.forEach(b=>{
+
+  b.onclick=()=>{
+
+    document
+    .querySelectorAll(
+      "button[data-view]"
+    )
+    .forEach(
+      x=>x.classList.remove("active")
+    );
+
+    b.classList.add("active");
+
+    selectedDate="";
+    calendarWeekOffset=0;
+    openOnly=false;
+
+    view=b.dataset.view;
+
+    render();
+  };
+});
+
+/* KALENDERTAG */
+
+document
+.querySelector(
+  "#calendarStrip"
+)
+.addEventListener(
+  "click",
+  event=>{
+
+    const day=
+      event.target.closest(
+        "button.daybox[data-date]"
+      );
+
+    if(!day) return;
+
+    selectedDate=
+      day.dataset.date;
+
+    view="day";
+    openOnly=false;
+
+    render();
+
+    setTimeout(()=>{
+
+      document
+      .querySelector("#app")
+      ?.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+    },50);
+  }
+);
+
+/* WOCHEN */
+
+document.querySelector(
+  "#prevWeekBtn"
+).onclick=()=>{
+
+  calendarWeekOffset--;
+  selectedDate="";
+  render();
+};
+
+document.querySelector(
+  "#nextWeekBtn"
+).onclick=()=>{
+
+  calendarWeekOffset++;
+  selectedDate="";
+  render();
+};
+
+document.querySelector(
+  "#currentWeekBtn"
+).onclick=()=>{
+
+  calendarWeekOffset=0;
+  selectedDate="";
+  openOnly=false;
+  view="week";
+
+  render();
+};
+
+/* AKTUALISIEREN */
+
+document.querySelector(
+  "#refreshBtn"
+).onclick=()=>{
+
+  loadData(true);
+};
+
+/* BOTTOM NAV */
+
+document
+.querySelectorAll(
+  "button[data-nav]"
+)
+.forEach(b=>{
+
+  b.onclick=()=>{
+
+    document
+    .querySelectorAll(
+      "button[data-nav]"
+    )
+    .forEach(
+      x=>x.classList.remove("active")
+    );
+
+    b.classList.add("active");
+
+    const n=b.dataset.nav;
+
+    selectedDate="";
+    calendarWeekOffset=0;
+
+    if(n==="open"){
+
+      openOnly=true;
+      view="all";
+      rangeMode="30";
+
+    }else{
+
+      openOnly=false;
+
+      if(n==="today"){
+        view="today";
+      }
+      else if(n==="all"){
+        view="all";
+      }
+      else{
+        view="week";
+      }
+    }
+
+    render();
+  };
+});
+
+/* ZEITRAUM */
+
+document
+.querySelectorAll(
+  "button[data-range]"
+)
+.forEach(b=>{
+
+  b.onclick=()=>{
+
+    document
+    .querySelectorAll(
+      "button[data-range]"
+    )
+    .forEach(
+      x=>x.classList.remove("active")
+    );
+
+    b.classList.add("active");
+
+    rangeMode=b.dataset.range;
+    view="all";
+    openOnly=false;
+    selectedDate="";
+
+    render();
+  };
+});
+
+/* VERGANGENE */
+
+document.querySelector(
+  "#pastToggle"
+).onclick=()=>{
+
+  const content=
+    document.querySelector(
+      "#pastContent"
+    );
+
+  const open=
+    content.classList.toggle(
+      "show"
+    );
+
+  document.querySelector(
+    "#pastToggle"
+  ).textContent=
+
+    open
+    ?"▾ Vergangene Termine"
+    :"▸ Vergangene Termine";
+};
+
+/* KARTEN */
+
+document
+.querySelector("#app")
+.addEventListener(
+  "click",
+  event=>{
+
+    if(
+      event.target.closest(
+        "[data-no-detail='1']"
+      )
+    ) return;
+
+    const cardEl=
+      event.target.closest(
+        ".card[data-event-key]"
+      );
+
+    if(!cardEl) return;
+
+    const e=
+      rawEvents().find(
+        x=>
+          eventKey(x)===
+          cardEl.dataset.eventKey
+      );
+
+    if(e) openModal(e);
+  }
+);
+
+document
+.querySelector("#pastContent")
+.addEventListener(
+  "click",
+  event=>{
+
+    if(
+      event.target.closest(
+        "[data-no-detail='1']"
+      )
+    ) return;
+
+    const cardEl=
+      event.target.closest(
+        ".card[data-event-key]"
+      );
+
+    if(!cardEl) return;
+
+    const e=
+      rawEvents().find(
+        x=>
+          eventKey(x)===
+          cardEl.dataset.eventKey
+      );
+
+    if(e) openModal(e);
+  }
+);
+
+/* MODAL */
+
+document.querySelector(
+  "#closeModalBtn"
+).onclick=closeModal;
+
+document.querySelector(
+  "#eventModal"
+).onclick=event=>{
+
+  if(event.target.id==="eventModal"){
+    closeModal();
+  }
+};
+
+/* SERVICE WORKER */
+
+if("serviceWorker" in navigator){
+
+  navigator.serviceWorker.register(
+    "sw.js"
+  );
+}
+
+/* START */
+
+loadData();
+
+</script>
+
 </body>
 </html>

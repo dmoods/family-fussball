@@ -1,0 +1,152 @@
+{
+  "season": "Bundesliga 2026/27",
+  "matchday": "1. Spieltag",
+  "updated": "Demo-Datensatz – bereit für deine aktuellen Tipps",
+  "alert": "Kurz vor Anpfiff können Aufstellungen und Ausfälle den Tipp verändern.",
+  "matches": [
+    {
+      "home": "FC Bayern München",
+      "away": "VfB Stuttgart",
+      "kickoff": "Fr 20:30",
+      "prediction": [
+        3,
+        1
+      ],
+      "confidence": 82,
+      "bank": true,
+      "surprise": false,
+      "form": "Bayern stark",
+      "injuries": "prüfen",
+      "suspensions": "keine hinterlegt",
+      "lineup": "hoch"
+    },
+    {
+      "home": "1. FC Köln",
+      "away": "TSG Hoffenheim",
+      "kickoff": "Sa 15:30",
+      "prediction": [
+        1,
+        1
+      ],
+      "confidence": 58,
+      "bank": false,
+      "surprise": true,
+      "form": "ausgeglichen",
+      "injuries": "prüfen",
+      "suspensions": "prüfen",
+      "lineup": "mittel"
+    },
+    {
+      "home": "SV Elversberg",
+      "away": "Bayer 04 Leverkusen",
+      "kickoff": "Sa 15:30",
+      "prediction": [
+        1,
+        2
+      ],
+      "confidence": 74,
+      "bank": true,
+      "surprise": false,
+      "form": "Leverkusen Vorteil",
+      "injuries": "prüfen",
+      "suspensions": "prüfen",
+      "lineup": "mittel"
+    },
+    {
+      "home": "FSV Mainz 05",
+      "away": "SC Paderborn 07",
+      "kickoff": "Sa 15:30",
+      "prediction": [
+        2,
+        1
+      ],
+      "confidence": 62,
+      "bank": false,
+      "surprise": false,
+      "form": "leichter Heimvorteil",
+      "injuries": "prüfen",
+      "suspensions": "prüfen",
+      "lineup": "mittel"
+    },
+    {
+      "home": "1. FC Union Berlin",
+      "away": "Eintracht Frankfurt",
+      "kickoff": "Sa 15:30",
+      "prediction": [
+        1,
+        2
+      ],
+      "confidence": 61,
+      "bank": false,
+      "surprise": true,
+      "form": "Frankfurt knapp vorn",
+      "injuries": "prüfen",
+      "suspensions": "prüfen",
+      "lineup": "mittel"
+    },
+    {
+      "home": "RB Leipzig",
+      "away": "Borussia Mönchengladbach",
+      "kickoff": "Sa 15:30",
+      "prediction": [
+        2,
+        0
+      ],
+      "confidence": 76,
+      "bank": true,
+      "surprise": false,
+      "form": "Leipzig Vorteil",
+      "injuries": "prüfen",
+      "suspensions": "prüfen",
+      "lineup": "hoch"
+    },
+    {
+      "home": "Borussia Dortmund",
+      "away": "Hamburger SV",
+      "kickoff": "Sa 18:30",
+      "prediction": [
+        3,
+        1
+      ],
+      "confidence": 79,
+      "bank": true,
+      "surprise": false,
+      "form": "Dortmund Vorteil",
+      "injuries": "prüfen",
+      "suspensions": "prüfen",
+      "lineup": "hoch"
+    },
+    {
+      "home": "SC Freiburg",
+      "away": "Werder Bremen",
+      "kickoff": "So 15:30",
+      "prediction": [
+        2,
+        1
+      ],
+      "confidence": 65,
+      "bank": false,
+      "surprise": false,
+      "form": "Freiburg stabil",
+      "injuries": "prüfen",
+      "suspensions": "prüfen",
+      "lineup": "mittel"
+    },
+    {
+      "home": "FC Augsburg",
+      "away": "FC Schalke 04",
+      "kickoff": "So 17:30",
+      "prediction": [
+        2,
+        1
+      ],
+      "confidence": 60,
+      "bank": false,
+      "surprise": true,
+      "form": "knapp",
+      "injuries": "prüfen",
+      "suspensions": "prüfen",
+      "lineup": "mittel"
+    }
+  ]
+}

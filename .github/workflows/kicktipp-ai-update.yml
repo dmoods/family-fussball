@@ -27,9 +27,9 @@ jobs:
         run: pip install requests
 
       - name: Update Bundesliga tips and player form
-  env:
-    API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-  run: python kicktipp-ai/update_live.py
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: python kicktipp-ai/update_live.py
 
       - name: Commit changed live data
         run: |

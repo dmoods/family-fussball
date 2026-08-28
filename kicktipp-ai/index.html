@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111318">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SternDesOstens">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>SternDesOstens – Kicktipp AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">SternDesOstens</div>
+      <h1>Kicktipp AI</h1>
+    </div>
+    <button id="installBtn" class="iconbtn" hidden aria-label="App installieren">＋</button>
+  </header>
+
+  <main>
+    <section id="home" class="view active">
+      <div class="hero card">
+        <div>
+          <div class="eyebrow" id="seasonLabel">Bundesliga 2026/27</div>
+          <h2 id="matchdayTitle">1. Spieltag</h2>
+          <p id="updatedLabel" class="muted">Stand: lokal</p>
+        </div>
+        <div class="hero-actions">
+          <button id="refreshBtn" class="btn primary">↻ Daten aktualisieren</button>
+          <button id="copyBtn" class="btn secondary">📋 Tipps kopieren</button>
+        </div>
+      </div>
+
+      <div id="alertBox" class="alert card hidden"></div>
+      <div id="matches"></div>
+
+      <div class="action-grid">
+        <button id="openKicktippBtn" class="btn primary">↗ Kicktipp öffnen</button>
+        <button id="exportBtn" class="btn secondary">⬆ JSON exportieren</button>
+      </div>
+    </section>
+
+    <section id="analysis" class="view">
+      <div class="card">
+        <div class="eyebrow">Premium-Analyse</div>
+        <h2>Spieltag-Übersicht</h2>
+        <p class="muted">Form, Ausfälle, Sperren, Aufstellungs-Sicherheit und Risiko je Partie.</p>
+      </div>
+      <div id="analysisList"></div>
+    </section>
+
+    <section id="stats" class="view">
+      <div class="card">
+        <div class="eyebrow">Auswertung</div>
+        <h2>Meine Tippbilanz</h2>
+        <div class="stat-grid">
+          <div class="stat"><span id="statPoints">0</span><small>Punkte</small></div>
+          <div class="stat"><span id="statExact">0</span><small>Exakt</small></div>
+          <div class="stat"><span id="statTendency">0</span><small>Tendenz</small></div>
+          <div class="stat"><span id="statMatches">0</span><small>Gewertet</small></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Ergebnisse eintragen</h3>
+        <p class="muted">Nach dem Spiel kannst du die echten Ergebnisse eintragen. Die App berechnet deine Bilanz lokal.</p>
+        <div id="resultEditor"></div>
+      </div>
+    </section>
+
+    <section id="settings" class="view">
+      <div class="card">
+        <div class="eyebrow">Einstellungen</div>
+        <h2>App konfigurieren</h2>
+
+        <label>Kicktipp-Link
+          <input id="kicktippUrl" type="url" placeholder="https://www.kicktipp.de/deine-runde/tippabgabe">
+        </label>
+
+        <label>Live-Daten-Endpunkt (optional)
+          <input id="apiEndpoint" type="url" placeholder="https://.../data.json">
+        </label>
+
+        <label>API-Key (optional)
+          <input id="apiKey" type="password" placeholder="wird nur lokal gespeichert">
+        </label>
+
+        <div class="split">
+          <button id="saveSettingsBtn" class="btn primary">Speichern</button>
+          <button id="importBtn" class="btn secondary">JSON importieren</button>
+          <input id="importFile" type="file" accept="application/json" hidden>
+        </div>
+
+        <hr>
+        <h3>Auf iPhone installieren</h3>
+        <p class="muted">
+          In Safari öffnen → Teilen → „Zum Home-Bildschirm“ → „Hinzufügen“.
+          Danach startet die App ohne Safari-Leiste wie eine normale App.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Hinweis zu Live-Daten</h3>
+        <p class="muted">
+          Die App kann aktuelle Daten laden, sobald du einen eigenen JSON-Endpunkt oder später eine Fußball-API hinterlegst.
+          Ohne Endpunkt läuft sie vollständig lokal/offline mit den gespeicherten Spieltagsdaten.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="tabbar">
+    <button data-view="home" class="tab active">⚽<span>Tipps</span></button>
+    <button data-view="analysis" class="tab">📊<span>Analyse</span></button>
+    <button data-view="stats" class="tab">🏆<span>Bilanz</span></button>
+    <button data-view="settings" class="tab">⚙️<span>Setup</span></button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>

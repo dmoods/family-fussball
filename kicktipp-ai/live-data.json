@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "1. Spieltag",
-  "updated": "28.08.2026 14:26",
+  "updated": "28.08.2026 23:58",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "FC Bayern München",
-      "away": "VfB Stuttgart",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 70,
-      "bank": false,
-      "surprise": {},
-      "form": "FC Bayern München: 2.72 Pkt/Spiel, 3.57:1.41 Tore; VfB Stuttgart: 1.48 Pkt/Spiel, 2.45:1.88 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.57,
-        "away_xg": 1.68,
-        "home_win": 56.8,
-        "draw": 18.6,
-        "away_win": 24.6,
-        "kicktipp_ev": 1.295
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 19.7,
-        "rain": 0.1,
-        "wind": 5.4
-      }
-    },
     {
       "home": "RB Leipzig",
       "away": "Borussia Mönchengladbach",
@@ -394,6 +356,6 @@
         "wind": 13.1
       }
     },
-    "updatedUtc": "2026-08-28T12:26:56.906468+00:00"
+    "updatedUtc": "2026-08-28T21:58:09.688480+00:00"
   }
 }

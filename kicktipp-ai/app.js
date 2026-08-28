@@ -98,11 +98,10 @@ function openKicktipp(){
 
 async function refreshData(){
   const s=loadSettings();
-  if(!s.apiEndpoint){ toast("Kein Live-Endpunkt hinterlegt"); return; }
   $("#refreshBtn").disabled=true; $("#refreshBtn").textContent="Lade…";
   try{
     const headers={}; if(s.apiKey) headers["Authorization"]="Bearer "+s.apiKey;
-    const r=await fetch(s.apiEndpoint,{headers});
+    const r=await fetch(s.apiEndpoint || "./live-data.json",{headers,cache:"no-store"});
     if(!r.ok) throw new Error("HTTP "+r.status);
     const incoming=await r.json();
     if(!incoming.matches) throw new Error("Ungültiges Datenformat");

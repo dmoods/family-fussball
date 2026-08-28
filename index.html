@@ -12,28 +12,21 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <style>
-
 :root{
   --bg:#f2f2f7;
   --text:#111;
   --muted:#6e6e73;
-
   --luis:#6f2dbd;
   --luis-soft:#f2eaff;
-
   --alicia:#d80027;
   --alicia-soft:#fff0f2;
-
   --green:#34c759;
   --orange:#ff9500;
   --red:#ff3b30;
-
   --shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html{
   -webkit-text-size-adjust:100%;
@@ -42,7 +35,6 @@ html{
 
 body{
   margin:0;
-
   padding:
     env(safe-area-inset-top)
     env(safe-area-inset-right)
@@ -50,51 +42,26 @@ body{
     env(safe-area-inset-left);
 
   font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "SF Pro Text",
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
+    -apple-system,BlinkMacSystemFont,
+    "SF Pro Display","SF Pro Text",
+    "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 
   background:
-    radial-gradient(
-      circle at top left,
-      rgba(111,45,189,.08),
-      transparent 34%
-    ),
-    radial-gradient(
-      circle at top right,
-      rgba(216,0,39,.08),
-      transparent 34%
-    ),
+    radial-gradient(circle at top left,rgba(111,45,189,.08),transparent 34%),
+    radial-gradient(circle at top right,rgba(216,0,39,.08),transparent 34%),
     var(--bg);
 
   color:var(--text);
 }
 
 header{
-  background:
-    linear-gradient(
-      135deg,
-      #0b0b0f,
-      #15151c
-    );
-
+  background:linear-gradient(135deg,#0b0b0f,#15151c);
   color:#fff;
-
-  padding:
-    20px 18px 16px;
-
+  padding:20px 18px 16px;
   position:sticky;
   top:0;
   z-index:10;
-
-  box-shadow:
-    0 8px 24px rgba(0,0,0,.16);
+  box-shadow:0 8px 24px rgba(0,0,0,.16);
 }
 
 h1{
@@ -116,29 +83,17 @@ main{
 }
 
 button{
-  border:
-    1px solid rgba(0,0,0,.06);
-
+  border:1px solid rgba(0,0,0,.06);
   border-radius:999px;
-
   padding:9px 14px;
-
   font-weight:750;
-
-  background:
-    rgba(255,255,255,.92);
-
+  background:rgba(255,255,255,.92);
   color:#1c1c1e;
-
   cursor:pointer;
-
-  box-shadow:
-    0 2px 10px rgba(0,0,0,.05);
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
 
-button:active{
-  transform:scale(.97);
-}
+button:active{transform:scale(.97)}
 
 button.active{
   background:#111;
@@ -154,18 +109,11 @@ button.active{
   margin-bottom:10px;
 }
 
-#refreshBtn{
-  margin-left:auto;
-}
-
-/* DASHBOARD */
+#refreshBtn{margin-left:auto}
 
 .dashboard{
   display:grid;
-  grid-template-columns:
-    minmax(0,1fr)
-    minmax(0,1fr);
-
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   gap:8px;
   margin:8px 0 10px;
 }
@@ -183,21 +131,11 @@ button.active{
 }
 
 .nextcard.luis{
-  background:
-    linear-gradient(
-      135deg,
-      #55208f,
-      #7f3fd0
-    );
+  background:linear-gradient(135deg,#55208f,#7f3fd0);
 }
 
 .nextcard.alicia{
-  background:
-    linear-gradient(
-      135deg,
-      #a90020,
-      #e11d3f
-    );
+  background:linear-gradient(135deg,#a90020,#e11d3f);
 }
 
 .nextlabel{
@@ -231,17 +169,11 @@ button.active{
   line-height:1.3;
 }
 
-.nextloc strong{
-  font-size:11px;
-}
-
-/* STATUS */
+.nextloc strong{font-size:11px}
 
 .statusbar{
   display:grid;
-  grid-template-columns:
-    repeat(4,1fr);
-
+  grid-template-columns:repeat(4,1fr);
   gap:6px;
   margin:8px 0 10px;
 }
@@ -251,9 +183,7 @@ button.active{
   border-radius:13px;
   padding:8px 4px;
   text-align:center;
-
-  box-shadow:
-    0 3px 12px rgba(0,0,0,.05);
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
 }
 
 .stat b{
@@ -267,15 +197,8 @@ button.active{
   font-weight:750;
 }
 
-.stat.open{
-  cursor:pointer;
-}
-
-.stat.open b{
-  color:var(--orange);
-}
-
-/* ÄNDERUNGEN */
+.stat.open{cursor:pointer}
+.stat.open b{color:var(--orange)}
 
 .changes{
   display:none;
@@ -287,22 +210,16 @@ button.active{
   font-size:12px;
 }
 
-.changes.show{
-  display:block;
-}
+.changes.show{display:block}
 
 .changes ul{
   margin:6px 0 0;
   padding-left:18px;
 }
 
-/* KALENDER */
-
 .calendarControls{
   display:grid;
-  grid-template-columns:
-    44px 1fr 44px;
-
+  grid-template-columns:44px 1fr 44px;
   align-items:center;
   gap:7px;
   margin:5px 0;
@@ -321,9 +238,7 @@ button.active{
 
 .calendarStrip{
   display:grid;
-  grid-template-columns:
-    repeat(7,minmax(0,1fr));
-
+  grid-template-columns:repeat(7,minmax(0,1fr));
   gap:4px;
   margin:6px 0 12px;
 }
@@ -331,30 +246,21 @@ button.active{
 .daybox{
   appearance:none;
   -webkit-appearance:none;
-
   width:100%;
   min-width:0;
   min-height:54px;
-
   margin:0;
   padding:6px 1px;
-
   border:0;
   border-radius:11px;
-
   background:#fff;
   color:#111;
-
   text-align:center;
   font-size:10px;
-
-  box-shadow:
-    0 2px 8px rgba(0,0,0,.05);
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
 }
 
-.daybox.today{
-  outline:2px solid #111;
-}
+.daybox.today{outline:2px solid #111}
 
 .daybox.selected{
   background:#111;
@@ -375,32 +281,16 @@ button.active{
   margin:0 1px;
 }
 
-.dot.luis{
-  background:var(--luis);
-}
-
-.dot.alicia{
-  background:var(--alicia);
-}
-
-/* HERO */
+.dot.luis{background:var(--luis)}
+.dot.alicia{background:var(--alicia)}
 
 .hero{
-  background:
-    linear-gradient(
-      135deg,
-      #111116,
-      #1f1f27
-    );
-
+  background:linear-gradient(135deg,#111116,#1f1f27);
   color:#fff;
-
   border-radius:20px;
   padding:15px;
   margin:7px 0 13px;
-
-  box-shadow:
-    0 10px 26px rgba(0,0,0,.14);
+  box-shadow:0 10px 26px rgba(0,0,0,.14);
 }
 
 .hero h2{
@@ -414,30 +304,16 @@ button.active{
   font-size:12px;
 }
 
-/* TERMINE */
-
-.week{
-  margin:18px 0;
-}
+.week{margin:18px 0}
 
 .week h2{
   font-size:17px;
   margin:0 0 10px;
 }
 
-/*
-   GANZ WICHTIG:
-   Luis immer links
-   Alicia immer rechts
-*/
-
 .grid{
   display:grid;
-
-  grid-template-columns:
-    minmax(0,1fr)
-    minmax(0,1fr);
-
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   gap:9px;
   align-items:start;
 }
@@ -450,12 +326,9 @@ button.active{
 
 .card{
   background:#fff;
-
   border-radius:18px;
   padding:12px;
-
   box-shadow:var(--shadow);
-
   position:relative;
   overflow:hidden;
   min-width:0;
@@ -471,52 +344,31 @@ button.active{
   width:5px;
 }
 
-.card.Luis::before{
-  background:var(--luis);
-}
-
-.card.Alicia::before{
-  background:var(--alicia);
-}
+.card.Luis::before{background:var(--luis)}
+.card.Alicia::before{background:var(--alicia)}
 
 .card.Luis{
-  background:
-    linear-gradient(
-      180deg,
-      #fff,
-      var(--luis-soft)
-    );
+  background:linear-gradient(180deg,#fff,var(--luis-soft));
 }
 
 .card.Alicia{
-  background:
-    linear-gradient(
-      180deg,
-      #fff,
-      var(--alicia-soft)
-    );
+  background:linear-gradient(180deg,#fff,var(--alicia-soft));
 }
 
 .card.game{
-  box-shadow:
-    0 12px 28px rgba(0,0,0,.11);
+  box-shadow:0 12px 28px rgba(0,0,0,.11);
 }
 
 .card.game::after{
   content:"SPIELTAG";
-
   position:absolute;
   top:8px;
   right:-24px;
-
   transform:rotate(35deg);
-
   background:#111;
   color:#fff;
-
   font-size:8px;
   font-weight:900;
-
   padding:4px 28px;
 }
 
@@ -531,13 +383,8 @@ button.active{
   font-size:15px;
 }
 
-.Luis .who{
-  color:var(--luis);
-}
-
-.Alicia .who{
-  color:var(--alicia);
-}
+.Luis .who{color:var(--luis)}
+.Alicia .who{color:var(--alicia)}
 
 .time{
   font-size:19px;
@@ -546,14 +393,10 @@ button.active{
 
 .type{
   display:inline-block;
-
   margin-top:8px;
-
   font-size:10px;
   font-weight:850;
-
   padding:5px 8px;
-
   border-radius:999px;
 }
 
@@ -601,37 +444,24 @@ button.active{
   font-weight:800;
 }
 
-/* ROUTE */
-
 .maps{
   display:flex;
   justify-content:center;
   align-items:center;
-
   width:100%;
-
   text-decoration:none;
-
   margin-top:10px;
-
   background:#111116;
   color:#fff;
-
   padding:9px 10px;
-
   border-radius:11px;
-
   font-weight:800;
   font-size:12px;
 }
 
-/* RSVP */
-
 .rsvp{
   display:grid;
-  grid-template-columns:
-    repeat(3,minmax(0,1fr));
-
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:4px;
   margin-top:9px;
 }
@@ -639,75 +469,45 @@ button.active{
 .rsvp button{
   margin:0;
   padding:7px 2px;
-
   font-size:9px;
-
   border-radius:9px;
-
   background:#fff;
-
   box-shadow:none;
 }
 
-.rsvp button.selected{
-  color:#fff;
-}
-
-.rsvp button[data-status="yes"].selected{
-  background:var(--green);
-}
-
-.rsvp button[data-status="maybe"].selected{
-  background:var(--orange);
-}
-
-.rsvp button[data-status="no"].selected{
-  background:var(--red);
-}
+.rsvp button.selected{color:#fff}
+.rsvp button[data-status="yes"].selected{background:var(--green)}
+.rsvp button[data-status="maybe"].selected{background:var(--orange)}
+.rsvp button[data-status="no"].selected{background:var(--red)}
 
 .empty{
   background:#fff;
-
   padding:17px;
-
   border-radius:17px;
-
   color:var(--muted);
 }
 
-.rangebar{
-  display:none;
-}
+.rangebar{display:none}
 
 .rangebar button{
   font-size:11px;
   padding:7px 10px;
 }
 
-/* VERGANGENE */
-
 .pastWrap{
   margin-top:18px;
-
-  background:
-    rgba(255,255,255,.65);
-
+  background:rgba(255,255,255,.65);
   border-radius:16px;
-
   overflow:hidden;
 }
 
 .pastToggle{
   width:100%;
   text-align:left;
-
   border:0;
   border-radius:0;
-
   background:transparent;
-
   box-shadow:none;
-
   padding:12px 14px;
 }
 
@@ -716,34 +516,20 @@ button.active{
   padding:0 10px 10px;
 }
 
-#pastContent.show{
-  display:block;
-}
-
-/* BOTTOM NAV */
+#pastContent.show{display:block}
 
 .bottomnav{
   position:sticky;
   bottom:8px;
   z-index:4;
-
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
+  grid-template-columns:repeat(4,1fr);
   gap:5px;
-
-  background:
-    rgba(20,20,24,.92);
-
+  background:rgba(20,20,24,.92);
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
-
   padding:6px;
-
   border-radius:18px;
-
   margin:28px 0 12px;
 }
 
@@ -762,40 +548,25 @@ button.active{
   color:#111;
 }
 
-/* MODAL */
-
 .modal{
   position:fixed;
   inset:0;
-
   display:none;
-
   align-items:flex-end;
   justify-content:center;
-
-  background:
-    rgba(0,0,0,.38);
-
+  background:rgba(0,0,0,.38);
   z-index:50;
-
   padding:12px;
 }
 
-.modal.show{
-  display:flex;
-}
+.modal.show{display:flex}
 
 .modalCard{
   width:min(620px,100%);
   max-height:88vh;
-
   overflow:auto;
-
   background:#f9f9fb;
-
-  border-radius:
-    24px 24px 18px 18px;
-
+  border-radius:24px 24px 18px 18px;
   padding:16px;
 }
 
@@ -845,68 +616,42 @@ footer{
   font-size:11px;
 }
 
-#app{
-  scroll-margin-top:150px;
-}
+#app{scroll-margin-top:150px}
 
 @media(max-width:560px){
-
-  main{
-    padding:10px;
-  }
+  main{padding:10px}
 
   header{
     padding:18px 18px 15px;
   }
 
-  h1{
-    font-size:24px;
-  }
+  h1{font-size:24px}
 
   .viewbar,
   .toolbar{
     margin-bottom:8px;
   }
 
-  .dashboard{
-    gap:7px;
-  }
+  .dashboard{gap:7px}
 
   .nextcard{
     padding:11px;
     min-height:140px;
   }
 
-  .nextname{
-    font-size:17px;
-  }
+  .nextname{font-size:17px}
+  .nextwhen{font-size:14px}
 
-  .nextwhen{
-    font-size:14px;
-  }
-
-  .statusbar{
-    gap:5px;
-  }
+  .statusbar{gap:5px}
 
   .stat{
     padding:8px 3px;
   }
 
-  .stat b{
-    font-size:17px;
-  }
-
-  /*
-     Auch auf dem iPhone:
-     Luis links / Alicia rechts
-  */
+  .stat b{font-size:17px}
 
   .grid{
-    grid-template-columns:
-      minmax(0,1fr)
-      minmax(0,1fr);
-
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
     gap:8px;
   }
 
@@ -914,241 +659,106 @@ footer{
     padding:10px 9px;
   }
 
-  .top{
-    display:block;
-  }
+  .top{display:block}
 
   .time{
     font-size:16px;
     margin-top:5px;
   }
 
-  .card h3{
-    font-size:13px;
-  }
-
-  .loc{
-    font-size:11px;
-  }
-
-  .venueName{
-    font-size:12px;
-  }
-
-  .venueAddress{
-    font-size:10px;
-  }
-
-  .rsvp{
-    gap:3px;
-  }
+  .card h3{font-size:13px}
+  .loc{font-size:11px}
+  .venueName{font-size:12px}
+  .venueAddress{font-size:10px}
+  .rsvp{gap:3px}
 
   .rsvp button{
     font-size:9px;
     padding:6px 2px;
   }
 
-  .modal{
-    padding:0;
-  }
+  .modal{padding:0}
 
   .modalCard{
-    border-radius:
-      24px 24px 0 0;
+    border-radius:24px 24px 0 0;
   }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
-<h1>
-⚽ Familien Fußball
-</h1>
-
+<h1>⚽ Familien Fußball</h1>
 <div class="sub">
-Luis · Eintracht Mahlsdorf
-•
-Alicia · 1. FC Union Berlin
+Luis · Eintracht Mahlsdorf • Alicia · 1. FC Union Berlin
 </div>
-
 </header>
 
 <main>
 
 <div class="viewbar">
-
-<button
-  class="active"
-  data-view="week">
-Diese Woche
-</button>
-
-<button
-  data-view="today">
-Heute
-</button>
-
-<button
-  data-view="all">
-Alle Termine
-</button>
-
-<button id="refreshBtn">
-🔄 Aktualisieren
-</button>
-
+<button class="active" data-view="week">Diese Woche</button>
+<button data-view="today">Heute</button>
+<button data-view="all">Alle Termine</button>
+<button id="refreshBtn">🔄 Aktualisieren</button>
 </div>
 
 <div class="toolbar">
-
-<button
-  class="active"
-  data-filter="all">
-Alle
-</button>
-
-<button
-  data-filter="Luis">
-Luis
-</button>
-
-<button
-  data-filter="Alicia">
-Alicia
-</button>
-
+<button class="active" data-filter="all">Alle</button>
+<button data-filter="Luis">Luis</button>
+<button data-filter="Alicia">Alicia</button>
 </div>
 
-<div
-  id="changes"
-  class="changes">
-</div>
+<div id="changes" class="changes"></div>
 
-<div
-  id="dashboard"
-  class="dashboard">
-</div>
+<div id="dashboard" class="dashboard"></div>
 
-<div
-  id="stats"
-  class="statusbar">
-</div>
+<div id="stats" class="statusbar"></div>
 
 <div class="calendarControls">
-
-<button id="prevWeekBtn">
-‹
-</button>
-
-<button id="currentWeekBtn">
-Diese Woche
-</button>
-
-<button id="nextWeekBtn">
-›
-</button>
-
+<button id="prevWeekBtn">‹</button>
+<button id="currentWeekBtn">Diese Woche</button>
+<button id="nextWeekBtn">›</button>
 </div>
 
-<div
-  id="calendarStrip"
-  class="calendarStrip">
-</div>
+<div id="calendarStrip" class="calendarStrip"></div>
 
-<div
-  id="rangebar"
-  class="rangebar">
-
-<button
-  class="active"
-  data-range="14">
-14 Tage
-</button>
-
-<button data-range="30">
-30 Tage
-</button>
-
-<button data-range="all">
-Alle
-</button>
-
+<div id="rangebar" class="rangebar">
+<button class="active" data-range="14">14 Tage</button>
+<button data-range="30">30 Tage</button>
+<button data-range="all">Alle</button>
 </div>
 
 <div id="app"></div>
 
 <div class="pastWrap">
-
-<button
-  id="pastToggle"
-  class="pastToggle">
+<button id="pastToggle" class="pastToggle">
 ▸ Vergangene Termine
 </button>
-
 <div id="pastContent"></div>
-
 </div>
 
 <div class="bottomnav">
-
-<button
-  class="active"
-  data-nav="week">
-🏠<br>
-Übersicht
-</button>
-
-<button data-nav="today">
-📅<br>
-Heute
-</button>
-
-<button data-nav="open">
-✓<br>
-Offen
-</button>
-
-<button data-nav="all">
-☰<br>
-Alle
-</button>
-
+<button class="active" data-nav="week">🏠<br>Übersicht</button>
+<button data-nav="today">📅<br>Heute</button>
+<button data-nav="open">✓<br>Offen</button>
+<button data-nav="all">☰<br>Alle</button>
 </div>
 
 </main>
 
 <footer>
-
 <div id="updated"></div>
-
-<div>
-Als App installierbar · Route direkt aus jedem Termin
-</div>
-
+<div>Als App installierbar · Route direkt aus jedem Termin</div>
 </footer>
 
-<div
-  id="eventModal"
-  class="modal">
-
+<div id="eventModal" class="modal">
 <div class="modalCard">
 
 <div class="modalHead">
-
-<h2 id="modalTitle">
-Termin
-</h2>
-
-<button
-  id="closeModalBtn"
-  class="closeBtn">
-×
-</button>
-
+<h2 id="modalTitle">Termin</h2>
+<button id="closeModalBtn" class="closeBtn">×</button>
 </div>
 
 <div id="modalBody"></div>
@@ -1158,138 +768,71 @@ Termin
 
 <script>
 
-/* =========================================================
-   DATEN
-   ========================================================= */
-
 let trainings=[];
 let myteamEvents=[];
 let aliciaUnionEvents=[];
-
-/*
-   Enthält Kalenderwochen,
-   für die eine echte Union-Wochenmail vorliegt.
-   In diesen Wochen werden KEINE festen Alicia-
-   Standardtrainings zusätzlich erzeugt.
-*/
-
 let aliciaCoveredWeeks=[];
 
 let filter="all";
 let view="week";
-
-let source={
-  games:[]
-};
+let source={games:[]};
 
 let openOnly=false;
 let selectedDate="";
 let calendarWeekOffset=0;
 let rangeMode="14";
 
-const pad=n=>
-  String(n).padStart(2,"0");
-
-/* =========================================================
-   DATUM
-   ========================================================= */
+const pad=n=>String(n).padStart(2,"0");
 
 function iso(d){
-
-  return (
-    d.getFullYear()+
-    "-"+
-    pad(d.getMonth()+1)+
-    "-"+
-    pad(d.getDate())
-  );
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 }
 
 function weekInfo(date){
 
-  const d=
-    new Date(
-      Date.UTC(
-        date.getFullYear(),
-        date.getMonth(),
-        date.getDate()
-      )
-    );
-
-  d.setUTCDate(
-    d.getUTCDate()+
-    4-
-    (d.getUTCDay()||7)
+  const d=new Date(
+    Date.UTC(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate()
+    )
   );
 
-  const year=
-    d.getUTCFullYear();
+  d.setUTCDate(
+    d.getUTCDate()+4-(d.getUTCDay()||7)
+  );
+
+  const year=d.getUTCFullYear();
 
   const yearStart=
-    new Date(
-      Date.UTC(
-        year,
-        0,
-        1
-      )
-    );
+    new Date(Date.UTC(year,0,1));
 
   const week=
     Math.ceil(
-      (
-        (
-          d-yearStart
-        )/
-        86400000+
-        1
-      )/
-      7
+      ((((d-yearStart)/86400000)+1)/7)
     );
 
-  return {
-    year,
-    week
-  };
+  return {year,week};
 }
 
 function weekNo(d){
-
   return weekInfo(d).week;
 }
 
-/*
-   Beispiel:
-   2026-W35
-*/
-
 function weekKey(d){
 
-  const w=
-    weekInfo(d);
+  const w=weekInfo(d);
 
-  return (
-    w.year+
-    "-W"+
-    String(w.week)
-      .padStart(2,"0")
-  );
+  return `${w.year}-W${String(w.week).padStart(2,"0")}`;
 }
 
 function monday(d){
 
-  const x=
-    new Date(d);
+  const x=new Date(d);
+  const n=x.getDay()||7;
 
-  const n=
-    x.getDay()||7;
-
-  x.setDate(
-    x.getDate()-n+1
-  );
-
-  x.setHours(
-    0,0,0,0
-  );
+  x.setDate(x.getDate()-n+1);
+  x.setHours(0,0,0,0);
 
   return x;
 }
@@ -1306,97 +849,46 @@ function fmt(d){
   );
 }
 
-/* =========================================================
-   SPORTSTÄTTEN
-   ========================================================= */
-
 function venueInfo(location){
 
-  const loc=
-    (location||"").trim();
-
-  const s=
-    loc.toLowerCase();
-
-  /*
-     Luis:
-     Melanchthonstraße 53
-  */
+  const loc=(location||"").trim();
+  const s=loc.toLowerCase();
 
   if(
-    s.includes(
-      "melanchthonstraße 53"
-    ) ||
-    s.includes(
-      "melanchthonstrasse 53"
-    ) ||
-    s.includes(
-      "melanchthonstr. 53"
-    )
+    s.includes("melanchthonstraße 53") ||
+    s.includes("melanchthonstrasse 53") ||
+    s.includes("melanchthonstr. 53")
   ){
-
     return {
       name:"Am Rosenhag",
       address:loc
     };
   }
 
-  /*
-     Alicia:
-     Trainingszentrum Oberspree
-  */
-
   if(
-    s.includes(
-      "bruno-bürgel-weg 63"
-    ) ||
-    s.includes(
-      "bruno-buergel-weg 63"
-    ) ||
-    s.includes(
-      "bruno-bürgel-weg"
-    )
+    s.includes("bruno-bürgel-weg 63") ||
+    s.includes("bruno-buergel-weg 63") ||
+    s.includes("bruno-bürgel-weg")
   ){
-
     return {
       name:"TZO",
       address:loc
     };
   }
 
-  /*
-     Alicia:
-     Trainingszentrum Plänterwald
-  */
-
   if(
-    s.includes(
-      "am plänterwald"
-    ) ||
-    s.includes(
-      "am plaenterwald"
-    )
+    s.includes("am plänterwald") ||
+    s.includes("am plaenterwald")
   ){
-
     return {
       name:"TZPW",
       address:loc
     };
   }
 
-  /*
-     Alicia:
-     Neue Krugallee
-     = NK
-     NICHT TZPW
-  */
-
   if(
-    s.includes(
-      "neue krugallee"
-    )
+    s.includes("neue krugallee")
   ){
-
     return {
       name:"NK",
       address:loc
@@ -1411,8 +903,7 @@ function venueInfo(location){
 
 function venueHtml(location){
 
-  const v=
-    venueInfo(location);
+  const v=venueInfo(location);
 
   if(!v.address){
     return "";
@@ -1422,14 +913,8 @@ function venueHtml(location){
 
     return `
       <div class="loc">
-        📍
-        <span class="venueName">
-          ${v.name}
-        </span>
-
-        <span class="venueAddress">
-          ${v.address}
-        </span>
+        📍 <span class="venueName">${v.name}</span>
+        <span class="venueAddress">${v.address}</span>
       </div>
     `;
   }
@@ -1441,22 +926,6 @@ function venueHtml(location){
   `;
 }
 
-/* =========================================================
-   ALICIA STANDARDTRAINING
-   ========================================================= */
-
-/*
-   Wird nur als Fallback benutzt.
-
-   Sobald eine Union-Wochenmail
-   z.B. 2026-W35 vorliegt,
-   wird für diese Woche KEIN
-   Standardtraining erzeugt.
-
-   Dadurch haben die echten Angaben
-   der Trainer immer Vorrang.
-*/
-
 function buildTraining(start,end){
 
   const out=[];
@@ -1466,10 +935,6 @@ function buildTraining(start,end){
     d<=end;
     d.setDate(d.getDate()+1)
   ){
-
-    /*
-       Echte Union-Mail vorhanden?
-    */
 
     if(
       aliciaCoveredWeeks.includes(
@@ -1487,35 +952,20 @@ function buildTraining(start,end){
       ){
 
         out.push({
-
           date:iso(d),
-
           time:t.time,
-
           child:"Alicia",
-
           type:"Training",
-
-          title:
-            t.title||
-            "Training",
-
-          location:
-            t.location||"",
-
+          title:t.title||"Training",
+          location:t.location||"",
           maps:
             t.location
             ?
             "https://maps.apple.com/?q="+
-            encodeURIComponent(
-              t.location
-            )
+            encodeURIComponent(t.location)
             :
             "",
-
-          source:
-            "union-training"
-
+          source:"union-training"
         });
       }
     }
@@ -1524,75 +974,39 @@ function buildTraining(start,end){
   return out;
 }
 
-/* =========================================================
-   ALLE TERMINE
-   ========================================================= */
-
 function rawEvents(){
 
-  const today=
-    new Date();
+  const today=new Date();
+  today.setHours(0,0,0,0);
 
-  today.setHours(
-    0,0,0,0
-  );
+  const start=new Date(today);
+  start.setDate(start.getDate()-30);
 
-  const start=
-    new Date(today);
-
-  start.setDate(
-    start.getDate()-30
-  );
-
-  const end=
-    new Date(today);
-
-  end.setDate(
-    end.getDate()+120
-  );
+  const end=new Date(today);
+  end.setDate(end.getDate()+120);
 
   return [
     ...source.games,
     ...myteamEvents,
     ...aliciaUnionEvents,
-    ...buildTraining(
-      start,
-      end
-    )
-  ]
-  .sort(
+    ...buildTraining(start,end)
+  ].sort(
     (a,b)=>
-      (
-        (a.date||"")+
-        (a.time||"")
-      )
+      ((a.date||"")+(a.time||""))
       .localeCompare(
-        (b.date||"")+
-        (b.time||"")
+        (b.date||"")+(b.time||"")
       )
   );
 }
 
-/*
-   Alle Termine,
-   unabhängig davon,
-   ob Datum schon vorbei ist.
-*/
-
 function allFilteredEvents(){
 
-  let ev=
-    rawEvents();
+  let ev=rawEvents();
 
-  if(
-    filter!=="all"
-  ){
-
-    ev=
-      ev.filter(
-        e=>
-          e.child===filter
-      );
+  if(filter!=="all"){
+    ev=ev.filter(
+      e=>e.child===filter
+    );
   }
 
   return ev;
@@ -1600,56 +1014,35 @@ function allFilteredEvents(){
 
 function futureEvents(){
 
-  const today=
-    new Date();
+  const today=new Date();
+  today.setHours(0,0,0,0);
 
-  today.setHours(
-    0,0,0,0
+  return rawEvents().filter(
+    e=>
+      new Date(e.date+"T23:59:00")
+      >=today
   );
-
-  return rawEvents()
-    .filter(
-      e=>
-        new Date(
-          e.date+
-          "T23:59:00"
-        )>=today
-    );
 }
 
 function pastEvents(){
 
-  const today=
-    new Date();
-
-  today.setHours(
-    0,0,0,0
-  );
+  const today=new Date();
+  today.setHours(0,0,0,0);
 
   return rawEvents()
     .filter(
       e=>
-        new Date(
-          e.date+
-          "T23:59:00"
-        )<today
+        new Date(e.date+"T23:59:00")
+        <today
     )
     .sort(
       (a,b)=>
-        (
-          (b.date||"")+
-          (b.time||"")
-        )
+        ((b.date||"")+(b.time||""))
         .localeCompare(
-          (a.date||"")+
-          (a.time||"")
+          (a.date||"")+(a.time||"")
         )
     );
 }
-
-/* =========================================================
-   RSVP
-   ========================================================= */
 
 function eventKey(e){
 
@@ -1659,65 +1052,41 @@ function eventKey(e){
     e.time||"",
     e.title||"",
     e.location||""
-  ]
-  .join("|");
+  ].join("|");
 }
 
 function eventIdentity(e){
 
   return [
     e.child||"",
-    (e.type||"")
-      .toLowerCase(),
-    (e.title||"")
-      .toLowerCase()
-  ]
-  .join("|");
+    (e.type||"").toLowerCase(),
+    (e.title||"").toLowerCase()
+  ].join("|");
 }
 
 function getRsvp(e){
 
   try{
-
-    return (
-      localStorage.getItem(
-        "rsvp:"+
-        eventKey(e)
-      )||
-      ""
-    );
-
+    return localStorage.getItem(
+      "rsvp:"+eventKey(e)
+    )||"";
   }catch(_){
-
     return "";
   }
 }
 
-function setRsvp(
-  key,
-  status
-){
+function setRsvp(key,status){
 
   try{
 
-    const k=
-      "rsvp:"+
-      key;
+    const k="rsvp:"+key;
 
     if(
-      localStorage.getItem(k)
-      ===
-      status
+      localStorage.getItem(k)===status
     ){
-
       localStorage.removeItem(k);
-
     }else{
-
-      localStorage.setItem(
-        k,
-        status
-      );
+      localStorage.setItem(k,status);
     }
 
   }catch(_){}
@@ -1729,68 +1098,32 @@ function rsvpButtons(e){
 
   const key=
     eventKey(e)
-      .replace(
-        /\\/g,
-        "\\\\"
-      )
-      .replace(
-        /'/g,
-        "\\'"
-      );
+      .replace(/\\/g,"\\\\")
+      .replace(/'/g,"\\'");
 
-  const s=
-    getRsvp(e);
+  const s=getRsvp(e);
 
   return `
-    <div
-      class="rsvp"
-      data-no-detail="1">
+    <div class="rsvp" data-no-detail="1">
 
       <button
         data-status="yes"
-        class="${
-          s==="yes"
-          ?"selected"
-          :""
-        }"
-        onclick="
-          setRsvp(
-            '${key}',
-            'yes'
-          )
-        ">
+        class="${s==="yes"?"selected":""}"
+        onclick="setRsvp('${key}','yes')">
         ✓ Zusage
       </button>
 
       <button
         data-status="maybe"
-        class="${
-          s==="maybe"
-          ?"selected"
-          :""
-        }"
-        onclick="
-          setRsvp(
-            '${key}',
-            'maybe'
-          )
-        ">
+        class="${s==="maybe"?"selected":""}"
+        onclick="setRsvp('${key}','maybe')">
         ? Vielleicht
       </button>
 
       <button
         data-status="no"
-        class="${
-          s==="no"
-          ?"selected"
-          :""
-        }"
-        onclick="
-          setRsvp(
-            '${key}',
-            'no'
-          )
-        ">
+        class="${s==="no"?"selected":""}"
+        onclick="setRsvp('${key}','no')">
         ✕ Absage
       </button>
 
@@ -1798,55 +1131,35 @@ function rsvpButtons(e){
   `;
 }
 
-/* =========================================================
-   TERMINART
-   ========================================================= */
-
 function typeIcon(e){
 
   const s=
-    (
-      (e.type||"")+
-      " "+
-      (e.title||"")
-    )
-    .toLowerCase();
+    ((e.type||"")+" "+(e.title||""))
+      .toLowerCase();
 
-  if(
-    s.includes("training")
-  ){
-    return "🏃";
-  }
+  if(s.includes("training")) return "🏃";
 
   if(
     s.includes("foto") ||
     s.includes("portrait")
-  ){
-    return "📸";
-  }
+  ) return "📸";
 
   if(
     s.includes("eltern") ||
     s.includes("versammlung")
-  ){
-    return "👥";
-  }
+  ) return "👥";
 
   if(
     s.includes("turnier") ||
     s.includes("festival")
-  ){
-    return "🏆";
-  }
+  ) return "🏆";
 
   if(
     s.includes("spiel") ||
     s.includes("liga") ||
     s.includes("freundschaft") ||
     s.includes("testspiel")
-  ){
-    return "⚽";
-  }
+  ) return "⚽";
 
   return "📌";
 }
@@ -1854,12 +1167,8 @@ function typeIcon(e){
 function isGame(e){
 
   const s=
-    (
-      (e.type||"")+
-      " "+
-      (e.title||"")
-    )
-    .toLowerCase();
+    ((e.type||"")+" "+(e.title||""))
+      .toLowerCase();
 
   return (
     s.includes("spiel") ||
@@ -1870,63 +1179,37 @@ function isGame(e){
   );
 }
 
-/* =========================================================
-   FILTER
-   ========================================================= */
-
 function thirtyDayLimit(){
 
-  const end=
-    new Date();
+  const end=new Date();
 
-  end.setHours(
-    23,59,59,999
-  );
-
-  end.setDate(
-    end.getDate()+30
-  );
+  end.setHours(23,59,59,999);
+  end.setDate(end.getDate()+30);
 
   return end;
 }
 
 function filteredFutureEvents(){
 
-  let ev=
-    futureEvents();
+  let ev=futureEvents();
 
-  if(
-    filter!=="all"
-  ){
-
-    ev=
-      ev.filter(
-        e=>
-          e.child===filter
-      );
+  if(filter!=="all"){
+    ev=ev.filter(
+      e=>e.child===filter
+    );
   }
 
   if(openOnly){
 
-    const end=
-      thirtyDayLimit();
+    const end=thirtyDayLimit();
 
-    ev=
-      ev.filter(
-        e=>{
+    ev=ev.filter(e=>{
 
-          const d=
-            new Date(
-              e.date+
-              "T23:59:00"
-            );
+      const d=
+        new Date(e.date+"T23:59:00");
 
-          return (
-            d<=end &&
-            !getRsvp(e)
-          );
-        }
-      );
+      return d<=end && !getRsvp(e);
+    });
   }
 
   if(
@@ -1934,31 +1217,20 @@ function filteredFutureEvents(){
     rangeMode!=="all"
   ){
 
-    const today=
-      new Date();
+    const today=new Date();
+    today.setHours(0,0,0,0);
 
-    today.setHours(
-      0,0,0,0
-    );
-
-    const end=
-      new Date(today);
+    const end=new Date(today);
 
     end.setDate(
-      end.getDate()+
-      Number(rangeMode)
+      end.getDate()+Number(rangeMode)
     );
 
-    ev=
-      ev.filter(
-        e=>
-          new Date(
-            e.date+
-            "T12:00:00"
-          )
-          <=
-          end
-      );
+    ev=ev.filter(
+      e=>
+        new Date(e.date+"T12:00:00")
+        <=end
+    );
   }
 
   return ev;
@@ -1966,89 +1238,47 @@ function filteredFutureEvents(){
 
 function nextFor(child){
 
-  return futureEvents()
-    .find(
-      e=>
-        e.child===child
-    );
+  return futureEvents().find(
+    e=>e.child===child
+  );
 }
-
-/* =========================================================
-   DASHBOARD
-   ========================================================= */
 
 function renderExtras(){
 
-  const ev=
-    futureEvents();
+  const ev=futureEvents();
+  const now=new Date();
 
-  const now=
-    new Date();
+  function nextCard(child,cls){
 
-  function nextCard(
-    child,
-    cls
-  ){
-
-    const e=
-      nextFor(child);
+    const e=nextFor(child);
 
     if(!e){
 
       return `
-        <button
-          class="nextcard ${cls}">
-
-          <div class="nextlabel">
-            Nächster Termin
-          </div>
-
-          <div class="nextname">
-            ${child}
-          </div>
-
-          <div class="nexttitle">
-            Kein Termin
-          </div>
-
+        <button class="nextcard ${cls}">
+          <div class="nextlabel">Nächster Termin</div>
+          <div class="nextname">${child}</div>
+          <div class="nexttitle">Kein Termin</div>
         </button>
       `;
     }
 
     const d=
-      new Date(
-        e.date+
-        "T12:00:00"
-      );
+      new Date(e.date+"T12:00:00");
 
     const key=
       eventKey(e)
-        .replace(
-          /"/g,
-          "&quot;"
-        );
+        .replace(/"/g,"&quot;");
 
     const venue=
-      venueInfo(
-        e.location
-      );
+      venueInfo(e.location);
 
     const locationDisplay=
       venue.name
       ?
-      `
-        📍
-        <strong>
-          ${venue.name}
-        </strong>
-        <br>
-        ${venue.address}
-      `
+      `📍 <strong>${venue.name}</strong><br>${venue.address}`
       :
-      `
-        📍
-        ${e.location||""}
-      `;
+      `📍 ${e.location||""}`;
 
     return `
       <button
@@ -2064,10 +1294,7 @@ function renderExtras(){
         </div>
 
         <div class="nextwhen">
-          ${typeIcon(e)}
-          ${fmt(d)}
-          ·
-          ${e.time||""}
+          ${typeIcon(e)} ${fmt(d)} · ${e.time||""}
         </div>
 
         <div class="nexttitle">
@@ -2082,78 +1309,47 @@ function renderExtras(){
     `;
   }
 
-  /*
-     Luis immer links,
-     Alicia immer rechts
-  */
-
-  document
-    .querySelector(
-      "#dashboard"
-    )
-    .innerHTML=
-      nextCard(
-        "Luis",
-        "luis"
-      )+
-      nextCard(
-        "Alicia",
-        "alicia"
-      );
+  document.querySelector(
+    "#dashboard"
+  ).innerHTML=
+    nextCard("Luis","luis")+
+    nextCard("Alicia","alicia");
 
   document
     .querySelectorAll(
       ".nextcard[data-event-key]"
     )
-    .forEach(
-      btn=>{
+    .forEach(btn=>{
 
-        btn.onclick=
-          ()=>{
+      btn.onclick=()=>{
 
-            const e=
-              rawEvents()
-                .find(
-                  x=>
-                    eventKey(x)
-                    ===
-                    btn.dataset.eventKey
-                );
+        const e=
+          rawEvents().find(
+            x=>
+              eventKey(x)===
+              btn.dataset.eventKey
+          );
 
-            if(!e){
-              return;
-            }
+        if(!e) return;
 
-            selectedDate=
-              e.date;
+        selectedDate=e.date;
+        view="day";
+        openOnly=false;
 
-            view="day";
-            openOnly=false;
+        render();
 
-            render();
+        setTimeout(()=>{
 
-            setTimeout(
-              ()=>{
+          document
+            .querySelector("#app")
+            ?.scrollIntoView({
+              behavior:"smooth",
+              block:"start"
+            });
 
-                document
-                  .querySelector(
-                    "#app"
-                  )
-                  ?.scrollIntoView(
-                    {
-                      behavior:"smooth",
-                      block:"start"
-                    }
-                  );
-
-              },
-              50
-            );
-          };
-      }
-    );
-
-  /* STATUS */
+        },50);
+      };
+    });
 
   const statusEnd=
     thirtyDayLimit();
@@ -2161,141 +1357,96 @@ function renderExtras(){
   const statusEvents=
     ev.filter(
       e=>
-        new Date(
-          e.date+
-          "T23:59:00"
-        )
-        <=
-        statusEnd
+        new Date(e.date+"T23:59:00")
+        <=statusEnd
     );
 
   const yes=
     statusEvents.filter(
-      e=>
-        getRsvp(e)==="yes"
+      e=>getRsvp(e)==="yes"
     ).length;
 
   const maybe=
     statusEvents.filter(
-      e=>
-        getRsvp(e)==="maybe"
+      e=>getRsvp(e)==="maybe"
     ).length;
 
   const no=
     statusEvents.filter(
-      e=>
-        getRsvp(e)==="no"
+      e=>getRsvp(e)==="no"
     ).length;
 
   const open=
     statusEvents.filter(
-      e=>
-        !getRsvp(e)
+      e=>!getRsvp(e)
     ).length;
 
-  document
-    .querySelector(
-      "#stats"
-    )
-    .innerHTML=`
+  document.querySelector(
+    "#stats"
+  ).innerHTML=`
 
-      <div class="stat">
-        <b>${yes}</b>
-        <span>zugesagt</span>
-      </div>
+    <div class="stat">
+      <b>${yes}</b>
+      <span>zugesagt</span>
+    </div>
 
-      <div class="stat">
-        <b>${maybe}</b>
-        <span>vielleicht</span>
-      </div>
+    <div class="stat">
+      <b>${maybe}</b>
+      <span>vielleicht</span>
+    </div>
 
-      <div class="stat">
-        <b>${no}</b>
-        <span>abgesagt</span>
-      </div>
+    <div class="stat">
+      <b>${no}</b>
+      <span>abgesagt</span>
+    </div>
 
-      <div
-        class="stat open"
-        id="openStat">
+    <div class="stat open" id="openStat">
+      <b>${open}</b>
+      <span>offen · 30 Tage</span>
+    </div>
+  `;
 
-        <b>${open}</b>
-        <span>
-          offen · 30 Tage
-        </span>
+  document.querySelector(
+    "#openStat"
+  ).onclick=()=>{
 
-      </div>
-    `;
+    openOnly=true;
+    view="all";
+    rangeMode="30";
+    selectedDate="";
 
-  document
-    .querySelector(
-      "#openStat"
-    )
-    .onclick=
-      ()=>{
+    render();
+  };
 
-        openOnly=true;
-        view="all";
-        rangeMode="30";
-        selectedDate="";
-
-        render();
-      };
-
-  /* KALENDER */
-
-  const base=
-    monday(now);
+  const base=monday(now);
 
   base.setDate(
-    base.getDate()+
-    calendarWeekOffset*7
+    base.getDate()+calendarWeekOffset*7
   );
 
   const days=[];
+  const calendarEvents=rawEvents();
 
-  /*
-     Hier ALLE Daten verwenden,
-     damit z.B. Dienstag und Donnerstag
-     der laufenden Woche am Freitag
-     noch ihre Punkte behalten.
-  */
+  for(let i=0;i<7;i++){
 
-  const calendarEvents=
-    rawEvents();
+    const d=new Date(base);
+    d.setDate(d.getDate()+i);
 
-  for(
-    let i=0;
-    i<7;
-    i++
-  ){
-
-    const d=
-      new Date(base);
-
-    d.setDate(
-      d.getDate()+i
-    );
-
-    const ds=
-      iso(d);
+    const ds=iso(d);
 
     const dayEvents=
-      calendarEvents
-        .filter(
-          e=>
-            e.date===ds
-        );
+      calendarEvents.filter(
+        e=>e.date===ds
+      );
 
     const luis=
       dayEvents.some(
-        e=>
-          e.child==="Luis"
+        e=>e.child==="Luis"
       );
 
     const alicia=
       dayEvents.some(
-        e=>
-          e.child==="Alicia"
+        e=>e.child==="Alicia"
       );
 
     days.push(`
@@ -2303,92 +1454,53 @@ function renderExtras(){
       <button
         class="
           daybox
-          ${
-            ds===iso(now)
-            ?"today"
-            :""
-          }
-          ${
-            ds===selectedDate
-            ?"selected"
-            :""
-          }
+          ${ds===iso(now)?"today":""}
+          ${ds===selectedDate?"selected":""}
         "
         data-date="${ds}">
 
         ${
           d.toLocaleDateString(
             "de-DE",
-            {
-              weekday:"short"
-            }
-          )
-          .slice(0,2)
+            {weekday:"short"}
+          ).slice(0,2)
         }
 
         <br>
 
-        <b>
-          ${d.getDate()}
-        </b>
+        <b>${d.getDate()}</b>
 
         <div class="dots">
-
-          ${
-            luis
-            ?
-            '<i class="dot luis"></i>'
-            :
-            ""
-          }
-
-          ${
-            alicia
-            ?
-            '<i class="dot alicia"></i>'
-            :
-            ""
-          }
-
+          ${luis?'<i class="dot luis"></i>':""}
+          ${alicia?'<i class="dot alicia"></i>':""}
         </div>
 
       </button>
     `);
   }
 
-  document
-    .querySelector(
-      "#calendarStrip"
-    )
-    .innerHTML=
-      days.join("");
+  document.querySelector(
+    "#calendarStrip"
+  ).innerHTML=days.join("");
 
   renderChanges(ev);
 }
-
-/* =========================================================
-   ÄNDERUNGEN
-   ========================================================= */
 
 function renderChanges(ev){
 
   try{
 
     const current=
-      ev.map(
-        e=>(
-          {
-            id:eventIdentity(e),
-            child:e.child,
-            title:e.title,
-            type:e.type,
-            date:e.date,
-            time:e.time,
-            endTime:e.endTime||"",
-            location:e.location
-          }
-        )
-      );
+      ev.map(e=>({
+        id:eventIdentity(e),
+        child:e.child,
+        title:e.title,
+        type:e.type,
+        date:e.date,
+        time:e.time,
+        endTime:e.endTime||"",
+        location:e.location
+      }));
 
     const oldRaw=
       localStorage.getItem(
@@ -2403,41 +1515,23 @@ function renderChanges(ev){
     if(oldRaw){
 
       const old=
-        JSON.parse(
-          oldRaw
-        );
+        JSON.parse(oldRaw);
 
       const oldMap=
         new Map(
-          old.map(
-            x=>
-              [
-                x.id,
-                x
-              ]
-          )
+          old.map(x=>[x.id,x])
         );
 
       const newMap=
         new Map(
-          current.map(
-            x=>
-              [
-                x.id,
-                x
-              ]
-          )
+          current.map(x=>[x.id,x])
         );
 
       const changes=[];
 
-      for(
-        const [id,n]
-        of newMap
-      ){
+      for(const [id,n] of newMap){
 
-        const o=
-          oldMap.get(id);
+        const o=oldMap.get(id);
 
         if(!o){
 
@@ -2449,34 +1543,19 @@ function renderChanges(ev){
 
           const diffs=[];
 
-          if(
-            o.date!==n.date
-          ){
-            diffs.push(
-              "Datum geändert"
-            );
-          }
+          if(o.date!==n.date)
+            diffs.push("Datum geändert");
 
           if(
             o.time!==n.time ||
             o.endTime!==n.endTime
-          ){
-            diffs.push(
-              "Zeit geändert"
-            );
-          }
+          )
+            diffs.push("Zeit geändert");
 
-          if(
-            o.location!==n.location
-          ){
-            diffs.push(
-              "Ort geändert"
-            );
-          }
+          if(o.location!==n.location)
+            diffs.push("Ort geändert");
 
-          if(
-            diffs.length
-          ){
+          if(diffs.length){
 
             changes.push(
               `${n.child}: „${n.title}“ – ${diffs.join(", ")}`
@@ -2485,74 +1564,46 @@ function renderChanges(ev){
         }
       }
 
-      if(
-        changes.length
-      ){
+      if(changes.length){
 
         ch.innerHTML=`
-          ⚠️
-          <b>
-            ${changes.length}
-            Änderung${
-              changes.length===1
-              ?""
-              :"en"
-            }
-          </b>
+          ⚠️ <b>${changes.length}
+          Änderung${changes.length===1?"":"en"}</b>
 
           <ul>
             ${
               changes
                 .slice(0,5)
-                .map(
-                  x=>
-                    `<li>${x}</li>`
-                )
+                .map(x=>`<li>${x}</li>`)
                 .join("")
             }
           </ul>
         `;
 
-        ch.classList.add(
-          "show"
-        );
+        ch.classList.add("show");
 
       }else{
 
-        ch.classList.remove(
-          "show"
-        );
+        ch.classList.remove("show");
       }
     }
 
     localStorage.setItem(
       "eventsSnapshotV3",
-      JSON.stringify(
-        current
-      )
+      JSON.stringify(current)
     );
 
   }catch(_){}
 }
 
-/* =========================================================
-   TERMIN-KARTE
-   ========================================================= */
-
 function card(e){
 
   const dt=
-    new Date(
-      e.date+
-      "T12:00:00"
-    );
+    new Date(e.date+"T12:00:00");
 
   const key=
     eventKey(e)
-      .replace(
-        /"/g,
-        "&quot;"
-      );
+      .replace(/"/g,"&quot;");
 
   const mapsBtn=
     e.maps
@@ -2575,38 +1626,22 @@ function card(e){
     "";
 
   const endTime=
-    e.endTime||
-    "";
+    e.endTime||"";
 
   const gameClass=
-    isGame(e)
-    ?
-    "game"
-    :
-    "";
+    isGame(e)?"game":"";
 
   return `
 
     <article
-      class="
-        card
-        ${e.child}
-        ${gameClass}
-      "
+      class="card ${e.child} ${gameClass}"
       data-event-key="${key}">
 
       <div class="top">
 
         <div>
-
-          <div class="who">
-            ${e.child}
-          </div>
-
-          <div>
-            ${fmt(dt)}
-          </div>
-
+          <div class="who">${e.child}</div>
+          <div>${fmt(dt)}</div>
         </div>
 
         <div class="time">
@@ -2616,8 +1651,7 @@ function card(e){
       </div>
 
       <div class="type">
-        ${typeIcon(e)}
-        ${e.type||"Termin"}
+        ${typeIcon(e)} ${e.type||"Termin"}
       </div>
 
       <h3>
@@ -2627,12 +1661,9 @@ function card(e){
       ${
         meet
         ?
-        `
-          <div class="meet">
-            ⏰ Treffen:
-            ${meet}
-          </div>
-        `
+        `<div class="meet">
+          ⏰ Treffen: ${meet}
+        </div>`
         :
         ""
       }
@@ -2640,19 +1671,14 @@ function card(e){
       ${
         endTime
         ?
-        `
-          <div class="endtime">
-            🏁 Ende:
-            ${endTime}
-          </div>
-        `
+        `<div class="endtime">
+          🏁 Ende: ${endTime}
+        </div>`
         :
         ""
       }
 
-      ${venueHtml(
-        e.location
-      )}
+      ${venueHtml(e.location)}
 
       ${mapsBtn}
 
@@ -2662,22 +1688,16 @@ function card(e){
   `;
 }
 
-/* =========================================================
-   LUIS LINKS / ALICIA RECHTS
-   ========================================================= */
-
 function twoCols(list){
 
   const luis=
     list.filter(
-      e=>
-        e.child==="Luis"
+      e=>e.child==="Luis"
     );
 
   const alicia=
     list.filter(
-      e=>
-        e.child==="Alicia"
+      e=>e.child==="Alicia"
     );
 
   return `
@@ -2685,80 +1705,49 @@ function twoCols(list){
     <div class="grid">
 
       <div class="kidcol">
-        ${
-          luis
-            .map(card)
-            .join("")
-        }
+        ${luis.map(card).join("")}
       </div>
 
       <div class="kidcol">
-        ${
-          alicia
-            .map(card)
-            .join("")
-        }
+        ${alicia.map(card).join("")}
       </div>
 
     </div>
   `;
 }
 
-/* =========================================================
-   VERGANGENE
-   ========================================================= */
-
 function renderPast(){
 
-  let ev=
-    pastEvents();
+  let ev=pastEvents();
 
-  if(
-    filter!=="all"
-  ){
+  if(filter!=="all"){
 
-    ev=
-      ev.filter(
-        e=>
-          e.child===filter
-      );
+    ev=ev.filter(
+      e=>e.child===filter
+    );
   }
 
-  ev=
-    ev.slice(
-      0,
-      20
-    );
+  ev=ev.slice(0,20);
 
-  document
-    .querySelector(
-      "#pastContent"
-    )
-    .innerHTML=
+  document.querySelector(
+    "#pastContent"
+  ).innerHTML=
 
-      ev.length
-      ?
-      twoCols(ev)
-      :
-      `
-        <div class="empty">
-          Keine vergangenen Termine vorhanden.
-        </div>
-      `;
+    ev.length
+    ?
+    twoCols(ev)
+    :
+    `
+      <div class="empty">
+        Keine vergangenen Termine vorhanden.
+      </div>
+    `;
 }
-
-/* =========================================================
-   HAUPTANSICHT
-   ========================================================= */
 
 function render(){
 
-  const today=
-    new Date();
-
-  today.setHours(
-    0,0,0,0
-  );
+  const today=new Date();
+  today.setHours(0,0,0,0);
 
   const rangebar=
     document.querySelector(
@@ -2775,39 +1764,21 @@ function render(){
     :
     "none";
 
-  /*
-     Standard:
-     Zukunft
-
-     Bei "Diese Woche" und bei
-     manuell angeklicktem Datum:
-     auch bereits vergangene Tage anzeigen.
-  */
-
   let ev;
 
   if(
     view==="week" ||
     view==="day"
   ){
-
-    ev=
-      allFilteredEvents();
-
+    ev=allFilteredEvents();
   }else{
-
-    ev=
-      filteredFutureEvents();
+    ev=filteredFutureEvents();
   }
 
   renderExtras();
   renderPast();
 
   let html="";
-
-  /* =============================
-     AUSGEWÄHLTER TAG
-     ============================= */
 
   if(
     view==="day" &&
@@ -2816,20 +1787,16 @@ function render(){
 
     const d=
       new Date(
-        selectedDate+
-        "T12:00:00"
+        selectedDate+"T12:00:00"
       );
 
     const list=
       ev.filter(
-        e=>
-          e.date===selectedDate
+        e=>e.date===selectedDate
       );
 
     html=`
-
       <div class="hero">
-
         <h2>
           ${
             d.toLocaleDateString(
@@ -2842,11 +1809,7 @@ function render(){
             )
           }
         </h2>
-
-        <p>
-          Ausgewählter Tag
-        </p>
-
+        <p>Ausgewählter Tag</p>
       </div>
     `;
 
@@ -2862,42 +1825,29 @@ function render(){
       `;
   }
 
-  /* =============================
-     HEUTE
-     ============================= */
-
-  else if(
-    view==="today"
-  ){
+  else if(view==="today"){
 
     const list=
       ev.filter(
-        e=>
-          e.date===iso(today)
+        e=>e.date===iso(today)
       );
 
     html=`
-
       <div class="hero">
-
-        <h2>
-          Heute
-        </h2>
+        <h2>Heute</h2>
 
         <p>
           ${
-            today
-              .toLocaleDateString(
-                "de-DE",
-                {
-                  weekday:"long",
-                  day:"2-digit",
-                  month:"long"
-                }
-              )
+            today.toLocaleDateString(
+              "de-DE",
+              {
+                weekday:"long",
+                day:"2-digit",
+                month:"long"
+              }
+            )
           }
         </p>
-
       </div>
     `;
 
@@ -2913,65 +1863,45 @@ function render(){
       `;
   }
 
-  /* =============================
-     DIESE WOCHE
-     ============================= */
+  else if(view==="week"){
 
-  else if(
-    view==="week"
-  ){
+    const m=monday(today);
 
-    const m=
-      monday(today);
-
-    const s=
-      new Date(m);
+    const s=new Date(m);
 
     s.setDate(
       s.getDate()+6
     );
 
     /*
-       WICHTIGE KORREKTUR:
-
-       Nicht mehr nur futureEvents().
-
-       Dadurch bleiben Dienstag,
-       Donnerstag, Freitag usw.
-       in der laufenden Wochenansicht
-       sichtbar, auch wenn der Tag
-       schon vorbei ist.
+      WICHTIG:
+      Sonntag vollständig berücksichtigen.
+      Gilt für Luis UND Alicia.
     */
 
+    s.setHours(
+      23,59,59,999
+    );
+
     const list=
-      ev.filter(
-        e=>{
+      ev.filter(e=>{
 
-          const d=
-            new Date(
-              e.date+
-              "T12:00:00"
-            );
-
-          return (
-            d>=m &&
-            d<=s
+        const d=
+          new Date(
+            e.date+"T12:00:00"
           );
-        }
-      );
+
+        return d>=m && d<=s;
+      });
 
     html=`
-
       <div class="hero">
 
         <h2>
-          Diese Woche
-          ·
-          KW ${weekNo(today)}
+          Diese Woche · KW ${weekNo(today)}
         </h2>
 
         <p>
-
           ${
             m.toLocaleDateString(
               "de-DE",
@@ -2981,15 +1911,8 @@ function render(){
               }
             )
           }
-
           –
-
-          ${
-            s.toLocaleDateString(
-              "de-DE"
-            )
-          }
-
+          ${s.toLocaleDateString("de-DE")}
         </p>
 
       </div>
@@ -3007,26 +1930,14 @@ function render(){
       `;
   }
 
-  /* =============================
-     ALLE / OFFEN
-     ============================= */
-
   else{
 
     if(openOnly){
 
       html+=`
-
         <div class="hero">
-
-          <h2>
-            Offene Rückmeldungen
-          </h2>
-
-          <p>
-            Nächste 30 Tage
-          </p>
-
+          <h2>Offene Rückmeldungen</h2>
+          <p>Nächste 30 Tage</p>
         </div>
       `;
     }
@@ -3037,21 +1948,15 @@ function render(){
 
       const d=
         new Date(
-          e.date+
-          "T12:00:00"
+          e.date+"T12:00:00"
         );
 
-      const wi=
-        weekInfo(d);
+      const wi=weekInfo(d);
 
       const k=
-        wi.year+
-        "-"+
-        wi.week;
+        `${wi.year}-${wi.week}`;
 
-      if(
-        !groups[k]
-      ){
+      if(!groups[k]){
         groups[k]=[];
       }
 
@@ -3065,30 +1970,23 @@ function render(){
 
       const d=
         new Date(
-          list[0].date+
-          "T12:00:00"
+          list[0].date+"T12:00:00"
         );
 
-      const m=
-        monday(d);
+      const m=monday(d);
 
-      const s=
-        new Date(m);
+      const s=new Date(m);
 
       s.setDate(
         s.getDate()+6
       );
 
       html+=`
-
         <section class="week">
 
           <h2>
-
             KW ${weekNo(d)}
-
             ·
-
             ${
               m.toLocaleDateString(
                 "de-DE",
@@ -3098,15 +1996,8 @@ function render(){
                 }
               )
             }
-
             –
-
-            ${
-              s.toLocaleDateString(
-                "de-DE"
-              )
-            }
-
+            ${s.toLocaleDateString("de-DE")}
           </h2>
 
           ${twoCols(list)}
@@ -3116,23 +2007,17 @@ function render(){
     }
   }
 
-  document
-    .querySelector(
-      "#app"
-    )
-    .innerHTML=
+  document.querySelector(
+    "#app"
+  ).innerHTML=
 
-      html||
-      `
-        <div class="empty">
-          Keine Termine gefunden.
-        </div>
-      `;
+    html||
+    `
+      <div class="empty">
+        Keine Termine gefunden.
+      </div>
+    `;
 }
-
-/* =========================================================
-   DETAIL-MODAL
-   ========================================================= */
 
 function openModal(e){
 
@@ -3148,8 +2033,7 @@ function openModal(e){
 
   const d=
     new Date(
-      e.date+
-      "T12:00:00"
+      e.date+"T12:00:00"
     );
 
   const meet=
@@ -3159,37 +2043,23 @@ function openModal(e){
     "";
 
   const endTime=
-    e.endTime||
-    "";
+    e.endTime||"";
 
   const venue=
-    venueInfo(
-      e.location
-    );
+    venueInfo(e.location);
 
-  document
-    .querySelector(
-      "#modalTitle"
-    )
-    .textContent=
-      typeIcon(e)+
-      " "+
-      e.title;
+  document.querySelector(
+    "#modalTitle"
+  ).textContent=
+    `${typeIcon(e)} ${e.title}`;
 
   body.innerHTML=`
 
     <div class="detailList">
 
       <div class="detailItem">
-
-        <div class="detailLabel">
-          Kind
-        </div>
-
-        <b>
-          ${e.child}
-        </b>
-
+        <div class="detailLabel">Kind</div>
+        <b>${e.child}</b>
       </div>
 
       <div class="detailItem">
@@ -3215,15 +2085,10 @@ function openModal(e){
       </div>
 
       <div class="detailItem">
-
         <div class="detailLabel">
           Beginn
         </div>
-
-        <b>
-          ${e.time||""}
-        </b>
-
+        <b>${e.time||""}</b>
       </div>
 
       ${
@@ -3231,15 +2096,10 @@ function openModal(e){
         ?
         `
           <div class="detailItem">
-
             <div class="detailLabel">
               Treffzeit
             </div>
-
-            <b>
-              ${meet}
-            </b>
-
+            <b>${meet}</b>
           </div>
         `
         :
@@ -3251,15 +2111,10 @@ function openModal(e){
         ?
         `
           <div class="detailItem">
-
             <div class="detailLabel">
               Ende
             </div>
-
-            <b>
-              ${endTime}
-            </b>
-
+            <b>${endTime}</b>
           </div>
         `
         :
@@ -3267,15 +2122,8 @@ function openModal(e){
       }
 
       <div class="detailItem">
-
-        <div class="detailLabel">
-          Art
-        </div>
-
-        <b>
-          ${e.type||"Termin"}
-        </b>
-
+        <div class="detailLabel">Art</div>
+        <b>${e.type||"Termin"}</b>
       </div>
 
       <div class="detailItem">
@@ -3285,21 +2133,14 @@ function openModal(e){
         </div>
 
         <b>
-
           ${
             venue.name
             ?
-            venue.name+
-            "<br>"
+            venue.name+"<br>"
             :
             ""
           }
-
-          ${
-            e.location||
-            ""
-          }
-
+          ${e.location||""}
         </b>
 
       </div>
@@ -3323,29 +2164,17 @@ function openModal(e){
     ${rsvpButtons(e)}
   `;
 
-  modal.classList.add(
-    "show"
-  );
+  modal.classList.add("show");
 }
 
 function closeModal(){
 
-  document
-    .querySelector(
-      "#eventModal"
-    )
-    .classList.remove(
-      "show"
-    );
+  document.querySelector(
+    "#eventModal"
+  ).classList.remove("show");
 }
 
-/* =========================================================
-   DATEN LADEN
-   ========================================================= */
-
-async function loadData(
-  showFeedback=false
-){
+async function loadData(showFeedback=false){
 
   const btn=
     document.querySelector(
@@ -3362,8 +2191,7 @@ async function loadData(
 
   try{
 
-    const stamp=
-      Date.now();
+    const stamp=Date.now();
 
     const [
       gamesData,
@@ -3374,75 +2202,40 @@ async function loadData(
     await Promise.all([
 
       fetch(
-        "data/events.json?"+
-        stamp,
-        {
-          cache:"no-store"
-        }
-      )
-      .then(
-        r=>r.json()
-      ),
+        "data/events.json?"+stamp,
+        {cache:"no-store"}
+      ).then(r=>r.json()),
 
       fetch(
-        "data/trainings.json?"+
-        stamp,
-        {
-          cache:"no-store"
-        }
-      )
-      .then(
-        r=>r.json()
-      ),
+        "data/trainings.json?"+stamp,
+        {cache:"no-store"}
+      ).then(r=>r.json()),
 
       fetch(
-        "data/luis_myteam.json?"+
-        stamp,
-        {
-          cache:"no-store"
-        }
-      )
-      .then(
-        r=>r.json()
-      ),
+        "data/luis_myteam.json?"+stamp,
+        {cache:"no-store"}
+      ).then(r=>r.json()),
 
       fetch(
-        "data/alicia_union.json?"+
-        stamp,
-        {
-          cache:"no-store"
-        }
-      )
-      .then(
-        r=>r.json()
-      )
+        "data/alicia_union.json?"+stamp,
+        {cache:"no-store"}
+      ).then(r=>r.json())
 
     ]);
 
-    source=
-      gamesData;
+    source=gamesData;
 
     trainings=
-      trainingsData.trainings||
-      [];
+      trainingsData.trainings||[];
 
     myteamEvents=
-      myteamData.events||
-      [];
+      myteamData.events||[];
 
     aliciaUnionEvents=
-      unionData.events||
-      [];
-
-    /*
-       NEU:
-       Die Kalenderwochen aus
-       alicia_union.json übernehmen.
-    */
+      unionData.events||[];
 
     aliciaCoveredWeeks=
-      unionData.coveredWeeks||
-      [];
+      unionData.coveredWeeks||[];
 
     const newest=
       [
@@ -3454,28 +2247,22 @@ async function loadData(
       .sort()
       .pop();
 
-    document
-      .querySelector(
-        "#updated"
-      )
-      .textContent=
+    document.querySelector(
+      "#updated"
+    ).textContent=
 
-        newest
-        ?
-        "Zuletzt aktualisiert: "+
-        new Date(newest)
-          .toLocaleString(
-            "de-DE"
-          )
-        :
-        "";
+      newest
+      ?
+      "Zuletzt aktualisiert: "+
+      new Date(newest)
+        .toLocaleString("de-DE")
+      :
+      "";
 
     render();
 
     if(showFeedback){
-
-      btn.textContent=
-        "✅ Aktualisiert";
+      btn.textContent="✅ Aktualisiert";
     }
 
   }catch(err){
@@ -3483,9 +2270,7 @@ async function loadData(
     console.error(err);
 
     if(showFeedback){
-
-      btn.textContent=
-        "⚠️ Fehler";
+      btn.textContent="⚠️ Fehler";
     }
 
     render();
@@ -3494,485 +2279,317 @@ async function loadData(
 
     if(showFeedback){
 
-      setTimeout(
-        ()=>{
+      setTimeout(()=>{
 
-          btn.disabled=false;
+        btn.disabled=false;
+        btn.textContent="🔄 Aktualisieren";
 
-          btn.textContent=
-            "🔄 Aktualisieren";
-
-        },
-        1200
-      );
+      },1200);
     }
   }
 }
 
-/* =========================================================
-   KINDERFILTER
-   ========================================================= */
-
 document
-  .querySelectorAll(
-    "button[data-filter]"
-  )
-  .forEach(
-    b=>{
+.querySelectorAll(
+  "button[data-filter]"
+)
+.forEach(b=>{
 
-      b.onclick=
-        ()=>{
+  b.onclick=()=>{
 
-          document
-            .querySelectorAll(
-              "button[data-filter]"
-            )
-            .forEach(
-              x=>
-                x.classList.remove(
-                  "active"
-                )
-            );
-
-          b.classList.add(
-            "active"
-          );
-
-          filter=
-            b.dataset.filter;
-
-          render();
-        };
-    }
-  );
-
-/* =========================================================
-   OBERE ANSICHT
-   ========================================================= */
-
-document
-  .querySelectorAll(
-    "button[data-view]"
-  )
-  .forEach(
-    b=>{
-
-      b.onclick=
-        ()=>{
-
-          document
-            .querySelectorAll(
-              "button[data-view]"
-            )
-            .forEach(
-              x=>
-                x.classList.remove(
-                  "active"
-                )
-            );
-
-          b.classList.add(
-            "active"
-          );
-
-          selectedDate="";
-          calendarWeekOffset=0;
-          openOnly=false;
-
-          view=
-            b.dataset.view;
-
-          render();
-        };
-    }
-  );
-
-/* =========================================================
-   KALENDERTAG
-   ========================================================= */
-
-document
-  .querySelector(
-    "#calendarStrip"
-  )
-  .addEventListener(
-    "click",
-    event=>{
-
-      const day=
-        event.target.closest(
-          "button.daybox[data-date]"
-        );
-
-      if(!day){
-        return;
-      }
-
-      selectedDate=
-        day.dataset.date;
-
-      view="day";
-      openOnly=false;
-
-      render();
-
-      setTimeout(
-        ()=>{
-
-          document
-            .querySelector(
-              "#app"
-            )
-            ?.scrollIntoView(
-              {
-                behavior:"smooth",
-                block:"start"
-              }
-            );
-
-        },
-        50
+    document
+      .querySelectorAll(
+        "button[data-filter]"
+      )
+      .forEach(
+        x=>x.classList.remove("active")
       );
-    }
-  );
 
-/* =========================================================
-   WOCHEN-NAVIGATION
-   ========================================================= */
+    b.classList.add("active");
 
-document
-  .querySelector(
-    "#prevWeekBtn"
-  )
-  .onclick=
-    ()=>{
+    filter=b.dataset.filter;
 
-      calendarWeekOffset--;
-
-      selectedDate="";
-
-      render();
-    };
+    render();
+  };
+});
 
 document
-  .querySelector(
-    "#nextWeekBtn"
-  )
-  .onclick=
-    ()=>{
+.querySelectorAll(
+  "button[data-view]"
+)
+.forEach(b=>{
 
-      calendarWeekOffset++;
+  b.onclick=()=>{
 
-      selectedDate="";
+    document
+      .querySelectorAll(
+        "button[data-view]"
+      )
+      .forEach(
+        x=>x.classList.remove("active")
+      );
 
-      render();
-    };
+    b.classList.add("active");
 
-document
-  .querySelector(
-    "#currentWeekBtn"
-  )
-  .onclick=
-    ()=>{
+    selectedDate="";
+    calendarWeekOffset=0;
+    openOnly=false;
 
-      calendarWeekOffset=0;
-      selectedDate="";
-      openOnly=false;
-      view="week";
+    view=b.dataset.view;
 
-      render();
-    };
-
-/* =========================================================
-   AKTUALISIEREN
-   ========================================================= */
+    render();
+  };
+});
 
 document
-  .querySelector(
-    "#refreshBtn"
-  )
-  .onclick=
-    ()=>{
+.querySelector(
+  "#calendarStrip"
+)
+.addEventListener(
+  "click",
+  event=>{
 
-      loadData(true);
-    };
+    const day=
+      event.target.closest(
+        "button.daybox[data-date]"
+      );
 
-/* =========================================================
-   BOTTOM NAV
-   ========================================================= */
+    if(!day) return;
 
-document
-  .querySelectorAll(
-    "button[data-nav]"
-  )
-  .forEach(
-    b=>{
+    selectedDate=
+      day.dataset.date;
 
-      b.onclick=
-        ()=>{
+    view="day";
+    openOnly=false;
 
-          document
-            .querySelectorAll(
-              "button[data-nav]"
-            )
-            .forEach(
-              x=>
-                x.classList.remove(
-                  "active"
-                )
-            );
+    render();
 
-          b.classList.add(
-            "active"
-          );
-
-          const n=
-            b.dataset.nav;
-
-          selectedDate="";
-          calendarWeekOffset=0;
-
-          if(
-            n==="open"
-          ){
-
-            openOnly=true;
-            view="all";
-            rangeMode="30";
-
-          }else{
-
-            openOnly=false;
-
-            if(
-              n==="today"
-            ){
-
-              view="today";
-
-            }else if(
-              n==="all"
-            ){
-
-              view="all";
-
-            }else{
-
-              view="week";
-            }
-          }
-
-          render();
-        };
-    }
-  );
-
-/* =========================================================
-   ZEITRAUM
-   ========================================================= */
-
-document
-  .querySelectorAll(
-    "button[data-range]"
-  )
-  .forEach(
-    b=>{
-
-      b.onclick=
-        ()=>{
-
-          document
-            .querySelectorAll(
-              "button[data-range]"
-            )
-            .forEach(
-              x=>
-                x.classList.remove(
-                  "active"
-                )
-            );
-
-          b.classList.add(
-            "active"
-          );
-
-          rangeMode=
-            b.dataset.range;
-
-          view="all";
-          openOnly=false;
-          selectedDate="";
-
-          render();
-        };
-    }
-  );
-
-/* =========================================================
-   VERGANGENE TERMINE
-   ========================================================= */
-
-document
-  .querySelector(
-    "#pastToggle"
-  )
-  .onclick=
-    ()=>{
-
-      const content=
-        document.querySelector(
-          "#pastContent"
-        );
-
-      const open=
-        content.classList.toggle(
-          "show"
-        );
+    setTimeout(()=>{
 
       document
-        .querySelector(
-          "#pastToggle"
-        )
-        .textContent=
+        .querySelector("#app")
+        ?.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
 
-          open
-          ?
-          "▾ Vergangene Termine"
-          :
-          "▸ Vergangene Termine";
-    };
+    },50);
+  }
+);
 
-/* =========================================================
-   KARTEN-KLICK
-   ========================================================= */
+document.querySelector(
+  "#prevWeekBtn"
+).onclick=()=>{
+
+  calendarWeekOffset--;
+  selectedDate="";
+  render();
+};
+
+document.querySelector(
+  "#nextWeekBtn"
+).onclick=()=>{
+
+  calendarWeekOffset++;
+  selectedDate="";
+  render();
+};
+
+document.querySelector(
+  "#currentWeekBtn"
+).onclick=()=>{
+
+  calendarWeekOffset=0;
+  selectedDate="";
+  openOnly=false;
+  view="week";
+
+  render();
+};
+
+document.querySelector(
+  "#refreshBtn"
+).onclick=()=>{
+
+  loadData(true);
+};
 
 document
-  .querySelector(
-    "#app"
-  )
-  .addEventListener(
-    "click",
-    event=>{
+.querySelectorAll(
+  "button[data-nav]"
+)
+.forEach(b=>{
 
-      if(
-        event.target.closest(
-          "[data-no-detail='1']"
-        )
-      ){
-        return;
+  b.onclick=()=>{
+
+    document
+      .querySelectorAll(
+        "button[data-nav]"
+      )
+      .forEach(
+        x=>x.classList.remove("active")
+      );
+
+    b.classList.add("active");
+
+    const n=b.dataset.nav;
+
+    selectedDate="";
+    calendarWeekOffset=0;
+
+    if(n==="open"){
+
+      openOnly=true;
+      view="all";
+      rangeMode="30";
+
+    }else{
+
+      openOnly=false;
+
+      if(n==="today"){
+        view="today";
       }
-
-      const cardEl=
-        event.target.closest(
-          ".card[data-event-key]"
-        );
-
-      if(!cardEl){
-        return;
+      else if(n==="all"){
+        view="all";
       }
-
-      const e=
-        rawEvents()
-          .find(
-            x=>
-              eventKey(x)
-              ===
-              cardEl.dataset.eventKey
-          );
-
-      if(e){
-        openModal(e);
+      else{
+        view="week";
       }
     }
-  );
+
+    render();
+  };
+});
 
 document
-  .querySelector(
-    "#pastContent"
-  )
-  .addEventListener(
-    "click",
-    event=>{
+.querySelectorAll(
+  "button[data-range]"
+)
+.forEach(b=>{
 
-      if(
-        event.target.closest(
-          "[data-no-detail='1']"
-        )
-      ){
-        return;
-      }
+  b.onclick=()=>{
 
-      const cardEl=
-        event.target.closest(
-          ".card[data-event-key]"
-        );
+    document
+      .querySelectorAll(
+        "button[data-range]"
+      )
+      .forEach(
+        x=>x.classList.remove("active")
+      );
 
-      if(!cardEl){
-        return;
-      }
+    b.classList.add("active");
 
-      const e=
-        rawEvents()
-          .find(
-            x=>
-              eventKey(x)
-              ===
-              cardEl.dataset.eventKey
-          );
+    rangeMode=b.dataset.range;
+    view="all";
+    openOnly=false;
+    selectedDate="";
 
-      if(e){
-        openModal(e);
-      }
-    }
-  );
+    render();
+  };
+});
 
-/* =========================================================
-   MODAL
-   ========================================================= */
+document.querySelector(
+  "#pastToggle"
+).onclick=()=>{
 
-document
-  .querySelector(
-    "#closeModalBtn"
-  )
-  .onclick=
-    closeModal;
-
-document
-  .querySelector(
-    "#eventModal"
-  )
-  .onclick=
-    event=>{
-
-      if(
-        event.target.id
-        ===
-        "eventModal"
-      ){
-        closeModal();
-      }
-    };
-
-/* =========================================================
-   SERVICE WORKER
-   ========================================================= */
-
-if(
-  "serviceWorker"
-  in
-  navigator
-){
-
-  navigator
-    .serviceWorker
-    .register(
-      "sw.js"
+  const content=
+    document.querySelector(
+      "#pastContent"
     );
-}
 
-/* =========================================================
-   START
-   ========================================================= */
+  const open=
+    content.classList.toggle(
+      "show"
+    );
+
+  document.querySelector(
+    "#pastToggle"
+  ).textContent=
+
+    open
+    ?
+    "▾ Vergangene Termine"
+    :
+    "▸ Vergangene Termine";
+};
+
+document
+.querySelector("#app")
+.addEventListener(
+  "click",
+  event=>{
+
+    if(
+      event.target.closest(
+        "[data-no-detail='1']"
+      )
+    ) return;
+
+    const cardEl=
+      event.target.closest(
+        ".card[data-event-key]"
+      );
+
+    if(!cardEl) return;
+
+    const e=
+      rawEvents().find(
+        x=>
+          eventKey(x)===
+          cardEl.dataset.eventKey
+      );
+
+    if(e) openModal(e);
+  }
+);
+
+document
+.querySelector("#pastContent")
+.addEventListener(
+  "click",
+  event=>{
+
+    if(
+      event.target.closest(
+        "[data-no-detail='1']"
+      )
+    ) return;
+
+    const cardEl=
+      event.target.closest(
+        ".card[data-event-key]"
+      );
+
+    if(!cardEl) return;
+
+    const e=
+      rawEvents().find(
+        x=>
+          eventKey(x)===
+          cardEl.dataset.eventKey
+      );
+
+    if(e) openModal(e);
+  }
+);
+
+document.querySelector(
+  "#closeModalBtn"
+).onclick=closeModal;
+
+document.querySelector(
+  "#eventModal"
+).onclick=event=>{
+
+  if(event.target.id==="eventModal"){
+    closeModal();
+  }
+};
+
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("sw.js");
+}
 
 loadData();
 

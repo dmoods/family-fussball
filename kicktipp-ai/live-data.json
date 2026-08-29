@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "1. Spieltag",
-  "updated": "29.08.2026 21:14",
+  "updated": "29.08.2026 22:14",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -132,6 +132,6 @@
         "wind": 9.7
       }
     },
-    "updatedUtc": "2026-08-29T19:14:49.704721+00:00"
+    "updatedUtc": "2026-08-29T20:14:50.046377+00:00"
   }
 }

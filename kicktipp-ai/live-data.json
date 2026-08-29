@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "1. Spieltag",
-  "updated": "29.08.2026 20:14",
+  "updated": "29.08.2026 21:14",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "Borussia Dortmund",
-      "away": "Hamburger SV",
-      "kickoff": "Sat 18:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 72,
-      "bank": false,
-      "surprise": {},
-      "form": "Borussia Dortmund: 1.91 Pkt/Spiel, 1.89:0.96 Tore; Hamburger SV: 1.16 Pkt/Spiel, 1.44:2.00 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.17,
-        "away_xg": 1.02,
-        "home_win": 63.7,
-        "draw": 19.7,
-        "away_win": 16.6,
-        "kicktipp_ev": 1.472
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 21.0,
-        "rain": 0.2,
-        "wind": 19.4
-      }
-    },
     {
       "home": "SC Freiburg",
       "away": "SV Werder Bremen",
@@ -170,6 +132,6 @@
         "wind": 9.7
       }
     },
-    "updatedUtc": "2026-08-29T18:14:49.495519+00:00"
+    "updatedUtc": "2026-08-29T19:14:49.704721+00:00"
   }
 }

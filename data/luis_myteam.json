@@ -1,16 +1,6 @@
 {
-  "updated": "2026-08-28T23:28:41+02:00",
+  "updated": "2026-08-29T08:04:34+02:00",
   "events": [
-    {
-      "date": "2026-08-28",
-      "time": "17:00–19:00",
-      "child": "Luis",
-      "type": "Fototermin",
-      "title": "Mannschaftsfoto+portraitfoto",
-      "location": "Melanchthonstraße 53, 12623 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
-      "maps": "https://maps.apple.com/?q=Melanchthonstra%C3%9Fe%2053%2C%2012623%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
-    },
     {
       "date": "2026-09-01",
       "time": "16:15–18:00",

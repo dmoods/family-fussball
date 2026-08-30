@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "1. Spieltag",
-  "updated": "30.08.2026 11:15",
+  "updated": "30.08.2026 12:15",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,7 +42,7 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 25.8,
+        "temp": 25.5,
         "rain": 0.0,
         "wind": 13.0
       }
@@ -82,7 +82,7 @@
       "weather": {
         "temp": 25.8,
         "rain": 0.0,
-        "wind": 9.0
+        "wind": 9.4
       }
     }
   ],
@@ -122,16 +122,16 @@
         "wind": 19.4
       },
       "sc freiburg|werder bremen": {
-        "temp": 25.8,
+        "temp": 25.5,
         "rain": 0.0,
         "wind": 13.0
       },
       "fc augsburg|schalke 04": {
         "temp": 25.8,
         "rain": 0.0,
-        "wind": 9.0
+        "wind": 9.4
       }
     },
-    "updatedUtc": "2026-08-30T09:15:00.735165+00:00"
+    "updatedUtc": "2026-08-30T10:15:14.585301+00:00"
   }
 }

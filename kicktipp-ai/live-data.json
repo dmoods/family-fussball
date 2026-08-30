@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "1. Spieltag",
-  "updated": "30.08.2026 17:14",
+  "updated": "30.08.2026 18:14",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "SC Freiburg",
-      "away": "SV Werder Bremen",
-      "kickoff": "Sun 15:30",
-      "prediction": [
-        1,
-        0
-      ],
-      "confidence": 71,
-      "bank": false,
-      "surprise": {},
-      "form": "SC Freiburg: 1.58 Pkt/Spiel, 1.84:1.78 Tore; SV Werder Bremen: 0.73 Pkt/Spiel, 0.90:1.68 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.96,
-        "away_xg": 0.95,
-        "home_win": 60.7,
-        "draw": 21.5,
-        "away_win": 17.8,
-        "kicktipp_ev": 1.428
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 26.1,
-        "rain": 0.0,
-        "wind": 14.4
-      }
-    },
     {
       "home": "FC Augsburg",
       "away": "FC Schalke 04",
@@ -132,6 +94,6 @@
         "wind": 10.8
       }
     },
-    "updatedUtc": "2026-08-30T15:14:46.640391+00:00"
+    "updatedUtc": "2026-08-30T16:14:47.865918+00:00"
   }
 }

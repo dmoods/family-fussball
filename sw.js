@@ -1,22 +1,16 @@
-const C="termine-kids-v6";
+const C="termine-kids-v7";
 const STATIC=["manifest.webmanifest","icon.svg","apple-touch-icon.png"];
 
-const WEEK_CARD_FIX=`<style id="week-card-equal-v6">
-#app .grid{align-items:stretch!important}
-#app .kidcol{align-content:start!important}
-#app .card{
-  min-height:330px!important;
-  height:330px!important;
-  display:flex!important;
-  flex-direction:column!important;
-}
-#app .card .maps{margin-top:auto!important}
-#app .card .rsvp{margin-top:9px!important}
-@media(max-width:560px){
-  #app .card{
-    min-height:350px!important;
-    height:350px!important;
-  }
+const WEEK_CARD_FIX=`<style id="week-card-equal-v7">
+/* Wochenansicht: alle Termin-Kacheln exakt gleich hoch */
+#app .grid{align-items:start!important}
+#app .kidcol{display:grid!important;grid-auto-rows:350px!important;gap:9px!important;align-content:start!important}
+#app .card{box-sizing:border-box!important;height:350px!important;min-height:350px!important;max-height:350px!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
+#app .card .maps{margin-top:auto!important;flex-shrink:0!important}
+#app .card .rsvp{flex-shrink:0!important}
+@media(min-width:561px){
+  #app .kidcol{grid-auto-rows:330px!important}
+  #app .card{height:330px!important;min-height:330px!important;max-height:330px!important}
 }
 </style>`;
 
@@ -41,7 +35,7 @@ self.addEventListener("fetch",e=>{
       fetch(e.request,{cache:"no-store"})
         .then(async r=>{
           const text=await r.text();
-          const html=text.includes('id="week-card-equal-v6"')
+          const html=text.includes('id="week-card-equal-v7"')
             ? text
             : text.replace("</head>",WEEK_CARD_FIX+"</head>");
           return new Response(html,{

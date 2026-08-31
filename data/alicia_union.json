@@ -1,63 +1,15 @@
 {
-  "updated": "2026-08-28T23:34:00+02:00",
-  "coveredWeeks": [
-    "2026-W35"
-  ],
+  "updated": "2026-08-31T13:55:00+02:00",
+  "coveredWeeks": ["2026-W35", "2026-W36"],
   "events": [
-    {
-      "date": "2026-08-25",
-      "time": "17:30",
-      "endTime": "19:00",
-      "child": "Alicia",
-      "type": "Training",
-      "title": "Training U13w FCU",
-      "location": "Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)",
-      "maps": "https://maps.apple.com/?q=Am+Pl%C3%A4nterwald+17%2C+12435+Berlin",
-      "source": "union-mail"
-    },
-    {
-      "date": "2026-08-27",
-      "time": "18:00",
-      "endTime": "19:30",
-      "child": "Alicia",
-      "type": "Training",
-      "title": "Training U13w FCU",
-      "location": "Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)",
-      "maps": "https://maps.apple.com/?q=Am+Pl%C3%A4nterwald+17%2C+12435+Berlin",
-      "source": "union-mail"
-    },
-    {
-      "date": "2026-08-28",
-      "time": "18:00",
-      "endTime": "19:30",
-      "child": "Alicia",
-      "type": "Training",
-      "title": "Training U13w FCU",
-      "location": "Neue Krugallee 219, 12437 Berlin (NK)",
-      "maps": "https://maps.apple.com/?q=Neue+Krugallee+219%2C+12437+Berlin",
-      "source": "union-mail"
-    },
-    {
-      "date": "2026-08-30",
-      "time": "15:00",
-      "meetTime": "14:00",
-      "endTime": "ca. 16:30",
-      "child": "Alicia",
-      "type": "Testspiel",
-      "title": "Testspiel U13w FCU",
-      "location": "Bruno-Bürgel-Weg 63, 12439 Berlin (TZO)",
-      "maps": "https://maps.apple.com/?q=Bruno-B%C3%BCrgel-Weg+63%2C+12439+Berlin",
-      "source": "union-mail"
-    },
-    {
-      "date": "2026-09-04",
-      "time": "18:30",
-      "child": "Alicia",
-      "type": "Elternversammlung",
-      "title": "Elternversammlung U13w FCU",
-      "location": "Ort richtet sich nach dem Trainingsplatz – genaue Information folgt in der Wochenmail",
-      "maps": "",
-      "source": "union-mail"
-    }
+    {"date":"2026-08-25","time":"17:30","endTime":"19:00","child":"Alicia","type":"Training","title":"Training U13w FCU","location":"Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)","maps":"https://maps.apple.com/?q=Am+Pl%C3%A4nterwald+17%2C+12435+Berlin","source":"union-mail"},
+    {"date":"2026-08-27","time":"18:00","endTime":"19:30","child":"Alicia","type":"Training","title":"Training U13w FCU","location":"Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)","maps":"https://maps.apple.com/?q=Am+Pl%C3%A4nterwald+17%2C+12435+Berlin","source":"union-mail"},
+    {"date":"2026-08-28","time":"18:00","endTime":"19:30","child":"Alicia","type":"Training","title":"Training U13w FCU","location":"Neue Krugallee 219, 12437 Berlin (NK)","maps":"https://maps.apple.com/?q=Neue+Krugallee+219%2C+12437+Berlin","source":"union-mail"},
+    {"date":"2026-08-30","time":"15:00","meetTime":"14:00","endTime":"ca. 16:30","child":"Alicia","type":"Testspiel","title":"Testspiel U13w FCU","location":"Bruno-Bürgel-Weg 63, 12439 Berlin (TZO)","maps":"https://maps.apple.com/?q=Bruno-B%C3%BCrgel-Weg+63%2C+12439+Berlin","source":"union-mail"},
+    {"date":"2026-09-01","time":"17:30","endTime":"19:00","child":"Alicia","type":"Training","title":"Training U13w FCU","location":"Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)","maps":"https://maps.apple.com/?q=Am+Pl%C3%A4nterwald+17%2C+12435+Berlin","source":"union-mail"},
+    {"date":"2026-09-02","time":"18:00","endTime":"19:30","child":"Alicia","type":"Training","title":"Training U13w FCU","location":"Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)","maps":"https://maps.apple.com/?q=Am+Pl%C3%A4nterwald+17%2C+12435+Berlin","source":"union-mail"},
+    {"date":"2026-09-04","time":"18:00","endTime":"19:00","child":"Alicia","type":"Training","title":"Training U13w FCU","location":"Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)","maps":"https://maps.apple.com/?q=Am+Pl%C3%A4nterwald+17%2C+12435+Berlin","source":"union-mail"},
+    {"date":"2026-09-04","time":"19:00","endTime":"20:30","child":"Alicia","type":"Elternversammlung","title":"Elternversammlung U13w FCU","location":"Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)","maps":"https://maps.apple.com/?q=Am+Pl%C3%A4nterwald+17%2C+12435+Berlin","source":"union-mail"},
+    {"date":"2026-09-06","time":"10:00","meetTime":"09:00","endTime":"ca. 11:30","child":"Alicia","type":"Punktspiel","title":"Punktspiel U13w FCU","location":"Bruno-Bürgel-Weg 63, 12439 Berlin (TZO)","maps":"https://maps.apple.com/?q=Bruno-B%C3%BCrgel-Weg+63%2C+12439+Berlin","source":"union-mail"}
   ]
 }

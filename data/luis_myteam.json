@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T08:05:04+02:00",
+  "updated": "2026-09-01T08:09:23+02:00",
   "events": [
     {
       "date": "2026-09-01",
@@ -333,6 +333,16 @@
     },
     {
       "date": "2026-12-22",
+      "time": "16:15–18:00",
+      "child": "Luis",
+      "type": "Training",
+      "title": "⁉️️ Training rosenhag",
+      "location": "Melanchthonstraße 53, 12623 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
+      "maps": "https://maps.apple.com/?q=Melanchthonstra%C3%9Fe%2053%2C%2012623%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
+      "date": "2026-12-29",
       "time": "16:15–18:00",
       "child": "Luis",
       "type": "Training",

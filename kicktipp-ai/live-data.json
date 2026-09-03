@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "2. Spieltag",
-  "updated": "03.09.2026 07:41",
+  "updated": "03.09.2026 08:27",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -114,9 +114,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 20.9,
+        "temp": 20.2,
         "rain": 0.0,
-        "wind": 16.8
+        "wind": 18.7
       }
     },
     {
@@ -152,9 +152,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 21.1,
+        "temp": 19.7,
         "rain": 0.0,
-        "wind": 17.9
+        "wind": 20.4
       }
     },
     {
@@ -266,9 +266,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 20.3,
+        "temp": 19.3,
         "rain": 0.0,
-        "wind": 14.9
+        "wind": 17.8
       }
     },
     {
@@ -399,14 +399,14 @@
         "wind": 5.2
       },
       "bayer leverkusen|union berlin": {
-        "temp": 20.9,
+        "temp": 20.2,
         "rain": 0.0,
-        "wind": 16.8
+        "wind": 18.7
       },
       "borussia monchengladbach|sv 07 elversberg": {
-        "temp": 21.1,
+        "temp": 19.7,
         "rain": 0.0,
-        "wind": 17.9
+        "wind": 20.4
       },
       "werder bremen|rb leipzig": {
         "temp": 20.3,
@@ -419,9 +419,9 @@
         "wind": 20.9
       },
       "schalke 04|bayern munchen": {
-        "temp": 20.3,
+        "temp": 19.3,
         "rain": 0.0,
-        "wind": 14.9
+        "wind": 17.8
       },
       "hamburger sv|mainz 05": {
         "temp": 20.7,
@@ -434,7 +434,7 @@
         "wind": 5.5
       }
     },
-    "updatedUtc": "2026-09-03T05:41:11.397283+00:00",
+    "updatedUtc": "2026-09-03T06:27:58.624698+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

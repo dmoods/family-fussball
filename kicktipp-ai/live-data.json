@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "2. Spieltag",
-  "updated": "04.09.2026 22:20",
+  "updated": "04.09.2026 23:19",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "VfB Stuttgart",
-      "away": "1. FC Köln",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 68,
-      "bank": false,
-      "surprise": {},
-      "form": "VfB Stuttgart: 1.10 Pkt/Spiel, 1.99:2.44 Tore; 1. FC Köln: 1.14 Pkt/Spiel, 1.76:2.41 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.25,
-        "away_xg": 1.65,
-        "home_win": 51.4,
-        "draw": 20.2,
-        "away_win": 28.4,
-        "kicktipp_ev": 1.197
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 28.6,
-        "rain": 0.0,
-        "wind": 10.5
-      }
-    },
     {
       "home": "TSG Hoffenheim",
       "away": "Borussia Dortmund",
@@ -434,7 +396,7 @@
         "wind": 4.7
       }
     },
-    "updatedUtc": "2026-09-04T20:20:55.920184+00:00",
+    "updatedUtc": "2026-09-04T21:19:55.885300+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

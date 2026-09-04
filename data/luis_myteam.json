@@ -1,16 +1,6 @@
 {
-  "updated": "2026-09-03T08:10:53+02:00",
+  "updated": "2026-09-04T08:09:12+02:00",
   "events": [
-    {
-      "date": "2026-09-03",
-      "time": "16:45–18:30",
-      "child": "Luis",
-      "type": "Training",
-      "title": "✅ Training Oschatzer",
-      "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
-      "source": "myteam"
-    },
     {
       "date": "2026-09-08",
       "time": "16:15–18:00",

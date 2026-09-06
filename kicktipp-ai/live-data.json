@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "2. Spieltag",
-  "updated": "06.09.2026 17:20",
+  "updated": "06.09.2026 18:21",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "Hamburger SV",
-      "away": "1. FSV Mainz 05",
-      "kickoff": "Sun 15:30",
-      "prediction": [
-        0,
-        1
-      ],
-      "confidence": 63,
-      "bank": false,
-      "surprise": {},
-      "form": "Hamburger SV: 1.04 Pkt/Spiel, 1.13:1.92 Tore; 1. FSV Mainz 05: 1.38 Pkt/Spiel, 1.32:1.29 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.26,
-        "away_xg": 1.33,
-        "home_win": 35.2,
-        "draw": 26.4,
-        "away_win": 38.4,
-        "kicktipp_ev": 0.967
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 19.0,
-        "rain": 0.0,
-        "wind": 8.4
-      }
-    },
     {
       "home": "Eintracht Frankfurt",
       "away": "FC Augsburg",
@@ -172,7 +134,7 @@
         "wind": 5.4
       }
     },
-    "updatedUtc": "2026-09-06T15:20:14.521823+00:00",
+    "updatedUtc": "2026-09-06T16:21:26.569235+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

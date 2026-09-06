@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "2. Spieltag",
-  "updated": "06.09.2026 11:20",
+  "updated": "06.09.2026 12:20",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 18.9,
+        "temp": 18.8,
         "rain": 0.0,
-        "wind": 11.4
+        "wind": 9.4
       }
     },
     {
@@ -80,9 +80,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 24.0,
+        "temp": 23.9,
         "rain": 0.0,
-        "wind": 5.2
+        "wind": 6.6
       }
     }
   ],
@@ -162,17 +162,17 @@
         "wind": 21.6
       },
       "hamburger sv|mainz 05": {
-        "temp": 18.9,
+        "temp": 18.8,
         "rain": 0.0,
-        "wind": 11.4
+        "wind": 9.4
       },
       "eintracht frankfurt|fc augsburg": {
-        "temp": 24.0,
+        "temp": 23.9,
         "rain": 0.0,
-        "wind": 5.2
+        "wind": 6.6
       }
     },
-    "updatedUtc": "2026-09-06T09:20:42.910442+00:00",
+    "updatedUtc": "2026-09-06T10:20:41.889173+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

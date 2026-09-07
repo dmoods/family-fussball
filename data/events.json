@@ -1,24 +1,6 @@
 {
-  "updated": "2026-09-06T06:08:57+00:00",
+  "updated": "2026-09-07T06:10:23+00:00",
   "games": [
-    {
-      "date": "2026-09-06",
-      "time": "10:00",
-      "child": "Alicia",
-      "type": "Spiel",
-      "title": "SC Siemensstadt II",
-      "location": "Am Plänterwald 17, 12435 Berlin",
-      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
-    },
-    {
-      "date": "2026-09-06",
-      "time": "14:30",
-      "child": "Luis",
-      "type": "Kinderfestival",
-      "title": "Lichtenberg 47",
-      "location": "Allee der Kosmonauten 20-22, 10315 Berlin",
-      "maps": "https://maps.apple.com/?q=Allee%20der%20Kosmonauten%2020-22%2C%2010315%20Berlin"
-    },
     {
       "date": "2026-09-12",
       "time": "09:30",
@@ -162,6 +144,15 @@
       "title": "Berliner SC II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+    },
+    {
+      "date": "2026-12-13",
+      "time": "11:30",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "FC Internationale Berlin II",
+      "location": "FC Internationale Berlin II, Berlin",
+      "maps": "https://maps.apple.com/?q=FC%20Internationale%20Berlin%20II%2C%20Berlin"
     }
   ],
   "status": "ok",

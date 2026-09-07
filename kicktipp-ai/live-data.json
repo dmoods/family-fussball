@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "3. Spieltag",
-  "updated": "07.09.2026 11:24",
+  "updated": "07.09.2026 12:22",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 16.5,
+        "temp": 17.2,
         "rain": 0.0,
-        "wind": 4.2
+        "wind": 2.1
       }
     },
     {
@@ -80,9 +80,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 19.8,
+        "temp": 20.6,
         "rain": 0.0,
-        "wind": 9.5
+        "wind": 3.2
       }
     },
     {
@@ -266,9 +266,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 20.5,
+        "temp": 20.6,
         "rain": 0.0,
-        "wind": 6.5
+        "wind": 3.1
       }
     },
     {
@@ -430,14 +430,14 @@
         "wind": 5.4
       },
       "union berlin|schalke 04": {
-        "temp": 16.5,
+        "temp": 17.2,
         "rain": 0.0,
-        "wind": 4.2
+        "wind": 2.1
       },
       "borussia dortmund|sc paderborn": {
-        "temp": 19.8,
+        "temp": 20.6,
         "rain": 0.0,
-        "wind": 9.5
+        "wind": 3.2
       },
       "sc freiburg|borussia monchengladbach": {
         "temp": 22.5,
@@ -455,9 +455,9 @@
         "wind": 1.8
       },
       "fc koln|werder bremen": {
-        "temp": 20.5,
+        "temp": 20.6,
         "rain": 0.0,
-        "wind": 6.5
+        "wind": 3.1
       },
       "rb leipzig|hamburger sv": {
         "temp": 23.8,
@@ -465,7 +465,7 @@
         "wind": 13.6
       }
     },
-    "updatedUtc": "2026-09-07T09:24:13.036299+00:00",
+    "updatedUtc": "2026-09-07T10:22:56.467764+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

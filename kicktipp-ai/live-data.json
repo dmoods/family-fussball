@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "3. Spieltag",
-  "updated": "10.09.2026 07:21",
+  "updated": "10.09.2026 08:27",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 18.1,
+        "temp": 17.6,
         "rain": 0.0,
-        "wind": 2.5
+        "wind": 3.5
       }
     },
     {
@@ -80,9 +80,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 20.6,
+        "temp": 20.9,
         "rain": 0.0,
-        "wind": 9.3
+        "wind": 6.3
       }
     },
     {
@@ -152,9 +152,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 23.7,
+        "temp": 23.6,
         "rain": 0.0,
-        "wind": 7.0
+        "wind": 6.1
       }
     },
     {
@@ -190,9 +190,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 21.6,
+        "temp": 21.0,
         "rain": 0.0,
-        "wind": 2.2
+        "wind": 8.8
       }
     },
     {
@@ -228,7 +228,7 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 24.3,
+        "temp": 23.5,
         "rain": 0.0,
         "wind": 5.4
       }
@@ -266,9 +266,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 21.1,
+        "temp": 20.9,
         "rain": 0.0,
-        "wind": 8.3
+        "wind": 8.4
       }
     },
     {
@@ -304,9 +304,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 20.4,
-        "rain": 0.1,
-        "wind": 6.4
+        "temp": 16.5,
+        "rain": 1.5,
+        "wind": 11.4
       }
     },
     {
@@ -430,42 +430,42 @@
         "wind": 5.4
       },
       "union berlin|schalke 04": {
-        "temp": 18.1,
+        "temp": 17.6,
         "rain": 0.0,
-        "wind": 2.5
+        "wind": 3.5
       },
       "borussia dortmund|sc paderborn": {
-        "temp": 20.6,
+        "temp": 20.9,
         "rain": 0.0,
-        "wind": 9.3
+        "wind": 6.3
       },
       "sc freiburg|borussia monchengladbach": {
-        "temp": 23.7,
+        "temp": 23.6,
         "rain": 0.0,
-        "wind": 7.0
+        "wind": 6.1
       },
       "fc augsburg|bayer leverkusen": {
-        "temp": 21.6,
+        "temp": 21.0,
         "rain": 0.0,
-        "wind": 2.2
+        "wind": 8.8
       },
       "mainz 05|eintracht frankfurt": {
-        "temp": 24.3,
+        "temp": 23.5,
         "rain": 0.0,
         "wind": 5.4
       },
       "fc koln|werder bremen": {
-        "temp": 21.1,
+        "temp": 20.9,
         "rain": 0.0,
-        "wind": 8.3
+        "wind": 8.4
       },
       "rb leipzig|hamburger sv": {
-        "temp": 20.4,
-        "rain": 0.1,
-        "wind": 6.4
+        "temp": 16.5,
+        "rain": 1.5,
+        "wind": 11.4
       }
     },
-    "updatedUtc": "2026-09-10T05:21:02.040021+00:00",
+    "updatedUtc": "2026-09-10T06:27:51.934843+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,
@@ -511,6 +511,51 @@
         "H": 0.43983279006867404,
         "D": 0.25818752460337846,
         "A": 0.30197968532794744
+      },
+      "stuttgart|fc koln": {
+        "H": 0.6431238648130302,
+        "D": 0.19018910738862807,
+        "A": 0.16668702779834185
+      },
+      "hoffenheim|dortmund": {
+        "H": 0.33072561359430525,
+        "D": 0.24370252604288187,
+        "A": 0.4255718603628129
+      },
+      "leverkusen|union berlin": {
+        "H": 0.6554978804535666,
+        "D": 0.19511963917913236,
+        "A": 0.1493824803673011
+      },
+      "m gladbach|elversberg": {
+        "H": 0.5037707562192005,
+        "D": 0.2474142429247093,
+        "A": 0.24881500085609018
+      },
+      "paderborn|freiburg": {
+        "H": 0.2680513614186832,
+        "D": 0.2573057384771927,
+        "A": 0.47464290010412413
+      },
+      "werder bremen|rb leipzig": {
+        "H": 0.22514945118699758,
+        "D": 0.23366420381271144,
+        "A": 0.5411863450002911
+      },
+      "schalke 04|bayern munchen": {
+        "H": 0.064555725966674,
+        "D": 0.11608784510494476,
+        "A": 0.8193564289283812
+      },
+      "hamburg|mainz": {
+        "H": 0.3357950820346562,
+        "D": 0.2696117843598385,
+        "A": 0.3945931336055053
+      },
+      "ein frankfurt|augsburg": {
+        "H": 0.4945958865783437,
+        "D": 0.23658349799537015,
+        "A": 0.26882061542628616
       }
     }
   }

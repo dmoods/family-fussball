@@ -1,9 +1,10 @@
-const C="termine-kids-v21";
+const C="termine-kids-v22";
 function inject(html){try{
   html=html.replace(/<script src="smartinfo\.js\?v=\d+"><\/script>/g,'<script src="smartinfo.js?v=5"></script>');
   html=html.replace(/<script src="opponents\.js\?v=\d+"><\/script>/g,'');
   if(!html.includes('smartinfo.js?v=5'))html=html.replace('</body>','<script src="smartinfo.js?v=5"></script></body>');
   if(!html.includes('hourlyweather.js'))html=html.replace('</body>','<script src="hourlyweather.js?v=2"></script></body>');
+  if(!html.includes('crests.js'))html=html.replace('</body>','<script src="crests.js?v=1"></script></body>');
   return html
 }catch(_){return html}}
 self.addEventListener("install",e=>{self.skipWaiting()});

@@ -1,0 +1,7 @@
+(()=>{
+'use strict';
+const css=`.clubcrests{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:end;margin:6px 0 4px}.clubcrest{height:72px;display:flex;align-items:center;justify-content:center}.clubcrest img{display:block;max-height:62px;max-width:82%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 3px 5px rgba(0,0,0,.12))}.clubcrest.union img{max-width:88%;max-height:55px}@media(max-width:560px){.clubcrests{gap:7px;margin:4px 0 2px}.clubcrest{height:58px}.clubcrest img{max-height:50px;max-width:78%}.clubcrest.union img{max-height:43px;max-width:88%}}`;
+if(!document.querySelector('#clubcrest-style')){const s=document.createElement('style');s.id='clubcrest-style';s.textContent=css;document.head.appendChild(s)}
+function add(){const dash=document.querySelector('#dashboard');if(!dash||document.querySelector('#clubcrests'))return;const row=document.createElement('div');row.id='clubcrests';row.className='clubcrests';row.innerHTML=`<div class="clubcrest mahlsdorf"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Eintracht%20Mahlsdorf%20Logo.png" alt="BSV Eintracht Mahlsdorf" referrerpolicy="no-referrer"></div><div class="clubcrest union"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/1.%20FC%20Union%20Berlin%20Logo.svg" alt="1. FC Union Berlin" referrerpolicy="no-referrer"></div>`;dash.before(row)}
+add();setTimeout(add,300);setTimeout(add,1200);
+})();

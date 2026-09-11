@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "3. Spieltag",
-  "updated": "11.09.2026 22:21",
+  "updated": "11.09.2026 23:19",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "1. FC Union Berlin",
-      "away": "FC Schalke 04",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 66,
-      "bank": false,
-      "surprise": {},
-      "form": "1. FC Union Berlin: 1.07 Pkt/Spiel, 1.93:2.31 Tore; FC Schalke 04: 1.71 Pkt/Spiel, 1.04:1.25 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.72,
-        "away_xg": 1.28,
-        "home_win": 47.8,
-        "draw": 23.7,
-        "away_win": 28.5,
-        "kicktipp_ev": 1.144
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 17.2,
-        "rain": 0.0,
-        "wind": 5.6
-      }
-    },
     {
       "home": "Borussia Dortmund",
       "away": "SC Paderborn 07",
@@ -465,7 +427,7 @@
         "wind": 11.0
       }
     },
-    "updatedUtc": "2026-09-11T20:21:38.620701+00:00",
+    "updatedUtc": "2026-09-11T21:19:55.970357+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

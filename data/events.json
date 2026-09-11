@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10T06:10:04+00:00",
+  "updated": "2026-09-11T06:09:04+00:00",
   "games": [
     {
       "date": "2026-09-12",
@@ -83,6 +83,15 @@
       "maps": "https://maps.apple.com/?q=Hauffstr.%2013-20%2C%2010317%20Berlin"
     },
     {
+      "date": "2026-10-18",
+      "time": "11:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "Wartenberger SV",
+      "location": "Wartenberger SV, Berlin",
+      "maps": "https://maps.apple.com/?q=Wartenberger%20SV%2C%20Berlin"
+    },
+    {
       "date": "2026-11-07",
       "time": "15:45",
       "child": "Luis",
@@ -144,15 +153,6 @@
       "title": "Berliner SC II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
-    },
-    {
-      "date": "2026-12-13",
-      "time": "11:30",
-      "child": "Alicia",
-      "type": "Spiel",
-      "title": "FC Internationale Berlin II",
-      "location": "FC Internationale Berlin II, Berlin",
-      "maps": "https://maps.apple.com/?q=FC%20Internationale%20Berlin%20II%2C%20Berlin"
     }
   ],
   "status": "ok",

@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "3. Spieltag",
-  "updated": "12.09.2026 20:22",
+  "updated": "12.09.2026 21:17",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "1. FC Köln",
-      "away": "SV Werder Bremen",
-      "kickoff": "Sat 18:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 67,
-      "bank": false,
-      "surprise": {},
-      "form": "1. FC Köln: 0.94 Pkt/Spiel, 1.61:2.73 Tore; SV Werder Bremen: 0.92 Pkt/Spiel, 1.28:2.02 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.88,
-        "away_xg": 1.34,
-        "home_win": 50.1,
-        "draw": 22.5,
-        "away_win": 27.4,
-        "kicktipp_ev": 1.19
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 21.7,
-        "rain": 0.0,
-        "wind": 10.1
-      }
-    },
     {
       "home": "RB Leipzig",
       "away": "Hamburger SV",
@@ -241,7 +203,7 @@
         "wind": 12.7
       }
     },
-    "updatedUtc": "2026-09-12T18:22:15.610007+00:00",
+    "updatedUtc": "2026-09-12T19:17:49.995960+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

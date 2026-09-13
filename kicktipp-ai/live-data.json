@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "3. Spieltag",
-  "updated": "13.09.2026 12:24",
+  "updated": "13.09.2026 13:20",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 21.0,
+        "temp": 19.9,
         "rain": 0.0,
-        "wind": 10.9
+        "wind": 10.1
       }
     },
     {
@@ -198,12 +198,12 @@
         "wind": 10.1
       },
       "rb leipzig|hamburger sv": {
-        "temp": 21.0,
+        "temp": 19.9,
         "rain": 0.0,
-        "wind": 10.9
+        "wind": 10.1
       }
     },
-    "updatedUtc": "2026-09-13T10:24:23.852052+00:00",
+    "updatedUtc": "2026-09-13T11:20:03.741207+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

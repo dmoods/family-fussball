@@ -1,52 +1,13 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "3. Spieltag",
-  "updated": "13.09.2026 17:20",
-  "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
-  "dataQuality": 63,
+  "updated": "13.09.2026 18:20",
+  "alert": "Multi-Source-Analyse · Datenqualität 54% · 1 aktive Quellen/Signale.",
+  "dataQuality": 54,
   "activeSources": [
-    "openLigaDB",
-    "openMeteo"
+    "openLigaDB"
   ],
   "matches": [
-    {
-      "home": "RB Leipzig",
-      "away": "Hamburger SV",
-      "kickoff": "Sun 15:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 73,
-      "bank": false,
-      "surprise": {},
-      "form": "RB Leipzig: 1.70 Pkt/Spiel, 1.84:1.88 Tore; Hamburger SV: 0.86 Pkt/Spiel, 0.94:2.55 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.22,
-        "away_xg": 1.02,
-        "home_win": 64.6,
-        "draw": 19.3,
-        "away_win": 16.1,
-        "kicktipp_ev": 1.489
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 19.3,
-        "rain": 0.0,
-        "wind": 10.2
-      }
-    },
     {
       "home": "SV 07 Elversberg",
       "away": "FC Bayern München",
@@ -203,7 +164,7 @@
         "wind": 10.2
       }
     },
-    "updatedUtc": "2026-09-13T15:20:10.587756+00:00",
+    "updatedUtc": "2026-09-13T16:20:53.494995+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

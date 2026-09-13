@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "3. Spieltag",
-  "updated": "13.09.2026 05:21",
+  "updated": "13.09.2026 06:21",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -203,7 +203,7 @@
         "wind": 12.7
       }
     },
-    "updatedUtc": "2026-09-13T03:21:27.088837+00:00",
+    "updatedUtc": "2026-09-13T04:21:18.547293+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

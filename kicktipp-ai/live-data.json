@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "4. Spieltag",
-  "updated": "14.09.2026 11:24",
+  "updated": "14.09.2026 12:22",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 13.0,
-        "rain": 0.1,
-        "wind": 4.1
+        "temp": 15.7,
+        "rain": 0.0,
+        "wind": 1.8
       }
     },
     {
@@ -118,9 +118,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 18.8,
-        "rain": 0.0,
-        "wind": 21.5
+        "temp": 19.2,
+        "rain": 0.1,
+        "wind": 18.5
       }
     },
     {
@@ -270,9 +270,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 17.7,
-        "rain": 0.2,
-        "wind": 7.8
+        "temp": 19.1,
+        "rain": 0.0,
+        "wind": 13.5
       }
     },
     {
@@ -308,9 +308,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 17.2,
+        "temp": 17.4,
         "rain": 0.0,
-        "wind": 9.0
+        "wind": 14.2
       }
     },
     {
@@ -473,9 +473,9 @@
         "wind": 10.2
       },
       "bayern munchen|union berlin": {
-        "temp": 13.0,
-        "rain": 0.1,
-        "wind": 4.1
+        "temp": 15.7,
+        "rain": 0.0,
+        "wind": 1.8
       },
       "eintracht frankfurt|sc freiburg": {
         "temp": 20.7,
@@ -483,9 +483,9 @@
         "wind": 10.9
       },
       "borussia monchengladbach|mainz 05": {
-        "temp": 18.8,
-        "rain": 0.0,
-        "wind": 21.5
+        "temp": 19.2,
+        "rain": 0.1,
+        "wind": 18.5
       },
       "hamburger sv|fc koln": {
         "temp": 17.4,
@@ -503,14 +503,14 @@
         "wind": 5.2
       },
       "bayer leverkusen|rb leipzig": {
-        "temp": 17.7,
-        "rain": 0.2,
-        "wind": 7.8
+        "temp": 19.1,
+        "rain": 0.0,
+        "wind": 13.5
       },
       "schalke 04|sv 07 elversberg": {
-        "temp": 17.2,
+        "temp": 17.4,
         "rain": 0.0,
-        "wind": 9.0
+        "wind": 14.2
       },
       "sc paderborn|tsg hoffenheim": {
         "temp": 14.8,
@@ -518,7 +518,7 @@
         "wind": 10.8
       }
     },
-    "updatedUtc": "2026-09-14T09:24:30.294329+00:00",
+    "updatedUtc": "2026-09-14T10:22:53.448233+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

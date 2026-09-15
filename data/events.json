@@ -1,22 +1,150 @@
 {
-  "updated": "2026-09-14T14:09:00+02:00",
+  "updated": "2026-09-15T06:09:28+00:00",
   "games": [
-    {"date":"2026-09-19","time":"12:00","child":"Luis","type":"Kinderfestival","title":"Eintracht Mahlsdorf Heimfestival","location":"Oschatzer Ring 16, 12627 Berlin","maps":"https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"},
-    {"date":"2026-09-20","time":"10:00","child":"Alicia","type":"Spiel","title":"SFC Stern 1900 II","location":"Bruno-Bürgel-Weg 63, 12439 Berlin (TZO)","maps":"https://maps.apple.com/?q=Bruno-B%C3%BCrgel-Weg+63%2C+12439+Berlin"},
-    {"date":"2026-09-26","time":"16:00","child":"Luis","type":"Kinderfestival","title":"FSV Berolina Stralau U11 II","location":"Persiusstr. 7 B, 10245 Berlin","maps":"https://maps.apple.com/?q=Persiusstr.%207%20B%2C%2010245%20Berlin"},
-    {"date":"2026-09-27","time":"10:45","child":"Alicia","type":"Spiel","title":"BSC Kickers 1900 II","location":"Monumentenstr. 13 C, 10829 Berlin","maps":"https://maps.apple.com/?q=Monumentenstr.%2013%20C%2C%2010829%20Berlin"},
-    {"date":"2026-10-04","time":"10:00","child":"Alicia","type":"Spiel","title":"1.FC Wacker 1921 Lankwitz II","location":"Am Plänterwald 17, 12435 Berlin","maps":"https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"},
-    {"date":"2026-10-10","time":"09:00","child":"Alicia","type":"Spiel","title":"Türkiyemspor Berlin 1978 II","location":"Blücherstr. 46-47, 10961 Berlin","maps":"https://maps.apple.com/?q=Bl%C3%BCcherstr.%2046-47%2C%2010961%20Berlin"},
-    {"date":"2026-10-11","time":"11:00","child":"Luis","type":"Kinderfestival","title":"SV Sparta Lichtenberg V","location":"Hauffstr. 13-20, 10317 Berlin","maps":"https://maps.apple.com/?q=Hauffstr.%2013-20%2C%2010317%20Berlin"},
-    {"date":"2026-10-18","time":"11:00","child":"Alicia","type":"Spiel","title":"Wartenberger SV","location":"Wartenberger SV, Berlin","maps":"https://maps.apple.com/?q=Wartenberger%20SV%2C%20Berlin"},
-    {"date":"2026-11-07","time":"15:45","child":"Luis","type":"Kinderfestival","title":"VfB Berlin 1911 U11","location":"Virchowstr. 7, 10249 Berlin","maps":"https://maps.apple.com/?q=Virchowstr.%207%2C%2010249%20Berlin"},
-    {"date":"2026-11-08","time":"10:00","child":"Alicia","type":"Spiel","title":"NFC Rot-Weiß II","location":"Am Plänterwald 17, 12435 Berlin","maps":"https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"},
-    {"date":"2026-11-15","time":"12:00","child":"Luis","type":"Kinderfestival","title":"SV Sparta Lichtenberg V","location":"Hauffstr. 13-20, 10317 Berlin","maps":"https://maps.apple.com/?q=Hauffstr.%2013-20%2C%2010317%20Berlin"},
-    {"date":"2026-11-21","time":"09:50","child":"Alicia","type":"Spiel","title":"VfB Fortuna Biesdorf U12","location":"Grabensprung 56, 12683 Berlin","maps":"https://maps.apple.com/?q=Grabensprung%2056%2C%2012683%20Berlin"},
-    {"date":"2026-11-22","time":"09:00","child":"Luis","type":"Kinderfestival","title":"SV Empor Berlin U10","location":"Cantianstr. 24, 10437 Berlin","maps":"https://maps.apple.com/?q=Cantianstr.%2024%2C%2010437%20Berlin"},
-    {"date":"2026-11-29","time":"10:00","child":"Alicia","type":"Spiel","title":"FV Rot-Weiß 90 Hellersdorf II","location":"Am Plänterwald 17, 12435 Berlin","maps":"https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"},
-    {"date":"2026-12-06","time":"10:00","child":"Alicia","type":"Spiel","title":"Berliner SC II","location":"Am Plänterwald 17, 12435 Berlin","maps":"https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"},
-    {"date":"2026-12-13","time":"11:30","child":"Alicia","type":"Spiel","title":"FC Internationale Berlin II","location":"FC Internationale Berlin II, Berlin","maps":"https://maps.apple.com/?q=FC%20Internationale%20Berlin%20II%2C%20Berlin"}
+    {
+      "date": "2026-09-19",
+      "time": "12:00",
+      "child": "Luis",
+      "type": "Kinderfestival",
+      "title": "Eintracht Mahlsdorf Heimfestival",
+      "location": "Oschatzer Ring 16, 12627 Berlin",
+      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"
+    },
+    {
+      "date": "2026-09-20",
+      "time": "10:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "SFC Stern 1900 II",
+      "location": "Am Plänterwald 17, 12435 Berlin",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+    },
+    {
+      "date": "2026-09-26",
+      "time": "16:00",
+      "child": "Luis",
+      "type": "Kinderfestival",
+      "title": "FSV Berolina Stralau U11 II",
+      "location": "Persiusstr. 7 B, 10245 Berlin",
+      "maps": "https://maps.apple.com/?q=Persiusstr.%207%20B%2C%2010245%20Berlin"
+    },
+    {
+      "date": "2026-09-27",
+      "time": "10:45",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "BSC Kickers 1900 II",
+      "location": "Monumentenstr. 13 C, 10829 Berlin",
+      "maps": "https://maps.apple.com/?q=Monumentenstr.%2013%20C%2C%2010829%20Berlin"
+    },
+    {
+      "date": "2026-10-04",
+      "time": "10:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "1.FC Wacker 1921 Lankwitz II",
+      "location": "Am Plänterwald 17, 12435 Berlin",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+    },
+    {
+      "date": "2026-10-10",
+      "time": "09:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "Türkiyemspor Berlin 1978 II",
+      "location": "Blücherstr. 46-47, 10961 Berlin",
+      "maps": "https://maps.apple.com/?q=Bl%C3%BCcherstr.%2046-47%2C%2010961%20Berlin"
+    },
+    {
+      "date": "2026-10-11",
+      "time": "11:00",
+      "child": "Luis",
+      "type": "Kinderfestival",
+      "title": "SV Sparta Lichtenberg V",
+      "location": "Hauffstr. 13-20, 10317 Berlin",
+      "maps": "https://maps.apple.com/?q=Hauffstr.%2013-20%2C%2010317%20Berlin"
+    },
+    {
+      "date": "2026-10-18",
+      "time": "11:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "Wartenberger SV",
+      "location": "Wartenberger SV, Berlin",
+      "maps": "https://maps.apple.com/?q=Wartenberger%20SV%2C%20Berlin"
+    },
+    {
+      "date": "2026-11-07",
+      "time": "15:45",
+      "child": "Luis",
+      "type": "Kinderfestival",
+      "title": "VfB Berlin 1911 U11",
+      "location": "Virchowstr. 7, 10249 Berlin",
+      "maps": "https://maps.apple.com/?q=Virchowstr.%207%2C%2010249%20Berlin"
+    },
+    {
+      "date": "2026-11-08",
+      "time": "10:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "NFC Rot-Weiß II",
+      "location": "Am Plänterwald 17, 12435 Berlin",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+    },
+    {
+      "date": "2026-11-15",
+      "time": "12:00",
+      "child": "Luis",
+      "type": "Kinderfestival",
+      "title": "SV Sparta Lichtenberg V",
+      "location": "Hauffstr. 13-20, 10317 Berlin",
+      "maps": "https://maps.apple.com/?q=Hauffstr.%2013-20%2C%2010317%20Berlin"
+    },
+    {
+      "date": "2026-11-21",
+      "time": "09:50",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "VfB Fortuna Biesdorf U12",
+      "location": "Grabensprung 56, 12683 Berlin",
+      "maps": "https://maps.apple.com/?q=Grabensprung%2056%2C%2012683%20Berlin"
+    },
+    {
+      "date": "2026-11-22",
+      "time": "09:00",
+      "child": "Luis",
+      "type": "Kinderfestival",
+      "title": "SV Empor Berlin U10",
+      "location": "Cantianstr. 24, 10437 Berlin",
+      "maps": "https://maps.apple.com/?q=Cantianstr.%2024%2C%2010437%20Berlin"
+    },
+    {
+      "date": "2026-11-29",
+      "time": "10:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "FV Rot-Weiß 90 Hellersdorf II",
+      "location": "Am Plänterwald 17, 12435 Berlin",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+    },
+    {
+      "date": "2026-12-06",
+      "time": "10:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "Berliner SC II",
+      "location": "Am Plänterwald 17, 12435 Berlin",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+    },
+    {
+      "date": "2026-12-13",
+      "time": "11:30",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "FC Internationale Berlin II",
+      "location": "FC Internationale Berlin II, Berlin",
+      "maps": "https://maps.apple.com/?q=FC%20Internationale%20Berlin%20II%2C%20Berlin"
+    }
   ],
   "status": "ok",
   "fallback_children": []

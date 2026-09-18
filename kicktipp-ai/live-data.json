@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "4. Spieltag",
-  "updated": "18.09.2026 22:20",
+  "updated": "18.09.2026 23:20",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "FC Bayern München",
-      "away": "1. FC Union Berlin",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 74,
-      "bank": false,
-      "surprise": {},
-      "form": "FC Bayern München: 2.48 Pkt/Spiel, 2.83:1.19 Tore; 1. FC Union Berlin: 0.96 Pkt/Spiel, 1.83:2.38 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.73,
-        "away_xg": 1.27,
-        "home_win": 68.0,
-        "draw": 16.5,
-        "away_win": 15.6,
-        "kicktipp_ev": 1.534
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 17.8,
-        "rain": 0.0,
-        "wind": 3.2
-      }
-    },
     {
       "home": "Eintracht Frankfurt",
       "away": "SC Freiburg",
@@ -518,7 +480,7 @@
         "wind": 17.5
       }
     },
-    "updatedUtc": "2026-09-18T20:20:41.111925+00:00",
+    "updatedUtc": "2026-09-18T21:20:17.851998+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

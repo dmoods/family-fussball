@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "4. Spieltag",
-  "updated": "20.09.2026 19:19",
+  "updated": "20.09.2026 20:22",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "FC Schalke 04",
-      "away": "SV 07 Elversberg",
-      "kickoff": "Sun 17:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 64,
-      "bank": false,
-      "surprise": {},
-      "form": "FC Schalke 04: 1.87 Pkt/Spiel, 1.35:1.23 Tore; SV 07 Elversberg: 1.94 Pkt/Spiel, 2.77:1.88 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.75,
-        "away_xg": 1.65,
-        "home_win": 40.7,
-        "draw": 22.6,
-        "away_win": 36.7,
-        "kicktipp_ev": 0.982
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 17.9,
-        "rain": 0.0,
-        "wind": 21.6
-      }
-    },
     {
       "home": "SC Paderborn 07",
       "away": "TSG Hoffenheim",
@@ -252,7 +214,7 @@
         "wind": 15.0
       }
     },
-    "updatedUtc": "2026-09-20T17:19:43.635495+00:00",
+    "updatedUtc": "2026-09-20T18:22:15.579177+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

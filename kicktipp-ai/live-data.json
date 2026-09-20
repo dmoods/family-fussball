@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "4. Spieltag",
-  "updated": "20.09.2026 15:20",
+  "updated": "20.09.2026 16:19",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 17.3,
-        "rain": 0.0,
-        "wind": 13.3
+        "temp": 16.4,
+        "rain": 0.1,
+        "wind": 16.6
       }
     },
     {
@@ -80,9 +80,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 18.8,
+        "temp": 17.9,
         "rain": 0.0,
-        "wind": 19.8
+        "wind": 22.3
       }
     },
     {
@@ -118,9 +118,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 16.3,
+        "temp": 16.0,
         "rain": 0.0,
-        "wind": 17.1
+        "wind": 14.4
       }
     }
   ],
@@ -275,22 +275,22 @@
         "wind": 6.2
       },
       "bayer leverkusen|rb leipzig": {
-        "temp": 17.3,
-        "rain": 0.0,
-        "wind": 13.3
+        "temp": 16.4,
+        "rain": 0.1,
+        "wind": 16.6
       },
       "schalke 04|sv 07 elversberg": {
-        "temp": 18.8,
+        "temp": 17.9,
         "rain": 0.0,
-        "wind": 19.8
+        "wind": 22.3
       },
       "sc paderborn|tsg hoffenheim": {
-        "temp": 16.3,
+        "temp": 16.0,
         "rain": 0.0,
-        "wind": 17.1
+        "wind": 14.4
       }
     },
-    "updatedUtc": "2026-09-20T13:20:08.028543+00:00",
+    "updatedUtc": "2026-09-20T14:19:51.380433+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

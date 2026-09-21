@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T06:08:54+00:00",
+  "updated": "2026-09-21T06:10:03+00:00",
   "games": [
     {
       "date": "2026-09-19",
@@ -9,15 +9,6 @@
       "title": "Eintracht Mahlsdorf Heimfestival",
       "location": "Oschatzer Ring 16, 12627 Berlin",
       "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin"
-    },
-    {
-      "date": "2026-09-20",
-      "time": "10:00",
-      "child": "Alicia",
-      "type": "Spiel",
-      "title": "SFC Stern 1900 II",
-      "location": "Am Plänterwald 17, 12435 Berlin",
-      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     },
     {
       "date": "2026-09-26",
@@ -144,6 +135,15 @@
       "title": "FC Internationale Berlin II",
       "location": "FC Internationale Berlin II, Berlin",
       "maps": "https://maps.apple.com/?q=FC%20Internationale%20Berlin%20II%2C%20Berlin"
+    },
+    {
+      "date": "2027-02-27",
+      "time": "11:20",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "Berliner SC II",
+      "location": "Hubertusallee 50, 14193 Berlin",
+      "maps": "https://maps.apple.com/?q=Hubertusallee%2050%2C%2014193%20Berlin"
     }
   ],
   "status": "fallback",

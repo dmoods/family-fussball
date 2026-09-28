@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27T11:14:28+00:00",
+  "updated": "2026-09-28T12:43:30+00:00",
   "games": [
     {
       "date": "2026-09-19",
@@ -18,15 +18,6 @@
       "title": "FSV Berolina Stralau U11 II",
       "location": "Persiusstr. 7 B, 10245 Berlin",
       "maps": "https://maps.apple.com/?q=Persiusstr.%207%20B%2C%2010245%20Berlin"
-    },
-    {
-      "date": "2026-09-27",
-      "time": "10:45",
-      "child": "Alicia",
-      "type": "Spiel",
-      "title": "BSC Kickers 1900 II",
-      "location": "Monumentenstr. 13 C, 10829 Berlin",
-      "maps": "https://maps.apple.com/?q=Monumentenstr.%2013%20C%2C%2010829%20Berlin"
     },
     {
       "date": "2026-10-04",
@@ -144,6 +135,15 @@
       "title": "Berliner SC II",
       "location": "Hubertusallee 50, 14193 Berlin",
       "maps": "https://maps.apple.com/?q=Hubertusallee%2050%2C%2014193%20Berlin"
+    },
+    {
+      "date": "2027-03-07",
+      "time": "10:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "FC Internationale Berlin II",
+      "location": "Am Plänterwald 17, 12435 Berlin",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     }
   ],
   "status": "fallback",

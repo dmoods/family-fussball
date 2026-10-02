@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "5. Spieltag",
-  "updated": "02.10.2026 20:22",
+  "updated": "03.10.2026 00:56",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -89,7 +89,7 @@
         1,
         2
       ],
-      "confidence": 63,
+      "confidence": 65,
       "bank": false,
       "surprise": {},
       "form": "FC Augsburg: 1.65 Pkt/Spiel, 2.31:1.72 Tore; FC Bayern München: 2.53 Pkt/Spiel, 3.48:0.92 Tore.",
@@ -111,9 +111,13 @@
         "footballDataOdds": false,
         "apiFootballInjuries": false,
         "apiFootballLineups": false,
-        "openMeteo": false
+        "openMeteo": true
       },
-      "weather": {}
+      "weather": {
+        "temp": 10.3,
+        "rain": 0.0,
+        "wind": 10.3
+      }
     },
     {
       "home": "1. FSV Mainz 05",
@@ -123,7 +127,7 @@
         2,
         1
       ],
-      "confidence": 64,
+      "confidence": 65,
       "bank": false,
       "surprise": {},
       "form": "1. FSV Mainz 05: 1.71 Pkt/Spiel, 2.35:1.73 Tore; Bayer 04 Leverkusen: 1.76 Pkt/Spiel, 2.26:1.30 Tore.",
@@ -145,9 +149,13 @@
         "footballDataOdds": false,
         "apiFootballInjuries": false,
         "apiFootballLineups": false,
-        "openMeteo": false
+        "openMeteo": true
       },
-      "weather": {}
+      "weather": {
+        "temp": 10.6,
+        "rain": 0.7,
+        "wind": 12.5
+      }
     },
     {
       "home": "1. FC Union Berlin",
@@ -157,7 +165,7 @@
         1,
         2
       ],
-      "confidence": 64,
+      "confidence": 65,
       "bank": false,
       "surprise": {},
       "form": "1. FC Union Berlin: 0.86 Pkt/Spiel, 1.57:3.23 Tore; SV 07 Elversberg: 1.69 Pkt/Spiel, 2.24:1.66 Tore.",
@@ -179,9 +187,13 @@
         "footballDataOdds": false,
         "apiFootballInjuries": false,
         "apiFootballLineups": false,
-        "openMeteo": false
+        "openMeteo": true
       },
-      "weather": {}
+      "weather": {
+        "temp": 14.2,
+        "rain": 0.0,
+        "wind": 15.7
+      }
     },
     {
       "home": "SC Paderborn 07",
@@ -191,7 +203,7 @@
         2,
         1
       ],
-      "confidence": 62,
+      "confidence": 64,
       "bank": false,
       "surprise": {},
       "form": "SC Paderborn 07: 1.10 Pkt/Spiel, 1.18:1.67 Tore; VfB Stuttgart: 1.02 Pkt/Spiel, 1.75:1.98 Tore.",
@@ -213,9 +225,13 @@
         "footballDataOdds": false,
         "apiFootballInjuries": false,
         "apiFootballLineups": false,
-        "openMeteo": false
+        "openMeteo": true
       },
-      "weather": {}
+      "weather": {
+        "temp": 9.9,
+        "rain": 0.7,
+        "wind": 15.2
+      }
     },
     {
       "home": "RB Leipzig",
@@ -225,7 +241,7 @@
         2,
         1
       ],
-      "confidence": 67,
+      "confidence": 69,
       "bank": false,
       "surprise": {},
       "form": "RB Leipzig: 1.42 Pkt/Spiel, 1.99:1.78 Tore; Eintracht Frankfurt: 0.98 Pkt/Spiel, 1.97:2.28 Tore.",
@@ -247,9 +263,13 @@
         "footballDataOdds": false,
         "apiFootballInjuries": false,
         "apiFootballLineups": false,
-        "openMeteo": false
+        "openMeteo": true
       },
-      "weather": {}
+      "weather": {
+        "temp": 12.5,
+        "rain": 0.0,
+        "wind": 17.2
+      }
     },
     {
       "home": "1. FC Köln",
@@ -489,9 +509,34 @@
         "temp": 10.8,
         "rain": 0.1,
         "wind": 16.7
+      },
+      "fc augsburg|bayern munchen": {
+        "temp": 10.3,
+        "rain": 0.0,
+        "wind": 10.3
+      },
+      "mainz 05|bayer leverkusen": {
+        "temp": 10.6,
+        "rain": 0.7,
+        "wind": 12.5
+      },
+      "union berlin|sv 07 elversberg": {
+        "temp": 14.2,
+        "rain": 0.0,
+        "wind": 15.7
+      },
+      "sc paderborn|vfb stuttgart": {
+        "temp": 9.9,
+        "rain": 0.7,
+        "wind": 15.2
+      },
+      "rb leipzig|eintracht frankfurt": {
+        "temp": 12.5,
+        "rain": 0.0,
+        "wind": 17.2
       }
     },
-    "updatedUtc": "2026-10-02T18:22:01.535263+00:00",
+    "updatedUtc": "2026-10-02T22:56:23.786149+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

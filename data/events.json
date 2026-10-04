@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T10:58:55+00:00",
+  "updated": "2026-10-04T11:40:59+00:00",
   "games": [
     {
       "date": "2026-09-19",
@@ -18,15 +18,6 @@
       "title": "FSV Berolina Stralau U11 II",
       "location": "Persiusstr. 7 B, 10245 Berlin",
       "maps": "https://maps.apple.com/?q=Persiusstr.%207%20B%2C%2010245%20Berlin"
-    },
-    {
-      "date": "2026-10-04",
-      "time": "10:00",
-      "child": "Alicia",
-      "type": "Spiel",
-      "title": "1.FC Wacker 1921 Lankwitz II",
-      "location": "Am Plänterwald 17, 12435 Berlin",
-      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     },
     {
       "date": "2026-10-10",
@@ -144,6 +135,15 @@
       "title": "FC Internationale Berlin II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+    },
+    {
+      "date": "2027-03-13",
+      "time": "10:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "SC Siemensstadt II",
+      "location": "Buolstraße 14, 13629 Berlin",
+      "maps": "https://maps.apple.com/?q=Buolstra%C3%9Fe%2014%2C%2013629%20Berlin"
     }
   ],
   "status": "fallback",

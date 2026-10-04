@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "5. Spieltag",
-  "updated": "03.10.2026 23:09",
+  "updated": "04.10.2026 02:33",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -279,7 +279,7 @@
         2,
         1
       ],
-      "confidence": 63,
+      "confidence": 65,
       "bank": false,
       "surprise": {},
       "form": "1. FC Köln: 0.65 Pkt/Spiel, 1.35:2.57 Tore; Borussia Mönchengladbach: 0.69 Pkt/Spiel, 1.61:2.79 Tore.",
@@ -301,9 +301,13 @@
         "footballDataOdds": false,
         "apiFootballInjuries": false,
         "apiFootballLineups": false,
-        "openMeteo": false
+        "openMeteo": true
       },
-      "weather": {}
+      "weather": {
+        "temp": 15.6,
+        "rain": 0.0,
+        "wind": 10.0
+      }
     },
     {
       "home": "SC Freiburg",
@@ -313,7 +317,7 @@
         1,
         0
       ],
-      "confidence": 69,
+      "confidence": 71,
       "bank": false,
       "surprise": {},
       "form": "SC Freiburg: 1.92 Pkt/Spiel, 2.57:1.32 Tore; FC Schalke 04: 1.63 Pkt/Spiel, 0.92:1.01 Tore.",
@@ -335,9 +339,13 @@
         "footballDataOdds": false,
         "apiFootballInjuries": false,
         "apiFootballLineups": false,
-        "openMeteo": false
+        "openMeteo": true
       },
-      "weather": {}
+      "weather": {
+        "temp": 13.3,
+        "rain": 0.0,
+        "wind": 3.3
+      }
     }
   ],
   "sourceCache": {
@@ -534,9 +542,19 @@
         "temp": 12.5,
         "rain": 0.0,
         "wind": 17.2
+      },
+      "fc koln|borussia monchengladbach": {
+        "temp": 15.6,
+        "rain": 0.0,
+        "wind": 10.0
+      },
+      "sc freiburg|schalke 04": {
+        "temp": 13.3,
+        "rain": 0.0,
+        "wind": 3.3
       }
     },
-    "updatedUtc": "2026-10-03T21:09:43.634429+00:00",
+    "updatedUtc": "2026-10-04T00:33:00.532693+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

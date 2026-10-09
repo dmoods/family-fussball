@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T12:40:25+00:00",
+  "updated": "2026-10-09T11:00:00+02:00",
   "games": [
     {
       "date": "2026-09-19",
@@ -30,7 +30,7 @@
     },
     {
       "date": "2026-10-11",
-      "time": "11:00",
+      "time": "11:30",
       "child": "Luis",
       "type": "Kinderfestival",
       "title": "SV Sparta Lichtenberg V",

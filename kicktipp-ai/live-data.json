@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "5. Spieltag",
-  "updated": "09.10.2026 18:08",
+  "updated": "09.10.2026 23:38",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "Borussia Dortmund",
-      "away": "SV Werder Bremen",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        2,
-        0
-      ],
-      "confidence": 74,
-      "bank": false,
-      "surprise": {},
-      "form": "Borussia Dortmund: 2.73 Pkt/Spiel, 2.21:0.58 Tore; SV Werder Bremen: 1.21 Pkt/Spiel, 1.44:1.87 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.41,
-        "away_xg": 0.98,
-        "home_win": 68.9,
-        "draw": 17.5,
-        "away_win": 13.6,
-        "kicktipp_ev": 1.574
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 12.9,
-        "rain": 0.0,
-        "wind": 27.7
-      }
-    },
     {
       "home": "TSG Hoffenheim",
       "away": "Hamburger SV",
@@ -554,7 +516,7 @@
         "wind": 5.0
       }
     },
-    "updatedUtc": "2026-10-09T16:08:11.542429+00:00",
+    "updatedUtc": "2026-10-09T21:38:09.902400+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

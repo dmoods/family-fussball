@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "5. Spieltag",
-  "updated": "09.10.2026 10:58",
+  "updated": "09.10.2026 18:08",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 11.8,
-        "rain": 1.9,
-        "wind": 22.7
+        "temp": 12.9,
+        "rain": 0.0,
+        "wind": 27.7
       }
     },
     {
@@ -114,9 +114,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 13.5,
-        "rain": 0.0,
-        "wind": 11.8
+        "temp": 12.0,
+        "rain": 0.2,
+        "wind": 10.5
       }
     },
     {
@@ -152,9 +152,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 16.2,
+        "temp": 15.5,
         "rain": 0.0,
-        "wind": 15.0
+        "wind": 10.6
       }
     },
     {
@@ -190,9 +190,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 16.6,
+        "temp": 16.7,
         "rain": 0.0,
-        "wind": 14.7
+        "wind": 15.9
       }
     },
     {
@@ -228,9 +228,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 14.2,
+        "temp": 13.9,
         "rain": 0.0,
-        "wind": 21.3
+        "wind": 19.3
       }
     },
     {
@@ -266,9 +266,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 15.0,
+        "temp": 15.6,
         "rain": 0.0,
-        "wind": 10.6
+        "wind": 12.6
       }
     },
     {
@@ -304,9 +304,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 14.0,
-        "rain": 0.1,
-        "wind": 18.9
+        "temp": 14.1,
+        "rain": 0.0,
+        "wind": 18.0
       }
     },
     {
@@ -342,9 +342,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 14.6,
+        "temp": 14.9,
         "rain": 0.0,
-        "wind": 7.6
+        "wind": 5.0
       }
     }
   ],
@@ -514,47 +514,47 @@
         "wind": 15.0
       },
       "borussia dortmund|werder bremen": {
-        "temp": 11.8,
-        "rain": 1.9,
-        "wind": 22.7
+        "temp": 12.9,
+        "rain": 0.0,
+        "wind": 27.7
       },
       "fc augsburg|bayern munchen": {
-        "temp": 13.5,
-        "rain": 0.0,
-        "wind": 11.8
+        "temp": 12.0,
+        "rain": 0.2,
+        "wind": 10.5
       },
       "mainz 05|bayer leverkusen": {
-        "temp": 16.2,
-        "rain": 0.0,
-        "wind": 15.0
-      },
-      "union berlin|sv 07 elversberg": {
-        "temp": 16.6,
-        "rain": 0.0,
-        "wind": 14.7
-      },
-      "sc paderborn|vfb stuttgart": {
-        "temp": 14.2,
-        "rain": 0.0,
-        "wind": 21.3
-      },
-      "rb leipzig|eintracht frankfurt": {
-        "temp": 15.0,
+        "temp": 15.5,
         "rain": 0.0,
         "wind": 10.6
       },
+      "union berlin|sv 07 elversberg": {
+        "temp": 16.7,
+        "rain": 0.0,
+        "wind": 15.9
+      },
+      "sc paderborn|vfb stuttgart": {
+        "temp": 13.9,
+        "rain": 0.0,
+        "wind": 19.3
+      },
+      "rb leipzig|eintracht frankfurt": {
+        "temp": 15.6,
+        "rain": 0.0,
+        "wind": 12.6
+      },
       "fc koln|borussia monchengladbach": {
-        "temp": 14.0,
-        "rain": 0.1,
-        "wind": 18.9
+        "temp": 14.1,
+        "rain": 0.0,
+        "wind": 18.0
       },
       "sc freiburg|schalke 04": {
-        "temp": 14.6,
+        "temp": 14.9,
         "rain": 0.0,
-        "wind": 7.6
+        "wind": 5.0
       }
     },
-    "updatedUtc": "2026-10-09T08:58:33.786141+00:00",
+    "updatedUtc": "2026-10-09T16:08:11.542429+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

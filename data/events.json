@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T12:27:25+00:00",
+  "updated": "2026-10-10T11:46:37+00:00",
   "games": [
     {
       "date": "2026-09-19",
@@ -18,15 +18,6 @@
       "title": "FSV Berolina Stralau U11 II",
       "location": "Persiusstr. 7 B, 10245 Berlin",
       "maps": "https://maps.apple.com/?q=Persiusstr.%207%20B%2C%2010245%20Berlin"
-    },
-    {
-      "date": "2026-10-10",
-      "time": "09:00",
-      "child": "Alicia",
-      "type": "Spiel",
-      "title": "Türkiyemspor Berlin 1978 II",
-      "location": "Blücherstr. 46-47, 10961 Berlin",
-      "maps": "https://maps.apple.com/?q=Bl%C3%BCcherstr.%2046-47%2C%2010961%20Berlin"
     },
     {
       "date": "2026-10-11",

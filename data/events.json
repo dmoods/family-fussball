@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T11:46:37+00:00",
+  "updated": "2026-10-11T11:58:41+00:00",
   "games": [
     {
       "date": "2026-09-19",
@@ -135,6 +135,15 @@
       "title": "SC Siemensstadt II",
       "location": "Buolstraße 14, 13629 Berlin",
       "maps": "https://maps.apple.com/?q=Buolstra%C3%9Fe%2014%2C%2013629%20Berlin"
+    },
+    {
+      "date": "2027-04-11",
+      "time": "10:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "TSV Mariendorf 1897 II",
+      "location": "Am Plänterwald 17, 12435 Berlin",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     }
   ],
   "status": "fallback",

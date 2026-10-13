@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T16:12:44+02:00",
+  "updated": "2026-10-13T15:23:12+02:00",
   "events": [
     {
       "date": "2026-10-13",
@@ -13,32 +13,12 @@
     },
     {
       "date": "2026-10-15",
-      "time": "16:45–18:30",
+      "time": "16:30–18:00",
       "child": "Luis",
       "type": "Training",
-      "title": "⁉️️ Training Oschatzer",
-      "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
-      "source": "myteam"
-    },
-    {
-      "date": "2026-10-20",
-      "time": "16:15–18:00",
-      "child": "Luis",
-      "type": "Training",
-      "title": "⁉️️ Training rosenhag",
-      "location": "Melanchthonstraße 53, 12623 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
-      "maps": "https://maps.apple.com/?q=Melanchthonstra%C3%9Fe%2053%2C%2012623%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
-    },
-    {
-      "date": "2026-10-22",
-      "time": "16:45–18:30",
-      "child": "Luis",
-      "type": "Training",
-      "title": "⁉️️ Training Oschatzer",
-      "location": "Oschatzer Ring 16, 12627 Berlin, Deutschland",
-      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Deutschland",
+      "title": "✅ Training Oschatzer",
+      "location": "Oschatzer Ring 16, 12627 Berlin, Germany",
+      "maps": "https://maps.apple.com/?q=Oschatzer%20Ring%2016%2C%2012627%20Berlin%2C%20Germany",
       "source": "myteam"
     },
     {
@@ -263,6 +243,16 @@
     },
     {
       "date": "2027-02-02",
+      "time": "16:15–18:00",
+      "child": "Luis",
+      "type": "Training",
+      "title": "⁉️️ Training rosenhag",
+      "location": "Melanchthonstraße 53, 12623 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
+      "maps": "https://maps.apple.com/?q=Melanchthonstra%C3%9Fe%2053%2C%2012623%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
+      "source": "myteam"
+    },
+    {
+      "date": "2027-02-09",
       "time": "16:15–18:00",
       "child": "Luis",
       "type": "Training",

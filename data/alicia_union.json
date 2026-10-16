@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T10:51:00+02:00",
+  "updated": "2026-10-16T14:15:00+02:00",
   "coveredWeeks": [
     "2026-W35",
     "2026-W36",
@@ -8,7 +8,9 @@
     "2026-W39",
     "2026-W40",
     "2026-W41",
-    "2026-W42"
+    "2026-W42",
+    "2026-W43",
+    "2026-W44"
   ],
   "events": [
     {
@@ -360,52 +362,56 @@
     },
     {
       "date": "2026-10-20",
-      "time": "nachmittags",
+      "time": "17:00",
+      "endTime": "18:30",
       "child": "Alicia",
       "type": "Training",
-      "title": "Training U13w FCU – Herbstferien (voraussichtlich)",
-      "location": "",
-      "maps": "",
+      "title": "Training U13w FCU",
+      "location": "Bruno-Bürgel-Weg 63, 12439 Berlin (TZO)",
+      "maps": "https://maps.apple.com/?q=Bruno-B%C3%BCrgel-Weg%2063%2C%2012439%20Berlin",
       "source": "union-mail"
     },
     {
       "date": "2026-10-21",
-      "time": "nachmittags",
+      "time": "16:00",
+      "endTime": "17:30",
       "child": "Alicia",
       "type": "Training",
-      "title": "Training U13w FCU – Herbstferien (voraussichtlich)",
-      "location": "",
-      "maps": "",
+      "title": "Training U13w FCU",
+      "location": "Bruno-Bürgel-Weg 63, 12439 Berlin (TZO)",
+      "maps": "https://maps.apple.com/?q=Bruno-B%C3%BCrgel-Weg%2063%2C%2012439%20Berlin",
       "source": "union-mail"
     },
     {
       "date": "2026-10-22",
-      "time": "nachmittags",
+      "time": "13:00",
       "child": "Alicia",
       "type": "Training",
-      "title": "Training U13w FCU – Herbstferien (voraussichtlich)",
-      "location": "",
-      "maps": "",
+      "title": "Training U13w FCU – 1. Einheit",
+      "location": "Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin",
       "source": "union-mail"
     },
     {
       "date": "2026-10-22",
-      "time": "vormittags",
+      "time": "17:00",
+      "endTime": "18:30",
       "child": "Alicia",
       "type": "Training",
-      "title": "Training U13w FCU – Herbstferien (voraussichtlich)",
-      "location": "",
-      "maps": "",
+      "title": "Training U13w FCU – 2. Einheit",
+      "location": "Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin",
       "source": "union-mail"
     },
     {
       "date": "2026-10-23",
-      "time": "nachmittags",
+      "time": "18:00",
+      "endTime": "19:30",
       "child": "Alicia",
       "type": "Training",
-      "title": "Training U13w FCU – Herbstferien (voraussichtlich)",
-      "location": "",
-      "maps": "",
+      "title": "Training U13w FCU",
+      "location": "Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin",
       "source": "union-mail"
     }
   ]

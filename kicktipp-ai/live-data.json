@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "6. Spieltag",
-  "updated": "16.10.2026 19:21",
+  "updated": "16.10.2026 23:00",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "Eintracht Frankfurt",
-      "away": "1. FC Köln",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 67,
-      "bank": false,
-      "surprise": {},
-      "form": "Eintracht Frankfurt: 0.81 Pkt/Spiel, 1.70:3.03 Tore; 1. FC Köln: 1.11 Pkt/Spiel, 1.49:2.33 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.02,
-        "away_xg": 1.49,
-        "home_win": 49.8,
-        "draw": 21.6,
-        "away_win": 28.7,
-        "kicktipp_ev": 1.177
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 17.1,
-        "rain": 0.0,
-        "wind": 2.9
-      }
-    },
     {
       "home": "1. FC Union Berlin",
       "away": "Borussia Dortmund",
@@ -594,7 +556,7 @@
         "wind": 6.8
       }
     },
-    "updatedUtc": "2026-10-16T17:21:48.636645+00:00",
+    "updatedUtc": "2026-10-16T21:00:39.743929+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

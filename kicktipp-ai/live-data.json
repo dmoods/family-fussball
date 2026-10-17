@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "6. Spieltag",
-  "updated": "17.10.2026 19:05",
+  "updated": "17.10.2026 21:21",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "FC Bayern München",
-      "away": "RB Leipzig",
-      "kickoff": "Sat 18:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 70,
-      "bank": false,
-      "surprise": {},
-      "form": "FC Bayern München: 2.22 Pkt/Spiel, 3.18:0.96 Tore; RB Leipzig: 1.59 Pkt/Spiel, 2.63:1.52 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.3,
-        "away_xg": 1.46,
-        "home_win": 56.5,
-        "draw": 19.8,
-        "away_win": 23.8,
-        "kicktipp_ev": 1.31
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 14.0,
-        "rain": 0.0,
-        "wind": 10.4
-      }
-    },
     {
       "home": "Bayer 04 Leverkusen",
       "away": "SC Freiburg",
@@ -370,7 +332,7 @@
         "wind": 6.8
       }
     },
-    "updatedUtc": "2026-10-17T17:05:13.776879+00:00",
+    "updatedUtc": "2026-10-17T19:21:29.017112+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

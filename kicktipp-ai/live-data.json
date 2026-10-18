@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "6. Spieltag",
-  "updated": "18.10.2026 12:56",
+  "updated": "18.10.2026 16:31",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 11.3,
+        "temp": 12.1,
         "rain": 0.0,
-        "wind": 6.5
+        "wind": 8.3
       }
     },
     {
@@ -80,7 +80,7 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 10.5,
+        "temp": 10.8,
         "rain": 0.0,
         "wind": 9.4
       }
@@ -322,17 +322,17 @@
         "wind": 10.4
       },
       "bayer leverkusen|sc freiburg": {
-        "temp": 11.3,
+        "temp": 12.1,
         "rain": 0.0,
-        "wind": 6.5
+        "wind": 8.3
       },
       "borussia monchengladbach|tsg hoffenheim": {
-        "temp": 10.5,
+        "temp": 10.8,
         "rain": 0.0,
         "wind": 9.4
       }
     },
-    "updatedUtc": "2026-10-18T10:56:39.535655+00:00",
+    "updatedUtc": "2026-10-18T14:31:59.344896+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

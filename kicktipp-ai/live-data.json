@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "6. Spieltag",
-  "updated": "18.10.2026 07:49",
+  "updated": "18.10.2026 12:56",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 12.2,
+        "temp": 11.3,
         "rain": 0.0,
-        "wind": 4.3
+        "wind": 6.5
       }
     },
     {
@@ -80,9 +80,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 11.8,
+        "temp": 10.5,
         "rain": 0.0,
-        "wind": 6.8
+        "wind": 9.4
       }
     }
   ],
@@ -322,17 +322,17 @@
         "wind": 10.4
       },
       "bayer leverkusen|sc freiburg": {
-        "temp": 12.2,
+        "temp": 11.3,
         "rain": 0.0,
-        "wind": 4.3
+        "wind": 6.5
       },
       "borussia monchengladbach|tsg hoffenheim": {
-        "temp": 11.8,
+        "temp": 10.5,
         "rain": 0.0,
-        "wind": 6.8
+        "wind": 9.4
       }
     },
-    "updatedUtc": "2026-10-18T05:49:23.460666+00:00",
+    "updatedUtc": "2026-10-18T10:56:39.535655+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,
@@ -513,6 +513,51 @@
         "H": 0.21729083317350936,
         "D": 0.21402595552579515,
         "A": 0.5686832113006955
+      },
+      "dortmund|werder bremen": {
+        "H": 0.7222871033554122,
+        "D": 0.17048661525814945,
+        "A": 0.1072262813864383
+      },
+      "augsburg|bayern munchen": {
+        "H": 0.08209851555850273,
+        "D": 0.11189736108565841,
+        "A": 0.8060041233558389
+      },
+      "hoffenheim|hamburg": {
+        "H": 0.6716827826559807,
+        "D": 0.1881220579504246,
+        "A": 0.1401951593935946
+      },
+      "mainz|leverkusen": {
+        "H": 0.32207892248655073,
+        "D": 0.2459441690041284,
+        "A": 0.43197690850932097
+      },
+      "paderborn|stuttgart": {
+        "H": 0.1980569133852813,
+        "D": 0.2042360374339944,
+        "A": 0.5977070491807243
+      },
+      "union berlin|elversberg": {
+        "H": 0.40943658262956123,
+        "D": 0.2580975475274061,
+        "A": 0.33246586984303267
+      },
+      "rb leipzig|ein frankfurt": {
+        "H": 0.6096665034228875,
+        "D": 0.19754396564931107,
+        "A": 0.19278953092780135
+      },
+      "fc koln|m gladbach": {
+        "H": 0.46978995163197607,
+        "D": 0.24224634378800894,
+        "A": 0.287963704580015
+      },
+      "freiburg|schalke 04": {
+        "H": 0.5776211029330369,
+        "D": 0.23529392033868599,
+        "A": 0.18708497672827704
       }
     }
   }

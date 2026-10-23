@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T14:15:00+02:00",
+  "updated": "2026-10-23T22:33:45+02:00",
   "coveredWeeks": [
     "2026-W35",
     "2026-W36",
@@ -412,6 +412,18 @@
       "title": "Training U13w FCU",
       "location": "Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin",
+      "source": "union-mail"
+    },
+    {
+      "date": "2026-11-01",
+      "time": "10:00",
+      "endTime": "ca. 14:30",
+      "meetTime": "09:00",
+      "child": "Alicia",
+      "type": "Turnier",
+      "title": "Kiez-Cup U13w – eigenes Union-Turnier",
+      "location": "Bruno-Bürgel-Weg 63, 12439 Berlin (TZO)",
+      "maps": "https://maps.apple.com/?q=Bruno-B%C3%BCrgel-Weg%2063%2C%2012439%20Berlin",
       "source": "union-mail"
     }
   ]

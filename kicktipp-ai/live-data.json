@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "7. Spieltag",
-  "updated": "23.10.2026 21:07",
+  "updated": "24.10.2026 01:05",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "VfB Stuttgart",
-      "away": "Borussia Mönchengladbach",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 68,
-      "bank": false,
-      "surprise": {},
-      "form": "VfB Stuttgart: 1.16 Pkt/Spiel, 1.44:1.48 Tore; Borussia Mönchengladbach: 0.27 Pkt/Spiel, 1.56:2.92 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.87,
-        "away_xg": 1.18,
-        "home_win": 53.5,
-        "draw": 22.6,
-        "away_win": 23.9,
-        "kicktipp_ev": 1.266
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 10.1,
-        "rain": 0.0,
-        "wind": 17.7
-      }
-    },
     {
       "home": "RB Leipzig",
       "away": "SV 07 Elversberg",
@@ -634,7 +596,7 @@
         "wind": 17.8
       }
     },
-    "updatedUtc": "2026-10-23T19:07:48.093863+00:00",
+    "updatedUtc": "2026-10-23T23:05:31.539624+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

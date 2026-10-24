@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "7. Spieltag",
-  "updated": "24.10.2026 18:33",
+  "updated": "24.10.2026 21:27",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "Borussia Dortmund",
-      "away": "Eintracht Frankfurt",
-      "kickoff": "Sat 18:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 73,
-      "bank": false,
-      "surprise": {},
-      "form": "Borussia Dortmund: 2.33 Pkt/Spiel, 1.83:0.71 Tore; Eintracht Frankfurt: 1.25 Pkt/Spiel, 1.63:2.57 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.29,
-        "away_xg": 1.06,
-        "home_win": 65.0,
-        "draw": 18.8,
-        "away_win": 16.2,
-        "kicktipp_ev": 1.495
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 11.3,
-        "rain": 0.0,
-        "wind": 19.4
-      }
-    },
     {
       "home": "TSG Hoffenheim",
       "away": "Bayer 04 Leverkusen",
@@ -406,7 +368,7 @@
         "wind": 7.6
       }
     },
-    "updatedUtc": "2026-10-24T16:33:09.975291+00:00",
+    "updatedUtc": "2026-10-24T19:27:25.349745+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

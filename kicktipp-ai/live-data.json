@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "7. Spieltag",
-  "updated": "24.10.2026 14:38",
+  "updated": "24.10.2026 18:33",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,196 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "RB Leipzig",
-      "away": "SV 07 Elversberg",
-      "kickoff": "Sat 15:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 67,
-      "bank": false,
-      "surprise": {},
-      "form": "RB Leipzig: 1.42 Pkt/Spiel, 2.46:2.13 Tore; SV 07 Elversberg: 1.61 Pkt/Spiel, 1.96:1.76 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.33,
-        "away_xg": 1.78,
-        "home_win": 50.5,
-        "draw": 19.8,
-        "away_win": 29.7,
-        "kicktipp_ev": 1.169
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 8.6,
-        "rain": 0.4,
-        "wind": 13.8
-      }
-    },
-    {
-      "home": "FC Augsburg",
-      "away": "1. FC Union Berlin",
-      "kickoff": "Sat 15:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 72,
-      "bank": false,
-      "surprise": {},
-      "form": "FC Augsburg: 1.20 Pkt/Spiel, 2.42:2.26 Tore; 1. FC Union Berlin: 1.26 Pkt/Spiel, 1.20:2.26 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.54,
-        "away_xg": 1.33,
-        "home_win": 63.5,
-        "draw": 18.0,
-        "away_win": 18.6,
-        "kicktipp_ev": 1.449
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 8.9,
-        "rain": 0.0,
-        "wind": 19.9
-      }
-    },
-    {
-      "home": "1. FSV Mainz 05",
-      "away": "SV Werder Bremen",
-      "kickoff": "Sat 15:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 70,
-      "bank": false,
-      "surprise": {},
-      "form": "1. FSV Mainz 05: 1.68 Pkt/Spiel, 2.20:1.70 Tore; SV Werder Bremen: 1.25 Pkt/Spiel, 1.69:1.88 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.29,
-        "away_xg": 1.44,
-        "home_win": 56.5,
-        "draw": 19.9,
-        "away_win": 23.7,
-        "kicktipp_ev": 1.311
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 12.4,
-        "rain": 0.0,
-        "wind": 13.2
-      }
-    },
-    {
-      "home": "1. FC Köln",
-      "away": "FC Schalke 04",
-      "kickoff": "Sat 15:30",
-      "prediction": [
-        1,
-        0
-      ],
-      "confidence": 64,
-      "bank": false,
-      "surprise": {},
-      "form": "1. FC Köln: 0.92 Pkt/Spiel, 1.19:2.12 Tore; FC Schalke 04: 0.90 Pkt/Spiel, 0.64:1.17 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.23,
-        "away_xg": 1.0,
-        "home_win": 41.6,
-        "draw": 28.6,
-        "away_win": 29.7,
-        "kicktipp_ev": 1.098
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 12.4,
-        "rain": 0.0,
-        "wind": 15.5
-      }
-    },
-    {
-      "home": "SC Paderborn 07",
-      "away": "Hamburger SV",
-      "kickoff": "Sat 15:30",
-      "prediction": [
-        1,
-        0
-      ],
-      "confidence": 65,
-      "bank": false,
-      "surprise": {},
-      "form": "SC Paderborn 07: 1.04 Pkt/Spiel, 1.10:1.49 Tore; Hamburger SV: 1.76 Pkt/Spiel, 1.27:2.16 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.55,
-        "away_xg": 1.21,
-        "home_win": 45.2,
-        "draw": 25.1,
-        "away_win": 29.8,
-        "kicktipp_ev": 1.099
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 10.6,
-        "rain": 0.0,
-        "wind": 19.2
-      }
-    },
     {
       "home": "Borussia Dortmund",
       "away": "Eintracht Frankfurt",
@@ -232,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 11.6,
+        "temp": 11.3,
         "rain": 0.0,
-        "wind": 21.2
+        "wind": 19.4
       }
     },
     {
@@ -304,9 +114,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 13.9,
+        "temp": 13.2,
         "rain": 0.0,
-        "wind": 11.2
+        "wind": 7.6
       }
     }
   ],
@@ -586,17 +396,17 @@
         "wind": 19.2
       },
       "borussia dortmund|eintracht frankfurt": {
-        "temp": 11.6,
+        "temp": 11.3,
         "rain": 0.0,
-        "wind": 21.2
+        "wind": 19.4
       },
       "sc freiburg|bayern munchen": {
-        "temp": 13.9,
+        "temp": 13.2,
         "rain": 0.0,
-        "wind": 11.2
+        "wind": 7.6
       }
     },
-    "updatedUtc": "2026-10-24T12:38:00.756358+00:00",
+    "updatedUtc": "2026-10-24T16:33:09.975291+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T11:28:06+00:00",
+  "updated": "2026-10-28T11:58:40+00:00",
   "games": [
     {
       "date": "2026-09-19",
@@ -45,6 +45,15 @@
       "title": "NFC Rot-Weiß II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+    },
+    {
+      "date": "2026-11-14",
+      "time": "10:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "SC Siemensstadt",
+      "location": "SC Siemensstadt, Berlin",
+      "maps": "https://maps.apple.com/?q=SC%20Siemensstadt%2C%20Berlin"
     },
     {
       "date": "2026-11-15",
@@ -135,15 +144,6 @@
       "title": "TSV Mariendorf 1897 II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
-    },
-    {
-      "date": "2027-04-17",
-      "time": "10:00",
-      "child": "Alicia",
-      "type": "Spiel",
-      "title": "SFC Stern 1900 II",
-      "location": "Kreuznacher Str. 29, 14197 Berlin",
-      "maps": "https://maps.apple.com/?q=Kreuznacher%20Str.%2029%2C%2014197%20Berlin"
     }
   ],
   "status": "fallback",

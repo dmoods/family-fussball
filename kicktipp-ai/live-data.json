@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "8. Spieltag",
-  "updated": "30.10.2026 20:17",
+  "updated": "31.10.2026 00:40",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,40 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "SV 07 Elversberg",
-      "away": "1. FSV Mainz 05",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 62,
-      "bank": false,
-      "surprise": {},
-      "form": "SV 07 Elversberg: 1.42 Pkt/Spiel, 1.67:2.07 Tore; 1. FSV Mainz 05: 1.51 Pkt/Spiel, 2.25:1.83 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.9,
-        "away_xg": 1.89,
-        "home_win": 39.6,
-        "draw": 21.4,
-        "away_win": 39.1,
-        "kicktipp_ev": 0.946
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": false
-      },
-      "weather": {}
-    },
     {
       "home": "Bayer 04 Leverkusen",
       "away": "VfB Stuttgart",
@@ -674,7 +640,7 @@
         "wind": 5.9
       }
     },
-    "updatedUtc": "2026-10-30T19:17:53.363273+00:00",
+    "updatedUtc": "2026-10-30T23:40:43.714155+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

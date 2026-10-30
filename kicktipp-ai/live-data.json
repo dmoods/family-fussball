@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "8. Spieltag",
-  "updated": "30.10.2026 01:52",
+  "updated": "30.10.2026 08:02",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -76,9 +76,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 10.6,
+        "temp": 11.9,
         "rain": 0.0,
-        "wind": 12.7
+        "wind": 11.5
       }
     },
     {
@@ -114,9 +114,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 7.7,
+        "temp": 9.7,
         "rain": 0.0,
-        "wind": 14.1
+        "wind": 10.6
       }
     },
     {
@@ -152,9 +152,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 10.4,
+        "temp": 12.4,
         "rain": 0.0,
-        "wind": 14.2
+        "wind": 15.5
       }
     },
     {
@@ -190,9 +190,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 10.0,
-        "rain": 0.1,
-        "wind": 8.2
+        "temp": 11.3,
+        "rain": 0.0,
+        "wind": 5.8
       }
     },
     {
@@ -228,7 +228,7 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 11.2,
+        "temp": 11.4,
         "rain": 0.0,
         "wind": 7.6
       }
@@ -266,9 +266,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 5.2,
-        "rain": 0.2,
-        "wind": 7.1
+        "temp": 8.0,
+        "rain": 0.0,
+        "wind": 3.1
       }
     },
     {
@@ -304,9 +304,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 9.9,
+        "temp": 9.6,
         "rain": 0.0,
-        "wind": 10.1
+        "wind": 3.2
       }
     },
     {
@@ -342,9 +342,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 9.2,
+        "temp": 8.9,
         "rain": 0.0,
-        "wind": 13.1
+        "wind": 4.0
       }
     }
   ],
@@ -634,47 +634,47 @@
         "wind": 12.9
       },
       "bayer leverkusen|vfb stuttgart": {
-        "temp": 10.6,
+        "temp": 11.9,
         "rain": 0.0,
-        "wind": 12.7
+        "wind": 11.5
       },
       "fc augsburg|sc freiburg": {
-        "temp": 7.7,
+        "temp": 9.7,
         "rain": 0.0,
-        "wind": 14.1
+        "wind": 10.6
       },
       "borussia monchengladbach|sc paderborn": {
-        "temp": 10.4,
+        "temp": 12.4,
         "rain": 0.0,
-        "wind": 14.2
+        "wind": 15.5
       },
       "werder bremen|tsg hoffenheim": {
-        "temp": 10.0,
-        "rain": 0.1,
-        "wind": 8.2
+        "temp": 11.3,
+        "rain": 0.0,
+        "wind": 5.8
       },
       "schalke 04|rb leipzig": {
-        "temp": 11.2,
+        "temp": 11.4,
         "rain": 0.0,
         "wind": 7.6
       },
       "bayern munchen|borussia dortmund": {
-        "temp": 5.2,
-        "rain": 0.2,
-        "wind": 7.1
+        "temp": 8.0,
+        "rain": 0.0,
+        "wind": 3.1
       },
       "union berlin|fc koln": {
-        "temp": 9.9,
+        "temp": 9.6,
         "rain": 0.0,
-        "wind": 10.1
+        "wind": 3.2
       },
       "eintracht frankfurt|hamburger sv": {
-        "temp": 9.2,
+        "temp": 8.9,
         "rain": 0.0,
-        "wind": 13.1
+        "wind": 4.0
       }
     },
-    "updatedUtc": "2026-10-30T00:52:38.030055+00:00",
+    "updatedUtc": "2026-10-30T07:02:37.117510+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,
@@ -945,6 +945,51 @@
         "H": 0.3040871737105208,
         "D": 0.23809503871340998,
         "A": 0.45781778757606917
+      },
+      "stuttgart|m gladbach": {
+        "H": 0.7038311822253728,
+        "D": 0.1640988464507975,
+        "A": 0.13206997132382972
+      },
+      "augsburg|union berlin": {
+        "H": 0.5154969135639074,
+        "D": 0.2435193782388204,
+        "A": 0.2409837081972722
+      },
+      "fc koln|schalke 04": {
+        "H": 0.4609945320278867,
+        "D": 0.24870711919449082,
+        "A": 0.2902983487776225
+      },
+      "mainz|werder bremen": {
+        "H": 0.5485450049157258,
+        "D": 0.23456408038193743,
+        "A": 0.2168909147023368
+      },
+      "paderborn|hamburg": {
+        "H": 0.4252141742730949,
+        "D": 0.25624686117480794,
+        "A": 0.31853896455209724
+      },
+      "rb leipzig|elversberg": {
+        "H": 0.6657444860239502,
+        "D": 0.1859886609874931,
+        "A": 0.14826685298855669
+      },
+      "dortmund|ein frankfurt": {
+        "H": 0.6467330901214509,
+        "D": 0.18866748969078195,
+        "A": 0.16459942018776713
+      },
+      "hoffenheim|leverkusen": {
+        "H": 0.3392991743603633,
+        "D": 0.24794957216642924,
+        "A": 0.41275125347320746
+      },
+      "freiburg|bayern munchen": {
+        "H": 0.14366189616390238,
+        "D": 0.1618933145891535,
+        "A": 0.6944447892469442
       }
     }
   }

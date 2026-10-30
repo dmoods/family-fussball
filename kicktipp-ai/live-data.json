@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "8. Spieltag",
-  "updated": "30.10.2026 15:03",
+  "updated": "30.10.2026 20:17",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -76,9 +76,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 11.9,
+        "temp": 12.5,
         "rain": 0.0,
-        "wind": 11.5
+        "wind": 6.1
       }
     },
     {
@@ -114,9 +114,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 9.7,
+        "temp": 9.4,
         "rain": 0.0,
-        "wind": 10.6
+        "wind": 9.4
       }
     },
     {
@@ -152,9 +152,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 12.4,
+        "temp": 12.3,
         "rain": 0.0,
-        "wind": 15.5
+        "wind": 10.8
       }
     },
     {
@@ -190,9 +190,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 11.3,
+        "temp": 12.0,
         "rain": 0.0,
-        "wind": 5.8
+        "wind": 5.4
       }
     },
     {
@@ -228,9 +228,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 11.4,
+        "temp": 11.7,
         "rain": 0.0,
-        "wind": 7.6
+        "wind": 10.1
       }
     },
     {
@@ -268,7 +268,7 @@
       "weather": {
         "temp": 8.0,
         "rain": 0.0,
-        "wind": 3.1
+        "wind": 6.7
       }
     },
     {
@@ -304,9 +304,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 9.6,
+        "temp": 9.1,
         "rain": 0.0,
-        "wind": 3.2
+        "wind": 2.1
       }
     },
     {
@@ -342,9 +342,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 8.9,
+        "temp": 10.4,
         "rain": 0.0,
-        "wind": 4.0
+        "wind": 5.9
       }
     }
   ],
@@ -634,47 +634,47 @@
         "wind": 12.9
       },
       "bayer leverkusen|vfb stuttgart": {
-        "temp": 11.9,
+        "temp": 12.5,
         "rain": 0.0,
-        "wind": 11.5
+        "wind": 6.1
       },
       "fc augsburg|sc freiburg": {
-        "temp": 9.7,
+        "temp": 9.4,
         "rain": 0.0,
-        "wind": 10.6
+        "wind": 9.4
       },
       "borussia monchengladbach|sc paderborn": {
-        "temp": 12.4,
+        "temp": 12.3,
         "rain": 0.0,
-        "wind": 15.5
+        "wind": 10.8
       },
       "werder bremen|tsg hoffenheim": {
-        "temp": 11.3,
+        "temp": 12.0,
         "rain": 0.0,
-        "wind": 5.8
+        "wind": 5.4
       },
       "schalke 04|rb leipzig": {
-        "temp": 11.4,
+        "temp": 11.7,
         "rain": 0.0,
-        "wind": 7.6
+        "wind": 10.1
       },
       "bayern munchen|borussia dortmund": {
         "temp": 8.0,
         "rain": 0.0,
-        "wind": 3.1
+        "wind": 6.7
       },
       "union berlin|fc koln": {
-        "temp": 9.6,
+        "temp": 9.1,
         "rain": 0.0,
-        "wind": 3.2
+        "wind": 2.1
       },
       "eintracht frankfurt|hamburger sv": {
-        "temp": 8.9,
+        "temp": 10.4,
         "rain": 0.0,
-        "wind": 4.0
+        "wind": 5.9
       }
     },
-    "updatedUtc": "2026-10-30T14:03:30.415382+00:00",
+    "updatedUtc": "2026-10-30T19:17:53.363273+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

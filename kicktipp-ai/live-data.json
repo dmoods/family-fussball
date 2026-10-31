@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "8. Spieltag",
-  "updated": "31.10.2026 18:40",
+  "updated": "31.10.2026 22:27",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "FC Bayern München",
-      "away": "Borussia Dortmund",
-      "kickoff": "Sat 18:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 68,
-      "bank": false,
-      "surprise": {},
-      "form": "FC Bayern München: 2.50 Pkt/Spiel, 3.76:0.91 Tore; Borussia Dortmund: 2.40 Pkt/Spiel, 1.60:0.50 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.87,
-        "away_xg": 1.21,
-        "home_win": 52.9,
-        "draw": 22.6,
-        "away_win": 24.5,
-        "kicktipp_ev": 1.253
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 7.4,
-        "rain": 0.0,
-        "wind": 9.2
-      }
-    },
     {
       "home": "1. FC Union Berlin",
       "away": "1. FC Köln",
@@ -450,7 +412,7 @@
         "wind": 4.5
       }
     },
-    "updatedUtc": "2026-10-31T17:40:27.323726+00:00",
+    "updatedUtc": "2026-10-31T21:27:28.944008+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

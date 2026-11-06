@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "9. Spieltag",
-  "updated": "06.11.2026 18:55",
+  "updated": "07.11.2026 00:02",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "Hamburger SV",
-      "away": "Borussia Mönchengladbach",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        1,
-        0
-      ],
-      "confidence": 63,
-      "bank": false,
-      "surprise": {},
-      "form": "Hamburger SV: 1.16 Pkt/Spiel, 0.93:2.21 Tore; Borussia Mönchengladbach: 0.64 Pkt/Spiel, 1.37:2.47 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.44,
-        "away_xg": 1.35,
-        "home_win": 39.5,
-        "draw": 25.3,
-        "away_win": 35.3,
-        "kicktipp_ev": 0.965
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 6.2,
-        "rain": 0.0,
-        "wind": 11.8
-      }
-    },
     {
       "home": "Borussia Dortmund",
       "away": "SV 07 Elversberg",
@@ -714,7 +676,7 @@
         "wind": 2.3
       }
     },
-    "updatedUtc": "2026-11-06T17:55:00.228329+00:00",
+    "updatedUtc": "2026-11-06T23:02:50.141854+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

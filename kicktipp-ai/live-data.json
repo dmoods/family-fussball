@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "9. Spieltag",
-  "updated": "07.11.2026 17:22",
+  "updated": "07.11.2026 21:50",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,196 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "Borussia Dortmund",
-      "away": "SV 07 Elversberg",
-      "kickoff": "Sat 15:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 69,
-      "bank": false,
-      "surprise": {},
-      "form": "Borussia Dortmund: 2.11 Pkt/Spiel, 1.64:0.79 Tore; SV 07 Elversberg: 1.60 Pkt/Spiel, 2.00:2.01 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.04,
-        "away_xg": 1.24,
-        "home_win": 55.8,
-        "draw": 21.3,
-        "away_win": 22.9,
-        "kicktipp_ev": 1.311
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 9.7,
-        "rain": 0.0,
-        "wind": 2.9
-      }
-    },
-    {
-      "home": "RB Leipzig",
-      "away": "FC Augsburg",
-      "kickoff": "Sat 15:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 71,
-      "bank": false,
-      "surprise": {},
-      "form": "RB Leipzig: 1.94 Pkt/Spiel, 2.76:1.37 Tore; FC Augsburg: 0.93 Pkt/Spiel, 2.09:1.98 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.53,
-        "away_xg": 1.45,
-        "home_win": 60.8,
-        "draw": 18.3,
-        "away_win": 20.8,
-        "kicktipp_ev": 1.391
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 5.9,
-        "rain": 0.0,
-        "wind": 7.4
-      }
-    },
-    {
-      "home": "1. FSV Mainz 05",
-      "away": "FC Bayern München",
-      "kickoff": "Sat 15:30",
-      "prediction": [
-        1,
-        2
-      ],
-      "confidence": 67,
-      "bank": false,
-      "surprise": {},
-      "form": "1. FSV Mainz 05: 1.14 Pkt/Spiel, 2.05:2.34 Tore; FC Bayern München: 2.21 Pkt/Spiel, 3.38:1.09 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.69,
-        "away_xg": 2.15,
-        "home_win": 30.7,
-        "draw": 20.7,
-        "away_win": 48.6,
-        "kicktipp_ev": 1.14
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 6.1,
-        "rain": 0.0,
-        "wind": 3.1
-      }
-    },
-    {
-      "home": "SC Paderborn 07",
-      "away": "Eintracht Frankfurt",
-      "kickoff": "Sat 15:30",
-      "prediction": [
-        1,
-        0
-      ],
-      "confidence": 64,
-      "bank": false,
-      "surprise": {},
-      "form": "SC Paderborn 07: 1.22 Pkt/Spiel, 0.79:1.06 Tore; Eintracht Frankfurt: 1.46 Pkt/Spiel, 1.56:2.07 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.3,
-        "away_xg": 1.15,
-        "home_win": 40.0,
-        "draw": 27.2,
-        "away_win": 32.8,
-        "kicktipp_ev": 1.025
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 6.5,
-        "rain": 0.0,
-        "wind": 13.2
-      }
-    },
-    {
-      "home": "VfB Stuttgart",
-      "away": "SV Werder Bremen",
-      "kickoff": "Sat 18:30",
-      "prediction": [
-        2,
-        1
-      ],
-      "confidence": 64,
-      "bank": false,
-      "surprise": {},
-      "form": "VfB Stuttgart: 1.19 Pkt/Spiel, 1.83:1.80 Tore; SV Werder Bremen: 1.99 Pkt/Spiel, 2.18:1.62 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 1.87,
-        "away_xg": 1.81,
-        "home_win": 40.5,
-        "draw": 21.7,
-        "away_win": 37.8,
-        "kicktipp_ev": 0.971
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 7.7,
-        "rain": 0.0,
-        "wind": 2.0
-      }
-    },
     {
       "home": "1. FC Köln",
       "away": "Bayer 04 Leverkusen",
@@ -676,7 +486,7 @@
         "wind": 3.8
       }
     },
-    "updatedUtc": "2026-11-07T16:22:17.826891+00:00",
+    "updatedUtc": "2026-11-07T20:50:31.895142+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

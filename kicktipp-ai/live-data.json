@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "9. Spieltag",
-  "updated": "07.11.2026 10:57",
+  "updated": "07.11.2026 17:22",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 9.6,
+        "temp": 9.7,
         "rain": 0.0,
-        "wind": 2.5
+        "wind": 2.9
       }
     },
     {
@@ -80,9 +80,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 5.8,
+        "temp": 5.9,
         "rain": 0.0,
-        "wind": 6.5
+        "wind": 7.4
       }
     },
     {
@@ -118,9 +118,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 7.6,
+        "temp": 6.1,
         "rain": 0.0,
-        "wind": 4.1
+        "wind": 3.1
       }
     },
     {
@@ -156,9 +156,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 8.8,
+        "temp": 6.5,
         "rain": 0.0,
-        "wind": 8.0
+        "wind": 13.2
       }
     },
     {
@@ -194,9 +194,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 8.2,
+        "temp": 7.7,
         "rain": 0.0,
-        "wind": 2.6
+        "wind": 2.0
       }
     },
     {
@@ -232,9 +232,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 9.7,
+        "temp": 10.7,
         "rain": 0.0,
-        "wind": 9.0
+        "wind": 5.4
       }
     },
     {
@@ -270,9 +270,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 9.4,
+        "temp": 10.1,
         "rain": 0.0,
-        "wind": 2.3
+        "wind": 3.8
       }
     },
     {
@@ -641,42 +641,42 @@
         "wind": 11.8
       },
       "borussia dortmund|sv 07 elversberg": {
-        "temp": 9.6,
-        "rain": 0.0,
-        "wind": 2.5
-      },
-      "rb leipzig|fc augsburg": {
-        "temp": 5.8,
-        "rain": 0.0,
-        "wind": 6.5
-      },
-      "mainz 05|bayern munchen": {
-        "temp": 7.6,
-        "rain": 0.0,
-        "wind": 4.1
-      },
-      "sc paderborn|eintracht frankfurt": {
-        "temp": 8.8,
-        "rain": 0.0,
-        "wind": 8.0
-      },
-      "vfb stuttgart|werder bremen": {
-        "temp": 8.2,
-        "rain": 0.0,
-        "wind": 2.6
-      },
-      "fc koln|bayer leverkusen": {
         "temp": 9.7,
         "rain": 0.0,
-        "wind": 9.0
+        "wind": 2.9
+      },
+      "rb leipzig|fc augsburg": {
+        "temp": 5.9,
+        "rain": 0.0,
+        "wind": 7.4
+      },
+      "mainz 05|bayern munchen": {
+        "temp": 6.1,
+        "rain": 0.0,
+        "wind": 3.1
+      },
+      "sc paderborn|eintracht frankfurt": {
+        "temp": 6.5,
+        "rain": 0.0,
+        "wind": 13.2
+      },
+      "vfb stuttgart|werder bremen": {
+        "temp": 7.7,
+        "rain": 0.0,
+        "wind": 2.0
+      },
+      "fc koln|bayer leverkusen": {
+        "temp": 10.7,
+        "rain": 0.0,
+        "wind": 5.4
       },
       "sc freiburg|union berlin": {
-        "temp": 9.4,
+        "temp": 10.1,
         "rain": 0.0,
-        "wind": 2.3
+        "wind": 3.8
       }
     },
-    "updatedUtc": "2026-11-07T09:57:24.107143+00:00",
+    "updatedUtc": "2026-11-07T16:22:17.826891+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

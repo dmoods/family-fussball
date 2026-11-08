@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T12:18:21+00:00",
+  "updated": "2026-11-08T12:38:07+00:00",
   "games": [
     {
       "date": "2026-09-19",
@@ -36,15 +36,6 @@
       "title": "VfB Berlin 1911 U11",
       "location": "Virchowstr. 7, 10249 Berlin",
       "maps": "https://maps.apple.com/?q=Virchowstr.%207%2C%2010249%20Berlin"
-    },
-    {
-      "date": "2026-11-08",
-      "time": "10:00",
-      "child": "Alicia",
-      "type": "Spiel",
-      "title": "NFC Rot-Weiß II",
-      "location": "Am Plänterwald 17, 12435 Berlin",
-      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
     },
     {
       "date": "2026-11-14",
@@ -144,6 +135,15 @@
       "title": "TSV Mariendorf 1897 II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+    },
+    {
+      "date": "2027-04-17",
+      "time": "10:00",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "SFC Stern 1900 II",
+      "location": "Kreuznacher Str. 29, 14197 Berlin",
+      "maps": "https://maps.apple.com/?q=Kreuznacher%20Str.%2029%2C%2014197%20Berlin"
     }
   ],
   "status": "fallback",

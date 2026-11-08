@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "9. Spieltag",
-  "updated": "08.11.2026 08:14",
+  "updated": "08.11.2026 16:05",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 11.0,
+        "temp": 10.7,
         "rain": 0.0,
-        "wind": 6.1
+        "wind": 5.8
       }
     },
     {
@@ -80,9 +80,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 10.2,
+        "temp": 10.1,
         "rain": 0.0,
-        "wind": 4.1
+        "wind": 3.7
       }
     },
     {
@@ -476,17 +476,17 @@
         "wind": 2.0
       },
       "fc koln|bayer leverkusen": {
-        "temp": 11.0,
+        "temp": 10.7,
         "rain": 0.0,
-        "wind": 6.1
+        "wind": 5.8
       },
       "sc freiburg|union berlin": {
-        "temp": 10.2,
+        "temp": 10.1,
         "rain": 0.0,
-        "wind": 4.1
+        "wind": 3.7
       }
     },
-    "updatedUtc": "2026-11-08T07:14:22.245407+00:00",
+    "updatedUtc": "2026-11-08T15:05:09.105540+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

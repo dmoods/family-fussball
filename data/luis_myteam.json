@@ -1,16 +1,6 @@
 {
-  "updated": "2026-11-10T15:10:29+01:00",
+  "updated": "2026-11-11T14:26:07+01:00",
   "events": [
-    {
-      "date": "2026-11-10",
-      "time": "16:15–18:00",
-      "child": "Luis",
-      "type": "Training",
-      "title": "⛔️ Training Wernerstraße (Halle)",
-      "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
-      "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
-    },
     {
       "date": "2026-11-12",
       "time": "16:15–18:00",

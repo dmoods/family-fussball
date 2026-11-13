@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T14:45:55+01:00",
+  "updated": "2026-11-13T16:20:44+01:00",
   "coveredWeeks": [
     "2026-W35",
     "2026-W36",
@@ -12,7 +12,8 @@
     "2026-W43",
     "2026-W44",
     "2026-W45",
-    "2026-W46"
+    "2026-W46",
+    "2026-W47"
   ],
   "events": [
     {
@@ -517,6 +518,51 @@
       "title": "Punktspiel U13w FCU – Kader wird bekanntgegeben",
       "location": "Rohrdamm 61-64, 13629 Berlin",
       "maps": "https://maps.apple.com/?q=Rohrdamm%2061-64%2C%2013629%20Berlin",
+      "source": "union-mail"
+    },
+    {
+      "date": "2026-11-16",
+      "time": "17:00",
+      "endTime": "18:00",
+      "child": "Alicia",
+      "type": "Training",
+      "title": "Leichtathletik-Training U13w FCU – Laufschuhe mitbringen",
+      "location": "Am Plänterwald 17 (Zugang Erwin-Bennewitz-Weg), 12435 Berlin (TZPW)",
+      "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin",
+      "source": "union-mail"
+    },
+    {
+      "date": "2026-11-17",
+      "time": "17:30",
+      "endTime": "19:00",
+      "child": "Alicia",
+      "type": "Training",
+      "title": "Hallentraining U13w FCU – Hallenschuhe mitbringen",
+      "location": "Hämmerlingstraße 88, 12555 Berlin (Halle)",
+      "maps": "https://maps.apple.com/?q=H%C3%A4mmerlingstra%C3%9Fe%2088%2C%2012555%20Berlin",
+      "source": "union-mail"
+    },
+    {
+      "date": "2026-11-20",
+      "time": "18:00",
+      "endTime": "19:30",
+      "child": "Alicia",
+      "type": "Training",
+      "title": "Training U13w FCU",
+      "location": "Bruno-Bürgel-Weg 63, 12439 Berlin (TZO)",
+      "maps": "https://maps.apple.com/?q=Bruno-B%C3%BCrgel-Weg%2063%2C%2012439%20Berlin",
+      "source": "union-mail"
+    },
+    {
+      "date": "2026-11-21",
+      "time": "09:50",
+      "endTime": "ca. 11:20",
+      "meetTime": "08:50",
+      "child": "Alicia",
+      "type": "Punktspiel",
+      "title": "Punktspiel U13w FCU – Kader wird bekanntgegeben",
+      "location": "Grabensprung 56, 12683 Berlin",
+      "maps": "https://maps.apple.com/?q=Grabensprung%2056%2C%2012683%20Berlin",
       "source": "union-mail"
     }
   ]

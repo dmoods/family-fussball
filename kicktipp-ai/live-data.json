@@ -1,11 +1,12 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "10. Spieltag",
-  "updated": "12.11.2026 19:51",
-  "alert": "Multi-Source-Analyse · Datenqualität 54% · 1 aktive Quellen/Signale.",
-  "dataQuality": 54,
+  "updated": "13.11.2026 01:13",
+  "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
+  "dataQuality": 63,
   "activeSources": [
-    "openLigaDB"
+    "openLigaDB",
+    "openMeteo"
   ],
   "matches": [
     {
@@ -16,7 +17,7 @@
         2,
         0
       ],
-      "confidence": 74,
+      "confidence": 75,
       "bank": false,
       "surprise": {},
       "form": "FC Bayern München: 2.28 Pkt/Spiel, 3.01:1.08 Tore; 1. FC Köln: 0.74 Pkt/Spiel, 0.85:1.39 Tore.",
@@ -38,9 +39,13 @@
         "footballDataOdds": false,
         "apiFootballInjuries": false,
         "apiFootballLineups": false,
-        "openMeteo": false
+        "openMeteo": true
       },
-      "weather": {}
+      "weather": {
+        "temp": 5.1,
+        "rain": 0.4,
+        "wind": 6.7
+      }
     },
     {
       "home": "Bayer 04 Leverkusen",
@@ -679,9 +684,14 @@
         "temp": 10.1,
         "rain": 0.0,
         "wind": 3.7
+      },
+      "bayern munchen|fc koln": {
+        "temp": 5.1,
+        "rain": 0.4,
+        "wind": 6.7
       }
     },
-    "updatedUtc": "2026-11-12T18:51:12.539016+00:00",
+    "updatedUtc": "2026-11-13T00:13:18.564031+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

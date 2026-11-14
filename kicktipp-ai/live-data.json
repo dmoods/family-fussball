@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "10. Spieltag",
-  "updated": "14.11.2026 04:07",
+  "updated": "14.11.2026 12:24",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 5.1,
-        "rain": 0.4,
-        "wind": 6.7
+        "temp": 2.0,
+        "rain": 0.0,
+        "wind": 10.1
       }
     },
     {
@@ -80,9 +80,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 5.8,
+        "temp": 5.9,
         "rain": 0.0,
-        "wind": 3.7
+        "wind": 0.6
       }
     },
     {
@@ -118,9 +118,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 5.5,
+        "temp": 6.1,
         "rain": 0.0,
-        "wind": 0.6
+        "wind": 3.8
       }
     },
     {
@@ -156,9 +156,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 2.7,
+        "temp": 4.6,
         "rain": 0.0,
-        "wind": 9.9
+        "wind": 16.8
       }
     },
     {
@@ -194,9 +194,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 6.2,
+        "temp": 5.7,
         "rain": 0.0,
-        "wind": 4.3
+        "wind": 3.1
       }
     },
     {
@@ -266,9 +266,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 3.1,
+        "temp": 4.6,
         "rain": 0.0,
-        "wind": 3.0
+        "wind": 5.2
       }
     },
     {
@@ -706,37 +706,37 @@
         "wind": 3.7
       },
       "bayern munchen|fc koln": {
-        "temp": 5.1,
-        "rain": 0.4,
-        "wind": 6.7
+        "temp": 2.0,
+        "rain": 0.0,
+        "wind": 10.1
       },
       "bayer leverkusen|sc paderborn": {
-        "temp": 5.8,
-        "rain": 0.0,
-        "wind": 3.7
-      },
-      "eintracht frankfurt|tsg hoffenheim": {
-        "temp": 5.5,
+        "temp": 5.9,
         "rain": 0.0,
         "wind": 0.6
       },
-      "union berlin|rb leipzig": {
-        "temp": 2.7,
+      "eintracht frankfurt|tsg hoffenheim": {
+        "temp": 6.1,
         "rain": 0.0,
-        "wind": 9.9
+        "wind": 3.8
+      },
+      "union berlin|rb leipzig": {
+        "temp": 4.6,
+        "rain": 0.0,
+        "wind": 16.8
       },
       "borussia monchengladbach|borussia dortmund": {
-        "temp": 6.2,
+        "temp": 5.7,
         "rain": 0.0,
-        "wind": 4.3
+        "wind": 3.1
       },
       "schalke 04|vfb stuttgart": {
-        "temp": 3.1,
+        "temp": 4.6,
         "rain": 0.0,
-        "wind": 3.0
+        "wind": 5.2
       }
     },
-    "updatedUtc": "2026-11-14T03:07:31.409130+00:00",
+    "updatedUtc": "2026-11-14T11:24:06.849006+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "10. Spieltag",
-  "updated": "14.11.2026 23:17",
+  "updated": "15.11.2026 03:35",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -279,7 +279,7 @@
         2,
         1
       ],
-      "confidence": 65,
+      "confidence": 66,
       "bank": false,
       "surprise": {},
       "form": "FC Augsburg: 0.61 Pkt/Spiel, 2.00:2.65 Tore; 1. FSV Mainz 05: 0.95 Pkt/Spiel, 2.03:2.46 Tore.",
@@ -301,9 +301,13 @@
         "footballDataOdds": false,
         "apiFootballInjuries": false,
         "apiFootballLineups": false,
-        "openMeteo": false
+        "openMeteo": true
       },
-      "weather": {}
+      "weather": {
+        "temp": 2.9,
+        "rain": 0.2,
+        "wind": 5.9
+      }
     },
     {
       "home": "SV Werder Bremen",
@@ -313,7 +317,7 @@
         2,
         1
       ],
-      "confidence": 69,
+      "confidence": 71,
       "bank": false,
       "surprise": {},
       "form": "SV Werder Bremen: 1.80 Pkt/Spiel, 1.89:1.34 Tore; Hamburger SV: 1.57 Pkt/Spiel, 1.36:2.02 Tore.",
@@ -335,9 +339,13 @@
         "footballDataOdds": false,
         "apiFootballInjuries": false,
         "apiFootballLineups": false,
-        "openMeteo": false
+        "openMeteo": true
       },
-      "weather": {}
+      "weather": {
+        "temp": 2.7,
+        "rain": 0.0,
+        "wind": 16.6
+      }
     }
   ],
   "sourceCache": {
@@ -734,9 +742,19 @@
         "temp": 4.6,
         "rain": 0.0,
         "wind": 5.2
+      },
+      "fc augsburg|mainz 05": {
+        "temp": 2.9,
+        "rain": 0.2,
+        "wind": 5.9
+      },
+      "werder bremen|hamburger sv": {
+        "temp": 2.7,
+        "rain": 0.0,
+        "wind": 16.6
       }
     },
-    "updatedUtc": "2026-11-14T22:17:29.436759+00:00",
+    "updatedUtc": "2026-11-15T02:35:23.487090+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

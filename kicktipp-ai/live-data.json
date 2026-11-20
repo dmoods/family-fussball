@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "10. Spieltag",
-  "updated": "20.11.2026 04:05",
+  "updated": "20.11.2026 12:27",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -342,9 +342,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 5.2,
+        "temp": 2.4,
         "rain": 0.0,
-        "wind": 9.7
+        "wind": 6.2
       }
     }
   ],
@@ -749,12 +749,12 @@
         "wind": 6.0
       },
       "werder bremen|hamburger sv": {
-        "temp": 5.2,
+        "temp": 2.4,
         "rain": 0.0,
-        "wind": 9.7
+        "wind": 6.2
       }
     },
-    "updatedUtc": "2026-11-20T03:05:14.083309+00:00",
+    "updatedUtc": "2026-11-20T11:27:49.014425+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

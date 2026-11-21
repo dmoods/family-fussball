@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T14:46:52+00:00",
+  "updated": "2026-11-21T14:02:25+00:00",
   "games": [
     {
       "date": "2026-09-19",
@@ -45,15 +45,6 @@
       "title": "SV Sparta Lichtenberg V",
       "location": "Hauffstr. 13-20, 10317 Berlin",
       "maps": "https://maps.apple.com/?q=Hauffstr.%2013-20%2C%2010317%20Berlin"
-    },
-    {
-      "date": "2026-11-21",
-      "time": "09:50",
-      "child": "Alicia",
-      "type": "Spiel",
-      "title": "VfB Fortuna Biesdorf U12",
-      "location": "Grabensprung 56, 12683 Berlin",
-      "maps": "https://maps.apple.com/?q=Grabensprung%2056%2C%2012683%20Berlin"
     },
     {
       "date": "2026-11-22",
@@ -144,6 +135,15 @@
       "title": "BSC Kickers 1900 II",
       "location": "Am Plänterwald 17, 12435 Berlin",
       "maps": "https://maps.apple.com/?q=Am%20Pl%C3%A4nterwald%2017%2C%2012435%20Berlin"
+    },
+    {
+      "date": "2027-05-01",
+      "time": "10:30",
+      "child": "Alicia",
+      "type": "Spiel",
+      "title": "1.FC Wacker 1921 Lankwitz II",
+      "location": "Gallwitzallee 146, 12249 Berlin",
+      "maps": "https://maps.apple.com/?q=Gallwitzallee%20146%2C%2012249%20Berlin"
     }
   ],
   "status": "fallback",

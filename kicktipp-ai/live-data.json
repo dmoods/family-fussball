@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "10. Spieltag",
-  "updated": "21.11.2026 18:24",
+  "updated": "22.11.2026 00:07",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "FC Schalke 04",
-      "away": "VfB Stuttgart",
-      "kickoff": "Sat 18:30",
-      "prediction": [
-        0,
-        1
-      ],
-      "confidence": 65,
-      "bank": false,
-      "surprise": {},
-      "form": "FC Schalke 04: 0.61 Pkt/Spiel, 0.57:1.11 Tore; VfB Stuttgart: 1.59 Pkt/Spiel, 1.75:1.24 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 0.97,
-        "away_xg": 1.27,
-        "home_win": 28.4,
-        "draw": 28.4,
-        "away_win": 43.2,
-        "kicktipp_ev": 1.133
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 6.1,
-        "rain": 0.0,
-        "wind": 9.4
-      }
-    },
     {
       "home": "FC Augsburg",
       "away": "1. FSV Mainz 05",
@@ -530,7 +492,7 @@
         "wind": 8.3
       }
     },
-    "updatedUtc": "2026-11-21T17:24:41.342887+00:00",
+    "updatedUtc": "2026-11-21T23:07:29.578531+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

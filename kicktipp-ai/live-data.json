@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "10. Spieltag",
-  "updated": "20.11.2026 21:03",
+  "updated": "21.11.2026 02:26",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "FC Bayern München",
-      "away": "1. FC Köln",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        2,
-        0
-      ],
-      "confidence": 75,
-      "bank": false,
-      "surprise": {},
-      "form": "FC Bayern München: 2.28 Pkt/Spiel, 3.01:1.08 Tore; 1. FC Köln: 0.74 Pkt/Spiel, 0.85:1.39 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.23,
-        "away_xg": 0.73,
-        "home_win": 71.5,
-        "draw": 17.8,
-        "away_win": 10.7,
-        "kicktipp_ev": 1.69
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": 8.3,
-        "rain": 0.1,
-        "wind": 21.3
-      }
-    },
     {
       "home": "Bayer 04 Leverkusen",
       "away": "SC Paderborn 07",
@@ -754,7 +716,7 @@
         "wind": 6.2
       }
     },
-    "updatedUtc": "2026-11-20T20:03:33.247430+00:00",
+    "updatedUtc": "2026-11-21T01:26:42.653176+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

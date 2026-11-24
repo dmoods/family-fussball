@@ -1,15 +1,17 @@
 {
-  "updated": "2026-11-23T18:10:01+01:00",
+  "updated": "2026-11-24",
   "events": [
     {
       "date": "2026-11-24",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "✅ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2026-11-26",
@@ -23,13 +25,15 @@
     },
     {
       "date": "2026-12-01",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2026-12-03",
@@ -43,13 +47,15 @@
     },
     {
       "date": "2026-12-08",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2026-12-10",
@@ -63,13 +69,15 @@
     },
     {
       "date": "2026-12-15",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2026-12-17",
@@ -83,133 +91,159 @@
     },
     {
       "date": "2026-12-22",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2026-12-29",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-01-05",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-01-12",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-01-19",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-01-26",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-02-02",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-02-09",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-02-16",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-02-23",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-03-02",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-03-09",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     },
     {
       "date": "2027-03-16",
-      "time": "16:15–18:00",
+      "time": "17:15",
       "child": "Luis",
       "type": "Training",
       "title": "⁉️️ Training Wernerstraße (Halle)",
       "location": "Wernerstraße 48, 12619 Berlin-Bezirk Marzahn-Hellersdorf, Deutschland",
       "maps": "https://maps.apple.com/?q=Wernerstra%C3%9Fe%2048%2C%2012619%20Berlin-Bezirk%20Marzahn-Hellersdorf%2C%20Deutschland",
-      "source": "myteam"
+      "source": "myteam",
+      "endTime": "18:45",
+      "meetTime": "17:00"
     }
   ],
   "status": "ok"

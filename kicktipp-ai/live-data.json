@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "11. Spieltag",
-  "updated": "28.11.2026 04:51",
+  "updated": "28.11.2026 13:53",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -42,9 +42,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 0.3,
+        "temp": 3.1,
         "rain": 0.0,
-        "wind": 6.5
+        "wind": 10.0
       }
     },
     {
@@ -63,12 +63,12 @@
       "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
       "lineup": "niedrig",
       "model": {
-        "home_xg": 1.28,
-        "away_xg": 2.06,
+        "home_xg": 1.31,
+        "away_xg": 2.1,
         "home_win": 23.5,
-        "draw": 21.2,
-        "away_win": 55.3,
-        "kicktipp_ev": 1.298
+        "draw": 21.0,
+        "away_win": 55.6,
+        "kicktipp_ev": 1.303
       },
       "sources": {
         "openLigaDB": true,
@@ -80,9 +80,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": -0.2,
+        "temp": 1.0,
         "rain": 0.0,
-        "wind": 14.8
+        "wind": 16.3
       }
     },
     {
@@ -118,9 +118,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 1.8,
+        "temp": 3.4,
         "rain": 0.0,
-        "wind": 10.7
+        "wind": 16.6
       }
     },
     {
@@ -156,9 +156,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 0.2,
+        "temp": 1.4,
         "rain": 0.0,
-        "wind": 17.3
+        "wind": 16.4
       }
     },
     {
@@ -194,9 +194,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 0.3,
+        "temp": 1.1,
         "rain": 0.0,
-        "wind": 3.3
+        "wind": 8.5
       }
     },
     {
@@ -232,9 +232,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": 5.9,
-        "rain": 0.1,
-        "wind": 6.6
+        "temp": 2.8,
+        "rain": 0.0,
+        "wind": 1.5
       }
     },
     {
@@ -287,12 +287,12 @@
       "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
       "lineup": "niedrig",
       "model": {
-        "home_xg": 1.77,
-        "away_xg": 1.36,
-        "home_win": 47.1,
-        "draw": 23.2,
+        "home_xg": 1.81,
+        "away_xg": 1.39,
+        "home_win": 47.3,
+        "draw": 22.9,
         "away_win": 29.7,
-        "kicktipp_ev": 1.128
+        "kicktipp_ev": 1.132
       },
       "sources": {
         "openLigaDB": true,
@@ -304,9 +304,9 @@
         "openMeteo": true
       },
       "weather": {
-        "temp": -2.0,
-        "rain": 0.0,
-        "wind": 4.9
+        "temp": 3.6,
+        "rain": 0.2,
+        "wind": 11.5
       }
     }
   ],
@@ -721,42 +721,42 @@
         "wind": 8.2
       },
       "mainz 05|union berlin": {
-        "temp": 0.3,
+        "temp": 3.1,
         "rain": 0.0,
-        "wind": 6.5
+        "wind": 10.0
       },
       "hamburger sv|bayern munchen": {
-        "temp": -0.2,
+        "temp": 1.0,
         "rain": 0.0,
-        "wind": 14.8
+        "wind": 16.3
       },
       "fc koln|sv 07 elversberg": {
-        "temp": 1.8,
+        "temp": 3.4,
         "rain": 0.0,
-        "wind": 10.7
+        "wind": 16.6
       },
       "sc paderborn|schalke 04": {
-        "temp": 0.2,
+        "temp": 1.4,
         "rain": 0.0,
-        "wind": 17.3
+        "wind": 16.4
       },
       "vfb stuttgart|eintracht frankfurt": {
-        "temp": 0.3,
+        "temp": 1.1,
         "rain": 0.0,
-        "wind": 3.3
+        "wind": 8.5
       },
       "sc freiburg|rb leipzig": {
-        "temp": 5.9,
-        "rain": 0.1,
-        "wind": 6.6
+        "temp": 2.8,
+        "rain": 0.0,
+        "wind": 1.5
       },
       "borussia dortmund|bayer leverkusen": {
-        "temp": -2.0,
-        "rain": 0.0,
-        "wind": 4.9
+        "temp": 3.6,
+        "rain": 0.2,
+        "wind": 11.5
       }
     },
-    "updatedUtc": "2026-11-28T03:51:17.129306+00:00",
+    "updatedUtc": "2026-11-28T12:53:54.158036+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,

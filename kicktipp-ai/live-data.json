@@ -1,7 +1,7 @@
 {
   "season": "Bundesliga 2026/27",
   "matchday": "11. Spieltag",
-  "updated": "27.11.2026 22:09",
+  "updated": "28.11.2026 04:51",
   "alert": "Multi-Source-Analyse · Datenqualität 63% · 2 aktive Quellen/Signale.",
   "dataQuality": 63,
   "activeSources": [
@@ -9,44 +9,6 @@
     "openMeteo"
   ],
   "matches": [
-    {
-      "home": "SV Werder Bremen",
-      "away": "Borussia Mönchengladbach",
-      "kickoff": "Fri 20:30",
-      "prediction": [
-        2,
-        0
-      ],
-      "confidence": 75,
-      "bank": false,
-      "surprise": {},
-      "form": "SV Werder Bremen: 1.92 Pkt/Spiel, 2.17:1.13 Tore; Borussia Mönchengladbach: 0.53 Pkt/Spiel, 1.04:2.14 Tore.",
-      "injuries": "Keine verlässlichen aktuellen Ausfälle aus API-Football gemeldet",
-      "suspensions": "Ausfälle/Sperren werden berücksichtigt, soweit API-Football sie meldet.",
-      "lineup": "niedrig",
-      "model": {
-        "home_xg": 2.37,
-        "away_xg": 0.81,
-        "home_win": 72.2,
-        "draw": 16.9,
-        "away_win": 10.9,
-        "kicktipp_ev": 1.678
-      },
-      "sources": {
-        "openLigaDB": true,
-        "apiFootballPrediction": false,
-        "apiFootballOdds": false,
-        "footballDataOdds": false,
-        "apiFootballInjuries": false,
-        "apiFootballLineups": false,
-        "openMeteo": true
-      },
-      "weather": {
-        "temp": -3.9,
-        "rain": 0.0,
-        "wind": 8.2
-      }
-    },
     {
       "home": "1. FSV Mainz 05",
       "away": "1. FC Union Berlin",
@@ -794,7 +756,7 @@
         "wind": 4.9
       }
     },
-    "updatedUtc": "2026-11-27T21:09:01.106947+00:00",
+    "updatedUtc": "2026-11-28T03:51:17.129306+00:00",
     "fd": {
       "bayern munchen|stuttgart": {
         "H": 0.7823666698586241,
